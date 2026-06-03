@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 FIFA World Cup — 前20強分析</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
+    <a href="index.html">🗓️ 賽程</a>
+    <a href="teams.html">🌍 球隊&球員</a>
+    <a href="analysis.html" class="active">📊 分析</a>
+    <a href="prediction.html">🔮 預測&彩票</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">深度分析</div>
+  <h1>前20強球隊深度分析</h1>
+  <p>優勢、劣勢、王牌球員及奪冠機率全面解析</p>
+</div>
+
+<div class="container">
+  <div class="stats-strip">
+    <div class="stat-box"><div class="num">🥇</div><div class="lbl">阿根廷 最大熱門</div></div>
+    <div class="stat-box"><div class="num">22%</div><div class="lbl">阿根廷奪冠機率</div></div>
+    <div class="stat-box"><div class="num">⭐</div><div class="lbl">梅西 本屆最佳球員</div></div>
+    <div class="stat-box"><div class="num">5</div><div class="lbl">南美洲球隊入列</div></div>
+  </div>
+
+  <div class="section-title">📊 前20強 — 優劣分析 + 王牌球員</div>
+  <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.88rem">奪冠機率基於FIFA排名、近期成績、歷史戰績及陣容深度綜合評估</p>
+
+  <div class="analysis-grid" id="analysis-container"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+const container = document.getElementById('analysis-container');
+
+ANALYSIS_TOP20.forEach((team, i) => {
+  const rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
+  const card = document.createElement('div');
+  card.className = 'analysis-card fade-in';
+  card.innerHTML = `
+    <div class="analysis-card-header">
+      <div class="rank-badge ${rankClass}">${i+1}</div>
+      <div style="font-size:2rem">${team.flag}</div>
+      <div style="flex:1">
+        <div style="font-size:1.1rem;font-weight:800">${team.name}</div>
+        <div style="font-size:0.8rem;color:var(--muted)">FIFA世界排名 #${team.worldRank}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:1.4rem;font-weight:900;color:${i<3?'var(--gold)':'var(--accent)'}">${team.winProb}%</div>
+        <div style="font-size:0.7rem;color:var(--muted)">奪冠機率</div>
+      </div>
+    </div>
+    <div class="analysis-card-body">
+      <div class="sw-row">
+        <div class="sw-box str">
+          <h4>✅ 優勢</h4>
+          <ul>${team.strengths.map(s=>`<li>${s}</li>`).join('')}</ul>
+        </div>
+        <div class="sw-box weak">
+          <h4>❌ 劣勢</h4>
+          <ul>${team.weaknesses.map(w=>`<li>${w}</li>`).join('')}</ul>
+        </div>
+      </div>
+      <div class="ace-box">
+        <div class="ace-icon">⭐</div>
+        <div class="ace-info">
+          <p>王牌球員 · ${team.ace.pos} · ${team.ace.club}</p>
+          <strong>${team.ace.name}</strong>
+        </div>
+      </div>
+      <div class="odds-bar">
+        <div class="odds-label">
+          <span>奪冠機率</span>
+          <span style="color:var(--accent2)">彩票賠率約 ${team.odds}</span>
+        </div>
+        <div class="odds-track">
+          <div class="odds-fill" style="width:${Math.min(team.winProb*4,100)}%"></div>
+        </div>
+      </div>
+    </div>`;
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>
