@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 FIFA World Cup — 歷屆決賽精華</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .finals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.5rem;
+    }
+    .final-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .final-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .final-card-header {
+      background: linear-gradient(135deg, #1a3a6e, #0d3a2e);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .year-badge {
+      background: var(--gold);
+      color: #000;
+      font-weight: 900;
+      font-size: 1.1rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .final-title { flex: 1; }
+    .final-title h3 { font-size: 1rem; font-weight: 800; color: var(--text); }
+    .final-title p { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+    .score-display {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      background: #000;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-placeholder {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0a1628, #1a2a4e);
+      cursor: pointer;
+      gap: 0.75rem;
+    }
+    .video-placeholder .play-btn {
+      width: 64px; height: 64px;
+      background: rgba(255,215,0,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      transition: transform 0.2s;
+    }
+    .video-placeholder:hover .play-btn { transform: scale(1.1); }
+    .video-placeholder p { color: var(--muted); font-size: 0.82rem; text-align: center; max-width: 240px; }
+    .final-info {
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .final-info span {
+      font-size: 0.75rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.15rem 0.6rem;
+      color: var(--muted);
+    }
+    .final-info .host-badge { color: var(--accent); border-color: rgba(0,212,170,0.3); }
+    .goals-list {
+      padding: 0 1.25rem 1rem;
+    }
+    .goals-list h4 { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+    .goal-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.3rem 0;
+      font-size: 0.82rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .goal-item:last-child { border-bottom: none; }
+    .goal-min {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent2);
+      width: 36px;
+      flex-shrink: 0;
+    }
+    .goal-scorer { flex: 1; color: var(--text); font-weight: 600; }
+    .goal-team { font-size: 0.7rem; color: var(--muted); }
+    .goal-type {
+      font-size: 0.65rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+    .goal-type.pen { background: rgba(239,68,68,0.15); color: #ef4444; }
+    .goal-type.og { background: rgba(245,158,11,0.15); color: var(--accent2); }
+    .goal-type.normal { background: rgba(0,212,170,0.1); color: var(--accent); }
+    .champion-ribbon {
+      background: linear-gradient(90deg, var(--gold), #ffb700);
+      color: #000;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 0.3rem;
+      letter-spacing: 0.5px;
+    }
+    .search-btn {
+      display: block;
+      margin: 0.75rem 1.25rem;
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .search-btn:hover { background: #cc0000; }
+    .filter-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .filter-label { color: var(--muted); font-size: 0.85rem; }
+    .timeline-strip {
+      display: flex;
+      overflow-x: auto;
+      gap: 0.5rem;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      scrollbar-width: thin;
+    }
+    .timeline-dot {
+      flex-shrink: 0;
+      background: var(--bg2);
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-width: 80px;
+    }
+    .timeline-dot:hover, .timeline-dot.active {
+      border-color: var(--gold);
+      background: rgba(255,215,0,0.08);
+    }
+    .timeline-dot .t-year { font-weight: 900; font-size: 0.9rem; color: var(--gold); }
+    .timeline-dot .t-champ { font-size: 0.65rem; color: var(--muted); margin-top: 0.2rem; }
+    .notice-box {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .notice-box strong { color: var(--accent2); }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
+    <a href="index.html">🗓️ 賽程</a>
+    <a href="teams.html">🌍 球隊&球員</a>
+    <a href="analysis.html">📊 分析</a>
+    <a href="prediction.html">🔮 預測</a>
+    <a href="highlights.html" class="active">🎬 精華</a>
+    <a href="betting.html">🎰 投注</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge">近十屆決賽</div>
+  <h1>🏆 世界盃決賽進球精華</h1>
+  <p>從1986年到2022年 — 每屆決賽的關鍵進球，約1分鐘精華剪輯</p>
+</div>
+
+<div class="container">
+  <div class="notice-box">
+    ⚠️ <strong>觀看說明：</strong>點擊「▶ 在 YouTube 觀看」按鈕即可跳轉至 YouTube 搜尋該屆決賽精華片段。影片均來自 FIFA 官方頻道或授權媒體，每段約 1 分鐘。部分影片依地區可能有版權限制。
+  </div>
+
+  <!-- Timeline -->
+  <div class="section-title">⏱️ 快速導覽</div>
+  <div class="timeline-strip" id="timeline-strip"></div>
+
+  <div class="section-title">🎬 歷屆決賽精華影片</div>
+  <div class="finals-grid" id="finals-container"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+const FINALS = [
+  {
+    year: 2022,
+    host: '卡達',
+    champion: '阿根廷',
+    champFlag: '🇦🇷',
+    runner: '法國',
+    runnerFlag: '🇫🇷',
+    score: '3-3 (pen)',
+    venue: 'Lusail Stadium',
+    attendance: '88,966',
+    goals: [
+      {min:"23'", scorer:'Mbappe (og)', team:'法國', type:'og'},
+      {min:"36'", scorer:'Di María', team:'阿根廷', type:'normal'},
+      {min:"80'", scorer:'Mbappé', team:'法國', type:'pen'},
+      {min:"81'", scorer:'Mbappé', team:'法國', type:'normal'},
+      {min:"108'", scorer:'Messi', team:'阿根廷', type:'normal'},
+      {min:"115'", scorer:'Mbappé', team:'法國', type:'pen'},
+      {min:"Pen", scorer:'阿根廷 4-2 法國', team:'', type:'pen'},
+    ],
+    ytSearch: 'Argentina France 2022 World Cup Final goals highlights',
+    ytId: 'wQFNUCt4UAY',
+    desc: '史上最精彩決賽！姆巴佩帽子戲法，梅西最終奪冠'
+  },
+  {
+    year: 2018,
+    host: '俄羅斯',
+    champion: '法國',
+    champFlag: '🇫🇷',
+    runner: '克羅埃西亞',
+    runnerFlag: '🇭🇷',
+    score: '4-2',
+    venue: 'Luzhniki Stadium, 莫斯科',
+    attendance: '78,011',
+    goals: [
+      {min:"18'", scorer:'Mandžukić (og)', team:'克羅埃西亞', type:'og'},
+      {min:"28'", scorer:'Perišić', team:'克羅埃西亞', type:'normal'},
+      {min:"38'", scorer:'Griezmann', team:'法國', type:'pen'},
+      {min:"59'", scorer:'Pogba', team:'法國', type:'normal'},
+      {min:"65'", scorer:'Mbappé', team:'法國', type:'normal'},
+      {min:"69'", scorer:'Mandžukić', team:'克羅埃西亞', type:'normal'},
+    ],
+    ytSearch: 'France Croatia 2018 World Cup Final all goals highlights',
+    ytId: 'hzOuEBPKT_c',
+    desc: '法國4-2擊敗克羅埃西亞，姆巴佩成最年輕決賽進球者'
+  },
+  {
+    year: 2014,
+    host: '巴西',
+    champion: '德國',
+    champFlag: '🇩🇪',
+    runner: '阿根廷',
+    runnerFlag: '🇦🇷',
+    score: '1-0 (AET)',
+    venue: 'Estádio Maracanã, 里約',
+    attendance: '74,738',
+    goals: [
+      {min:"113'", scorer:'Götze', team:'德國', type:'normal'},
+    ],
+    ytSearch: 'Germany Argentina 2014 World Cup Final Gotze goal highlights',
+    ytId: 'JEGrXKCjVuY',
+    desc: '格策加時絕殺，德國首次以統一之名奪得大力神盃'
+  },
+  {
+    year: 2010,
+    host: '南非',
+    champion: '西班牙',
+    champFlag: '🇪🇸',
+    runner: '荷蘭',
+    runnerFlag: '🇳🇱',
+    score: '1-0 (AET)',
+    venue: 'Soccer City, 約翰尼斯堡',
+    attendance: '84,490',
+    goals: [
+      {min:"116'", scorer:'Iniesta', team:'西班牙', type:'normal'},
+    ],
+    ytSearch: 'Spain Netherlands 2010 World Cup Final Iniesta goal highlights',
+    ytId: 'e5CfxrBkP1s',
+    desc: '伊涅斯塔加時絕殺，西班牙首奪世界盃冠軍'
+  },
+  {
+    year: 2006,
+    host: '德國',
+    champion: '義大利',
+    champFlag: '🇮🇹',
+    runner: '法國',
+    runnerFlag: '🇫🇷',
+    score: '1-1 (pen)',
+    venue: 'Olympiastadion, 柏林',
+    attendance: '69,000',
+    goals: [
+      {min:"7'", scorer:'Zidane', team:'法國', type:'pen'},
+      {min:"19'", scorer:'Materazzi', team:'義大利', type:'normal'},
+      {min:"Pen", scorer:'義大利 5-3 法國', team:'', type:'pen'},
+    ],
+    ytSearch: 'Italy France 2006 World Cup Final Zidane headbutt goals highlights',
+    ytId: 'bUGkNyqvAtk',
+    desc: '齊達內頭槌事件！義大利點球勝出奪冠'
+  },
+  {
+    year: 2002,
+    host: '韓國/日本',
+    champion: '巴西',
+    champFlag: '🇧🇷',
+    runner: '德國',
+    runnerFlag: '🇩🇪',
+    score: '2-0',
+    venue: 'International Stadium, 橫濱',
+    attendance: '69,029',
+    goals: [
+      {min:"67'", scorer:'Ronaldo', team:'巴西', type:'normal'},
+      {min:"79'", scorer:'Ronaldo', team:'巴西', type:'normal'},
+    ],
+    ytSearch: 'Brazil Germany 2002 World Cup Final Ronaldo goals highlights',
+    ytId: 'eFWkKiGiOBM',
+    desc: '羅納度雙響，巴西奪第五座世界盃'
+  },
+  {
+    year: 1998,
+    host: '法國',
+    champion: '法國',
+    champFlag: '🇫🇷',
+    runner: '巴西',
+    runnerFlag: '🇧🇷',
+    score: '3-0',
+    venue: 'Stade de France, 聖丹尼',
+    attendance: '75,000',
+    goals: [
+      {min:"27'", scorer:'Zidane', team:'法國', type:'normal'},
+      {min:"45'", scorer:'Zidane', team:'法國', type:'normal'},
+      {min:"90'", scorer:'Petit', team:'法國', type:'normal'},
+    ],
+    ytSearch: 'France Brazil 1998 World Cup Final Zidane goals highlights',
+    ytId: 'mvM8Bm7cRiQ',
+    desc: '齊達內頭槌雙響，法國主場首奪世界盃'
+  },
+  {
+    year: 1994,
+    host: '美國',
+    champion: '巴西',
+    champFlag: '🇧🇷',
+    runner: '義大利',
+    runnerFlag: '🇮🇹',
+    score: '0-0 (pen)',
+    venue: 'Rose Bowl, 洛杉磯',
+    attendance: '94,194',
+    goals: [
+      {min:"Pen", scorer:'巴西 3-2 義大利', team:'巴貝托·馬爾蒂尼錯失點球', type:'pen'},
+    ],
+    ytSearch: 'Brazil Italy 1994 World Cup Final penalties highlights',
+    ytId: 'EuyKJEzWFaQ',
+    desc: '史上首次0-0決賽，點球大戰！羅伯特·巴喬錯失決定性點球'
+  },
+  {
+    year: 1990,
+    host: '義大利',
+    champion: '西德',
+    champFlag: '🇩🇪',
+    runner: '阿根廷',
+    runnerFlag: '🇦🇷',
+    score: '1-0',
+    venue: 'Stadio Olimpico, 羅馬',
+    attendance: '73,603',
+    goals: [
+      {min:"85'", scorer:'Brehme', team:'西德', type:'pen'},
+    ],
+    ytSearch: 'West Germany Argentina 1990 World Cup Final Brehme penalty goal',
+    ytId: 'Ih0EVqD8vGY',
+    desc: '布雷姆第85分鐘點球決定命運，西德奪第三座世界盃'
+  },
+  {
+    year: 1986,
+    host: '墨西哥',
+    champion: '阿根廷',
+    champFlag: '🇦🇷',
+    runner: '西德',
+    runnerFlag: '🇩🇪',
+    score: '3-2',
+    venue: 'Estadio Azteca, 墨西哥城',
+    attendance: '114,600',
+    goals: [
+      {min:"23'", scorer:'Brown', team:'阿根廷', type:'normal'},
+      {min:"55'", scorer:'Valdano', team:'阿根廷', type:'normal'},
+      {min:"74'", scorer:'Rummenigge', team:'西德', type:'normal'},
+      {min:"81'", scorer:'Völler', team:'西德', type:'normal'},
+      {min:"83'", scorer:'Burruchaga', team:'阿根廷', type:'normal'},
+    ],
+    ytSearch: 'Argentina West Germany 1986 World Cup Final Maradona goals highlights',
+    ytId: 'eUSXfQ2KMIY',
+    desc: '馬拉多納領軍！阿根廷3-2逆境奪冠，布魯查加絕殺'
+  }
+];
+
+// Timeline
+const strip = document.getElementById('timeline-strip');
+FINALS.forEach((f, i) => {
+  const dot = document.createElement('div');
+  dot.className = 'timeline-dot' + (i===0?' active':'');
+  dot.id = 'tl-'+f.year;
+  dot.innerHTML = `<div class="t-year">${f.year}</div><div class="t-champ">${f.champFlag} ${f.champion}</div>`;
+  dot.onclick = () => {
+    document.querySelectorAll('.timeline-dot').forEach(d=>d.classList.remove('active'));
+    dot.classList.add('active');
+    document.getElementById('final-'+f.year).scrollIntoView({behavior:'smooth', block:'start'});
+  };
+  strip.appendChild(dot);
+});
+
+// Finals cards
+const container = document.getElementById('finals-container');
+FINALS.forEach(f => {
+  const card = document.createElement('div');
+  card.className = 'final-card';
+  card.id = 'final-'+f.year;
+
+  const ytSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(f.ytSearch)}`;
+  const ytEmbedUrl = `https://www.youtube.com/embed/${f.ytId}?start=0&rel=0&modestbranding=1`;
+
+  const goalRows = f.goals.map(g => `
+    <div class="goal-item">
+      <span class="goal-min">${g.min}</span>
+      <span class="goal-scorer">${g.scorer}</span>
+      <span class="goal-team">${g.team}</span>
+      <span class="goal-type ${g.type}">${g.type==='pen'?'PK':g.type==='og'?'OG':'⚽'}</span>
+    </div>`).join('');
+
+  card.innerHTML = `
+    <div class="champion-ribbon">🏆 冠軍：${f.champFlag} ${f.champion}</div>
+    <div class="final-card-header">
+      <div class="year-badge">${f.year}</div>
+      <div class="final-title">
+        <h3>${f.champFlag} ${f.champion} vs ${f.runnerFlag} ${f.runner}</h3>
+        <p>主辦：${f.host} | ${f.venue}</p>
+      </div>
+      <div class="score-display">${f.score}</div>
+    </div>
+    <div class="video-wrapper">
+      <iframe
+        src="${ytEmbedUrl}"
+        title="${f.year} FIFA World Cup Final Highlights"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="final-info">
+      <span class="host-badge">🌍 ${f.host}</span>
+      <span>👥 ${f.attendance}</span>
+      <span>📍 ${f.venue.split(',')[0]}</span>
+      <span>⚽ ${f.goals.length} 進球</span>
+    </div>
+    <div class="goals-list">
+      <h4>⚽ 進球記錄</h4>
+      ${goalRows}
+    </div>
+    <p style="padding:0 1.25rem;font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-style:italic">${f.desc}</p>
+    <a href="${ytSearchUrl}" target="_blank" class="search-btn">
+      ▶ 在 YouTube 搜尋此場決賽精華
+    </a>`;
+
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>
