@@ -465,13 +465,11 @@ FINALS.forEach(f => {
       </div>
       <div class="score-display">${f.score}</div>
     </div>
-    <div class="video-wrapper">
-      <iframe
-        src="${ytEmbedUrl}"
-        title="${f.year} FIFA World Cup Final Highlights"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="video-wrapper" id="vw-${f.year}" style="cursor:pointer" onclick="loadVideo(this, '${ytEmbedUrl}', '${ytSearchUrl}')">
+      <div class="video-placeholder">
+        <div class="play-btn">▶</div>
+        <p><strong style="color:var(--text)">${f.year} FIFA決賽精華</strong><br>${f.champion} vs ${f.runner}<br><span style="font-size:0.75rem">點擊播放影片</span></p>
+      </div>
     </div>
     <div class="final-info">
       <span class="host-badge">🌍 ${f.host}</span>
@@ -490,6 +488,33 @@ FINALS.forEach(f => {
 
   container.appendChild(card);
 });
+
+function loadVideo(wrapper, embedUrl, searchUrl) {
+  // Try to load the YouTube embed; if it fails, open search
+  wrapper.style.cursor = 'default';
+  wrapper.onclick = null;
+  wrapper.innerHTML = `<iframe
+    src="${embedUrl}"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:none"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>`;
+  // Listen for embed error and fall back to YouTube search
+  const iframe = wrapper.querySelector('iframe');
+  iframe.onload = function() {
+    // After 3s if no video, show fallback
+    setTimeout(() => {
+      try {
+        if (iframe.contentDocument && iframe.contentDocument.body.innerText.includes('unavailable')) {
+          wrapper.innerHTML = `<div class="video-placeholder" onclick="window.open('${searchUrl}','_blank')">
+            <div class="play-btn">▶</div>
+            <p>此影片無法嵌入<br><span style="color:var(--accent)">點擊前往 YouTube 搜尋</span></p>
+          </div>`;
+        }
+      } catch(e) {} // Cross-origin, ignore
+    }, 3000);
+  };
+}
 </script>
 </body>
 </html>
