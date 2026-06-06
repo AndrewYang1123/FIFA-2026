@@ -111,20 +111,70 @@
     .discuss-sub {
       font-size: 0.85rem;
       color: var(--muted);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
     }
-    #disqus_thread { min-height: 120px; }
-    .disqus-notice {
-      font-size: 0.82rem;
-      color: var(--muted);
+    /* Comment form */
+    .comment-form { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.8rem; }
+    .comment-form input, .comment-form textarea {
       background: var(--bg3);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem 1.2rem;
-      margin-top: 1rem;
-      line-height: 1.7;
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-family: inherit;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
     }
-    .disqus-notice strong { color: var(--gold); }
+    .comment-form input:focus, .comment-form textarea:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .comment-form textarea { resize: vertical; min-height: 90px; }
+    .comment-submit {
+      align-self: flex-end;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1.6rem;
+      font-weight: 800;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .comment-submit:hover { opacity: 0.85; }
+    .comment-submit:disabled { opacity: 0.45; cursor: default; }
+    /* Comment list */
+    .comment-divider {
+      font-size: 0.78rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .comment-list { display: flex; flex-direction: column; gap: 1rem; }
+    .comment-item {
+      display: flex; gap: 0.85rem; align-items: flex-start;
+    }
+    .comment-avatar {
+      flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.95rem; color: #000;
+    }
+    .comment-body { flex: 1; }
+    .comment-meta {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      margin-bottom: 0.3rem;
+    }
+    .comment-name { font-weight: 800; font-size: 0.88rem; color: var(--text); }
+    .comment-time { font-size: 0.74rem; color: var(--muted); }
+    .comment-msg  { font-size: 0.88rem; color: var(--text); line-height: 1.6; }
+    .comment-empty {
+      text-align: center; padding: 2rem 1rem;
+      color: var(--muted); font-size: 0.88rem;
+    }
+    .comment-loading { text-align:center; color:var(--muted); padding:1rem; font-size:0.85rem; }
 
     /* ── Guidelines ───────────────────────────────────────── */
     .rules-box {
@@ -182,24 +232,25 @@
     <p data-i18n-html="community_rules_p">• 友善討論，尊重不同看法<br>• 歡迎分享球隊資訊與賽事分析<br>• 禁止發布不實訊息或垃圾內容<br>• 讓這裡成為球迷交流的最佳空間 ⚽</p>
   </div>
 
-  <!-- ── Comments (Disqus) ────────────────────────── -->
+  <!-- ── Comments (Firebase) ───────────────────────── -->
   <div class="discuss-box">
     <h2 data-i18n="community_section_discuss">💬 留言討論</h2>
     <p class="discuss-sub" data-i18n="community_discuss_sub">分享你的觀點、預測或對賽事的任何想法！</p>
-    <div id="disqus_thread"></div>
 
-    <!-- Setup notice — shown when Disqus shortname is placeholder -->
-    <div class="disqus-notice" id="disqus-notice" style="display:none">
-      💡 <strong>設定留言系統：</strong>
-      前往 <a href="https://disqus.com" target="_blank" style="color:var(--accent)">disqus.com</a> 免費註冊，
-      建立一個 Site 並取得你的 <strong>shortname</strong>，
-      然後在 <code>community.html</code> 底部找到 <code>YOUR_DISQUS_SHORTNAME</code>，
-      替換成你的 shortname 後重新 push 即可。
-      <br><br>
-      💡 <strong>Set up comments:</strong>
-      Go to <a href="https://disqus.com" target="_blank" style="color:var(--accent)">disqus.com</a>, sign up free,
-      create a site to get your <strong>shortname</strong>, then find
-      <code>YOUR_DISQUS_SHORTNAME</code> in <code>community.html</code> and replace it, then push.
+    <!-- Comment form -->
+    <div class="comment-form" id="comment-form">
+      <input type="text" id="comment-name" maxlength="40"
+             placeholder="你的名字（可選 / Optional）" />
+      <textarea id="comment-msg" maxlength="500"
+                placeholder="留下你的想法… / Share your thoughts…"></textarea>
+      <button class="comment-submit" id="comment-submit">✈️ 送出留言</button>
+    </div>
+    <div id="comment-status" style="font-size:0.82rem;color:var(--accent);margin-bottom:1rem;min-height:1.2em"></div>
+
+    <!-- Comments list -->
+    <div class="comment-divider" id="comment-divider">載入留言中…</div>
+    <div class="comment-list" id="comment-list">
+      <div class="comment-loading">⏳</div>
     </div>
   </div>
 
@@ -330,24 +381,110 @@ container.addEventListener('click', function(e) {
   }
 });
 
-// ── Disqus loader ─────────────────────────────────────────────
-var DISQUS_SHORTNAME = 'YOUR_DISQUS_SHORTNAME'; // ← 替換成你的 Disqus shortname
+// ── Firebase Realtime Database Comments ───────────────────────
+var FB_URL = 'https://fifa-2026-bd106-default-rtdb.firebaseio.com';
 
-if (DISQUS_SHORTNAME === 'YOUR_DISQUS_SHORTNAME') {
-  // Show setup notice instead
-  document.getElementById('disqus-notice').style.display = 'block';
-} else {
-  var disqus_config = function () {
-    this.page.url      = 'https://fifa-2026-brown.vercel.app/community.html';
-    this.page.identifier = 'community-page';
-  };
-  (function () {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
+// Avatar colour palette
+var AVATAR_COLORS = ['#00d4aa','#ffd700','#e74c3c','#3498db','#9b59b6','#e67e22','#1abc9c','#f39c12'];
+function avatarColor(name) {
+  var h = 0;
+  for (var i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) & 0xffffffff;
+  return AVATAR_COLORS[Math.abs(h) % AVATAR_COLORS.length];
 }
+
+function timeAgo(ts) {
+  var diff = Math.floor((Date.now() - ts) / 1000);
+  if (diff < 60)  return '剛剛';
+  if (diff < 3600) return Math.floor(diff/60) + ' 分鐘前';
+  if (diff < 86400) return Math.floor(diff/3600) + ' 小時前';
+  return Math.floor(diff/86400) + ' 天前';
+}
+
+function renderComments(data) {
+  var list = document.getElementById('comment-list');
+  var divider = document.getElementById('comment-divider');
+
+  if (!data) {
+    list.innerHTML = '<div class="comment-empty">還沒有留言，來第一個說說話！<br>Be the first to comment! ⚽</div>';
+    divider.textContent = '0 則留言';
+    return;
+  }
+
+  // Firebase returns object; convert to array sorted newest first
+  var items = Object.values(data).sort(function(a, b) { return b.timestamp - a.timestamp; });
+  divider.textContent = items.length + ' 則留言 · Comments';
+
+  list.innerHTML = items.map(function(c) {
+    var displayName = (c.name || '').trim() || '匿名球迷';
+    var initial = displayName.charAt(0).toUpperCase();
+    var color = avatarColor(displayName);
+    var ago = timeAgo(c.timestamp || 0);
+    var msg = (c.message || '').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+    return '<div class="comment-item">' +
+      '<div class="comment-avatar" style="background:' + color + '">' + initial + '</div>' +
+      '<div class="comment-body">' +
+        '<div class="comment-meta">' +
+          '<span class="comment-name">' + displayName + '</span>' +
+          '<span class="comment-time">' + ago + '</span>' +
+        '</div>' +
+        '<div class="comment-msg">' + msg + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function loadComments() {
+  fetch(FB_URL + '/comments.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) { renderComments(data); })
+    .catch(function() {
+      document.getElementById('comment-list').innerHTML =
+        '<div class="comment-empty">⚠️ 載入留言失敗，請稍後再試。</div>';
+      document.getElementById('comment-divider').textContent = '留言';
+    });
+}
+
+// Submit handler
+document.getElementById('comment-submit').addEventListener('click', function() {
+  var nameEl  = document.getElementById('comment-name');
+  var msgEl   = document.getElementById('comment-msg');
+  var statusEl= document.getElementById('comment-status');
+  var btn     = document.getElementById('comment-submit');
+
+  var msg = (msgEl.value || '').trim();
+  if (!msg) { statusEl.textContent = '⚠️ 請輸入留言內容！'; return; }
+
+  var payload = {
+    name: (nameEl.value || '').trim() || '匿名球迷',
+    message: msg,
+    timestamp: Date.now()
+  };
+
+  btn.disabled = true;
+  statusEl.textContent = '送出中…';
+
+  fetch(FB_URL + '/comments.json', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function(r) { return r.json(); })
+  .then(function() {
+    msgEl.value = '';
+    nameEl.value = '';
+    statusEl.textContent = '✅ 留言成功！';
+    setTimeout(function() { statusEl.textContent = ''; }, 3000);
+    loadComments();
+  })
+  .catch(function() {
+    statusEl.textContent = '❌ 送出失敗，請再試一次。';
+  })
+  .finally(function() { btn.disabled = false; });
+});
+
+// Load on page init, refresh every 30 s
+loadComments();
+setInterval(loadComments, 30000);
 </script>
 </body>
 </html>
