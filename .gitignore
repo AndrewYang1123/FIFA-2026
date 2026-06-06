@@ -1,0 +1,11 @@
+# Social media drafts & personal notes
+*.draft.md
+linkedin-*.md
+twitter-*.md
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
