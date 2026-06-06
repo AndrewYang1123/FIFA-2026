@@ -6,71 +6,74 @@
   <title>2026 FIFA World Cup — 預測 & 彩票建議</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page-title="pred_title">
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
-    <a href="index.html">🗓️ 賽程</a>
-    <a href="teams.html">🌍 球隊&球員</a>
-    <a href="analysis.html">📊 分析</a>
-    <a href="prediction.html" class="active">🔮 預測&彩票</a>
+    <a href="index.html" data-i18n="nav_schedule">🗓️ 賽程</a>
+    <a href="teams.html" data-i18n="nav_teams">🌍 球隊&球員</a>
+    <a href="analysis.html" data-i18n="nav_analysis">📊 分析</a>
+    <a href="prediction.html" class="active" data-i18n="nav_prediction">🔮 預測</a>
+    <a href="highlights.html" data-i18n="nav_highlights">🎬 精華</a>
+    <a href="betting.html" data-i18n="nav_betting">🎰 投注</a>
+    <a href="scores.html" data-i18n="nav_scores">⚡ 即時比分</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="badge">AI 預測分析</div>
-  <h1>2026冠軍預測 & 彩票建議</h1>
-  <p>基於過去50年世界盃戰績深度分析 — 誰最有可能舉起大力神盃？</p>
+  <div class="badge" data-i18n="pred_hero_badge">AI 預測分析</div>
+  <h1 data-i18n="pred_hero_h1">2026冠軍預測 & 彩票建議</h1>
+  <p data-i18n="pred_hero_p">基於過去50年世界盃戰績深度分析 — 誰最有可能舉起大力神盃？</p>
 </div>
 
 <div class="container">
 
   <!-- CHAMPION PREDICTION PODIUM -->
   <div class="prediction-hero">
-    <h2>👑 2026冠軍預測排名</h2>
-    <p>綜合評估：歷史戰績、現役陣容、FIFA排名、戰術體系、近期狀態</p>
+    <h2 data-i18n="pred_podium_h2">👑 2026冠軍預測排名</h2>
+    <p data-i18n="pred_podium_p">綜合評估：歷史戰績、現役陣容、FIFA排名、戰術體系、近期狀態</p>
     <div class="podium">
       <div class="podium-card second">
         <div class="podium-flag">🇫🇷</div>
-        <div style="color:var(--silver);font-size:0.8rem;margin-bottom:0.25rem">🥈 第二熱門</div>
-        <h3>法國</h3>
+        <div style="color:var(--silver);font-size:0.8rem;margin-bottom:0.25rem" data-i18n="pred_2nd_fav">🥈 第二熱門</div>
+        <h3 data-i18n-tx="1">法國</h3>
         <div class="podium-prob">18%</div>
-        <div class="podium-label">奪冠機率</div>
-        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem">2018冠軍 · 2022亞軍<br>姆巴佩領軍再衝冠</div>
+        <div class="podium-label" data-i18n="pred_title_prob_lbl">奪冠機率</div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem" data-i18n-html="pred_france_note">2018冠軍 · 2022亞軍<br>姆巴佩領軍再衝冠</div>
       </div>
       <div class="podium-card first">
         <div style="font-size:1.5rem;margin-bottom:0.25rem">👑</div>
         <div class="podium-flag">🇦🇷</div>
-        <div style="color:var(--gold);font-size:0.8rem;margin-bottom:0.25rem">🥇 最大熱門</div>
-        <h3>阿根廷</h3>
+        <div style="color:var(--gold);font-size:0.8rem;margin-bottom:0.25rem" data-i18n="pred_top_fav">🥇 最大熱門</div>
+        <h3 data-i18n-tx="1">阿根廷</h3>
         <div class="podium-prob">22%</div>
-        <div class="podium-label">奪冠機率</div>
-        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem">2022衛冕冠軍<br>梅西最後一舞？</div>
+        <div class="podium-label" data-i18n="pred_title_prob_lbl">奪冠機率</div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem" data-i18n-html="pred_argentina_note">2022衛冕冠軍<br>梅西最後一舞？</div>
       </div>
       <div class="podium-card third">
         <div class="podium-flag">🇪🇸</div>
-        <div style="color:var(--bronze);font-size:0.8rem;margin-bottom:0.25rem">🥉 第三熱門</div>
-        <h3>西班牙</h3>
+        <div style="color:var(--bronze);font-size:0.8rem;margin-bottom:0.25rem" data-i18n="pred_3rd_fav">🥉 第三熱門</div>
+        <h3 data-i18n-tx="1">西班牙</h3>
         <div class="podium-prob">16%</div>
-        <div class="podium-label">奪冠機率</div>
-        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem">EURO 2024冠軍<br>亞馬爾橫空出世</div>
+        <div class="podium-label" data-i18n="pred_title_prob_lbl">奪冠機率</div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem" data-i18n-html="pred_spain_note">EURO 2024冠軍<br>亞馬爾橫空出世</div>
       </div>
     </div>
   </div>
 
   <!-- PROBABILITY TABLE -->
-  <div class="section-title">📈 各隊奪冠機率排名</div>
+  <div class="section-title" data-i18n="pred_section_prob">📈 各隊奪冠機率排名</div>
   <div class="card" style="margin-bottom:2rem">
     <div id="prob-table"></div>
   </div>
 
   <!-- HISTORY TABLE -->
-  <div class="section-title">📜 過去50年世界盃戰績 (1974–2022)</div>
+  <div class="section-title" data-i18n="pred_section_history">📜 過去50年世界盃戰績 (1974–2022)</div>
   <div class="card" style="margin-bottom:2rem;overflow-x:auto">
     <table class="history-table">
       <thead>
         <tr>
-          <th>年份</th><th>主辦國</th><th>🏆 冠軍</th><th>🥈 亞軍</th><th>🥉 季軍</th><th>進球數</th>
+          <th data-i18n="pred_th_year">年份</th><th data-i18n="pred_th_host">主辦國</th><th data-i18n="pred_th_champion">🏆 冠軍</th><th data-i18n="pred_th_runner">🥈 亞軍</th><th data-i18n="pred_th_third">🥉 季軍</th><th data-i18n="pred_th_goals">進球數</th>
         </tr>
       </thead>
       <tbody id="history-body"></tbody>
@@ -78,166 +81,167 @@
   </div>
 
   <!-- CHAMPION STATS -->
-  <div class="section-title">🏆 歷屆冠軍統計 (全部歷史)</div>
+  <div class="section-title" data-i18n="pred_section_champstats">🏆 歷屆冠軍統計 (全部歷史)</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-bottom:2rem" id="champ-stats"></div>
 
   <!-- ANALYSIS -->
-  <div class="section-title">🔍 歷史規律分析</div>
+  <div class="section-title" data-i18n="pred_section_patterns">🔍 歷史規律分析</div>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-bottom:2rem">
     <div class="card">
-      <h4 style="color:var(--accent);margin-bottom:0.75rem">📊 南美洲 vs 歐洲</h4>
-      <p style="color:var(--muted);font-size:0.88rem;line-height:1.7">在過去13屆世界盃中，歐洲球隊奪冠7次（德國4次、法國2次、義大利1次），南美洲奪冠6次（巴西3次、阿根廷2次、烏拉圭1次）。<br><br><strong style="color:var(--text)">在美洲舉辦時，南美洲球隊有明顯優勢：</strong>1978年阿根廷、1950年烏拉圭、1970年巴西都在美洲舉辦的賽事中奪冠。</p>
+      <h4 style="color:var(--accent);margin-bottom:0.75rem" data-i18n="pred_card1_h">📊 南美洲 vs 歐洲</h4>
+      <p style="color:var(--muted);font-size:0.88rem;line-height:1.7" data-i18n-html="pred_card1_p">在過去13屆世界盃中，歐洲球隊奪冠7次（德國4次、法國2次、義大利1次），南美洲奪冠6次（巴西3次、阿根廷2次、烏拉圭1次）。<br><br><strong style="color:var(--text)">在美洲舉辦時，南美洲球隊有明顯優勢：</strong>1978年阿根廷、1950年烏拉圭、1970年巴西都在美洲舉辦的賽事中奪冠。</p>
     </div>
     <div class="card">
-      <h4 style="color:var(--accent);margin-bottom:0.75rem">🔁 衛冕冠軍魔咒</h4>
-      <p style="color:var(--muted);font-size:0.88rem;line-height:1.7">歷史上衛冕冠軍成功衛冕的只有<strong style="color:var(--text)">義大利（1934→1938）</strong>。近年衛冕冠軍幾乎必然在小組賽或十六強被淘汰：<br>• 2018法國奪冠 → 2022小組出線但決賽輸<br>• 2014德國奪冠 → 2018小組出局<br>• 2010西班牙奪冠 → 2014小組出局</p>
+      <h4 style="color:var(--accent);margin-bottom:0.75rem" data-i18n="pred_card2_h">🔁 衛冕冠軍魔咒</h4>
+      <p style="color:var(--muted);font-size:0.88rem;line-height:1.7" data-i18n-html="pred_card2_p">歷史上衛冕冠軍成功衛冕的只有<strong style="color:var(--text)">義大利（1934→1938）</strong>。近年衛冕冠軍幾乎必然在小組賽或十六強被淘汰：<br>• 2018法國奪冠 → 2022小組出線但決賽輸<br>• 2014德國奪冠 → 2018小組出局<br>• 2010西班牙奪冠 → 2014小組出局</p>
     </div>
     <div class="card">
-      <h4 style="color:var(--accent);margin-bottom:0.75rem">⚽ 熱門從未落空</h4>
-      <p style="color:var(--muted);font-size:0.88rem;line-height:1.7">世界盃歷史上，最終冠軍幾乎都來自<strong style="color:var(--text)">開賽前排名前5的熱門</strong>。唯一例外是1966英格蘭（主場）。<br><br>2026年賠率最低的前5支球隊（阿根廷、法國、西班牙、巴西、德國）佔了約<strong style="color:var(--gold)">63%</strong>的預測奪冠機率。</p>
+      <h4 style="color:var(--accent);margin-bottom:0.75rem" data-i18n="pred_card3_h">⚽ 熱門從未落空</h4>
+      <p style="color:var(--muted);font-size:0.88rem;line-height:1.7" data-i18n-html="pred_card3_p">世界盃歷史上，最終冠軍幾乎都來自<strong style="color:var(--text)">開賽前排名前5的熱門</strong>。唯一例外是1966英格蘭（主場）。<br><br>2026年賠率最低的前5支球隊（阿根廷、法國、西班牙、巴西、德國）佔了約<strong style="color:var(--gold)">63%</strong>的預測奪冠機率。</p>
     </div>
     <div class="card">
-      <h4 style="color:var(--accent);margin-bottom:0.75rem">🌎 主辦國優勢</h4>
-      <p style="color:var(--muted);font-size:0.88rem;line-height:1.7">在美國、加拿大、墨西哥三國聯合主辦下，北美球隊尤其是<strong style="color:var(--text)">美國和墨西哥</strong>將受益於主場球迷支持。<br><br>歷史上主辦國平均進入八強的機率是非主辦國的2倍。美國年輕一代如普利西奇、雷納可能創造奇蹟。</p>
+      <h4 style="color:var(--accent);margin-bottom:0.75rem" data-i18n="pred_card4_h">🌎 主辦國優勢</h4>
+      <p style="color:var(--muted);font-size:0.88rem;line-height:1.7" data-i18n-html="pred_card4_p">在美國、加拿大、墨西哥三國聯合主辦下，北美球隊尤其是<strong style="color:var(--text)">美國和墨西哥</strong>將受益於主場球迷支持。<br><br>歷史上主辦國平均進入八強的機率是非主辦國的2倍。美國年輕一代如普利西奇、雷納可能創造奇蹟。</p>
     </div>
   </div>
 
   <!-- LOTTERY SECTION -->
-  <div class="section-title">🎰 彩票建議 — 如何投注才最划算？</div>
+  <div class="section-title" data-i18n="pred_section_lottery">🎰 彩票建議 — 如何投注才最划算？</div>
   <div class="tip-box">
-    <h3>⚠️ 重要聲明</h3>
-    <p>以下分析純屬統計預測，不構成真實投注建議。世界盃充滿意外，請理性對待任何預測。</p>
+    <h3 data-i18n="pred_disclaimer_h">⚠️ 重要聲明</h3>
+    <p data-i18n="pred_disclaimer_p">以下分析純屬統計預測，不構成真實投注建議。世界盃充滿意外，請理性對待任何預測。</p>
   </div>
 
   <div style="margin-top:1.5rem">
-    <h3 style="color:var(--gold);margin-bottom:1rem">🏆 策略一：買確定性（低賠率·高概率）</h3>
-    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1rem">如果你想穩穩贏，選擇熱門隊冠軍 — 賠率低但機率最高</p>
+    <h3 style="color:var(--gold);margin-bottom:1rem" data-i18n="pred_strat1_h">🏆 策略一：買確定性（低賠率·高概率）</h3>
+    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1rem" data-i18n="pred_strat1_p">如果你想穩穩贏，選擇熱門隊冠軍 — 賠率低但機率最高</p>
     <div class="lottery-grid">
       <div class="lottery-card top">
         <div class="lottery-flag">🇦🇷</div>
-        <h4>阿根廷</h4>
+        <h4 data-i18n-tx="1">阿根廷</h4>
         <div class="lottery-return">× 3.5</div>
-        <div class="lottery-type">最大熱門 · 22%機率<br>衛冕冠軍 + 梅西</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_argentina">最大熱門 · 22%機率<br>衛冕冠軍 + 梅西</div>
       </div>
       <div class="lottery-card top">
         <div class="lottery-flag">🇫🇷</div>
-        <h4>法國</h4>
+        <h4 data-i18n-tx="1">法國</h4>
         <div class="lottery-return">× 4.0</div>
-        <div class="lottery-type">第二熱門 · 18%機率<br>姆巴佩 + 強陣容</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_france">第二熱門 · 18%機率<br>姆巴佩 + 強陣容</div>
       </div>
       <div class="lottery-card top">
         <div class="lottery-flag">🇪🇸</div>
-        <h4>西班牙</h4>
+        <h4 data-i18n-tx="1">西班牙</h4>
         <div class="lottery-return">× 4.5</div>
-        <div class="lottery-type">第三熱門 · 16%機率<br>EURO冠軍 + 亞馬爾</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_spain">第三熱門 · 16%機率<br>EURO冠軍 + 亞馬爾</div>
       </div>
       <div class="lottery-card top">
         <div class="lottery-flag">🇧🇷</div>
-        <h4>巴西</h4>
+        <h4 data-i18n-tx="1">巴西</h4>
         <div class="lottery-return">× 5.5</div>
-        <div class="lottery-type">南美洲強隊 · 12%機率<br>維尼修斯巔峰狀態</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_brazil">南美洲強隊 · 12%機率<br>維尼修斯巔峰狀態</div>
       </div>
     </div>
   </div>
 
   <div style="margin-top:2rem">
-    <h3 style="color:var(--accent);margin-bottom:1rem">💡 策略二：買平衡（中賠率·合理概率）</h3>
-    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1rem">賠率與機率相對平衡，適合分散投注</p>
+    <h3 style="color:var(--accent);margin-bottom:1rem" data-i18n="pred_strat2_h">💡 策略二：買平衡（中賠率·合理概率）</h3>
+    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1rem" data-i18n="pred_strat2_p">賠率與機率相對平衡，適合分散投注</p>
     <div class="lottery-grid">
       <div class="lottery-card mid">
         <div class="lottery-flag">🇩🇪</div>
-        <h4>德國</h4>
+        <h4 data-i18n-tx="1">德國</h4>
         <div class="lottery-return">× 11</div>
-        <div class="lottery-type">正在重建 · 5%機率<br>維爾茨+穆西亞拉</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_germany">正在重建 · 5%機率<br>維爾茨+穆西亞拉</div>
       </div>
       <div class="lottery-card mid">
         <div class="lottery-flag">🇵🇹</div>
-        <h4>葡萄牙</h4>
+        <h4 data-i18n-tx="1">葡萄牙</h4>
         <div class="lottery-return">× 7</div>
-        <div class="lottery-type">平衡投注 · 8%機率<br>C羅最後世界盃</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_portugal">平衡投注 · 8%機率<br>C羅最後世界盃</div>
       </div>
       <div class="lottery-card mid">
         <div class="lottery-flag">🇳🇱</div>
-        <h4>荷蘭</h4>
+        <h4 data-i18n-tx="1">荷蘭</h4>
         <div class="lottery-return">× 8</div>
-        <div class="lottery-type">暗馬選手 · 7%機率<br>范迪克領軍</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_netherlands">暗馬選手 · 7%機率<br>范迪克領軍</div>
       </div>
       <div class="lottery-card mid">
         <div class="lottery-flag">🇨🇴</div>
-        <h4>哥倫比亞</h4>
+        <h4 data-i18n-tx="1">哥倫比亞</h4>
         <div class="lottery-return">× 12</div>
-        <div class="lottery-type">Copa冠軍 · 5%機率<br>詹姆斯復甦</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_colombia">Copa冠軍 · 5%機率<br>詹姆斯復甦</div>
       </div>
     </div>
   </div>
 
   <div style="margin-top:2rem">
-    <h3 style="color:var(--accent2);margin-bottom:1rem">🎲 策略三：買冷門（高賠率·低概率）</h3>
-    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1rem">小注博大賠 — 歷史上每屆都有黑馬，2022摩洛哥進了四強就是最佳例子</p>
+    <h3 style="color:var(--accent2);margin-bottom:1rem" data-i18n="pred_strat3_h">🎲 策略三：買冷門（高賠率·低概率）</h3>
+    <p style="color:var(--muted);font-size:0.88rem;margin-bottom:1rem" data-i18n="pred_strat3_p">小注博大賠 — 歷史上每屆都有黑馬，2022摩洛哥進了四強就是最佳例子</p>
     <div class="lottery-grid">
       <div class="lottery-card wild">
         <div class="lottery-flag">🇲🇦</div>
-        <h4>摩洛哥</h4>
+        <h4 data-i18n-tx="1">摩洛哥</h4>
         <div class="lottery-return">× 20</div>
-        <div class="lottery-type">非洲最強 · 3%機率<br>2022四強黑馬</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_morocco">非洲最強 · 3%機率<br>2022四強黑馬</div>
       </div>
       <div class="lottery-card wild">
         <div class="lottery-flag">🇺🇾</div>
-        <h4>烏拉圭</h4>
+        <h4 data-i18n-tx="1">烏拉圭</h4>
         <div class="lottery-return">× 20</div>
-        <div class="lottery-type">比耶爾薩戰術 · 3%機率<br>努涅斯+瓦爾維德</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_uruguay">比耶爾薩戰術 · 3%機率<br>努涅斯+瓦爾維德</div>
       </div>
       <div class="lottery-card wild">
         <div class="lottery-flag">🇺🇸</div>
-        <h4>美國</h4>
+        <h4 data-i18n-tx="1">美國</h4>
         <div class="lottery-return">× 15</div>
-        <div class="lottery-type">主場優勢 · 4%機率<br>普利西奇 + 主場</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_usa">主場優勢 · 4%機率<br>普利西奇 + 主場</div>
       </div>
       <div class="lottery-card wild">
         <div class="lottery-flag">🇯🇵</div>
-        <h4>日本</h4>
+        <h4 data-i18n-tx="1">日本</h4>
         <div class="lottery-return">× 25</div>
-        <div class="lottery-type">亞洲黑馬 · 2%機率<br>2022擊敗德國西班牙</div>
+        <div class="lottery-type" data-i18n-html="pred_lottery_japan">亞洲黑馬 · 2%機率<br>2022擊敗德國西班牙</div>
       </div>
     </div>
   </div>
 
   <!-- FINAL VERDICT -->
   <div style="margin-top:2.5rem;background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);border:2px solid var(--gold);border-radius:16px;padding:2rem">
-    <h2 style="color:var(--gold);margin-bottom:1rem;text-align:center">👑 最終預測 — 誰是2026冠軍？</h2>
+    <h2 style="color:var(--gold);margin-bottom:1rem;text-align:center" data-i18n="pred_verdict_h">👑 最終預測 — 誰是2026冠軍？</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem">
       <div style="text-align:center">
         <div style="font-size:4rem">🇦🇷</div>
-        <h3 style="font-size:1.5rem;color:var(--gold)">阿根廷</h3>
-        <p style="color:var(--muted);font-size:0.9rem;line-height:1.7">預測冠軍首選。衛冕冠軍、梅西帶領、球隊凝聚力極強、陣容深度充足。在美洲舉辦的主場效應也對南美球隊有利。即使梅西年紀漸長，他仍是全球最頂尖的足球大腦。</p>
-        <div style="margin-top:1rem;font-size:1.2rem;font-weight:900;color:var(--gold)">奪冠機率：22%</div>
+        <h3 style="font-size:1.5rem;color:var(--gold)" data-i18n-tx="1">阿根廷</h3>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.7" data-i18n="pred_verdict_p">預測冠軍首選。衛冕冠軍、梅西帶領、球隊凝聚力極強、陣容深度充足。在美洲舉辦的主場效應也對南美球隊有利。即使梅西年紀漸長，他仍是全球最頂尖的足球大腦。</p>
+        <div style="margin-top:1rem;font-size:1.2rem;font-weight:900;color:var(--gold)" data-i18n="pred_verdict_prob">奪冠機率：22%</div>
       </div>
       <div>
-        <h3 style="color:var(--accent);margin-bottom:1rem">📋 投注組合建議</h3>
+        <h3 style="color:var(--accent);margin-bottom:1rem" data-i18n="pred_combo_h">📋 投注組合建議</h3>
         <div style="display:flex;flex-direction:column;gap:0.75rem">
           <div style="background:rgba(0,212,170,0.08);border:1px solid rgba(0,212,170,0.3);border-radius:8px;padding:0.75rem">
-            <div style="font-weight:700;margin-bottom:0.25rem">🛡️ 保守型組合</div>
-            <div style="font-size:0.82rem;color:var(--muted)">阿根廷(50%) + 法國(30%) + 西班牙(20%)<br>預期回報：穩定低風險</div>
+            <div style="font-weight:700;margin-bottom:0.25rem" data-i18n="pred_combo_conservative_h">🛡️ 保守型組合</div>
+            <div style="font-size:0.82rem;color:var(--muted)" data-i18n-html="pred_combo_conservative_p">阿根廷(50%) + 法國(30%) + 西班牙(20%)<br>預期回報：穩定低風險</div>
           </div>
           <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:0.75rem">
-            <div style="font-weight:700;margin-bottom:0.25rem">⚖️ 平衡型組合</div>
-            <div style="font-size:0.82rem;color:var(--muted)">巴西 + 德國 + 葡萄牙 + 美國<br>預期回報：中風險中回報</div>
+            <div style="font-weight:700;margin-bottom:0.25rem" data-i18n="pred_combo_balanced_h">⚖️ 平衡型組合</div>
+            <div style="font-size:0.82rem;color:var(--muted)" data-i18n-html="pred_combo_balanced_p">巴西 + 德國 + 葡萄牙 + 美國<br>預期回報：中風險中回報</div>
           </div>
           <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:0.75rem">
-            <div style="font-weight:700;margin-bottom:0.25rem">🎲 冒險型組合</div>
-            <div style="font-size:0.82rem;color:var(--muted)">摩洛哥 + 日本 + 哥倫比亞 + 美國<br>預期回報：低機率高賠率</div>
+            <div style="font-weight:700;margin-bottom:0.25rem" data-i18n="pred_combo_aggressive_h">🎲 冒險型組合</div>
+            <div style="font-size:0.82rem;color:var(--muted)" data-i18n-html="pred_combo_aggressive_p">摩洛哥 + 日本 + 哥倫比亞 + 美國<br>預期回報：低機率高賠率</div>
           </div>
         </div>
       </div>
     </div>
     <div style="margin-top:1.5rem;background:rgba(255,255,255,0.05);border-radius:10px;padding:1rem;text-align:center">
-      <p style="color:var(--muted);font-size:0.85rem">⚠️ 足球最美的地方就是它的不可預測性。2022年沒有人預測摩洛哥會打進四強；2018年沒有人預測克羅埃西亞打進決賽。請永遠記住：任何預測都不是百分百準確的。</p>
+      <p style="color:var(--muted);font-size:0.85rem" data-i18n="pred_closing_note">⚠️ 足球最美的地方就是它的不可預測性。2022年沒有人預測摩洛哥會打進四強；2018年沒有人預測克羅埃西亞打進決賽。請永遠記住：任何預測都不是百分百準確的。</p>
     </div>
   </div>
 
 </div>
 
 <script src="data.js"></script>
+<script src="i18n.js"></script>
 <script>
 // Probability table
 const probData = [
@@ -269,8 +273,8 @@ probData.forEach((row,i)=>{
   div.className = 'prob-row';
   div.innerHTML = `
     <div class="prob-rank">${i+1}</div>
-    <div class="prob-flag">${row.flag}</div>
-    <div class="prob-name">${row.name}</div>
+    <div class="prob-flag">${tx(row.flag)}</div>
+    <div class="prob-name">${tx(row.name)}</div>
     <div class="prob-bar-wrap">
       <div class="prob-bar">
         <div class="prob-fill" style="width:${row.prob/22*100}%;background:${row.color}"></div>
@@ -299,7 +303,7 @@ Object.entries(CHAMPION_STATS).sort((a,b)=>b[1].wins-a[1].wins).forEach(([name,d
   const d = document.createElement('div');
   d.className = 'card';
   d.style.textAlign='center';
-  d.innerHTML = `<div style="font-size:2rem">${flags2[name]||''}</div><div style="font-weight:800;margin:0.25rem 0">${name}</div><div style="font-size:1.5rem;font-weight:900;color:var(--gold)">${data.wins}次</div><div style="font-size:0.75rem;color:var(--muted)">${data.titles.join(' · ')}</div>`;
+  d.innerHTML = `<div style="font-size:2rem">${flags2[name]||''}</div><div style="font-weight:800;margin:0.25rem 0">${name}</div><div style="font-size:1.5rem;font-weight:900;color:var(--gold)">${t('pred_wins_label', {n: data.wins})}</div><div style="font-size:0.75rem;color:var(--muted)">${data.titles.join(' · ')}</div>`;
   cs.appendChild(d);
 });
 </script>

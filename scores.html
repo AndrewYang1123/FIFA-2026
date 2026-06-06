@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 FIFA World Cup — 即時比分</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .updated-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+    .updated-tag::before { content: '🕓 '; }
+
+    /* Empty state — shown before the tournament kicks off */
+    .empty-box {
+      background: linear-gradient(135deg, rgba(255,215,0,0.07), rgba(0,212,170,0.05));
+      border: 1px solid rgba(255,215,0,0.28);
+      border-radius: 16px;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .empty-box .emoji {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+    }
+    .empty-box h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--gold);
+      margin-bottom: 0.85rem;
+    }
+    .empty-box p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.9;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .empty-box p a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .empty-box p a:hover { text-decoration: underline; }
+
+    /* Results table — populated once matches are completed */
+    .score-table-wrap {
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .score-table { width: 100%; border-collapse: collapse; }
+    .score-table th {
+      background: var(--bg3);
+      color: var(--accent);
+      padding: 0.7rem 0.9rem;
+      text-align: left;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .score-table td {
+      padding: 0.75rem 0.9rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: middle;
+    }
+    .score-table tr:last-child td { border-bottom: none; }
+    .score-table tr:hover td { background: var(--bg3); }
+    .match-cell {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .match-cell .score-val {
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 1.05rem;
+      padding: 0.1rem 0.5rem;
+      background: rgba(255,215,0,0.08);
+      border-radius: 6px;
+    }
+    .status-pill {
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .status-final { background: rgba(0,212,170,0.18); color: var(--accent); }
+    .status-scheduled { background: rgba(255,255,255,0.06); color: var(--muted); }
+
+    .note-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.3rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body data-page-title="score_title">
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
+    <a href="index.html" data-i18n="nav_schedule">🗓️ 賽程</a>
+    <a href="teams.html" data-i18n="nav_teams">🌍 球隊&球員</a>
+    <a href="analysis.html" data-i18n="nav_analysis">📊 分析</a>
+    <a href="prediction.html" data-i18n="nav_prediction">🔮 預測</a>
+    <a href="highlights.html" data-i18n="nav_highlights">🎬 精華</a>
+    <a href="betting.html" data-i18n="nav_betting">🎰 投注</a>
+    <a href="scores.html" class="active" data-i18n="nav_scores">⚡ 即時比分</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge" data-i18n="score_hero_badge">每日更新</div>
+  <h1 data-i18n="score_hero_h1">⚡ 各隊最終比分追蹤</h1>
+  <p data-i18n="score_hero_p">賽事開打後（2026年6月11日起），本頁將每日自動更新所有完場賽事的最終比分</p>
+</div>
+
+<div class="container">
+  <div class="section-title" data-i18n="score_section_latest">📋 最新賽果</div>
+  <div class="updated-tag" id="updated-tag"></div>
+
+  <div id="scores-area"></div>
+
+  <div class="note-box" data-i18n="score_note">📡 比分資料每日自動擷取並更新，若有錯誤或延遲，請以 FIFA 官方網站 (fifa.com) 公告為準。</div>
+</div>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script src="scores.js"></script>
+</body>
+</html>

@@ -6,40 +6,42 @@
   <title>2026 FIFA World Cup — 前20強分析</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page-title="an_title">
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
-    <a href="index.html">🗓️ 賽程</a>
-    <a href="teams.html">🌍 球隊&球員</a>
-    <a href="analysis.html" class="active">📊 分析</a>
-    <a href="prediction.html">🔮 預測</a>
-    <a href="highlights.html">🎬 精華</a>
-    <a href="betting.html">🎰 投注</a>
+    <a href="index.html" data-i18n="nav_schedule">🗓️ 賽程</a>
+    <a href="teams.html" data-i18n="nav_teams">🌍 球隊&球員</a>
+    <a href="analysis.html" class="active" data-i18n="nav_analysis">📊 分析</a>
+    <a href="prediction.html" data-i18n="nav_prediction">🔮 預測</a>
+    <a href="highlights.html" data-i18n="nav_highlights">🎬 精華</a>
+    <a href="betting.html" data-i18n="nav_betting">🎰 投注</a>
+    <a href="scores.html" data-i18n="nav_scores">⚡ 即時比分</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="badge">深度分析</div>
-  <h1>前20強球隊深度分析</h1>
-  <p>優勢、劣勢、王牌球員及奪冠機率全面解析</p>
+  <div class="badge" data-i18n="an_hero_badge">深度分析</div>
+  <h1 data-i18n="an_hero_h1">前20強球隊深度分析</h1>
+  <p data-i18n="an_hero_p">優勢、劣勢、王牌球員及奪冠機率全面解析</p>
 </div>
 
 <div class="container">
   <div class="stats-strip">
-    <div class="stat-box"><div class="num">🥇</div><div class="lbl">阿根廷 最大熱門</div></div>
-    <div class="stat-box"><div class="num">22%</div><div class="lbl">阿根廷奪冠機率</div></div>
-    <div class="stat-box"><div class="num">⭐</div><div class="lbl">梅西 本屆最佳球員</div></div>
-    <div class="stat-box"><div class="num">5</div><div class="lbl">南美洲球隊入列</div></div>
+    <div class="stat-box"><div class="num">🥇</div><div class="lbl" data-i18n="an_stat1_lbl">阿根廷 最大熱門</div></div>
+    <div class="stat-box"><div class="num">22%</div><div class="lbl" data-i18n="an_stat2_lbl">阿根廷奪冠機率</div></div>
+    <div class="stat-box"><div class="num">⭐</div><div class="lbl" data-i18n="an_stat3_lbl">梅西 本屆最佳球員</div></div>
+    <div class="stat-box"><div class="num">5</div><div class="lbl" data-i18n="an_stat4_lbl">南美洲球隊入列</div></div>
   </div>
 
-  <div class="section-title">📊 前20強 — 優劣分析 + 王牌球員</div>
-  <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.88rem">奪冠機率基於FIFA排名、近期成績、歷史戰績及陣容深度綜合評估</p>
+  <div class="section-title" data-i18n="an_section_title">📊 前20強 — 優劣分析 + 王牌球員</div>
+  <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.88rem" data-i18n="an_section_sub">奪冠機率基於FIFA排名、近期成績、歷史戰績及陣容深度綜合評估</p>
 
   <div class="analysis-grid" id="analysis-container"></div>
 </div>
 
 <script src="data.js"></script>
+<script src="i18n.js"></script>
 <script>
 const container = document.getElementById('analysis-container');
 
@@ -53,35 +55,35 @@ ANALYSIS_TOP20.forEach((team, i) => {
       <div style="font-size:2rem">${team.flag}</div>
       <div style="flex:1">
         <div style="font-size:1.1rem;font-weight:800">${team.name}</div>
-        <div style="font-size:0.8rem;color:var(--muted)">FIFA世界排名 #${team.worldRank}</div>
+        <div style="font-size:0.8rem;color:var(--muted)">${t('an_world_rank', {wr: team.worldRank})}</div>
       </div>
       <div style="text-align:right">
         <div style="font-size:1.4rem;font-weight:900;color:${i<3?'var(--gold)':'var(--accent)'}">${team.winProb}%</div>
-        <div style="font-size:0.7rem;color:var(--muted)">奪冠機率</div>
+        <div style="font-size:0.7rem;color:var(--muted)">${t('an_title_prob')}</div>
       </div>
     </div>
     <div class="analysis-card-body">
       <div class="sw-row">
         <div class="sw-box str">
-          <h4>✅ 優勢</h4>
+          <h4>${t('an_strengths')}</h4>
           <ul>${team.strengths.map(s=>`<li>${s}</li>`).join('')}</ul>
         </div>
         <div class="sw-box weak">
-          <h4>❌ 劣勢</h4>
+          <h4>${t('an_weaknesses')}</h4>
           <ul>${team.weaknesses.map(w=>`<li>${w}</li>`).join('')}</ul>
         </div>
       </div>
       <div class="ace-box">
         <div class="ace-icon">⭐</div>
         <div class="ace-info">
-          <p>王牌球員 · ${team.ace.pos} · ${team.ace.club}</p>
+          <p>${t('an_ace_label', {pos: team.ace.pos, club: team.ace.club})}</p>
           <strong>${team.ace.name}</strong>
         </div>
       </div>
       <div class="odds-bar">
         <div class="odds-label">
-          <span>奪冠機率</span>
-          <span style="color:var(--accent2)">彩票賠率約 ${team.odds}</span>
+          <span>${t('an_title_prob')}</span>
+          <span style="color:var(--accent2)">${t('an_odds_label', {odds: team.odds})}</span>
         </div>
         <div class="odds-track">
           <div class="odds-fill" style="width:${Math.min(team.winProb*4,100)}%"></div>

@@ -6,51 +6,53 @@
   <title>2026 FIFA World Cup — 球隊與球員</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page-title="team_title">
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
-    <a href="index.html">🗓️ 賽程</a>
-    <a href="teams.html" class="active">🌍 球隊&球員</a>
-    <a href="analysis.html">📊 分析</a>
-    <a href="prediction.html">🔮 預測</a>
-    <a href="highlights.html">🎬 精華</a>
-    <a href="betting.html">🎰 投注</a>
+    <a href="index.html" data-i18n="nav_schedule">🗓️ 賽程</a>
+    <a href="teams.html" class="active" data-i18n="nav_teams">🌍 球隊&球員</a>
+    <a href="analysis.html" data-i18n="nav_analysis">📊 分析</a>
+    <a href="prediction.html" data-i18n="nav_prediction">🔮 預測</a>
+    <a href="highlights.html" data-i18n="nav_highlights">🎬 精華</a>
+    <a href="betting.html" data-i18n="nav_betting">🎰 投注</a>
+    <a href="scores.html" data-i18n="nav_scores">⚡ 即時比分</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="badge">48支參賽球隊</div>
-  <h1>所有球隊與球員名單</h1>
-  <p>2026年FIFA世界盃全部48個參賽國家及主要球員陣容</p>
-  <p style="margin-top:0.5rem;color:var(--accent)">⭐ 金色標籤 = 王牌球員</p>
+  <div class="badge" data-i18n="team_hero_badge">48支參賽球隊</div>
+  <h1 data-i18n="team_hero_h1">所有球隊與球員名單</h1>
+  <p data-i18n="team_hero_p1">2026年FIFA世界盃全部48個參賽國家及主要球員陣容</p>
+  <p style="margin-top:0.5rem;color:var(--accent)" data-i18n="team_hero_p2">⭐ 金色標籤 = 王牌球員</p>
 </div>
 
 <div class="container">
   <div class="stats-strip">
-    <div class="stat-box"><div class="num">48</div><div class="lbl">參賽球隊</div></div>
-    <div class="stat-box"><div class="num">6</div><div class="lbl">洲際聯盟</div></div>
-    <div class="stat-box"><div class="num">26</div><div class="lbl">每隊球員人數</div></div>
-    <div class="stat-box"><div class="num">1248</div><div class="lbl">總球員人數</div></div>
+    <div class="stat-box"><div class="num">48</div><div class="lbl" data-i18n="team_stat_teams">參賽球隊</div></div>
+    <div class="stat-box"><div class="num">6</div><div class="lbl" data-i18n="team_stat_confs">洲際聯盟</div></div>
+    <div class="stat-box"><div class="num">26</div><div class="lbl" data-i18n="team_stat_ppt">每隊球員人數</div></div>
+    <div class="stat-box"><div class="num">1248</div><div class="lbl" data-i18n="team_stat_total">總球員人數</div></div>
   </div>
 
   <div class="tabs" id="conf-tabs"></div>
 
-  <input type="text" class="teams-search" id="search" placeholder="🔍 搜尋球隊或球員名字...">
+  <input type="text" class="teams-search" id="search" data-i18n-placeholder="team_search_placeholder" placeholder="🔍 搜尋球隊或球員名字...">
   <div class="teams-grid" id="teams-container"></div>
 </div>
 
 <script src="data.js"></script>
+<script src="i18n.js"></script>
 <script>
 const confs = ['全部','CONMEBOL','UEFA','CAF','AFC','CONCACAF','OFC'];
-const confLabels = {'全部':'🌍 全部','CONMEBOL':'🌎 南美洲','UEFA':'🌍 歐洲','CAF':'🌍 非洲','AFC':'🌏 亞洲','CONCACAF':'🌎 北美洲','OFC':'🌊 大洋洲'};
+const confKeys = {'全部':'team_conf_all','CONMEBOL':'team_conf_conmebol','UEFA':'team_conf_uefa','CAF':'team_conf_caf','AFC':'team_conf_afc','CONCACAF':'team_conf_concacaf','OFC':'team_conf_ofc'};
 let currentConf = '全部';
 
 const tabsEl = document.getElementById('conf-tabs');
 confs.forEach(c => {
   const btn = document.createElement('button');
   btn.className = 'tab-btn' + (c==='全部'?' active':'');
-  btn.textContent = confLabels[c];
+  btn.textContent = t(confKeys[c]);
   btn.onclick = () => {
     currentConf = c;
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -65,36 +67,36 @@ function render() {
   const container = document.getElementById('teams-container');
   container.innerHTML = '';
 
-  const filtered = TEAMS_DATA.filter(t => {
-    const confMatch = currentConf==='全部' || t.conf===currentConf;
-    const qMatch = !q || t.name.toLowerCase().includes(q) || t.players.some(p=>p.name.toLowerCase().includes(q));
+  const filtered = TEAMS_DATA.filter(tm => {
+    const confMatch = currentConf==='全部' || tm.conf===currentConf;
+    const qMatch = !q || tm.name.toLowerCase().includes(q) || tm.players.some(p=>p.name.toLowerCase().includes(q));
     return confMatch && qMatch;
   }).sort((a,b)=>a.rank-b.rank);
 
-  filtered.forEach(t => {
+  filtered.forEach(tm => {
     const card = document.createElement('div');
     card.className = 'team-card fade-in';
     card.innerHTML = `
       <div class="team-card-header">
-        <div class="team-card-flag">${t.flag}</div>
+        <div class="team-card-flag">${tm.flag}</div>
         <div class="team-card-info">
-          <h3>${t.name}</h3>
-          <p>FIFA排名 #${t.rank} &nbsp;|&nbsp; ${t.conf}</p>
-          <p>👤 主帥: ${t.coach}</p>
-          <span class="team-group-badge">第${t.group}組</span>
+          <h3>${tm.name}</h3>
+          <p>${t('team_fifa_rank', {rank: tm.rank, conf: tm.conf})}</p>
+          <p>${t('team_coach', {coach: tm.coach})}</p>
+          <span class="team-group-badge">${t('team_group_badge', {group: tm.group})}</span>
         </div>
       </div>
       <div class="team-card-body">
-        <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.5px">主要球員陣容</div>
+        <div style="font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.5px">${t('team_key_players')}</div>
         <div class="players-list">
-          ${t.players.map(p=>`<span class="player-tag${p.star?' star':''}" title="${p.pos}">${p.star?'⭐ ':''}${p.name}</span>`).join('')}
+          ${tm.players.map(p=>`<span class="player-tag${p.star?' star':''}" title="${p.pos}">${p.star?'⭐ ':''}${p.name}</span>`).join('')}
         </div>
       </div>`;
     container.appendChild(card);
   });
 
   if(filtered.length===0) {
-    container.innerHTML = '<div style="color:var(--muted);text-align:center;padding:3rem">找不到符合的球隊或球員</div>';
+    container.innerHTML = `<div style="color:var(--muted);text-align:center;padding:3rem">${t('team_no_results')}</div>`;
   }
 }
 

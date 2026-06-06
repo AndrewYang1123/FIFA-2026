@@ -195,39 +195,41 @@
     .notice-box strong { color: var(--accent2); }
   </style>
 </head>
-<body>
+<body data-page-title="hl_title">
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
-    <a href="index.html">🗓️ 賽程</a>
-    <a href="teams.html">🌍 球隊&球員</a>
-    <a href="analysis.html">📊 分析</a>
-    <a href="prediction.html">🔮 預測</a>
-    <a href="highlights.html" class="active">🎬 精華</a>
-    <a href="betting.html">🎰 投注</a>
+    <a href="index.html" data-i18n="nav_schedule">🗓️ 賽程</a>
+    <a href="teams.html" data-i18n="nav_teams">🌍 球隊&球員</a>
+    <a href="analysis.html" data-i18n="nav_analysis">📊 分析</a>
+    <a href="prediction.html" data-i18n="nav_prediction">🔮 預測</a>
+    <a href="highlights.html" class="active" data-i18n="nav_highlights">🎬 精華</a>
+    <a href="betting.html" data-i18n="nav_betting">🎰 投注</a>
+    <a href="scores.html" data-i18n="nav_scores">⚡ 即時比分</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="badge">近十屆決賽</div>
-  <h1>🏆 世界盃決賽進球精華</h1>
-  <p>從1986年到2022年 — 每屆決賽的關鍵進球，約1分鐘精華剪輯</p>
+  <div class="badge" data-i18n="hl_hero_badge">近十屆決賽</div>
+  <h1 data-i18n="hl_hero_h1">🏆 世界盃決賽進球精華</h1>
+  <p data-i18n="hl_hero_p">從1986年到2022年 — 每屆決賽的關鍵進球，約1分鐘精華剪輯</p>
 </div>
 
 <div class="container">
-  <div class="notice-box">
+  <div class="notice-box" data-i18n-html="hl_notice">
     ⚠️ <strong>觀看說明：</strong>點擊「▶ 在 YouTube 觀看」按鈕即可跳轉至 YouTube 搜尋該屆決賽精華片段。影片均來自 FIFA 官方頻道或授權媒體，每段約 1 分鐘。部分影片依地區可能有版權限制。
   </div>
 
   <!-- Timeline -->
-  <div class="section-title">⏱️ 快速導覽</div>
+  <div class="section-title" data-i18n="hl_section_timeline">⏱️ 快速導覽</div>
   <div class="timeline-strip" id="timeline-strip"></div>
 
-  <div class="section-title">🎬 歷屆決賽精華影片</div>
+  <div class="section-title" data-i18n="hl_section_finals">🎬 歷屆決賽精華影片</div>
   <div class="finals-grid" id="finals-container"></div>
 </div>
 
 <script src="data.js"></script>
+<script src="i18n.js"></script>
 <script>
 const FINALS = [
   {
@@ -428,7 +430,7 @@ FINALS.forEach((f, i) => {
   const dot = document.createElement('div');
   dot.className = 'timeline-dot' + (i===0?' active':'');
   dot.id = 'tl-'+f.year;
-  dot.innerHTML = `<div class="t-year">${f.year}</div><div class="t-champ">${f.champFlag} ${f.champion}</div>`;
+  dot.innerHTML = `<div class="t-year">${f.year}</div><div class="t-champ">${f.champFlag} ${tx(f.champion)}</div>`;
   dot.onclick = () => {
     document.querySelectorAll('.timeline-dot').forEach(d=>d.classList.remove('active'));
     dot.classList.add('active');
@@ -447,43 +449,48 @@ FINALS.forEach(f => {
   const ytSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(f.ytSearch)}`;
   const ytEmbedUrl = `https://www.youtube.com/embed/${f.ytId}?start=0&rel=0&modestbranding=1`;
 
+  const champion = tx(f.champion);
+  const runner = tx(f.runner);
+  const host = tx(f.host);
+  const venue = tx(f.venue);
+
   const goalRows = f.goals.map(g => `
     <div class="goal-item">
       <span class="goal-min">${g.min}</span>
-      <span class="goal-scorer">${g.scorer}</span>
-      <span class="goal-team">${g.team}</span>
-      <span class="goal-type ${g.type}">${g.type==='pen'?'PK':g.type==='og'?'OG':'⚽'}</span>
+      <span class="goal-scorer">${tx(g.scorer)}</span>
+      <span class="goal-team">${tx(g.team)}</span>
+      <span class="goal-type ${g.type}">${g.type==='pen'?t('hl_tag_pen'):g.type==='og'?t('hl_tag_og'):'⚽'}</span>
     </div>`).join('');
 
   card.innerHTML = `
-    <div class="champion-ribbon">🏆 冠軍：${f.champFlag} ${f.champion}</div>
+    <div class="champion-ribbon">${t('hl_champion_ribbon', {flag: f.champFlag, champion: champion})}</div>
     <div class="final-card-header">
       <div class="year-badge">${f.year}</div>
       <div class="final-title">
-        <h3>${f.champFlag} ${f.champion} vs ${f.runnerFlag} ${f.runner}</h3>
-        <p>主辦：${f.host} | ${f.venue}</p>
+        <h3>${f.champFlag} ${champion} vs ${f.runnerFlag} ${runner}</h3>
+        <p>${t('hl_host_label', {host: host, venue: venue})}</p>
       </div>
       <div class="score-display">${f.score}</div>
     </div>
     <div class="video-wrapper" id="vw-${f.year}" style="cursor:pointer" onclick="loadVideo(this, '${ytEmbedUrl}', '${ytSearchUrl}')">
       <div class="video-placeholder">
         <div class="play-btn">▶</div>
-        <p><strong style="color:var(--text)">${f.year} FIFA決賽精華</strong><br>${f.champion} vs ${f.runner}<br><span style="font-size:0.75rem">點擊播放影片</span></p>
+        <p><strong style="color:var(--text)">${t('hl_video_title', {year: f.year})}</strong><br>${champion} vs ${runner}<br><span style="font-size:0.75rem">${t('hl_click_to_play')}</span></p>
       </div>
     </div>
     <div class="final-info">
-      <span class="host-badge">🌍 ${f.host}</span>
+      <span class="host-badge">🌍 ${host}</span>
       <span>👥 ${f.attendance}</span>
       <span>📍 ${f.venue.split(',')[0]}</span>
-      <span>⚽ ${f.goals.length} 進球</span>
+      <span>${t('hl_goals_count', {n: f.goals.length})}</span>
     </div>
     <div class="goals-list">
-      <h4>⚽ 進球記錄</h4>
+      <h4>${t('hl_goals_record')}</h4>
       ${goalRows}
     </div>
-    <p style="padding:0 1.25rem;font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-style:italic">${f.desc}</p>
+    <p style="padding:0 1.25rem;font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem;font-style:italic">${tx(f.desc)}</p>
     <a href="${ytSearchUrl}" target="_blank" class="search-btn">
-      ▶ 在 YouTube 搜尋此場決賽精華
+      ${t('hl_search_btn')}
     </a>`;
 
   container.appendChild(card);
@@ -508,7 +515,7 @@ function loadVideo(wrapper, embedUrl, searchUrl) {
         if (iframe.contentDocument && iframe.contentDocument.body.innerText.includes('unavailable')) {
           wrapper.innerHTML = `<div class="video-placeholder" onclick="window.open('${searchUrl}','_blank')">
             <div class="play-btn">▶</div>
-            <p>此影片無法嵌入<br><span style="color:var(--accent)">點擊前往 YouTube 搜尋</span></p>
+            <p>${t('hl_unembeddable')}</p>
           </div>`;
         }
       } catch(e) {} // Cross-origin, ignore

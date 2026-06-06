@@ -6,42 +6,43 @@
   <title>2026 FIFA World Cup — 完整賽程</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page-title="idx_title">
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
-    <a href="index.html" class="active">🗓️ 賽程</a>
-    <a href="teams.html">🌍 球隊&球員</a>
-    <a href="analysis.html">📊 分析</a>
-    <a href="prediction.html">🔮 預測</a>
-    <a href="highlights.html">🎬 精華</a>
-    <a href="betting.html">🎰 投注</a>
+    <a href="index.html" class="active" data-i18n="nav_schedule">🗓️ 賽程</a>
+    <a href="teams.html" data-i18n="nav_teams">🌍 球隊&球員</a>
+    <a href="analysis.html" data-i18n="nav_analysis">📊 分析</a>
+    <a href="prediction.html" data-i18n="nav_prediction">🔮 預測</a>
+    <a href="highlights.html" data-i18n="nav_highlights">🎬 精華</a>
+    <a href="betting.html" data-i18n="nav_betting">🎰 投注</a>
+    <a href="scores.html" data-i18n="nav_scores">⚡ 即時比分</a>
   </div>
 </nav>
 
 <div class="hero">
-  <div class="badge">2026 FIFA World Cup™</div>
-  <h1>完整賽程總覽</h1>
-  <p>從首場比賽到決賽冠軍 — 48支球隊，104場比賽，一個冠軍</p>
-  <p style="margin-top:0.5rem;color:var(--accent)">📍 美國 · 加拿大 · 墨西哥 &nbsp;|&nbsp; 🗓️ 2026年6月11日 — 7月23日</p>
+  <div class="badge" data-i18n="idx_hero_badge">2026 FIFA World Cup™</div>
+  <h1 data-i18n="idx_hero_h1">完整賽程總覽</h1>
+  <p data-i18n="idx_hero_p1">從首場比賽到決賽冠軍 — 48支球隊，104場比賽，一個冠軍</p>
+  <p style="margin-top:0.5rem;color:var(--accent)" data-i18n-html="idx_hero_p2">📍 美國 · 加拿大 · 墨西哥 &nbsp;|&nbsp; 🗓️ 2026年6月11日 — 7月23日</p>
 </div>
 
 <div class="container">
   <div class="stats-strip">
-    <div class="stat-box"><div class="num">48</div><div class="lbl">參賽球隊</div></div>
-    <div class="stat-box"><div class="num">12</div><div class="lbl">組別數量</div></div>
-    <div class="stat-box"><div class="num">104</div><div class="lbl">總比賽場數</div></div>
-    <div class="stat-box"><div class="num">16</div><div class="lbl">比賽場館</div></div>
-    <div class="stat-box"><div class="num">3</div><div class="lbl">主辦國家</div></div>
-    <div class="stat-box"><div class="num">43</div><div class="lbl">比賽天數</div></div>
+    <div class="stat-box"><div class="num">48</div><div class="lbl" data-i18n="idx_stat_teams">參賽球隊</div></div>
+    <div class="stat-box"><div class="num">12</div><div class="lbl" data-i18n="idx_stat_groups">組別數量</div></div>
+    <div class="stat-box"><div class="num">104</div><div class="lbl" data-i18n="idx_stat_matches">總比賽場數</div></div>
+    <div class="stat-box"><div class="num">16</div><div class="lbl" data-i18n="idx_stat_venues">比賽場館</div></div>
+    <div class="stat-box"><div class="num">3</div><div class="lbl" data-i18n="idx_stat_hosts">主辦國家</div></div>
+    <div class="stat-box"><div class="num">43</div><div class="lbl" data-i18n="idx_stat_days">比賽天數</div></div>
   </div>
 
   <!-- GROUPS -->
-  <div class="section-title">⚽ 分組情況 — 12組共48隊</div>
+  <div class="section-title" data-i18n="idx_section_groups">⚽ 分組情況 — 12組共48隊</div>
   <div id="groups-container" class="groups-grid fade-in"></div>
 
   <!-- SCHEDULE -->
-  <div class="section-title" style="margin-top:2rem">🗓️ 完整賽程 — 從首場到決賽</div>
+  <div class="section-title" style="margin-top:2rem" data-i18n="idx_section_schedule">🗓️ 完整賽程 — 從首場到決賽</div>
 
   <div class="tabs" id="phase-tabs"></div>
   <div id="schedule-container"></div>
@@ -50,20 +51,23 @@
 <!-- VENUES -->
 <div style="background:var(--bg2);border-top:1px solid var(--border);margin-top:2rem;padding:2rem 0">
   <div class="container">
-    <div class="section-title">🏟️ 16座比賽場館</div>
+    <div class="section-title" data-i18n="idx_section_venues">🏟️ 16座比賽場館</div>
     <div id="venues-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem"></div>
   </div>
 </div>
 
 <script src="data.js"></script>
+<script src="i18n.js"></script>
 <script>
 // Render Groups
 const gc = document.getElementById('groups-container');
 GROUPS.forEach(g => {
   const div = document.createElement('div');
   div.className = 'group-card';
-  div.innerHTML = `<div class="group-header">🏆 第${g.id}組 <span>(${g.teams.map(t=>t.conf).filter((v,i,a)=>a.indexOf(v)===i).join(' / ')})</span></div>`
-    + g.teams.map(t => `<div class="team-row"><span class="team-flag">${t.flag}</span><span class="team-name">${t.name}${t.host?'<sup style="color:var(--accent);font-size:0.65rem"> 主</sup>':''}</span><span class="team-rank">FIFA #${t.rank}</span></div>`).join('');
+  const groupLabel = t('idx_group_label', {id: g.id});
+  const hostTag = t('idx_host_tag');
+  div.innerHTML = `<div class="group-header">${groupLabel} <span>(${g.teams.map(tm=>tm.conf).filter((v,i,a)=>a.indexOf(v)===i).join(' / ')})</span></div>`
+    + g.teams.map(tm => `<div class="team-row"><span class="team-flag">${tm.flag}</span><span class="team-name">${tm.name}${tm.host?'<sup style="color:var(--accent);font-size:0.65rem"> '+hostTag+'</sup>':''}</span><span class="team-rank">FIFA #${tm.rank}</span></div>`).join('');
   gc.appendChild(div);
 });
 
@@ -109,7 +113,7 @@ phases.forEach((phase, i) => {
           <div class="match-team away">${m.away} ${m.awayFlag}</div>
         </div>
         <div class="match-info">
-          ${m.group ? `<span>第${m.group}組</span>` : ''}
+          ${m.group ? `<span>${t('idx_match_group', {group: m.group})}</span>` : ''}
           <span>📅 ${m.date}</span>
           <span>⏰ ${m.time}</span>
           <span class="venue">🏟️ ${m.venue}</span>
@@ -128,7 +132,7 @@ VENUES.forEach(v => {
   const d = document.createElement('div');
   d.className = 'card';
   d.style.display='flex';d.style.flexDirection='column';d.style.gap='0.25rem';
-  d.innerHTML = `<strong style="color:var(--text)">${v.name}</strong><span style="font-size:0.82rem;color:var(--muted)">📍 ${v.city}</span><span style="font-size:0.78rem;color:var(--accent)">容量: ${v.cap.toLocaleString()}</span>`;
+  d.innerHTML = `<strong style="color:var(--text)">${v.name}</strong><span style="font-size:0.82rem;color:var(--muted)">📍 ${v.city}</span><span style="font-size:0.78rem;color:var(--accent)">${t('idx_venue_capacity', {cap: v.cap.toLocaleString()})}</span>`;
   vg.appendChild(d);
 });
 </script>
