@@ -140,13 +140,13 @@ VENUES.forEach(v => {
 </script>
 <script>
 // Visitor counter via CountAPI (free, no setup needed)
-fetch('https://api.countapi.xyz/hit/fifa2026-andrewyang/homepage')
+fetch('https://api.counterapi.dev/v1/fifa2026-andrewyang/homepage/up')
   .then(function(r) { return r.json(); })
   .then(function(data) {
     var el = document.getElementById('visitor-count');
-    if (el && data && data.value) el.textContent = data.value.toLocaleString();
+    if (el && data && data.count) el.textContent = data.count.toLocaleString();
   })
-  .catch(function() {}); // silent fail — counter just stays at "—"
+  .catch(function() {}); // silent fail — counter stays at "—"
 </script>
 </body>
 </html>
