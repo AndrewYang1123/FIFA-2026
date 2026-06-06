@@ -42,6 +42,7 @@
     nav_highlights: { zh: `🎬 精華`,         en: `🎬 Highlights` },
     nav_betting:    { zh: `🎰 投注`,         en: `🎰 Betting` },
     nav_scores:     { zh: `⚡ 即時比分`,      en: `⚡ Live Scores` },
+    nav_community:  { zh: `💬 社群`,          en: `💬 Community` },
 
     // ============================================================
     // INDEX.HTML — Schedule page
@@ -459,7 +460,37 @@
     score_col_score: { zh: `比分`, en: `Score` },
     score_col_round: { zh: `階段`, en: `Round` },
     score_col_venue: { zh: `場地`, en: `Venue` },
-    score_note: { zh: `📡 比分資料每日自動擷取並更新，若有錯誤或延遲，請以 FIFA 官方網站 (fifa.com) 公告為準。`, en: `📡 Scores are fetched and refreshed automatically each day. In case of any error or delay, please refer to the official FIFA website (fifa.com) for the authoritative result.` }
+    score_note: { zh: `📡 比分資料每日自動擷取並更新，若有錯誤或延遲，請以 FIFA 官方網站 (fifa.com) 公告為準。`, en: `📡 Scores are fetched and refreshed automatically each day. In case of any error or delay, please refer to the official FIFA website (fifa.com) for the authoritative result.` },
+
+    // ============================================================
+    // COMMUNITY.HTML — Fan community / comments page
+    // ============================================================
+    community_title:        { zh: `2026 FIFA World Cup — 球迷社群`, en: `2026 FIFA World Cup — Fan Community` },
+    community_hero_badge:   { zh: `球迷交流`, en: `Fan Zone` },
+    community_hero_h1:      { zh: `💬 球迷互動區`, en: `💬 Fan Community Hub` },
+    community_hero_p:       { zh: `分享你的觀點、預測與熱情 — 和全球球迷一起討論 2026 世界盃`, en: `Share your views, predictions and passion — join fellow fans to discuss the 2026 World Cup` },
+    community_section_polls:{ zh: `🗳️ 快速投票`, en: `🗳️ Quick Polls` },
+    community_polls_sub:    { zh: `投出你的看法，看看球迷們怎麼想`, en: `Cast your vote and see what fans think` },
+    community_poll1_q:      { zh: `🏆 誰會奪得 2026 世界盃冠軍？`, en: `🏆 Who will win the 2026 World Cup?` },
+    community_poll2_q:      { zh: `🌟 你最看好的黑馬隊伍？`, en: `🌟 Which team will be the biggest dark horse?` },
+    community_poll3_q:      { zh: `⚽ 你最期待哪場比賽？`, en: `⚽ Which match are you most excited to watch?` },
+    community_poll_vote_btn:{ zh: `投票`, en: `Vote` },
+    community_poll_total:   { zh: `{n} 票`, en: `{n} votes` },
+    community_poll_thanks:  { zh: `✅ 感謝你的投票！`, en: `✅ Thanks for voting!` },
+    community_section_discuss:{ zh: `💬 留言討論`, en: `💬 Comments & Discussion` },
+    community_discuss_sub:  { zh: `分享你的觀點、預測或對賽事的任何想法！`, en: `Share your thoughts, predictions, or anything about the tournament!` },
+    community_rules_h:      { zh: `📋 社群守則`, en: `📋 Community Guidelines` },
+    community_rules_p:      {
+      zh: `• 友善討論，尊重不同看法<br>• 歡迎分享球隊資訊與賽事分析<br>• 禁止發布不實訊息或垃圾內容<br>• 讓這裡成為球迷交流的最佳空間 ⚽`,
+      en: `• Be respectful and friendly to all fans<br>• Share team news, analysis and predictions<br>• No misinformation or spam<br>• Let's make this the best fan space for 2026 ⚽`
+    },
+    community_disqus_setup: {
+      zh: `💡 留言系統設定中 — 如果看不到留言框，請參考頁面底部的設定說明。`,
+      en: `💡 Comment system loading — if you don't see the comment box, see the setup note at the bottom of the page.`
+    },
+
+    // INDEX.HTML — visitor counter label
+    idx_stat_visitors: { zh: `瀏覽人數`, en: `Visitors` }
   };
 
   /* ---------------------------------------------------------

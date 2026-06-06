@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 FIFA World Cup — 球迷社群</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Poll cards ───────────────────────────────────────── */
+    .poll-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .poll-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem 1.3rem 1.2rem;
+    }
+    .poll-card h3 {
+      font-size: 0.97rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .poll-options { display: flex; flex-direction: column; gap: 0.55rem; }
+    .poll-option {
+      position: relative;
+      cursor: pointer;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg3);
+      transition: border-color 0.2s;
+    }
+    .poll-option:hover { border-color: var(--accent); }
+    .poll-option.voted-this  { border-color: var(--gold); }
+    .poll-bar {
+      position: absolute; inset: 0; left: 0; top: 0;
+      background: linear-gradient(90deg, rgba(0,212,170,0.13), rgba(0,212,170,0.05));
+      width: 0%; transition: width 0.5s ease;
+      border-radius: 8px;
+    }
+    .poll-option.voted-this .poll-bar {
+      background: linear-gradient(90deg, rgba(255,215,0,0.18), rgba(255,215,0,0.06));
+    }
+    .poll-label {
+      position: relative;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      z-index: 1;
+    }
+    .poll-pct {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 34px;
+      text-align: right;
+    }
+    .poll-option.voted-this .poll-pct { color: var(--gold); }
+    .poll-footer {
+      margin-top: 0.75rem;
+      font-size: 0.74rem;
+      color: var(--muted);
+      text-align: right;
+    }
+    .poll-btn {
+      display: block; width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: var(--accent);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.85rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .poll-btn:hover { opacity: 0.85; }
+    .poll-btn:disabled { opacity: 0.4; cursor: default; }
+    .poll-thanks {
+      display: none;
+      margin-top: 0.7rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    /* ── Comments section ─────────────────────────────────── */
+    .discuss-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .discuss-box h2 {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .discuss-sub {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+    #disqus_thread { min-height: 120px; }
+    .disqus-notice {
+      font-size: 0.82rem;
+      color: var(--muted);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+      line-height: 1.7;
+    }
+    .disqus-notice strong { color: var(--gold); }
+
+    /* ── Guidelines ───────────────────────────────────────── */
+    .rules-box {
+      background: linear-gradient(135deg, rgba(0,212,170,0.06), rgba(255,215,0,0.04));
+      border: 1px solid rgba(0,212,170,0.22);
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 2rem;
+    }
+    .rules-box h3 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .rules-box p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+  </style>
+</head>
+<body data-page-title="community_title">
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">⚽ <span>FIFA 2026</span></a>
+    <a href="index.html"     data-i18n="nav_schedule">🗓️ 賽程</a>
+    <a href="teams.html"     data-i18n="nav_teams">🌍 球隊&球員</a>
+    <a href="analysis.html"  data-i18n="nav_analysis">📊 分析</a>
+    <a href="prediction.html"data-i18n="nav_prediction">🔮 預測</a>
+    <a href="highlights.html"data-i18n="nav_highlights">🎬 精華</a>
+    <a href="betting.html"   data-i18n="nav_betting">🎰 投注</a>
+    <a href="scores.html"    data-i18n="nav_scores">⚡ 即時比分</a>
+    <a href="community.html" class="active" data-i18n="nav_community">💬 社群</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="badge" data-i18n="community_hero_badge">球迷交流</div>
+  <h1 data-i18n="community_hero_h1">💬 球迷互動區</h1>
+  <p data-i18n="community_hero_p">分享你的觀點、預測與熱情 — 和全球球迷一起討論 2026 世界盃</p>
+</div>
+
+<div class="container">
+
+  <!-- ── Quick Polls ──────────────────────────────── -->
+  <div class="section-title" data-i18n="community_section_polls">🗳️ 快速投票</div>
+  <p style="color:var(--muted);font-size:0.88rem;margin:-1rem 0 1.25rem" data-i18n="community_polls_sub">投出你的看法，看看球迷們怎麼想</p>
+
+  <div class="poll-grid" id="polls-container"></div>
+
+  <!-- ── Rules ───────────────────────────────────── -->
+  <div class="rules-box">
+    <h3 data-i18n="community_rules_h">📋 社群守則</h3>
+    <p data-i18n-html="community_rules_p">• 友善討論，尊重不同看法<br>• 歡迎分享球隊資訊與賽事分析<br>• 禁止發布不實訊息或垃圾內容<br>• 讓這裡成為球迷交流的最佳空間 ⚽</p>
+  </div>
+
+  <!-- ── Comments (Disqus) ────────────────────────── -->
+  <div class="discuss-box">
+    <h2 data-i18n="community_section_discuss">💬 留言討論</h2>
+    <p class="discuss-sub" data-i18n="community_discuss_sub">分享你的觀點、預測或對賽事的任何想法！</p>
+    <div id="disqus_thread"></div>
+
+    <!-- Setup notice — shown when Disqus shortname is placeholder -->
+    <div class="disqus-notice" id="disqus-notice" style="display:none">
+      💡 <strong>設定留言系統：</strong>
+      前往 <a href="https://disqus.com" target="_blank" style="color:var(--accent)">disqus.com</a> 免費註冊，
+      建立一個 Site 並取得你的 <strong>shortname</strong>，
+      然後在 <code>community.html</code> 底部找到 <code>YOUR_DISQUS_SHORTNAME</code>，
+      替換成你的 shortname 後重新 push 即可。
+      <br><br>
+      💡 <strong>Set up comments:</strong>
+      Go to <a href="https://disqus.com" target="_blank" style="color:var(--accent)">disqus.com</a>, sign up free,
+      create a site to get your <strong>shortname</strong>, then find
+      <code>YOUR_DISQUS_SHORTNAME</code> in <code>community.html</code> and replace it, then push.
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script src="i18n.js"></script>
+<script>
+// ── Poll data ────────────────────────────────────────────────
+var POLL_DATA = [
+  {
+    key: 'champion',
+    qKey: 'community_poll1_q',
+    options: [
+      { zh: '🇦🇷 阿根廷', en: '🇦🇷 Argentina', seed: 342 },
+      { zh: '🇫🇷 法國',   en: '🇫🇷 France',    seed: 285 },
+      { zh: '🇧🇷 巴西',   en: '🇧🇷 Brazil',    seed: 267 },
+      { zh: '🇪🇸 西班牙', en: '🇪🇸 Spain',     seed: 198 },
+      { zh: '🌍 其他',    en: '🌍 Others',      seed: 108 }
+    ]
+  },
+  {
+    key: 'darkhorse',
+    qKey: 'community_poll2_q',
+    options: [
+      { zh: '🇲🇦 摩洛哥', en: '🇲🇦 Morocco',   seed: 312 },
+      { zh: '🇺🇸 美國',   en: '🇺🇸 USA',       seed: 287 },
+      { zh: '🇯🇵 日本',   en: '🇯🇵 Japan',     seed: 198 },
+      { zh: '🇭🇷 克羅埃西亞', en: '🇭🇷 Croatia', seed: 156 },
+      { zh: '🌍 其他',    en: '🌍 Others',      seed: 247 }
+    ]
+  },
+  {
+    key: 'bestmatch',
+    qKey: 'community_poll3_q',
+    options: [
+      { zh: '🇲🇽 墨西哥 vs 🇵🇱 波蘭（開幕戰）', en: '🇲🇽 Mexico vs 🇵🇱 Poland (Opener)', seed: 189 },
+      { zh: '🇦🇷 阿根廷 vs 🇫🇷 法國',           en: '🇦🇷 Argentina vs 🇫🇷 France',         seed: 456 },
+      { zh: '🇧🇷 巴西 vs 🇵🇹 葡萄牙',            en: '🇧🇷 Brazil vs 🇵🇹 Portugal',           seed: 312 },
+      { zh: '🏆 決賽',                             en: '🏆 The Final',                         seed: 398 },
+      { zh: '🌟 黑馬驚喜場',                        en: '🌟 The Dark Horse Upset',               seed: 145 }
+    ]
+  }
+];
+
+var lang = getLang();
+
+// ── Render polls ─────────────────────────────────────────────
+function getPollVote(key) {
+  try { return JSON.parse(localStorage.getItem('fifa2026_poll_' + key)); } catch(e) { return null; }
+}
+function setPollVote(key, idx) {
+  localStorage.setItem('fifa2026_poll_' + key, JSON.stringify({ idx: idx }));
+}
+
+function renderPoll(poll) {
+  var stored = getPollVote(poll.key);
+  var votedIdx = stored ? stored.idx : -1;
+  var hasVoted = votedIdx >= 0;
+
+  // Compute counts = seed + user's vote
+  var counts = poll.options.map(function(o, i) {
+    return o.seed + (i === votedIdx ? 1 : 0);
+  });
+  var total = counts.reduce(function(a, b) { return a + b; }, 0);
+
+  var optionsHTML = poll.options.map(function(o, i) {
+    var pct = total > 0 ? Math.round(counts[i] / total * 100) : 0;
+    var isVoted = i === votedIdx;
+    return `<div class="poll-option${isVoted ? ' voted-this' : ''}" data-idx="${i}">
+      <div class="poll-bar" style="width:${hasVoted ? pct : 0}%"></div>
+      <div class="poll-label">
+        <span>${lang === 'en' ? o.en : o.zh}</span>
+        <span class="poll-pct">${hasVoted ? pct + '%' : ''}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  var totalLabel = t('community_poll_total', { n: total.toLocaleString() });
+  var btnLabel   = t('community_poll_vote_btn');
+  var thanksMsg  = t('community_poll_thanks');
+
+  return `<div class="poll-card" data-poll-key="${poll.key}">
+    <h3>${t(poll.qKey)}</h3>
+    <div class="poll-options">${optionsHTML}</div>
+    <div class="poll-footer">${hasVoted ? totalLabel : ''}</div>
+    <button class="poll-btn" ${hasVoted ? 'disabled' : ''}>${hasVoted ? '✓ ' + btnLabel : btnLabel}</button>
+    <div class="poll-thanks" ${hasVoted ? 'style="display:block"' : ''}>${thanksMsg}</div>
+  </div>`;
+}
+
+var container = document.getElementById('polls-container');
+container.innerHTML = POLL_DATA.map(renderPoll).join('');
+
+// ── Poll interactivity ────────────────────────────────────────
+container.addEventListener('click', function(e) {
+  var card = e.target.closest('.poll-card');
+  if (!card) return;
+  var key = card.dataset.pollKey;
+  var poll = POLL_DATA.find(function(p) { return p.key === key; });
+  if (!poll || getPollVote(key)) return; // already voted
+
+  // Which option was clicked?
+  var opt = e.target.closest('.poll-option');
+  var btn = e.target.closest('.poll-btn');
+  var clickedIdx = -1;
+  if (opt) clickedIdx = parseInt(opt.dataset.idx);
+
+  if (clickedIdx >= 0) {
+    // Highlight selection, enable button
+    card.querySelectorAll('.poll-option').forEach(function(el) {
+      el.style.borderColor = parseInt(el.dataset.idx) === clickedIdx ? 'var(--gold)' : '';
+    });
+    card.querySelector('.poll-btn').dataset.selected = clickedIdx;
+  }
+
+  if (btn) {
+    var selected = parseInt(btn.dataset.selected);
+    if (isNaN(selected) || selected < 0) return;
+    setPollVote(key, selected);
+    // Re-render this card
+    card.outerHTML = renderPoll(poll);
+    // Animate bars
+    setTimeout(function() {
+      document.querySelectorAll('.poll-card[data-poll-key="' + key + '"] .poll-bar').forEach(function(bar) {
+        bar.style.transition = 'width 0.6s ease';
+      });
+    }, 50);
+  }
+});
+
+// ── Disqus loader ─────────────────────────────────────────────
+var DISQUS_SHORTNAME = 'YOUR_DISQUS_SHORTNAME'; // ← 替換成你的 Disqus shortname
+
+if (DISQUS_SHORTNAME === 'YOUR_DISQUS_SHORTNAME') {
+  // Show setup notice instead
+  document.getElementById('disqus-notice').style.display = 'block';
+} else {
+  var disqus_config = function () {
+    this.page.url      = 'https://fifa-2026-brown.vercel.app/community.html';
+    this.page.identifier = 'community-page';
+  };
+  (function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://' + DISQUS_SHORTNAME + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+}
+</script>
+</body>
+</html>

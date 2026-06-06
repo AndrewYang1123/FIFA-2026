@@ -16,7 +16,8 @@
     <a href="prediction.html" data-i18n="nav_prediction">🔮 預測</a>
     <a href="highlights.html" data-i18n="nav_highlights">🎬 精華</a>
     <a href="betting.html" data-i18n="nav_betting">🎰 投注</a>
-    <a href="scores.html" data-i18n="nav_scores">⚡ 即時比分</a>
+    <a href="scores.html"    data-i18n="nav_scores">⚡ 即時比分</a>
+    <a href="community.html" data-i18n="nav_community">💬 社群</a>
   </div>
 </nav>
 
@@ -35,6 +36,7 @@
     <div class="stat-box"><div class="num">16</div><div class="lbl" data-i18n="idx_stat_venues">比賽場館</div></div>
     <div class="stat-box"><div class="num">3</div><div class="lbl" data-i18n="idx_stat_hosts">主辦國家</div></div>
     <div class="stat-box"><div class="num">43</div><div class="lbl" data-i18n="idx_stat_days">比賽天數</div></div>
+    <div class="stat-box"><div class="num" id="visitor-count">—</div><div class="lbl" data-i18n="idx_stat_visitors">瀏覽人數</div></div>
   </div>
 
   <!-- GROUPS -->
@@ -135,6 +137,16 @@ VENUES.forEach(v => {
   d.innerHTML = `<strong style="color:var(--text)">${v.name}</strong><span style="font-size:0.82rem;color:var(--muted)">📍 ${v.city}</span><span style="font-size:0.78rem;color:var(--accent)">${t('idx_venue_capacity', {cap: v.cap.toLocaleString()})}</span>`;
   vg.appendChild(d);
 });
+</script>
+<script>
+// Visitor counter via CountAPI (free, no setup needed)
+fetch('https://api.countapi.xyz/hit/fifa2026-andrewyang/homepage')
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    var el = document.getElementById('visitor-count');
+    if (el && data && data.value) el.textContent = data.value.toLocaleString();
+  })
+  .catch(function() {}); // silent fail — counter just stays at "—"
 </script>
 </body>
 </html>
