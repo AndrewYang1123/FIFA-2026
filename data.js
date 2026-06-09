@@ -93,167 +93,166 @@ const VENUES = [
 ];
 
 const SCHEDULE = [
-  // ── GROUP STAGE — MATCHDAY 1 ──────────────────────────────────────────
+  // ── GROUP STAGE — MATCHDAY 1 ─────────────────────── (All times PDT)
   // Group A
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 11', time:'15:00', home:'Mexico', away:'South Africa', homeFlag:'🇲🇽', awayFlag:'🇿🇦', venue:'Estadio Azteca', group:'A', featured:true },
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 11', time:'22:00', home:'South Korea', away:'Czechia', homeFlag:'🇰🇷', awayFlag:'🇨🇿', venue:'Estadio Akron', group:'A' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 11', time:'12:00', home:'Mexico', away:'South Africa', homeFlag:'🇲🇽', awayFlag:'🇿🇦', venue:'Estadio Azteca', group:'A', featured:true },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 11', time:'19:00', home:'South Korea', away:'Czechia', homeFlag:'🇰🇷', awayFlag:'🇨🇿', venue:'Estadio Akron', group:'A' },
   // Group B
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 12', time:'15:00', home:'Canada', away:'Bosnia and Herzegovina', homeFlag:'🇨🇦', awayFlag:'🇧🇦', venue:'BMO Field', group:'B' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 12', time:'12:00', home:'Canada', away:'Bosnia and Herzegovina', homeFlag:'🇨🇦', awayFlag:'🇧🇦', venue:'BMO Field', group:'B' },
   // Group D
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 12', time:'21:00', home:'USA', away:'Paraguay', homeFlag:'🇺🇸', awayFlag:'🇵🇾', venue:'SoFi Stadium', group:'D' },
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'00:00', home:'Australia', away:'Türkiye', homeFlag:'🇦🇺', awayFlag:'🇹🇷', venue:'BC Place', group:'D' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 12', time:'18:00', home:'USA', away:'Paraguay', homeFlag:'🇺🇸', awayFlag:'🇵🇾', venue:'SoFi Stadium', group:'D' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 12', time:'21:00', home:'Australia', away:'Türkiye', homeFlag:'🇦🇺', awayFlag:'🇹🇷', venue:'BC Place', group:'D' },
   // Group B (cont.)
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'15:00', home:'Qatar', away:'Switzerland', homeFlag:'🇶🇦', awayFlag:'🇨🇭', venue:"Levi's Stadium", group:'B' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'12:00', home:'Qatar', away:'Switzerland', homeFlag:'🇶🇦', awayFlag:'🇨🇭', venue:"Levi's Stadium", group:'B' },
   // Group C
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'18:00', home:'Brazil', away:'Morocco', homeFlag:'🇧🇷', awayFlag:'🇲🇦', venue:'MetLife Stadium', group:'C', featured:true },
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'21:00', home:'Haiti', away:'Scotland', homeFlag:'🇭🇹', awayFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', venue:'Gillette Stadium', group:'C' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'15:00', home:'Brazil', away:'Morocco', homeFlag:'🇧🇷', awayFlag:'🇲🇦', venue:'MetLife Stadium', group:'C', featured:true },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'18:00', home:'Haiti', away:'Scotland', homeFlag:'🇭🇹', awayFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', venue:'Gillette Stadium', group:'C' },
   // Group E
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 14', time:'13:00', home:'Germany', away:'Curaçao', homeFlag:'🇩🇪', awayFlag:'🇨🇼', venue:'NRG Stadium', group:'E' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 14', time:'10:00', home:'Germany', away:'Curaçao', homeFlag:'🇩🇪', awayFlag:'🇨🇼', venue:'NRG Stadium', group:'E' },
   // Group F
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 14', time:'16:00', home:'Netherlands', away:'Japan', homeFlag:'🇳🇱', awayFlag:'🇯🇵', venue:'AT&T Stadium', group:'F' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 14', time:'13:00', home:'Netherlands', away:'Japan', homeFlag:'🇳🇱', awayFlag:'🇯🇵', venue:'AT&T Stadium', group:'F' },
   // Group E (cont.)
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 14', time:'19:00', home:'Ivory Coast', away:'Ecuador', homeFlag:'🇨🇮', awayFlag:'🇪🇨', venue:'Lincoln Financial Field', group:'E' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 14', time:'16:00', home:'Ivory Coast', away:'Ecuador', homeFlag:'🇨🇮', awayFlag:'🇪🇨', venue:'Lincoln Financial Field', group:'E' },
   // Group F (cont.)
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 14', time:'22:00', home:'Sweden', away:'Tunisia', homeFlag:'🇸🇪', awayFlag:'🇹🇳', venue:'Estadio BBVA', group:'F' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 14', time:'19:00', home:'Sweden', away:'Tunisia', homeFlag:'🇸🇪', awayFlag:'🇹🇳', venue:'Estadio BBVA', group:'F' },
   // Group H
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'12:00', home:'Spain', away:'Cape Verde', homeFlag:'🇪🇸', awayFlag:'🇨🇻', venue:'Mercedes-Benz Stadium', group:'H' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'09:00', home:'Spain', away:'Cape Verde', homeFlag:'🇪🇸', awayFlag:'🇨🇻', venue:'Mercedes-Benz Stadium', group:'H' },
   // Group G
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'15:00', home:'Belgium', away:'Egypt', homeFlag:'🇧🇪', awayFlag:'🇪🇬', venue:'Lumen Field', group:'G' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'12:00', home:'Belgium', away:'Egypt', homeFlag:'🇧🇪', awayFlag:'🇪🇬', venue:'Lumen Field', group:'G' },
   // Group H (cont.)
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'18:00', home:'Saudi Arabia', away:'Uruguay', homeFlag:'🇸🇦', awayFlag:'🇺🇾', venue:'Hard Rock Stadium', group:'H' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'15:00', home:'Saudi Arabia', away:'Uruguay', homeFlag:'🇸🇦', awayFlag:'🇺🇾', venue:'Hard Rock Stadium', group:'H' },
   // Group G (cont.)
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'21:00', home:'Iran', away:'New Zealand', homeFlag:'🇮🇷', awayFlag:'🇳🇿', venue:'SoFi Stadium', group:'G' },
-  // Group J
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'00:00', home:'Austria', away:'Jordan', homeFlag:'🇦🇹', awayFlag:'🇯🇴', venue:"Levi's Stadium", group:'J' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'18:00', home:'Iran', away:'New Zealand', homeFlag:'🇮🇷', awayFlag:'🇳🇿', venue:'SoFi Stadium', group:'G' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'21:00', home:'Austria', away:'Jordan', homeFlag:'🇦🇹', awayFlag:'🇯🇴', venue:"Levi's Stadium", group:'J' },
   // Group I
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'15:00', home:'France', away:'Senegal', homeFlag:'🇫🇷', awayFlag:'🇸🇳', venue:'MetLife Stadium', group:'I', featured:true },
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'18:00', home:'Iraq', away:'Norway', homeFlag:'🇮🇶', awayFlag:'🇳🇴', venue:'Gillette Stadium', group:'I' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'12:00', home:'France', away:'Senegal', homeFlag:'🇫🇷', awayFlag:'🇸🇳', venue:'MetLife Stadium', group:'I', featured:true },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'15:00', home:'Iraq', away:'Norway', homeFlag:'🇮🇶', awayFlag:'🇳🇴', venue:'Gillette Stadium', group:'I' },
   // Group J (cont.)
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'21:00', home:'Argentina', away:'Algeria', homeFlag:'🇦🇷', awayFlag:'🇩🇿', venue:'Arrowhead Stadium', group:'J', featured:true },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'18:00', home:'Argentina', away:'Algeria', homeFlag:'🇦🇷', awayFlag:'🇩🇿', venue:'Arrowhead Stadium', group:'J', featured:true },
   // Group K
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'13:00', home:'Portugal', away:'DR Congo', homeFlag:'🇵🇹', awayFlag:'🇨🇩', venue:'NRG Stadium', group:'K' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'10:00', home:'Portugal', away:'DR Congo', homeFlag:'🇵🇹', awayFlag:'🇨🇩', venue:'NRG Stadium', group:'K' },
   // Group L
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'16:00', home:'England', away:'Croatia', homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayFlag:'🇭🇷', venue:'AT&T Stadium', group:'L', featured:true },
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'19:00', home:'Ghana', away:'Panama', homeFlag:'🇬🇭', awayFlag:'🇵🇦', venue:'BMO Field', group:'L' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'13:00', home:'England', away:'Croatia', homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayFlag:'🇭🇷', venue:'AT&T Stadium', group:'L', featured:true },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'16:00', home:'Ghana', away:'Panama', homeFlag:'🇬🇭', awayFlag:'🇵🇦', venue:'BMO Field', group:'L' },
   // Group K (cont.)
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'22:00', home:'Uzbekistan', away:'Colombia', homeFlag:'🇺🇿', awayFlag:'🇨🇴', venue:'Estadio Azteca', group:'K' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'19:00', home:'Uzbekistan', away:'Colombia', homeFlag:'🇺🇿', awayFlag:'🇨🇴', venue:'Estadio Azteca', group:'K' },
   // ── GROUP STAGE — MATCHDAY 2 ──────────────────────────────────────────
   // Group A
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'12:00', home:'Czechia', away:'South Africa', homeFlag:'🇨🇿', awayFlag:'🇿🇦', venue:'Mercedes-Benz Stadium', group:'A' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'09:00', home:'Czechia', away:'South Africa', homeFlag:'🇨🇿', awayFlag:'🇿🇦', venue:'Mercedes-Benz Stadium', group:'A' },
   // Group B
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'15:00', home:'Switzerland', away:'Bosnia and Herzegovina', homeFlag:'🇨🇭', awayFlag:'🇧🇦', venue:'SoFi Stadium', group:'B' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'18:00', home:'Canada', away:'Qatar', homeFlag:'🇨🇦', awayFlag:'🇶🇦', venue:'BC Place', group:'B' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'12:00', home:'Switzerland', away:'Bosnia and Herzegovina', homeFlag:'🇨🇭', awayFlag:'🇧🇦', venue:'SoFi Stadium', group:'B' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'15:00', home:'Canada', away:'Qatar', homeFlag:'🇨🇦', awayFlag:'🇶🇦', venue:'BC Place', group:'B' },
   // Group A (cont.)
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'21:00', home:'Mexico', away:'South Korea', homeFlag:'🇲🇽', awayFlag:'🇰🇷', venue:'Estadio Akron', group:'A' },
-  // Group D
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'00:00', home:'Türkiye', away:'Paraguay', homeFlag:'🇹🇷', awayFlag:'🇵🇾', venue:"Levi's Stadium", group:'D' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'15:00', home:'USA', away:'Australia', homeFlag:'🇺🇸', awayFlag:'🇦🇺', venue:'Lumen Field', group:'D' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'18:00', home:'Mexico', away:'South Korea', homeFlag:'🇲🇽', awayFlag:'🇰🇷', venue:'Estadio Akron', group:'A' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'21:00', home:'Türkiye', away:'Paraguay', homeFlag:'🇹🇷', awayFlag:'🇵🇾', venue:"Levi's Stadium", group:'D' },
+  // Group D (cont.)
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'12:00', home:'USA', away:'Australia', homeFlag:'🇺🇸', awayFlag:'🇦🇺', venue:'Lumen Field', group:'D' },
   // Group C
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'18:00', home:'Scotland', away:'Morocco', homeFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', awayFlag:'🇲🇦', venue:'Gillette Stadium', group:'C' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'21:00', home:'Brazil', away:'Haiti', homeFlag:'🇧🇷', awayFlag:'🇭🇹', venue:'Lincoln Financial Field', group:'C' },
-  // Group F
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'00:00', home:'Tunisia', away:'Japan', homeFlag:'🇹🇳', awayFlag:'🇯🇵', venue:'Estadio BBVA', group:'F' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'13:00', home:'Netherlands', away:'Sweden', homeFlag:'🇳🇱', awayFlag:'🇸🇪', venue:'NRG Stadium', group:'F' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'15:00', home:'Scotland', away:'Morocco', homeFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', awayFlag:'🇲🇦', venue:'Gillette Stadium', group:'C' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'18:00', home:'Brazil', away:'Haiti', homeFlag:'🇧🇷', awayFlag:'🇭🇹', venue:'Lincoln Financial Field', group:'C' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'21:00', home:'Tunisia', away:'Japan', homeFlag:'🇹🇳', awayFlag:'🇯🇵', venue:'Estadio BBVA', group:'F' },
+  // Group F (cont.)
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'10:00', home:'Netherlands', away:'Sweden', homeFlag:'🇳🇱', awayFlag:'🇸🇪', venue:'NRG Stadium', group:'F' },
   // Group E
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'16:00', home:'Germany', away:'Ivory Coast', homeFlag:'🇩🇪', awayFlag:'🇨🇮', venue:'BMO Field', group:'E' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'20:00', home:'Ecuador', away:'Curaçao', homeFlag:'🇪🇨', awayFlag:'🇨🇼', venue:'Arrowhead Stadium', group:'E' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'13:00', home:'Germany', away:'Ivory Coast', homeFlag:'🇩🇪', awayFlag:'🇨🇮', venue:'BMO Field', group:'E' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'17:00', home:'Ecuador', away:'Curaçao', homeFlag:'🇪🇨', awayFlag:'🇨🇼', venue:'Arrowhead Stadium', group:'E' },
   // Group H
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'12:00', home:'Spain', away:'Saudi Arabia', homeFlag:'🇪🇸', awayFlag:'🇸🇦', venue:'Mercedes-Benz Stadium', group:'H' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'09:00', home:'Spain', away:'Saudi Arabia', homeFlag:'🇪🇸', awayFlag:'🇸🇦', venue:'Mercedes-Benz Stadium', group:'H' },
   // Group G
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'15:00', home:'Belgium', away:'Iran', homeFlag:'🇧🇪', awayFlag:'🇮🇷', venue:'SoFi Stadium', group:'G' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'12:00', home:'Belgium', away:'Iran', homeFlag:'🇧🇪', awayFlag:'🇮🇷', venue:'SoFi Stadium', group:'G' },
   // Group H (cont.)
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'18:00', home:'Uruguay', away:'Cape Verde', homeFlag:'🇺🇾', awayFlag:'🇨🇻', venue:'Hard Rock Stadium', group:'H' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'15:00', home:'Uruguay', away:'Cape Verde', homeFlag:'🇺🇾', awayFlag:'🇨🇻', venue:'Hard Rock Stadium', group:'H' },
   // Group G (cont.)
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'21:00', home:'New Zealand', away:'Egypt', homeFlag:'🇳🇿', awayFlag:'🇪🇬', venue:'BC Place', group:'G' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'18:00', home:'New Zealand', away:'Egypt', homeFlag:'🇳🇿', awayFlag:'🇪🇬', venue:'BC Place', group:'G' },
   // Group J
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 22', time:'13:00', home:'Argentina', away:'Austria', homeFlag:'🇦🇷', awayFlag:'🇦🇹', venue:'AT&T Stadium', group:'J' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 22', time:'10:00', home:'Argentina', away:'Austria', homeFlag:'🇦🇷', awayFlag:'🇦🇹', venue:'AT&T Stadium', group:'J' },
   // Group I
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 22', time:'17:00', home:'France', away:'Iraq', homeFlag:'🇫🇷', awayFlag:'🇮🇶', venue:'Lincoln Financial Field', group:'I' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 22', time:'20:00', home:'Norway', away:'Senegal', homeFlag:'🇳🇴', awayFlag:'🇸🇳', venue:'MetLife Stadium', group:'I' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 22', time:'14:00', home:'France', away:'Iraq', homeFlag:'🇫🇷', awayFlag:'🇮🇶', venue:'Lincoln Financial Field', group:'I' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 22', time:'17:00', home:'Norway', away:'Senegal', homeFlag:'🇳🇴', awayFlag:'🇸🇳', venue:'MetLife Stadium', group:'I' },
   // Group J (cont.)
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 22', time:'23:00', home:'Jordan', away:'Algeria', homeFlag:'🇯🇴', awayFlag:'🇩🇿', venue:"Levi's Stadium", group:'J' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 22', time:'20:00', home:'Jordan', away:'Algeria', homeFlag:'🇯🇴', awayFlag:'🇩🇿', venue:"Levi's Stadium", group:'J' },
   // Group K
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 23', time:'13:00', home:'Portugal', away:'Uzbekistan', homeFlag:'🇵🇹', awayFlag:'🇺🇿', venue:'NRG Stadium', group:'K' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 23', time:'10:00', home:'Portugal', away:'Uzbekistan', homeFlag:'🇵🇹', awayFlag:'🇺🇿', venue:'NRG Stadium', group:'K' },
   // Group L
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 23', time:'16:00', home:'England', away:'Ghana', homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayFlag:'🇬🇭', venue:'Gillette Stadium', group:'L' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 23', time:'19:00', home:'Panama', away:'Croatia', homeFlag:'🇵🇦', awayFlag:'🇭🇷', venue:'BMO Field', group:'L' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 23', time:'13:00', home:'England', away:'Ghana', homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayFlag:'🇬🇭', venue:'Gillette Stadium', group:'L' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 23', time:'16:00', home:'Panama', away:'Croatia', homeFlag:'🇵🇦', awayFlag:'🇭🇷', venue:'BMO Field', group:'L' },
   // Group K (cont.)
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 23', time:'22:00', home:'Colombia', away:'DR Congo', homeFlag:'🇨🇴', awayFlag:'🇨🇩', venue:'Estadio Akron', group:'K' },
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 23', time:'19:00', home:'Colombia', away:'DR Congo', homeFlag:'🇨🇴', awayFlag:'🇨🇩', venue:'Estadio Akron', group:'K' },
   // ── GROUP STAGE — MATCHDAY 3 (simultaneous within each group) ─────────
   // Group B
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'15:00', home:'Switzerland', away:'Canada', homeFlag:'🇨🇭', awayFlag:'🇨🇦', venue:'BC Place', group:'B' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'15:00', home:'Bosnia and Herzegovina', away:'Qatar', homeFlag:'🇧🇦', awayFlag:'🇶🇦', venue:'Lumen Field', group:'B' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'12:00', home:'Switzerland', away:'Canada', homeFlag:'🇨🇭', awayFlag:'🇨🇦', venue:'BC Place', group:'B' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'12:00', home:'Bosnia and Herzegovina', away:'Qatar', homeFlag:'🇧🇦', awayFlag:'🇶🇦', venue:'Lumen Field', group:'B' },
   // Group C
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'18:00', home:'Scotland', away:'Brazil', homeFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', awayFlag:'🇧🇷', venue:'Hard Rock Stadium', group:'C' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'18:00', home:'Morocco', away:'Haiti', homeFlag:'🇲🇦', awayFlag:'🇭🇹', venue:'Mercedes-Benz Stadium', group:'C' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'15:00', home:'Scotland', away:'Brazil', homeFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', awayFlag:'🇧🇷', venue:'Hard Rock Stadium', group:'C' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'15:00', home:'Morocco', away:'Haiti', homeFlag:'🇲🇦', awayFlag:'🇭🇹', venue:'Mercedes-Benz Stadium', group:'C' },
   // Group A
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'21:00', home:'Czechia', away:'Mexico', homeFlag:'🇨🇿', awayFlag:'🇲🇽', venue:'Estadio Azteca', group:'A' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'21:00', home:'South Africa', away:'South Korea', homeFlag:'🇿🇦', awayFlag:'🇰🇷', venue:'Estadio BBVA', group:'A' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'18:00', home:'Czechia', away:'Mexico', homeFlag:'🇨🇿', awayFlag:'🇲🇽', venue:'Estadio Azteca', group:'A' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 24', time:'18:00', home:'South Africa', away:'South Korea', homeFlag:'🇿🇦', awayFlag:'🇰🇷', venue:'Estadio BBVA', group:'A' },
   // Group E
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'16:00', home:'Ecuador', away:'Germany', homeFlag:'🇪🇨', awayFlag:'🇩🇪', venue:'MetLife Stadium', group:'E' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'16:00', home:'Curaçao', away:'Ivory Coast', homeFlag:'🇨🇼', awayFlag:'🇨🇮', venue:'Lincoln Financial Field', group:'E' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'13:00', home:'Ecuador', away:'Germany', homeFlag:'🇪🇨', awayFlag:'🇩🇪', venue:'MetLife Stadium', group:'E' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'13:00', home:'Curaçao', away:'Ivory Coast', homeFlag:'🇨🇼', awayFlag:'🇨🇮', venue:'Lincoln Financial Field', group:'E' },
   // Group F
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'19:00', home:'Japan', away:'Sweden', homeFlag:'🇯🇵', awayFlag:'🇸🇪', venue:'AT&T Stadium', group:'F' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'19:00', home:'Tunisia', away:'Netherlands', homeFlag:'🇹🇳', awayFlag:'🇳🇱', venue:'Arrowhead Stadium', group:'F' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'16:00', home:'Japan', away:'Sweden', homeFlag:'🇯🇵', awayFlag:'🇸🇪', venue:'AT&T Stadium', group:'F' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'16:00', home:'Tunisia', away:'Netherlands', homeFlag:'🇹🇳', awayFlag:'🇳🇱', venue:'Arrowhead Stadium', group:'F' },
   // Group D
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'22:00', home:'Türkiye', away:'USA', homeFlag:'🇹🇷', awayFlag:'🇺🇸', venue:'SoFi Stadium', group:'D' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'22:00', home:'Paraguay', away:'Australia', homeFlag:'🇵🇾', awayFlag:'🇦🇺', venue:"Levi's Stadium", group:'D' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'19:00', home:'Türkiye', away:'USA', homeFlag:'🇹🇷', awayFlag:'🇺🇸', venue:'SoFi Stadium', group:'D' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 25', time:'19:00', home:'Paraguay', away:'Australia', homeFlag:'🇵🇾', awayFlag:'🇦🇺', venue:"Levi's Stadium", group:'D' },
   // Group I
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'15:00', home:'Norway', away:'France', homeFlag:'🇳🇴', awayFlag:'🇫🇷', venue:'Gillette Stadium', group:'I' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'15:00', home:'Senegal', away:'Iraq', homeFlag:'🇸🇳', awayFlag:'🇮🇶', venue:'BMO Field', group:'I' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'12:00', home:'Norway', away:'France', homeFlag:'🇳🇴', awayFlag:'🇫🇷', venue:'Gillette Stadium', group:'I' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'12:00', home:'Senegal', away:'Iraq', homeFlag:'🇸🇳', awayFlag:'🇮🇶', venue:'BMO Field', group:'I' },
   // Group H
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'20:00', home:'Cape Verde', away:'Saudi Arabia', homeFlag:'🇨🇻', awayFlag:'🇸🇦', venue:'NRG Stadium', group:'H' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'20:00', home:'Uruguay', away:'Spain', homeFlag:'🇺🇾', awayFlag:'🇪🇸', venue:'Estadio Akron', group:'H' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'17:00', home:'Cape Verde', away:'Saudi Arabia', homeFlag:'🇨🇻', awayFlag:'🇸🇦', venue:'NRG Stadium', group:'H' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'17:00', home:'Uruguay', away:'Spain', homeFlag:'🇺🇾', awayFlag:'🇪🇸', venue:'Estadio Akron', group:'H' },
   // Group G
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'23:00', home:'Egypt', away:'Iran', homeFlag:'🇪🇬', awayFlag:'🇮🇷', venue:'Lumen Field', group:'G' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'23:00', home:'New Zealand', away:'Belgium', homeFlag:'🇳🇿', awayFlag:'🇧🇪', venue:'BC Place', group:'G' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'20:00', home:'Egypt', away:'Iran', homeFlag:'🇪🇬', awayFlag:'🇮🇷', venue:'Lumen Field', group:'G' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 26', time:'20:00', home:'New Zealand', away:'Belgium', homeFlag:'🇳🇿', awayFlag:'🇧🇪', venue:'BC Place', group:'G' },
   // Group L
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'17:00', home:'Panama', away:'England', homeFlag:'🇵🇦', awayFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', venue:'MetLife Stadium', group:'L' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'17:00', home:'Croatia', away:'Ghana', homeFlag:'🇭🇷', awayFlag:'🇬🇭', venue:'Lincoln Financial Field', group:'L' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'14:00', home:'Panama', away:'England', homeFlag:'🇵🇦', awayFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', venue:'MetLife Stadium', group:'L' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'14:00', home:'Croatia', away:'Ghana', homeFlag:'🇭🇷', awayFlag:'🇬🇭', venue:'Lincoln Financial Field', group:'L' },
   // Group K
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'19:30', home:'Colombia', away:'Portugal', homeFlag:'🇨🇴', awayFlag:'🇵🇹', venue:'Hard Rock Stadium', group:'K' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'19:30', home:'DR Congo', away:'Uzbekistan', homeFlag:'🇨🇩', awayFlag:'🇺🇿', venue:'Mercedes-Benz Stadium', group:'K' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'16:30', home:'Colombia', away:'Portugal', homeFlag:'🇨🇴', awayFlag:'🇵🇹', venue:'Hard Rock Stadium', group:'K' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'16:30', home:'DR Congo', away:'Uzbekistan', homeFlag:'🇨🇩', awayFlag:'🇺🇿', venue:'Mercedes-Benz Stadium', group:'K' },
   // Group J
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'22:00', home:'Algeria', away:'Austria', homeFlag:'🇩🇿', awayFlag:'🇦🇹', venue:'Arrowhead Stadium', group:'J' },
-  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'22:00', home:'Jordan', away:'Argentina', homeFlag:'🇯🇴', awayFlag:'🇦🇷', venue:'AT&T Stadium', group:'J' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'19:00', home:'Algeria', away:'Austria', homeFlag:'🇩🇿', awayFlag:'🇦🇹', venue:'Arrowhead Stadium', group:'J' },
+  { phase:'Group Stage', round:'Matchday 3', date:'Jun 27', time:'19:00', home:'Jordan', away:'Argentina', homeFlag:'🇯🇴', awayFlag:'🇦🇷', venue:'AT&T Stadium', group:'J' },
   // ── ROUND OF 32 ──────────────────────────────────────────────────────
-  { phase:'Round of 32', round:'R32', date:'Jun 28', time:'15:00', home:'1A', away:'3D/E/F', homeFlag:'🏆', awayFlag:'🥉', venue:'SoFi Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jun 29', time:'13:00', home:'1B', away:'3G/H/I', homeFlag:'🏆', awayFlag:'🥉', venue:'NRG Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jun 29', time:'16:30', home:'1C', away:'3A/B/L', homeFlag:'🏆', awayFlag:'🥉', venue:'Gillette Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jun 29', time:'21:00', home:'2A', away:'2C', homeFlag:'🥈', awayFlag:'🥈', venue:'Estadio BBVA', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jun 30', time:'13:00', home:'1D', away:'3J/K', homeFlag:'🏆', awayFlag:'🥉', venue:'AT&T Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jun 30', time:'17:00', home:'2B', away:'2D', homeFlag:'🥈', awayFlag:'🥈', venue:'MetLife Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jun 30', time:'21:00', home:'1E', away:'3A/C', homeFlag:'🏆', awayFlag:'🥉', venue:'Estadio Azteca', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 1', time:'12:00', home:'2E', away:'2F', homeFlag:'🥈', awayFlag:'🥈', venue:'Mercedes-Benz Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 1', time:'16:00', home:'1F', away:'3B/J', homeFlag:'🏆', awayFlag:'🥉', venue:'Lumen Field', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 1', time:'20:00', home:'2G', away:'2H', homeFlag:'🥈', awayFlag:'🥈', venue:"Levi's Stadium", group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 2', time:'15:00', home:'1G', away:'3C/D', homeFlag:'🏆', awayFlag:'🥉', venue:'SoFi Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 2', time:'19:00', home:'2I', away:'2J', homeFlag:'🥈', awayFlag:'🥈', venue:'BMO Field', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 2', time:'23:00', home:'1H', away:'3K/L', homeFlag:'🏆', awayFlag:'🥉', venue:'BC Place', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 3', time:'14:00', home:'2K', away:'2L', homeFlag:'🥈', awayFlag:'🥈', venue:'AT&T Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 3', time:'18:00', home:'1I', away:'3E/F', homeFlag:'🏆', awayFlag:'🥉', venue:'Hard Rock Stadium', group:'' },
-  { phase:'Round of 32', round:'R32', date:'Jul 3', time:'21:30', home:'1J/K/L', away:'1L', homeFlag:'🏆', awayFlag:'🏆', venue:'Arrowhead Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jun 28', time:'12:00', home:'1A', away:'3D/E/F', homeFlag:'🏆', awayFlag:'🥉', venue:'SoFi Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jun 29', time:'10:00', home:'1B', away:'3G/H/I', homeFlag:'🏆', awayFlag:'🥉', venue:'NRG Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jun 29', time:'13:30', home:'1C', away:'3A/B/L', homeFlag:'🏆', awayFlag:'🥉', venue:'Gillette Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jun 29', time:'18:00', home:'2A', away:'2C', homeFlag:'🥈', awayFlag:'🥈', venue:'Estadio BBVA', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jun 30', time:'10:00', home:'1D', away:'3J/K', homeFlag:'🏆', awayFlag:'🥉', venue:'AT&T Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jun 30', time:'14:00', home:'2B', away:'2D', homeFlag:'🥈', awayFlag:'🥈', venue:'MetLife Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jun 30', time:'18:00', home:'1E', away:'3A/C', homeFlag:'🏆', awayFlag:'🥉', venue:'Estadio Azteca', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 1', time:'09:00', home:'2E', away:'2F', homeFlag:'🥈', awayFlag:'🥈', venue:'Mercedes-Benz Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 1', time:'13:00', home:'1F', away:'3B/J', homeFlag:'🏆', awayFlag:'🥉', venue:'Lumen Field', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 1', time:'17:00', home:'2G', away:'2H', homeFlag:'🥈', awayFlag:'🥈', venue:"Levi's Stadium", group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 2', time:'12:00', home:'1G', away:'3C/D', homeFlag:'🏆', awayFlag:'🥉', venue:'SoFi Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 2', time:'16:00', home:'2I', away:'2J', homeFlag:'🥈', awayFlag:'🥈', venue:'BMO Field', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 2', time:'20:00', home:'1H', away:'3K/L', homeFlag:'🏆', awayFlag:'🥉', venue:'BC Place', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 3', time:'11:00', home:'2K', away:'2L', homeFlag:'🥈', awayFlag:'🥈', venue:'AT&T Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 3', time:'15:00', home:'1I', away:'3E/F', homeFlag:'🏆', awayFlag:'🥉', venue:'Hard Rock Stadium', group:'' },
+  { phase:'Round of 32', round:'R32', date:'Jul 3', time:'18:30', home:'1J/K/L', away:'1L', homeFlag:'🏆', awayFlag:'🏆', venue:'Arrowhead Stadium', group:'' },
   // ── ROUND OF 16 ──────────────────────────────────────────────────────
-  { phase:'Round of 16', round:'R16', date:'Jul 4', time:'13:00', home:'W R32-1', away:'W R32-2', homeFlag:'🏆', awayFlag:'🏆', venue:'NRG Stadium', group:'' },
-  { phase:'Round of 16', round:'R16', date:'Jul 4', time:'17:00', home:'W R32-3', away:'W R32-4', homeFlag:'🏆', awayFlag:'🏆', venue:'Lincoln Financial Field', group:'' },
-  { phase:'Round of 16', round:'R16', date:'Jul 5', time:'16:00', home:'W R32-5', away:'W R32-6', homeFlag:'🏆', awayFlag:'🏆', venue:'MetLife Stadium', group:'' },
-  { phase:'Round of 16', round:'R16', date:'Jul 5', time:'20:00', home:'W R32-7', away:'W R32-8', homeFlag:'🏆', awayFlag:'🏆', venue:'Estadio Azteca', group:'' },
-  { phase:'Round of 16', round:'R16', date:'Jul 6', time:'15:00', home:'W R32-9', away:'W R32-10', homeFlag:'🏆', awayFlag:'🏆', venue:'AT&T Stadium', group:'' },
-  { phase:'Round of 16', round:'R16', date:'Jul 6', time:'20:00', home:'W R32-11', away:'W R32-12', homeFlag:'🏆', awayFlag:'🏆', venue:'Lumen Field', group:'' },
-  { phase:'Round of 16', round:'R16', date:'Jul 7', time:'12:00', home:'W R32-13', away:'W R32-14', homeFlag:'🏆', awayFlag:'🏆', venue:'Mercedes-Benz Stadium', group:'' },
-  { phase:'Round of 16', round:'R16', date:'Jul 7', time:'16:00', home:'W R32-15', away:'W R32-16', homeFlag:'🏆', awayFlag:'🏆', venue:'BC Place', group:'' },
+  { phase:'Round of 16', round:'R16', date:'Jul 4', time:'10:00', home:'W R32-1', away:'W R32-2', homeFlag:'🏆', awayFlag:'🏆', venue:'NRG Stadium', group:'' },
+  { phase:'Round of 16', round:'R16', date:'Jul 4', time:'14:00', home:'W R32-3', away:'W R32-4', homeFlag:'🏆', awayFlag:'🏆', venue:'Lincoln Financial Field', group:'' },
+  { phase:'Round of 16', round:'R16', date:'Jul 5', time:'13:00', home:'W R32-5', away:'W R32-6', homeFlag:'🏆', awayFlag:'🏆', venue:'MetLife Stadium', group:'' },
+  { phase:'Round of 16', round:'R16', date:'Jul 5', time:'17:00', home:'W R32-7', away:'W R32-8', homeFlag:'🏆', awayFlag:'🏆', venue:'Estadio Azteca', group:'' },
+  { phase:'Round of 16', round:'R16', date:'Jul 6', time:'12:00', home:'W R32-9', away:'W R32-10', homeFlag:'🏆', awayFlag:'🏆', venue:'AT&T Stadium', group:'' },
+  { phase:'Round of 16', round:'R16', date:'Jul 6', time:'17:00', home:'W R32-11', away:'W R32-12', homeFlag:'🏆', awayFlag:'🏆', venue:'Lumen Field', group:'' },
+  { phase:'Round of 16', round:'R16', date:'Jul 7', time:'09:00', home:'W R32-13', away:'W R32-14', homeFlag:'🏆', awayFlag:'🏆', venue:'Mercedes-Benz Stadium', group:'' },
+  { phase:'Round of 16', round:'R16', date:'Jul 7', time:'13:00', home:'W R32-15', away:'W R32-16', homeFlag:'🏆', awayFlag:'🏆', venue:'BC Place', group:'' },
   // ── QUARTERFINALS ────────────────────────────────────────────────────
-  { phase:'Quarterfinals', round:'QF', date:'Jul 9', time:'16:00', home:'W R16-1', away:'W R16-2', homeFlag:'🏆', awayFlag:'🏆', venue:'Gillette Stadium', group:'' },
-  { phase:'Quarterfinals', round:'QF', date:'Jul 10', time:'15:00', home:'W R16-3', away:'W R16-4', homeFlag:'🏆', awayFlag:'🏆', venue:'SoFi Stadium', group:'' },
-  { phase:'Quarterfinals', round:'QF', date:'Jul 11', time:'17:00', home:'W R16-5', away:'W R16-6', homeFlag:'🏆', awayFlag:'🏆', venue:'Hard Rock Stadium', group:'' },
-  { phase:'Quarterfinals', round:'QF', date:'Jul 11', time:'21:00', home:'W R16-7', away:'W R16-8', homeFlag:'🏆', awayFlag:'🏆', venue:'Arrowhead Stadium', group:'' },
+  { phase:'Quarterfinals', round:'QF', date:'Jul 9', time:'13:00', home:'W R16-1', away:'W R16-2', homeFlag:'🏆', awayFlag:'🏆', venue:'Gillette Stadium', group:'' },
+  { phase:'Quarterfinals', round:'QF', date:'Jul 10', time:'12:00', home:'W R16-3', away:'W R16-4', homeFlag:'🏆', awayFlag:'🏆', venue:'SoFi Stadium', group:'' },
+  { phase:'Quarterfinals', round:'QF', date:'Jul 11', time:'14:00', home:'W R16-5', away:'W R16-6', homeFlag:'🏆', awayFlag:'🏆', venue:'Hard Rock Stadium', group:'' },
+  { phase:'Quarterfinals', round:'QF', date:'Jul 11', time:'18:00', home:'W R16-7', away:'W R16-8', homeFlag:'🏆', awayFlag:'🏆', venue:'Arrowhead Stadium', group:'' },
   // ── SEMIFINALS ───────────────────────────────────────────────────────
-  { phase:'Semifinals', round:'SF', date:'Jul 14', time:'15:00', home:'W QF-1', away:'W QF-2', homeFlag:'🏆', awayFlag:'🏆', venue:'AT&T Stadium', group:'' },
-  { phase:'Semifinals', round:'SF', date:'Jul 15', time:'15:00', home:'W QF-3', away:'W QF-4', homeFlag:'🏆', awayFlag:'🏆', venue:'Mercedes-Benz Stadium', group:'' },
+  { phase:'Semifinals', round:'SF', date:'Jul 14', time:'12:00', home:'W QF-1', away:'W QF-2', homeFlag:'🏆', awayFlag:'🏆', venue:'AT&T Stadium', group:'' },
+  { phase:'Semifinals', round:'SF', date:'Jul 15', time:'12:00', home:'W QF-3', away:'W QF-4', homeFlag:'🏆', awayFlag:'🏆', venue:'Mercedes-Benz Stadium', group:'' },
   // ── 3RD PLACE ────────────────────────────────────────────────────────
-  { phase:'3rd Place Play-off', round:'3rd', date:'Jul 18', time:'17:00', home:'L SF-1', away:'L SF-2', homeFlag:'🥉', awayFlag:'🥉', venue:'Hard Rock Stadium', group:'' },
+  { phase:'3rd Place Play-off', round:'3rd', date:'Jul 18', time:'14:00', home:'L SF-1', away:'L SF-2', homeFlag:'🥉', awayFlag:'🥉', venue:'Hard Rock Stadium', group:'' },
   // ── FINAL ────────────────────────────────────────────────────────────
-  { phase:'⭐ FINAL ⭐', round:'Final', date:'Jul 19', time:'15:00', home:'W SF-1', away:'W SF-2', homeFlag:'🏆', awayFlag:'🏆', venue:'MetLife Stadium', group:'', featured:true }
+  { phase:'⭐ FINAL ⭐', round:'Final', date:'Jul 19', time:'12:00', home:'W SF-1', away:'W SF-2', homeFlag:'🏆', awayFlag:'🏆', venue:'MetLife Stadium', group:'', featured:true }
 ];
 
 const TEAMS_DATA = [
