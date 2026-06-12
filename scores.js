@@ -44,6 +44,32 @@ const FINAL_SCORES = [
 
 const SCORES_UPDATED = '2026-06-11';
 
+// 12 distinct header gradient colours for groups A → L
+var GRP_COLORS = [
+  'linear-gradient(135deg,#0d2a5c,#0a3a28)',  // A - navy / forest
+  'linear-gradient(135deg,#3a0d6e,#1a0840)',  // B - violet
+  'linear-gradient(135deg,#0d4a1a,#063a28)',  // C - forest green
+  'linear-gradient(135deg,#6e1010,#4a0808)',  // D - crimson
+  'linear-gradient(135deg,#5c3a0d,#3a2508)',  // E - amber
+  'linear-gradient(135deg,#0d205c,#0a0a4a)',  // F - royal blue
+  'linear-gradient(135deg,#5c0d48,#3a0830)',  // G - magenta
+  'linear-gradient(135deg,#1a0d6e,#0d0a5a)',  // H - indigo
+  'linear-gradient(135deg,#0d4a4a,#083038)',  // I - teal
+  'linear-gradient(135deg,#6e2a0d,#4a1808)',  // J - burnt orange
+  'linear-gradient(135deg,#10185c,#080a4a)',  // K - midnight
+  'linear-gradient(135deg,#0d5a2a,#083a1a)',  // L - emerald
+];
+
+// Knockout round schedule (key must match FINAL_SCORES round field)
+var KO_ROUNDS = [
+  { key:'Round of 32',   zh:'32強賽',      en:'Round of 32',    dates:'Jul 2–5',   total:16 },
+  { key:'Round of 16',   zh:'16強賽',      en:'Round of 16',    dates:'Jul 6–8',   total:8  },
+  { key:'Quarter-final', zh:'八強賽 (QF)', en:'Quarter-finals', dates:'Jul 10–11', total:4  },
+  { key:'Semi-final',    zh:'準決賽 (SF)', en:'Semi-finals',    dates:'Jul 14–15', total:2  },
+  { key:'3rd Place',     zh:'季軍戰',      en:'3rd Place',      dates:'Jul 21',    total:1  },
+  { key:'Final',         zh:'🏆 決賽',     en:'🏆 The Final',   dates:'Jul 23',    total:1  },
+];
+
 (function () {
   function renderUpdatedTag() {
     var tag = document.getElementById('updated-tag');
@@ -125,8 +151,9 @@ const SCORES_UPDATED = '2026-06-11';
     var st = computeStandings();
     var isEn = getLang() === 'en';
 
-    grid.innerHTML = GROUPS.map(function(g) {
+    grid.innerHTML = GROUPS.map(function(g, gi) {
       var label = t('idx_group_label', { id: g.id });
+      var hdrStyle = 'style="background:' + (GRP_COLORS[gi] || GRP_COLORS[0]) + '"';
       var sorted = g.teams.map(function(t) {
         return Object.assign({ name: t.name },
           st[t.name] || { flag:t.flag, mp:0,w:0,d:0,l:0,gf:0,ga:0,pts:0 });
@@ -151,7 +178,7 @@ const SCORES_UPDATED = '2026-06-11';
       }).join('');
 
       return '<div class="group-block">' +
-        '<div class="group-block-hdr">' + label + '</div>' +
+        '<div class="group-block-hdr" ' + hdrStyle + '>' + label + '</div>' +
         '<div class="table-scroll"><table class="stand-tbl">' +
           '<thead><tr class="stand-hrow">' +
             '<th>#</th><th class="th-team">' + (isEn ? 'Team' : '球隊') + '</th>' +
@@ -166,7 +193,70 @@ const SCORES_UPDATED = '2026-06-11';
     }).join('');
   }
 
+  // ── Knockout stage ─────────────────────────────────────
+  function renderKnockout() {
+    var area = document.getElementById('knockout-area');
+    if (!area) return;
+    var isEn = getLang() === 'en';
+
+    // Collect results grouped by knockout round key
+    var koMap = {};
+    FINAL_SCORES.forEach(function(m) {
+      KO_ROUNDS.forEach(function(r) {
+        if (m.round === r.key) {
+          if (!koMap[r.key]) koMap[r.key] = [];
+          koMap[r.key].push(m);
+        }
+      });
+    });
+
+    var hasAny = KO_ROUNDS.some(function(r) { return koMap[r.key] && koMap[r.key].length > 0; });
+
+    var roundCards = KO_ROUNDS.map(function(r) {
+      var isFinal = r.key === 'Final';
+      var label = isEn ? r.en : r.zh;
+      var results = koMap[r.key] || [];
+      var matchHTML = results.length > 0
+        ? results.map(function(m) {
+            return '<div class="ko-match">' +
+              '<span class="ko-team">' + m.homeFlag + ' ' + tx(m.home) + '</span>' +
+              '<span class="ko-score">' + m.homeScore + ' – ' + m.awayScore + '</span>' +
+              '<span class="ko-team right">' + tx(m.away) + ' ' + m.awayFlag + '</span>' +
+              '</div>';
+          }).join('')
+        : '<div class="ko-tbd">🔒 ' + r.total + (isEn ? ' matches — pending' : ' 場賽事 — 待確定') + '</div>';
+
+      return '<div class="ko-round-card' + (isFinal ? ' ko-final' : '') + '">' +
+        '<div class="ko-round-hdr"><span>' + label + '</span><span class="ko-dates">' + r.dates + '</span></div>' +
+        '<div class="ko-round-body">' + matchHTML + '</div>' +
+        '</div>';
+    }).join('');
+
+    var banner = !hasAny
+      ? '<div class="ko-coming-soon">' +
+          '<div class="ko-icon">🏆</div>' +
+          '<p>' + (isEn ? 'Knockout stage begins July 2, 2026' : '淘汰賽將於 2026年7月2日 開始') + '</p>' +
+          '<p style="font-size:0.76rem;margin-top:0.5rem;color:var(--muted)">' +
+            (isEn ? 'Group stage results will determine the bracket.' : '小組賽結果將決定淘汰賽對陣。') + '</p>' +
+          '</div>'
+      : '';
+
+    area.innerHTML = banner + '<div class="ko-grid">' + roundCards + '</div>';
+  }
+
+  // ── Tab switching ───────────────────────────────────────
+  document.querySelectorAll('[data-stab]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('[data-stab]').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.tab-pane').forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var pane = document.getElementById('stab-' + btn.dataset.stab);
+      if (pane) pane.classList.add('active');
+    });
+  });
+
   renderUpdatedTag();
   renderStandings();
   renderScores();
+  renderKnockout();
 })();

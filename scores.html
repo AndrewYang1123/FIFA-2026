@@ -173,6 +173,75 @@
     @media (max-width: 600px) {
       .standings-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── Knockout stage ────────────────────────────────── */
+    .ko-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .ko-round-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .ko-round-card.ko-final {
+      border-color: var(--gold);
+      box-shadow: 0 0 20px rgba(255,215,0,0.12);
+      grid-column: 1 / -1;
+    }
+    .ko-round-hdr {
+      background: linear-gradient(135deg, #1a2e5c, #0d3a28);
+      padding: 0.65rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--gold);
+    }
+    .ko-final .ko-round-hdr { background: linear-gradient(135deg, #5a3800, #3a2600); }
+    .ko-dates { font-size: 0.72rem; font-weight: 400; color: var(--muted); }
+    .ko-round-body { padding: 0.25rem 0; }
+    .ko-match {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.84rem;
+    }
+    .ko-match:last-child { border-bottom: none; }
+    .ko-team { flex: 1; font-weight: 600; }
+    .ko-team.right { text-align: right; }
+    .ko-score {
+      color: var(--gold);
+      font-weight: 900;
+      padding: 0.1rem 0.55rem;
+      background: rgba(255,215,0,0.08);
+      border-radius: 6px;
+      white-space: nowrap;
+      font-size: 0.95rem;
+    }
+    .ko-tbd {
+      padding: 1.1rem 1.25rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+    .ko-coming-soon {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .ko-coming-soon .ko-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    @media (max-width: 600px) {
+      .ko-grid { grid-template-columns: 1fr; }
+      .ko-round-card.ko-final { grid-column: auto; }
+    }
   </style>
 </head>
 <body data-page-title="score_title">
@@ -198,18 +267,33 @@
 
 <div class="container">
 
-  <!-- ── Group standings ─────────────────────────────── -->
-  <div class="section-title" data-i18n="score_section_standings">📊 小組積分榜</div>
-  <div class="qualify-legend">
-    <span class="qualify-bar"></span>
-    <span data-i18n="score_qualify_legend">綠色側邊欄 = 晉級小組第16強（前兩名）</span>
-  </div>
-  <div class="standings-grid" id="standings-grid"></div>
+  <div class="updated-tag" id="updated-tag" style="margin-bottom:1rem"></div>
 
-  <!-- ── Latest results ──────────────────────────────── -->
-  <div class="section-title" data-i18n="score_section_latest">📋 最新賽果</div>
-  <div class="updated-tag" id="updated-tag"></div>
-  <div id="scores-area"></div>
+  <!-- ── Score page tabs ─────────────────────────────── -->
+  <div class="tabs">
+    <button class="tab-btn active" data-stab="results">📋 最新賽果</button>
+    <button class="tab-btn" data-stab="standings">📊 小組積分</button>
+    <button class="tab-btn" data-stab="knockout">🏆 淘汰賽</button>
+  </div>
+
+  <!-- Tab: Latest results -->
+  <div class="tab-pane active" id="stab-results">
+    <div id="scores-area"></div>
+  </div>
+
+  <!-- Tab: Group standings -->
+  <div class="tab-pane" id="stab-standings">
+    <div class="qualify-legend">
+      <span class="qualify-bar"></span>
+      <span data-i18n="score_qualify_legend">綠色側邊欄 = 晉級小組第16強（前兩名）</span>
+    </div>
+    <div class="standings-grid" id="standings-grid"></div>
+  </div>
+
+  <!-- Tab: Knockout stage -->
+  <div class="tab-pane" id="stab-knockout">
+    <div id="knockout-area"></div>
+  </div>
 
   <div class="note-box" data-i18n="score_note">📡 比分資料每日自動擷取並更新，若有錯誤或延遲，請以 FIFA 官方網站 (fifa.com) 公告為準。</div>
 </div>
