@@ -176,6 +176,70 @@
       color: var(--muted); font-size: 0.88rem;
     }
     .comment-loading { text-align:center; color:var(--muted); padding:1rem; font-size:0.85rem; }
+    /* Reply button */
+    .reply-btn {
+      margin-left: 0.6rem;
+      background: none; border: none;
+      color: var(--muted); font-size: 0.75rem;
+      cursor: pointer; padding: 0.1rem 0.3rem;
+      border-radius: 4px; transition: color 0.2s;
+    }
+    .reply-btn:hover { color: var(--accent); }
+    /* Reply form */
+    .reply-form {
+      margin-top: 0.75rem;
+      padding: 0.75rem;
+      background: var(--bg3);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .reply-form input, .reply-form textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.5rem 0.7rem;
+      color: var(--text);
+      font-size: 0.84rem;
+      font-family: inherit;
+      width: 100%; box-sizing: border-box;
+    }
+    .reply-form input:focus, .reply-form textarea:focus { outline: none; border-color: var(--accent); }
+    .reply-form textarea { resize: vertical; min-height: 60px; }
+    .reply-submit-btn {
+      align-self: flex-end;
+      background: var(--accent); color: #000;
+      border: none; border-radius: 6px;
+      padding: 0.4rem 1.1rem;
+      font-weight: 800; font-size: 0.82rem;
+      cursor: pointer; transition: opacity 0.2s;
+    }
+    .reply-submit-btn:hover { opacity: 0.85; }
+    .reply-submit-btn:disabled { opacity: 0.45; cursor: default; }
+    /* Replies list */
+    .replies-list {
+      margin-top: 0.75rem;
+      padding-left: 0.75rem;
+      border-left: 2px solid var(--border);
+      display: flex; flex-direction: column; gap: 0.65rem;
+    }
+    .reply-item { display: flex; gap: 0.6rem; align-items: flex-start; }
+    .reply-avatar {
+      flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.75rem; color: #000;
+    }
+    .reply-body { flex: 1; }
+    .reply-meta { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.2rem; }
+    .reply-name { font-weight: 800; font-size: 0.82rem; color: var(--text); }
+    .reply-time { font-size: 0.7rem; color: var(--muted); }
+    .reply-msg  { font-size: 0.84rem; color: var(--text); line-height: 1.55; }
+    /* Mobile */
+    @media (max-width: 600px) {
+      .discuss-box { padding: 1rem; }
+      .comment-avatar { width: 30px; height: 30px; font-size: 0.82rem; }
+    }
 
     /* ── Guidelines ───────────────────────────────────────── */
     .rules-box {
@@ -401,6 +465,29 @@ function timeAgo(ts) {
   return Math.floor(diff/86400) + ' 天前';
 }
 
+function renderReplies(replies) {
+  if (!replies) return '';
+  var entries = Object.entries(replies).sort(function(a, b) {
+    return (a[1].timestamp || 0) - (b[1].timestamp || 0);
+  });
+  return '<div class="replies-list">' +
+    entries.map(function(re) {
+      var rc = re[1];
+      var rName = (rc.name || '').trim() || '匿名球迷';
+      return '<div class="reply-item">' +
+        '<div class="reply-avatar" style="background:' + avatarColor(rName) + '">' + rName.charAt(0).toUpperCase() + '</div>' +
+        '<div class="reply-body">' +
+          '<div class="reply-meta">' +
+            '<span class="reply-name">' + rName + '</span>' +
+            '<span class="reply-time">' + timeAgo(rc.timestamp || 0) + '</span>' +
+          '</div>' +
+          '<div class="reply-msg">' + (rc.message || '').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>') + '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('') +
+  '</div>';
+}
+
 function renderComments(data) {
   var list = document.getElementById('comment-list');
   var divider = document.getElementById('comment-divider');
@@ -411,27 +498,67 @@ function renderComments(data) {
     return;
   }
 
-  // Firebase returns object; convert to array sorted newest first
-  var items = Object.values(data).sort(function(a, b) { return b.timestamp - a.timestamp; });
-  divider.textContent = items.length + ' 則留言 · Comments';
+  // Use entries to keep Firebase keys for reply API calls
+  var entries = Object.entries(data).sort(function(a, b) {
+    return (b[1].timestamp || 0) - (a[1].timestamp || 0);
+  });
+  divider.textContent = entries.length + ' 則留言 · Comments';
 
-  list.innerHTML = items.map(function(c) {
+  list.innerHTML = entries.map(function(entry) {
+    var id = entry[0];
+    var c  = entry[1];
     var displayName = (c.name || '').trim() || '匿名球迷';
-    var initial = displayName.charAt(0).toUpperCase();
-    var color = avatarColor(displayName);
-    var ago = timeAgo(c.timestamp || 0);
-    var msg = (c.message || '').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
-    return '<div class="comment-item">' +
-      '<div class="comment-avatar" style="background:' + color + '">' + initial + '</div>' +
+    var msg = (c.message || '').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
+    return '<div class="comment-item" data-id="' + id + '">' +
+      '<div class="comment-avatar" style="background:' + avatarColor(displayName) + '">' + displayName.charAt(0).toUpperCase() + '</div>' +
       '<div class="comment-body">' +
         '<div class="comment-meta">' +
           '<span class="comment-name">' + displayName + '</span>' +
-          '<span class="comment-time">' + ago + '</span>' +
+          '<span class="comment-time">' + timeAgo(c.timestamp || 0) + '</span>' +
+          '<button class="reply-btn" onclick="toggleReplyForm(\'' + id + '\')">↩ 回覆</button>' +
         '</div>' +
         '<div class="comment-msg">' + msg + '</div>' +
+        renderReplies(c.replies) +
+        '<div class="reply-form" id="rf-' + id + '" style="display:none">' +
+          '<input type="text" class="reply-name-input" maxlength="40" placeholder="你的名字（可選）"/>' +
+          '<textarea class="reply-msg-input" maxlength="300" placeholder="回覆內容…"></textarea>' +
+          '<button class="reply-submit-btn" onclick="submitReply(\'' + id + '\', this)">送出回覆</button>' +
+        '</div>' +
       '</div>' +
     '</div>';
   }).join('');
+}
+
+function toggleReplyForm(commentId) {
+  var form = document.getElementById('rf-' + commentId);
+  if (!form) return;
+  form.style.display = form.style.display === 'none' ? 'flex' : 'none';
+  if (form.style.display === 'flex') {
+    form.style.flexDirection = 'column';
+    form.querySelector('.reply-name-input').focus();
+  }
+}
+
+function submitReply(commentId, btn) {
+  var form = document.getElementById('rf-' + commentId);
+  var nameVal = form.querySelector('.reply-name-input').value.trim();
+  var msgVal  = form.querySelector('.reply-msg-input').value.trim();
+  if (!msgVal) { form.querySelector('.reply-msg-input').focus(); return; }
+
+  btn.disabled = true;
+  btn.textContent = '送出中…';
+
+  fetch(FB_URL + '/comments/' + commentId + '/replies.json', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: nameVal || '匿名球迷', message: msgVal, timestamp: Date.now() })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function() { loadComments(); })
+  .catch(function() {
+    btn.disabled = false;
+    btn.textContent = '送出回覆';
+  });
 }
 
 function loadComments() {

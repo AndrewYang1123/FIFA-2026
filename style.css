@@ -95,8 +95,18 @@ nav a.active { color: var(--accent); }
   background: var(--accent);
   color: #00261f;
 }
+/* Tablet ≤900px */
+@media (max-width: 900px) {
+  .analysis-grid { grid-template-columns: 1fr; }
+  .sw-row { grid-template-columns: 1fr; }
+}
+/* Tablet ≤768px */
 @media (max-width: 768px) {
   .lang-toggle button { padding: 0.3rem 0.55rem; font-size: 0.7rem; }
+  .teams-grid { grid-template-columns: 1fr; }
+  .prediction-hero { padding: 1.25rem 1rem; }
+  .prediction-hero h2 { font-size: 1.5rem; }
+  .history-table td, .history-table th { padding: 0.45rem 0.6rem; font-size: 0.82rem; }
 }
 
 /* HERO */
@@ -579,11 +589,52 @@ nav a.active { color: var(--accent); }
 }
 .stat-box .lbl { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
 
-/* RESPONSIVE */
-@media (max-width: 640px) {
+/* Mobile ≤600px */
+@media (max-width: 600px) {
+  /* Nav: horizontally scrollable single row */
+  nav { padding: 0 0.5rem; }
+  .nav-inner {
+    gap: 0.1rem;
+    height: auto;
+    min-height: 48px;
+    padding: 0.3rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-logo { flex-shrink: 0; font-size: 0.95rem; margin-right: 0.25rem; }
+  nav a { font-size: 0.68rem; padding: 0.26rem 0.42rem; flex-shrink: 0; }
+  .lang-toggle { flex-shrink: 0; }
+  .lang-toggle button { padding: 0.26rem 0.45rem; font-size: 0.66rem; }
+
+  /* Layout */
+  .container { padding: 1.25rem 0.75rem; }
+  .hero { padding: 2rem 0.75rem; }
+  .hero p { font-size: 0.9rem; }
+  .section-title { font-size: 1.1rem; }
+
+  /* Grids → single column */
+  .groups-grid, .matches-grid, .teams-grid, .analysis-grid { grid-template-columns: 1fr; }
+  .sw-row { grid-template-columns: 1fr; }
+  .lottery-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Stats strip: 3 per row */
+  .stats-strip { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .stat-box { padding: 0.75rem 0.5rem; }
+  .stat-box .num { font-size: 1.35rem; }
+  .stat-box .lbl { font-size: 0.68rem; }
+
+  /* Prediction */
   .podium { grid-template-columns: 1fr; }
-  .nav-inner { gap: 0.75rem; }
-  nav a { font-size: 0.75rem; padding: 0.3rem 0.5rem; }
+  .podium-flag { font-size: 2.5rem; }
+  .prob-bar-wrap { width: 80px; }
+  .prob-pct { width: 38px; font-size: 0.78rem; }
+  .prob-name { font-size: 0.82rem; }
+
+  /* Match cards */
+  .match-team { font-size: 0.85rem; }
 }
 
 /* SCROLL */
