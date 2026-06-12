@@ -112,6 +112,67 @@
       line-height: 1.7;
       margin-top: 1rem;
     }
+
+    /* ── Group standings grid ──────────────────────── */
+    .standings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(430px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .group-block {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .group-block-hdr {
+      background: linear-gradient(135deg, #1a3a6e, #0d3a2e);
+      padding: 0.6rem 1rem;
+      font-weight: 900;
+      font-size: 0.88rem;
+      color: var(--gold);
+      letter-spacing: 0.4px;
+    }
+    .table-scroll { overflow-x: auto; }
+    .stand-tbl { width: 100%; border-collapse: collapse; }
+    .stand-hrow th {
+      background: var(--bg3);
+      color: var(--muted);
+      padding: 0.42rem 0.55rem;
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .stand-hrow .th-team { text-align: left; min-width: 120px; }
+    .stand-tbl .srow td {
+      padding: 0.52rem 0.55rem;
+      text-align: center;
+      font-size: 0.83rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .stand-tbl .srow:last-child td { border-bottom: none; }
+    .stand-tbl .srow:hover td { background: rgba(255,255,255,0.03); }
+    .stand-tbl .srow.qualify { border-left: 3px solid var(--accent); }
+    .stand-tbl .scol-pos { color: var(--muted); font-size: 0.76rem; width: 22px; }
+    .stand-tbl .scol-team { text-align: left; font-weight: 600; white-space: nowrap; padding-right: 0.75rem; }
+    .stand-tbl .scol-team span { margin-left: 0.28rem; }
+    .stand-tbl .scol-gd { color: var(--muted); font-size: 0.8rem; }
+    .stand-tbl .scol-pts { font-weight: 900; color: var(--gold); }
+    .qualify-legend {
+      font-size: 0.74rem; color: var(--muted);
+      margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .qualify-bar {
+      display: inline-block; width: 10px; height: 10px;
+      background: var(--accent); border-radius: 2px;
+    }
+    @media (max-width: 600px) {
+      .standings-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body data-page-title="score_title">
@@ -136,9 +197,18 @@
 </div>
 
 <div class="container">
+
+  <!-- ── Group standings ─────────────────────────────── -->
+  <div class="section-title" data-i18n="score_section_standings">📊 小組積分榜</div>
+  <div class="qualify-legend">
+    <span class="qualify-bar"></span>
+    <span data-i18n="score_qualify_legend">綠色側邊欄 = 晉級小組第16強（前兩名）</span>
+  </div>
+  <div class="standings-grid" id="standings-grid"></div>
+
+  <!-- ── Latest results ──────────────────────────────── -->
   <div class="section-title" data-i18n="score_section_latest">📋 最新賽果</div>
   <div class="updated-tag" id="updated-tag"></div>
-
   <div id="scores-area"></div>
 
   <div class="note-box" data-i18n="score_note">📡 比分資料每日自動擷取並更新，若有錯誤或延遲，請以 FIFA 官方網站 (fifa.com) 公告為準。</div>

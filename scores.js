@@ -30,15 +30,19 @@
    instead of an empty table.
    ============================================================ */
 
+// Shape of each entry (the daily job appends one per finished match):
+// { date:'Jun 11', round:'Matchday 1',
+//   home:'Mexico', homeFlag:'🇲🇽', homeScore:2,
+//   away:'South Africa', awayFlag:'🇿🇦', awayScore:0,
+//   venue:'SoFi Stadium' }
 const FINAL_SCORES = [
-  // Populated automatically by the daily score-update job.
-  // Example of what an entry will look like once added:
-  // { date: 'Jun 11', round: 'Matchday 1', home: 'Mexico', away: 'Poland',
-  //   homeFlag: '🇲🇽', awayFlag: '🇵🇱', homeScore: 2, awayScore: 1,
-  //   venue: 'Estadio Azteca' }
+  { date:'Jun 11', round:'Matchday 1',
+    home:'Mexico',       homeFlag:'🇲🇽', homeScore:2,
+    away:'South Africa', awayFlag:'🇿🇦', awayScore:0,
+    venue:'Estadio Azteca' }
 ];
 
-const SCORES_UPDATED = '2026-06-05';
+const SCORES_UPDATED = '2026-06-11';
 
 (function () {
   function renderUpdatedTag() {
@@ -94,6 +98,75 @@ const SCORES_UPDATED = '2026-06-05';
       </div>`;
   }
 
+  // ── Group standings ────────────────────────────────────────
+  function computeStandings() {
+    var data = {};
+    GROUPS.forEach(function(g) {
+      g.teams.forEach(function(t) {
+        data[t.name] = { groupId:g.id, flag:t.flag, mp:0, w:0, d:0, l:0, gf:0, ga:0, pts:0 };
+      });
+    });
+    FINAL_SCORES.forEach(function(m) {
+      var h = data[m.home], a = data[m.away];
+      if (!h || !a || h.groupId !== a.groupId) return;
+      h.mp++; a.mp++;
+      h.gf += m.homeScore; h.ga += m.awayScore;
+      a.gf += m.awayScore; a.ga += m.homeScore;
+      if (m.homeScore > m.awayScore)       { h.w++; h.pts += 3; a.l++; }
+      else if (m.homeScore === m.awayScore) { h.d++; h.pts++;    a.d++; a.pts++; }
+      else                                 { h.l++;              a.w++; a.pts += 3; }
+    });
+    return data;
+  }
+
+  function renderStandings() {
+    var grid = document.getElementById('standings-grid');
+    if (!grid || typeof GROUPS === 'undefined') return;
+    var st = computeStandings();
+    var isEn = getLang() === 'en';
+
+    grid.innerHTML = GROUPS.map(function(g) {
+      var label = t('idx_group_label', { id: g.id });
+      var sorted = g.teams.map(function(t) {
+        return Object.assign({ name: t.name },
+          st[t.name] || { flag:t.flag, mp:0,w:0,d:0,l:0,gf:0,ga:0,pts:0 });
+      }).sort(function(a, b) {
+        if (b.pts !== a.pts) return b.pts - a.pts;
+        var gd = (b.gf - b.ga) - (a.gf - a.ga);
+        if (gd !== 0) return gd;
+        if (b.gf !== a.gf) return b.gf - a.gf;
+        return a.name < b.name ? -1 : 1;
+      });
+
+      var rows = sorted.map(function(tm, i) {
+        var gd = tm.gf - tm.ga;
+        return '<tr class="srow' + (i < 2 ? ' qualify' : '') + '">' +
+          '<td class="scol-pos">' + (i + 1) + '</td>' +
+          '<td class="scol-team">' + tm.flag + ' <span>' + tm.name + '</span></td>' +
+          '<td>' + tm.mp + '</td><td>' + tm.w + '</td><td>' + tm.d + '</td><td>' + tm.l + '</td>' +
+          '<td>' + tm.gf + '</td><td>' + tm.ga + '</td>' +
+          '<td class="scol-gd">' + (gd > 0 ? '+' : '') + gd + '</td>' +
+          '<td class="scol-pts">' + tm.pts + '</td>' +
+          '</tr>';
+      }).join('');
+
+      return '<div class="group-block">' +
+        '<div class="group-block-hdr">' + label + '</div>' +
+        '<div class="table-scroll"><table class="stand-tbl">' +
+          '<thead><tr class="stand-hrow">' +
+            '<th>#</th><th class="th-team">' + (isEn ? 'Team' : '球隊') + '</th>' +
+            '<th title="Matches Played">MP</th><th title="Wins">W</th>' +
+            '<th title="Draws">D</th><th title="Losses">L</th>' +
+            '<th title="Goals For">GF</th><th title="Goals Against">GA</th>' +
+            '<th title="Goal Difference">GD</th><th title="Points">Pts</th>' +
+          '</tr></thead>' +
+          '<tbody>' + rows + '</tbody>' +
+        '</table></div>' +
+      '</div>';
+    }).join('');
+  }
+
   renderUpdatedTag();
+  renderStandings();
   renderScores();
 })();

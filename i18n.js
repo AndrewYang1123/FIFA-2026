@@ -449,6 +449,8 @@
     score_hero_badge: { zh: `每日更新`, en: `Updated Daily` },
     score_hero_h1: { zh: `⚡ 各隊最終比分追蹤`, en: `⚡ Final Score Tracker` },
     score_hero_p: { zh: `賽事開打後（2026年6月11日起），本頁將每日自動更新所有完場賽事的最終比分`, en: `Once the tournament kicks off (from June 11, 2026), this page will be updated automatically every day with the final score of every completed match` },
+    score_section_standings: { zh: `📊 小組積分榜`, en: `📊 Group Standings` },
+    score_qualify_legend: { zh: `綠色側邊欄 = 晉級小組第16強（前兩名）`, en: `Green bar = qualified for Round of 16 (top 2 per group)` },
     score_section_latest: { zh: `📋 最新賽果`, en: `📋 Latest Results` },
     score_updated_label: { zh: `最後更新：{date}`, en: `Last updated: {date}` },
     score_empty_title: { zh: `🕐 賽事尚未開始`, en: `🕐 The Tournament Hasn't Started Yet` },
