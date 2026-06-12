@@ -238,6 +238,27 @@
       font-size: 0.9rem;
     }
     .ko-coming-soon .ko-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+    /* ── Match detail row (goals / cards / description) ── */
+    .match-detail {
+      padding: 0.55rem 1rem 0.8rem;
+      background: rgba(255,255,255,0.018);
+    }
+    .match-events {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 1.1rem;
+      font-size: 0.78rem;
+      margin-bottom: 0.45rem;
+    }
+    .match-events .evt-goal { color: var(--text); }
+    .match-events .evt-red  { color: #e05555; }
+    .match-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.65;
+      font-style: italic;
+    }
     @media (max-width: 600px) {
       .ko-grid { grid-template-columns: 1fr; }
       .ko-round-card.ko-final { grid-column: auto; }

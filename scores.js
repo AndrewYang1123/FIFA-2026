@@ -39,7 +39,25 @@ const FINAL_SCORES = [
   { date:'Jun 11', round:'Matchday 1',
     home:'Mexico',       homeFlag:'🇲🇽', homeScore:2,
     away:'South Africa', awayFlag:'🇿🇦', awayScore:0,
-    venue:'Estadio Azteca' }
+    venue:'Estadio Azteca',
+    goals:[
+      { team:'home', scorer:'Julián Quiñones', minute:"9'"  },
+      { team:'home', scorer:'Raúl Jiménez',    minute:"67'" },
+    ],
+    cards:[
+      { team:'away', player:'S. Sithole', minute:"49'",   type:'red' },
+      { team:'away', player:'T. Zwane',   minute:"84'",   type:'red' },
+      { team:'home', player:'C. Montes',  minute:"90+2'", type:'red' },
+    ],
+    description:
+      '墨西哥在主場 Azteca 球場震撼揭幕！Quiñones 閃電 9 分鐘破網，率先為地主隊開分；' +
+      '下半場 Jiménez 以精準頭槌鎖定勝局。南非雖連吃兩紅牌仍頑強抵抗，功虧一簣——' +
+      '墨西哥以完美姿態揭開 2026 世界盃序幕。',
+    descriptionEn:
+      'Mexico lit up the Azteca with a commanding opener! Quiñones struck in just the 9th minute ' +
+      'to score the first World Cup goal on home soil, then Jiménez sealed it with a powerful ' +
+      '67th-minute header. South Africa had two men sent off but fought bravely — ' +
+      'the hosts delivered the perfect start to 2026.' }
 ];
 
 const SCORES_UPDATED = '2026-06-11';
@@ -90,21 +108,36 @@ var KO_ROUNDS = [
       return;
     }
 
+    var isEn = getLang() === 'en';
     var rows = FINAL_SCORES.map(function (m) {
-      return `
-        <tr>
+      // Build detail row (goals, cards, description)
+      var evts = [];
+      (m.goals || []).forEach(function(g) {
+        evts.push('<span class="evt-goal">⚽ ' + g.scorer + ' ' + g.minute + '</span>');
+      });
+      (m.cards || []).forEach(function(c) {
+        if (c.type === 'red')
+          evts.push('<span class="evt-red">🟥 ' + c.player + ' ' + c.minute + '</span>');
+      });
+      var eventsHTML = evts.length
+        ? '<div class="match-events">' + evts.join('') + '</div>' : '';
+      var desc = isEn ? (m.descriptionEn || m.description || '') : (m.description || '');
+      var descHTML = desc ? '<div class="match-desc">' + desc + '</div>' : '';
+      var detailRow = (eventsHTML || descHTML)
+        ? '<tr><td colspan="5" class="match-detail">' + eventsHTML + descHTML + '</td></tr>'
+        : '';
+
+      return `<tr>
           <td>${tx(m.date)}</td>
-          <td>
-            <div class="match-cell">
-              <span>${m.homeFlag} ${tx(m.home)}</span>
-              <span class="score-val">${m.homeScore} – ${m.awayScore}</span>
-              <span>${tx(m.away)} ${m.awayFlag}</span>
-            </div>
-          </td>
+          <td><div class="match-cell">
+            <span>${m.homeFlag} ${tx(m.home)}</span>
+            <span class="score-val">${m.homeScore} – ${m.awayScore}</span>
+            <span>${tx(m.away)} ${m.awayFlag}</span>
+          </div></td>
           <td><span class="status-pill status-final">${t('score_status_final')}</span></td>
           <td>${tx(m.round)}</td>
           <td>${tx(m.venue)}</td>
-        </tr>`;
+        </tr>` + detailRow;
     }).join('');
 
     area.innerHTML = `
