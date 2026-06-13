@@ -97,6 +97,29 @@ const FINAL_SCORES = [
       'ahead and silenced the home crowd, but substitute Cyle Larin — on the pitch for just ' +
       '2 minutes — fired home a stunning 78th-minute equalizer to send the stadium into ' +
       'pandemonium. Canada\'s first-ever World Cup point on home soil: a moment to remember.' },
+
+  { date:'Jun 12', round:'Matchday 1',
+    home:'USA',      homeFlag:'🇺🇸', homeScore:4,
+    away:'Paraguay', awayFlag:'🇵🇾', awayScore:1,
+    venue:'SoFi Stadium',
+    goals:[
+      { team:'away', scorer:'Bobadilla (OG)', minute:"7'"    },
+      { team:'home', scorer:'F. Balogun',     minute:"30'"   },
+      { team:'home', scorer:'F. Balogun',     minute:"45+5'" },
+      { team:'away', scorer:'Mauricio',       minute:"73'"   },
+      { team:'home', scorer:'G. Reyna',       minute:"90+8'" },
+    ],
+    description:
+      '美國在主場 SoFi 球場震撼揭幕！第 7 分鐘巴拉圭後衛自摩球率先破門，' +
+      'Balogun 此後連入兩球——30 分鐘一槌，加時補時再補一球，半場以 3:0' +
+      '領先。下半場巴拉圭扳一城，但 Reyna 補時梅開二度，美國以 4:1 寫下' +
+      '世界盃史上最大勝仗。Balogun 成為自 1930 年以來首位在世盃單場進兩球的美國球員。',
+    descriptionEn:
+      'The USMNT lit up SoFi Stadium in a historic World Cup opener! An own goal in the 7th ' +
+      'minute set the tone, then Folarin Balogun became the first American to score multiple ' +
+      'World Cup goals since 1930 — netting on 30\' and 45+5\' to make it 3-0 at the break. ' +
+      'Paraguay pulled one back, but Gio Reyna\'s stoppage-time strike sealed a stunning 4-1 ' +
+      'rout: the USMNT\'s biggest-ever World Cup win, 32 years after USA \'94.' },
 ];
 
 const SCORES_UPDATED = '2026-06-12';
