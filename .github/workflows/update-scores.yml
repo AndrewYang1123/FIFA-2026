@@ -2,7 +2,10 @@ name: Update World Cup Scores
 
 on:
   schedule:
-    - cron: '0 16 * * *'   # 09:00 PDT (UTC-7) — Vancouver time during World Cup
+    - cron: '0 14 * * *'   # 07:00 PDT — catches overnight/early-morning matches
+    - cron: '0 19 * * *'   # 12:00 PDT — catches late-morning matches
+    - cron: '30 3 * * *'   # 20:30 PDT — catches 18:00 PDT matches (~done by 20:30)
+    - cron: '0 8 * * *'    # 01:00 PDT — catches 21:00 PDT matches (~done by 23:30)
   workflow_dispatch:         # Allow manual trigger from GitHub UI anytime
 
 permissions:

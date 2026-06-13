@@ -57,10 +57,20 @@ const FINAL_SCORES = [
       'Mexico lit up the Azteca with a commanding opener! Quiñones struck in just the 9th minute ' +
       'to score the first World Cup goal on home soil, then Jiménez sealed it with a powerful ' +
       '67th-minute header. South Africa had two men sent off but fought bravely — ' +
-      'the hosts delivered the perfect start to 2026.' }
+      'the hosts delivered the perfect start to 2026.' },
+
+  { date:'Jun 11', round:'Matchday 1',
+    home:'South Korea', homeFlag:'🇰🇷', homeScore:2,
+    away:'Czechia',     awayFlag:'🇨🇿', awayScore:1,
+    venue:'Estadio Akron' },
+
+  { date:'Jun 12', round:'Matchday 1',
+    home:'Canada',               homeFlag:'🇨🇦', homeScore:1,
+    away:'Bosnia and Herzegovina', awayFlag:'🇧🇦', awayScore:1,
+    venue:'BMO Field' },
 ];
 
-const SCORES_UPDATED = '2026-06-11';
+const SCORES_UPDATED = '2026-06-12';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [

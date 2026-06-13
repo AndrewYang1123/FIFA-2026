@@ -101,7 +101,7 @@ const SCHEDULE = [
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 12', time:'12:00', home:'Canada', away:'Bosnia and Herzegovina', homeFlag:'🇨🇦', awayFlag:'🇧🇦', venue:'BMO Field', group:'B' },
   // Group D
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 12', time:'18:00', home:'USA', away:'Paraguay', homeFlag:'🇺🇸', awayFlag:'🇵🇾', venue:'SoFi Stadium', group:'D' },
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 12', time:'21:00', home:'Australia', away:'Türkiye', homeFlag:'🇦🇺', awayFlag:'🇹🇷', venue:'BC Place', group:'D' },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'21:00', home:'Australia', away:'Türkiye', homeFlag:'🇦🇺', awayFlag:'🇹🇷', venue:'BC Place', group:'D' },
   // Group B (cont.)
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 13', time:'12:00', home:'Qatar', away:'Switzerland', homeFlag:'🇶🇦', awayFlag:'🇨🇭', venue:"Levi's Stadium", group:'B' },
   // Group C
@@ -123,12 +123,12 @@ const SCHEDULE = [
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'15:00', home:'Saudi Arabia', away:'Uruguay', homeFlag:'🇸🇦', awayFlag:'🇺🇾', venue:'Hard Rock Stadium', group:'H' },
   // Group G (cont.)
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'18:00', home:'Iran', away:'New Zealand', homeFlag:'🇮🇷', awayFlag:'🇳🇿', venue:'SoFi Stadium', group:'G' },
-  { phase:'Group Stage', round:'Matchday 1', date:'Jun 15', time:'21:00', home:'Austria', away:'Jordan', homeFlag:'🇦🇹', awayFlag:'🇯🇴', venue:"Levi's Stadium", group:'J' },
   // Group I
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'12:00', home:'France', away:'Senegal', homeFlag:'🇫🇷', awayFlag:'🇸🇳', venue:'MetLife Stadium', group:'I', featured:true },
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'15:00', home:'Iraq', away:'Norway', homeFlag:'🇮🇶', awayFlag:'🇳🇴', venue:'Gillette Stadium', group:'I' },
-  // Group J (cont.)
+  // Group J
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'18:00', home:'Argentina', away:'Algeria', homeFlag:'🇦🇷', awayFlag:'🇩🇿', venue:'Arrowhead Stadium', group:'J', featured:true },
+  { phase:'Group Stage', round:'Matchday 1', date:'Jun 16', time:'21:00', home:'Austria', away:'Jordan', homeFlag:'🇦🇹', awayFlag:'🇯🇴', venue:"Levi's Stadium", group:'J' },
   // Group K
   { phase:'Group Stage', round:'Matchday 1', date:'Jun 17', time:'10:00', home:'Portugal', away:'DR Congo', homeFlag:'🇵🇹', awayFlag:'🇨🇩', venue:'NRG Stadium', group:'K' },
   // Group L
