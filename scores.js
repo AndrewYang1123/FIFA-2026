@@ -62,12 +62,41 @@ const FINAL_SCORES = [
   { date:'Jun 11', round:'Matchday 1',
     home:'South Korea', homeFlag:'🇰🇷', homeScore:2,
     away:'Czechia',     awayFlag:'🇨🇿', awayScore:1,
-    venue:'Estadio Akron' },
+    venue:'Estadio Akron',
+    goals:[
+      { team:'away', scorer:'L. Krejčí',    minute:"59'" },
+      { team:'home', scorer:'Hwang In-Beom', minute:"67'" },
+      { team:'home', scorer:'Oh Hyeon-Gyu', minute:"80'" },
+    ],
+    description:
+      '南韓展現教科書級別的後來居上！捷克 Krejčí 59 分鐘頭槌率先破網，' +
+      '但太極虎毫不示弱——Hwang In-Beom 67 分鐘精妙弧線扳平，' +
+      '換人上場的 Oh Hyeon-Gyu 80 分鐘冷靜收尾一槌定音。南韓完美逆轉，' +
+      '與墨西哥並列 A 組榜首。',
+    descriptionEn:
+      'South Korea delivered a stunning second-half comeback at Estadio Akron! ' +
+      'Krejčí gave Czechia the lead with a powerful 59th-minute header, but the Taeguk Warriors ' +
+      'fought back — Hwang In-Beom clipped home a beautiful equalizer in the 67th, ' +
+      'and substitute Oh Hyeon-Gyu sealed all three points with a cool 80th-minute finish. ' +
+      'South Korea share the top of Group A with Mexico.' },
 
   { date:'Jun 12', round:'Matchday 1',
     home:'Canada',               homeFlag:'🇨🇦', homeScore:1,
     away:'Bosnia and Herzegovina', awayFlag:'🇧🇦', awayScore:1,
-    venue:'BMO Field' },
+    venue:'BMO Field',
+    goals:[
+      { team:'away', scorer:'J. Lukić',   minute:"21'" },
+      { team:'home', scorer:'C. Larin',   minute:"78'" },
+    ],
+    description:
+      '加拿大在主場 BMO Field 創造歷史！Lukić 21 分鐘頭槌令地主先落後，' +
+      '全場球迷屏息以待。候補球員 Larin 78 分鐘入替後僅花 2 分鐘便精準射門扳平，' +
+      'BMO Field 全場沸騰。加拿大首次在主場世界盃奪積分，寫下美麗的里程碑。',
+    descriptionEn:
+      'Canada made history at a packed BMO Field! Lukić\'s 21st-minute header put Bosnia ' +
+      'ahead and silenced the home crowd, but substitute Cyle Larin — on the pitch for just ' +
+      '2 minutes — fired home a stunning 78th-minute equalizer to send the stadium into ' +
+      'pandemonium. Canada\'s first-ever World Cup point on home soil: a moment to remember.' },
 ];
 
 const SCORES_UPDATED = '2026-06-12';
