@@ -120,9 +120,29 @@ const FINAL_SCORES = [
       'World Cup goals since 1930 — netting on 30\' and 45+5\' to make it 3-0 at the break. ' +
       'Paraguay pulled one back, but Gio Reyna\'s stoppage-time strike sealed a stunning 4-1 ' +
       'rout: the USMNT\'s biggest-ever World Cup win, 32 years after USA \'94.' },
+
+  { date:'Jun 13', round:'Matchday 1',
+    home:'Qatar',       homeFlag:'🇶🇦', homeScore:1,
+    away:'Switzerland', awayFlag:'🇨🇭', awayScore:1,
+    venue:"Levi's Stadium" },
+
+  { date:'Jun 13', round:'Matchday 1',
+    home:'Brazil',  homeFlag:'🇧🇷', homeScore:1,
+    away:'Morocco', awayFlag:'🇲🇦', awayScore:1,
+    venue:'MetLife Stadium' },
+
+  { date:'Jun 13', round:'Matchday 1',
+    home:'Haiti',   homeFlag:'🇭🇹', homeScore:0,
+    away:'Scotland', awayFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', awayScore:1,
+    venue:'Gillette Stadium' },
+
+  { date:'Jun 13', round:'Matchday 1',
+    home:'Australia', homeFlag:'🇦🇺', homeScore:1,
+    away:'Türkiye',   awayFlag:'🇹🇷', awayScore:0,
+    venue:'BC Place' },
 ];
 
-const SCORES_UPDATED = '2026-06-12';
+const SCORES_UPDATED = '2026-06-13';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
