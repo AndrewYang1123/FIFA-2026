@@ -124,22 +124,62 @@ const FINAL_SCORES = [
   { date:'Jun 13', round:'Matchday 1',
     home:'Qatar',       homeFlag:'🇶🇦', homeScore:1,
     away:'Switzerland', awayFlag:'🇨🇭', awayScore:1,
-    venue:"Levi's Stadium" },
+    venue:"Levi's Stadium",
+    goals:[
+      { team:'away', scorer:'B. Embolo (pen)', minute:"17'" },
+      { team:'home', scorer:'M. Muheim (OG)',  minute:"90+4'" },
+    ],
+    description:
+      '卡塔爾在世界盃史上首次奪得積分，戲劇性情節令人咋舌！' +
+      'Embolo 在 17 分鐘主射十二碼破門，瑞士率先領先。' +
+      '就在傷停補時第 4 分鐘，卡塔爾拋入高球，瑞士後衛 Muheim 不慎頭槌自摩，' +
+      '讓地主以 1:1 平手告終——卡塔爾球迷欣喜若狂，慶祝隊史首個世盃積分。',
+    descriptionEn:
+      'Qatar made history at Levi\'s Stadium — their first-ever World Cup point! ' +
+      'Breel Embolo converted a 17th-minute penalty to put Switzerland ahead, ' +
+      'and the Swiss looked set to collect all three points. But deep into stoppage time (90+4\'), ' +
+      'Switzerland\'s Miro Muheim deflected a Qatar cross into his own net, ' +
+      'sending the Qatar fans into raptures and stunning the Swiss.' },
 
   { date:'Jun 13', round:'Matchday 1',
     home:'Brazil',  homeFlag:'🇧🇷', homeScore:1,
     away:'Morocco', awayFlag:'🇲🇦', awayScore:1,
-    venue:'MetLife Stadium' },
+    venue:'MetLife Stadium',
+    goals:[
+      { team:'away', scorer:'I. Saibari',   minute:"21'" },
+      { team:'home', scorer:'Vinícius Jr.', minute:"32'" },
+    ],
+    description:
+      '巨星對決，精彩紛呈！摩洛哥 Saibari 在 21 分鐘精妙挑射，' +
+      '輕鬆騙過門將 Alisson，率先以閃電反擊破網。' +
+      '但巴西不甘示弱——Vinícius Jr. 11 分鐘後個人突破，' +
+      '一腳弧線球高射入網扳平，展現世界頂級球星的個人能力。' +
+      '兩隊平分秋色，均積 1 分，C 組形勢大開。',
+    descriptionEn:
+      'A classic encounter at MetLife Stadium! Morocco\'s Ismael Saibari chipped ' +
+      'Alisson Becker brilliantly in the 21st minute to finish a devastating counter-attack. ' +
+      'But Brazil answered through Vinícius Jr. in the 32nd — a stunning solo run ' +
+      'capped with a curling finish into the roof of the net. ' +
+      'Both giants share the points; Group C is wide open.' },
 
   { date:'Jun 13', round:'Matchday 1',
-    home:'Haiti',   homeFlag:'🇭🇹', homeScore:0,
+    home:'Haiti',    homeFlag:'🇭🇹', homeScore:0,
     away:'Scotland', awayFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', awayScore:1,
-    venue:'Gillette Stadium' },
-
-  { date:'Jun 13', round:'Matchday 1',
-    home:'Australia', homeFlag:'🇦🇺', homeScore:1,
-    away:'Türkiye',   awayFlag:'🇹🇷', awayScore:0,
-    venue:'BC Place' },
+    venue:'Gillette Stadium',
+    goals:[
+      { team:'away', scorer:'J. McGinn', minute:"28'" },
+    ],
+    description:
+      '蘇格蘭 28 年等待終結！McGinn 在第 28 分鐘接應隊友傳球後射門，' +
+      '皮球擦防守球員偏轉入網——這是蘇格蘭自 1998 年世界盃後的首粒進球，' +
+      '相隔整整 10,244 天。海地全力抵抗但未能破門，' +
+      '蘇格蘭以 1:0 勝出，憑巴西與摩洛哥握手言和之利，登上 C 組榜首。',
+    descriptionEn:
+      'Scotland end a 28-year World Cup goalscoring drought! John McGinn\'s ' +
+      '28th-minute effort deflected past the helpless Johny Placide — ' +
+      'the Tartan Army\'s first World Cup goal in 10,244 days (since Craig Burley in France \'98). ' +
+      'Haiti fought hard but couldn\'t convert their chances. ' +
+      'Scotland top Group C after Brazil and Morocco cancelled each other out.' },
 ];
 
 const SCORES_UPDATED = '2026-06-13';
