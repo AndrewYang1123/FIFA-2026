@@ -180,9 +180,125 @@ const FINAL_SCORES = [
       'the Tartan Army\'s first World Cup goal in 10,244 days (since Craig Burley in France \'98). ' +
       'Haiti fought hard but couldn\'t convert their chances. ' +
       'Scotland top Group C after Brazil and Morocco cancelled each other out.' },
+
+  { date:'Jun 13', round:'Matchday 1',
+    home:'Australia', homeFlag:'🇦🇺', homeScore:2,
+    away:'Türkiye',   awayFlag:'🇹🇷', awayScore:0,
+    venue:'BC Place',
+    goals:[
+      { team:'home', scorer:'N. Irankunda', minute:"27'" },
+      { team:'home', scorer:'C. Metcalfe',  minute:"75'" },
+    ],
+    description:
+      '澳洲以精彩的反擊戰術震撼 BC Place！20 歲的 Irankunda 在第 27 分鐘' +
+      '率先破門，成為澳洲史上最年輕的世界盃進球球員。' +
+      '中場 Metcalfe 在第 75 分鐘射入一腳強勁的低射，鎖定勝局。' +
+      '門將 Ryan 全場攔下 8 次射門，澳洲 D 組開局完美，' +
+      '令土耳其重返世界盃（睽違 24 年）的首戰以潰敗收場。',
+    descriptionEn:
+      'Australia delivered a counterattacking masterclass at BC Place in Vancouver! ' +
+      'Teenage sensation Nestory Irankunda scored in the 27th minute to become the youngest ' +
+      'Australian to net at a World Cup, before Connor Metcalfe drilled home a powerful ' +
+      'low shot in the 75th to seal a commanding 2-0 win. Goalkeeper Mathew Ryan made eight ' +
+      'saves to keep a clean sheet. A perfect Group D start for the Socceroos, ' +
+      'while Türkiye\'s long-awaited World Cup return ends in disappointment.' },
+
+  { date:'Jun 14', round:'Matchday 1',
+    home:'Germany',  homeFlag:'🇩🇪', homeScore:7,
+    away:'Curaçao',  awayFlag:'🇨🇼', awayScore:1,
+    venue:'NRG Stadium',
+    goals:[
+      { team:'home', scorer:'L. Nmecha',      minute:"6'"    },
+      { team:'away', scorer:'Q. Comenecia',   minute:"21'"   },
+      { team:'home', scorer:'N. Schlotterbeck', minute:"38'" },
+      { team:'home', scorer:'K. Havertz (pen)', minute:"45+5'" },
+      { team:'home', scorer:'J. Musiala',     minute:"47'"   },
+      { team:'home', scorer:'J. Brown',       minute:"68'"   },
+      { team:'home', scorer:'D. Undav',       minute:"78'"   },
+      { team:'home', scorer:'K. Havertz',     minute:"88'"   },
+    ],
+    description:
+      '德國以狂轟 7 球的超強姿態揭開世界盃序幕！Nmecha 僅花 6 分鐘率先破門，' +
+      '庫拉索雖靠 Comenecia 一度令比數為 1:1，但德國此後如入無人之境。' +
+      'Havertz 梅開二度（含一個十二碼），Musiala、Schlotterbeck、Brown 及 Undav' +
+      '各建一功，最終以 7:1 狂勝創造世界盃佳績。庫拉索首度闖入世界盃便飽嚐苦果。',
+    descriptionEn:
+      'Germany put on a dazzling display at NRG Stadium in Houston — their biggest-ever ' +
+      'World Cup win! Nmecha struck in just the 6th minute, and although Comenecia briefly ' +
+      'leveled for debutants Curaçao, Die Mannschaft ran riot. Havertz scored twice ' +
+      '(including a penalty), with Schlotterbeck, Musiala, Brown, and Undav also on target ' +
+      'in a stunning 7-1 rout. A record-breaking statement of intent from Germany.' },
+
+  { date:'Jun 14', round:'Matchday 1',
+    home:'Netherlands', homeFlag:'🇳🇱', homeScore:2,
+    away:'Japan',       awayFlag:'🇯🇵', awayScore:2,
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'home', scorer:'V. van Dijk',    minute:"50'"   },
+      { team:'away', scorer:'K. Nakamura',    minute:"57'"   },
+      { team:'home', scorer:'C. Summerville', minute:"64'"   },
+      { team:'away', scorer:'D. Kamada',      minute:"89'"   },
+    ],
+    description:
+      '精彩刺激的 F 組揭幕戰！荷蘭 van Dijk 下半場率先破門，' +
+      '日本 Nakamura 迅速扳平；Summerville 再度讓荷蘭領先後，' +
+      '老將 Kamada 在第 89 分鐘頭球扳平，讓日本在最後一刻搶回一分。' +
+      '兩隊同積 1 分，F 組格局大開。',
+    descriptionEn:
+      'A pulsating Group F opener at AT&T Stadium in Dallas! Van Dijk headed the Dutch ' +
+      'ahead in the 50th minute, but Keito Nakamura\'s deflected effort leveled it in the 57th. ' +
+      'Crysencio Summerville restored the Dutch lead in the 64th, only for Daichi Kamada ' +
+      'to head home a dramatic 89th-minute equalizer and snatch a point for Japan. ' +
+      'Both teams share the spoils in a thrilling draw.' },
+
+  { date:'Jun 14', round:'Matchday 1',
+    home:'Ivory Coast', homeFlag:'🇨🇮', homeScore:1,
+    away:'Ecuador',     awayFlag:'🇪🇨', awayScore:0,
+    venue:'Lincoln Financial Field',
+    goals:[
+      { team:'home', scorer:'Amad Diallo', minute:"90'" },
+    ],
+    description:
+      '象牙海岸靠後備球員 Amad Diallo 在第 90 分鐘的絕殺，' +
+      '驚險擊退厄瓜多爾！Diallo 接應 Singo 右路突破後的傳球，' +
+      '以左腳精準側射破網，終結厄瓜多爾長達 19 場不敗的神話。' +
+      '象牙海岸時隔多年再度闖入世界盃，首戰即以戲劇性方式三分到手。',
+    descriptionEn:
+      'Ivory Coast snatched all three points with a stoppage-time sucker punch at Lincoln ' +
+      'Financial Field in Philadelphia! Substitute Amad Diallo sidefooted home clinically ' +
+      'in the 90th minute after Wilfried Singo\'s lung-busting run down the right, ' +
+      'ending Ecuador\'s remarkable 19-game unbeaten run and giving the Elephants a ' +
+      'dramatic Group E opening-day victory.' },
+
+  { date:'Jun 14', round:'Matchday 1',
+    home:'Sweden',  homeFlag:'🇸🇪', homeScore:5,
+    away:'Tunisia', awayFlag:'🇹🇳', awayScore:1,
+    venue:'Estadio BBVA',
+    goals:[
+      { team:'home', scorer:'Y. Ayari',      minute:"7'"    },
+      { team:'home', scorer:'A. Isak',        minute:"30'"   },
+      { team:'away', scorer:'O. Rekik',       minute:"43'"   },
+      { team:'home', scorer:'V. Gyokeres',    minute:"59'"   },
+      { team:'home', scorer:'M. Svanberg',    minute:"84'"   },
+      { team:'home', scorer:'Y. Ayari',       minute:"90+6'" },
+    ],
+    description:
+      '瑞典在 Estadio BBVA 以 5:1 大勝突尼西亞，震撼 F 組！' +
+      'Ayari 第 7 分鐘遠射率先破網，Isak 30 分鐘擴大領先；' +
+      '突尼西亞 Rekik 43 分鐘一度追回一球，但 Gyokeres 59 分鐘再入一球，' +
+      '換人上場的 Svanberg 僅 18 秒即射門建功，Ayari 在傷時補時第 6 分鐘' +
+      '補上第二個遠射，完美落幕。Isak 與 Gyokeres 的鋒線組合令人印象深刻。',
+    descriptionEn:
+      'Sweden made a stunning Group F statement at Estadio BBVA in Monterrey, thrashing ' +
+      'Tunisia 5-1! Yasin Ayari opened with a long-range rocket in the 7th minute, ' +
+      'Isak doubled it in the 30th, and although Omar Rekik pulled one back for Tunisia just ' +
+      'before half-time, Gyokeres restored the two-goal cushion in the 59th. ' +
+      'Substitute Svanberg scored just 18 seconds after coming on in the 84th, ' +
+      'and Ayari blasted home a second long-ranger deep in stoppage time to cap a ' +
+      'magnificent five-star performance.' },
 ];
 
-const SCORES_UPDATED = '2026-06-13';
+const SCORES_UPDATED = '2026-06-15';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
