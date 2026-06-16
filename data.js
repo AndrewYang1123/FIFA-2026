@@ -144,18 +144,20 @@ const SCHEDULE = [
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'15:00', home:'Canada', away:'Qatar', homeFlag:'🇨🇦', awayFlag:'🇶🇦', venue:'BC Place', group:'B' },
   // Group A (cont.)
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'18:00', home:'Mexico', away:'South Korea', homeFlag:'🇲🇽', awayFlag:'🇰🇷', venue:'Estadio Akron', group:'A' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 18', time:'21:00', home:'Türkiye', away:'Paraguay', homeFlag:'🇹🇷', awayFlag:'🇵🇾', venue:"Levi's Stadium", group:'D' },
   // Group D (cont.)
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'12:00', home:'USA', away:'Australia', homeFlag:'🇺🇸', awayFlag:'🇦🇺', venue:'Lumen Field', group:'D' },
   // Group C
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'15:00', home:'Scotland', away:'Morocco', homeFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', awayFlag:'🇲🇦', venue:'Gillette Stadium', group:'C' },
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'18:00', home:'Brazil', away:'Haiti', homeFlag:'🇧🇷', awayFlag:'🇭🇹', venue:'Lincoln Financial Field', group:'C' },
-  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'21:00', home:'Tunisia', away:'Japan', homeFlag:'🇹🇳', awayFlag:'🇯🇵', venue:'Estadio BBVA', group:'F' },
+  // Group D (cont.)
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 19', time:'21:00', home:'Türkiye', away:'Paraguay', homeFlag:'🇹🇷', awayFlag:'🇵🇾', venue:"Levi's Stadium", group:'D' },
   // Group F (cont.)
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'10:00', home:'Netherlands', away:'Sweden', homeFlag:'🇳🇱', awayFlag:'🇸🇪', venue:'NRG Stadium', group:'F' },
   // Group E
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'13:00', home:'Germany', away:'Ivory Coast', homeFlag:'🇩🇪', awayFlag:'🇨🇮', venue:'BMO Field', group:'E' },
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'17:00', home:'Ecuador', away:'Curaçao', homeFlag:'🇪🇨', awayFlag:'🇨🇼', venue:'Arrowhead Stadium', group:'E' },
+  // Group F (cont.)
+  { phase:'Group Stage', round:'Matchday 2', date:'Jun 20', time:'21:00', home:'Tunisia', away:'Japan', homeFlag:'🇹🇳', awayFlag:'🇯🇵', venue:'Estadio BBVA', group:'F' },
   // Group H
   { phase:'Group Stage', round:'Matchday 2', date:'Jun 21', time:'09:00', home:'Spain', away:'Saudi Arabia', homeFlag:'🇪🇸', awayFlag:'🇸🇦', venue:'Mercedes-Benz Stadium', group:'H' },
   // Group G

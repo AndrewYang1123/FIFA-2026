@@ -296,9 +296,89 @@ const FINAL_SCORES = [
       'Substitute Svanberg scored just 18 seconds after coming on in the 84th, ' +
       'and Ayari blasted home a second long-ranger deep in stoppage time to cap a ' +
       'magnificent five-star performance.' },
+
+  { date:'Jun 15', round:'Matchday 1',
+    home:'Spain',      homeFlag:'🇪🇸', homeScore:0,
+    away:'Cape Verde', awayFlag:'🇨🇻', awayScore:0,
+    venue:'Mercedes-Benz Stadium',
+    goals:[],
+    description:
+      '西班牙在亞特蘭大未能破門，與佛得角悶和 0:0！' +
+      '衛冕歐洲冠軍主宰控球卻屢遭密集防守所阻，' +
+      'Yamal、Olmo 及 Williams 均無功而返。' +
+      '佛得角門將全場撲救出色，H 組首輪最大冷門誕生。',
+    descriptionEn:
+      'Spain were held to a goalless draw by Cape Verde in Atlanta — ' +
+      'one of the biggest shocks of Matchday 1! ' +
+      'The European champions dominated possession but were repeatedly frustrated ' +
+      'by a disciplined Cape Verde low block. Yamal, Olmo and Williams all failed to ' +
+      'find a way through as the Sharks earned a famous point. Group H is wide open.' },
+
+  { date:'Jun 15', round:'Matchday 1',
+    home:'Belgium',    homeFlag:'🇧🇪', homeScore:1,
+    away:'Egypt',      awayFlag:'🇪🇬', awayScore:1,
+    venue:'Lumen Field',
+    goals:[
+      { team:'away', scorer:'E. Ashour',    minute:"19'" },
+      { team:'home', scorer:'M. Hany (OG)', minute:"66'" },
+    ],
+    description:
+      '比利時與埃及平分秋色，Lukaku 的影響力不容小覷！' +
+      '埃及 Ashour 19 分鐘率先破門；下半場 Lukaku 替補出場後立刻製造威脅，' +
+      '埃及後衛 Mohamed Hany 在第 66 分鐘於壓迫下不慎打入自家球，' +
+      '令比賽終以 1:1 收場。G 組首輪懸念未解。',
+    descriptionEn:
+      'Belgium and Egypt share the spoils in Seattle in a feisty Group G opener! ' +
+      'Emam Ashour fired Egypt ahead in the 19th minute. ' +
+      'Belgium introduced Lukaku from the bench and the pressure paid off — ' +
+      'Mohamed Hany turned into his own net in the 66th minute under a Lukaku challenge. ' +
+      'Both sides settled for a point; Group G remains wide open.' },
+
+  { date:'Jun 15', round:'Matchday 1',
+    home:'Saudi Arabia', homeFlag:'🇸🇦', homeScore:1,
+    away:'Uruguay',      awayFlag:'🇺🇾', awayScore:1,
+    venue:'Hard Rock Stadium',
+    goals:[
+      { team:'home', scorer:'A. Al-Amri', minute:"41'" },
+      { team:'away', scorer:'M. Araújo',  minute:"80'" },
+    ],
+    description:
+      '沙特阿拉伯與烏拉圭上演一場精彩的 H 組對決！' +
+      'Al-Amri 在第 41 分鐘遠射破門，為沙特帶來半場領先優勢。' +
+      '但烏拉圭馬拉度納式前鋒 Araújo 在第 80 分鐘挺身而出，' +
+      '頭槌扳平比分，讓兩隊各取一分。',
+    descriptionEn:
+      'Saudi Arabia and Uruguay play out a tense 1-1 draw at Hard Rock Stadium in Miami! ' +
+      'Al-Amri struck a fine long-range effort in the 41st minute to put Saudi Arabia ahead at ' +
+      'the break. But Uruguay hit back through Matías Araújo\'s 80th-minute header to level, ' +
+      'denying Saudi Arabia their first World Cup win in over a decade. ' +
+      'Both teams take a point apiece in Group H.' },
+
+  { date:'Jun 15', round:'Matchday 1',
+    home:'Iran',        homeFlag:'🇮🇷', homeScore:2,
+    away:'New Zealand', awayFlag:'🇳🇿', awayScore:2,
+    venue:'SoFi Stadium',
+    goals:[
+      { team:'away', scorer:'E. Just',      minute:"7'"  },
+      { team:'home', scorer:'Rezaeian',     minute:"32'" },
+      { team:'away', scorer:'E. Just',      minute:"54'" },
+      { team:'home', scorer:'Mohebbi',      minute:"64'" },
+    ],
+    description:
+      '伊朗與紐西蘭在 SoFi 球場奉獻 G 組最精彩的揭幕戰！' +
+      'Just 第 7 分鐘閃電破門為全白衣率先破網，' +
+      'Rezaeian 32 分鐘扳平；Just 下半場再入第二球令紐西蘭再度領先，' +
+      'Mohebbi 64 分鐘為伊朗再追平。' +
+      '兩支初次相遇的球隊均展現頑強鬥志，以 2:2 平分結束。',
+    descriptionEn:
+      'A gripping Group G thriller at SoFi Stadium in Los Angeles as Iran and New Zealand ' +
+      'play out an enthralling 2-2 draw! Emre Just struck in just the 7th minute to put the ' +
+      'All Whites ahead. Rezaeian equalized for Iran in the 32nd, only for Just to grab his ' +
+      'second of the game in the 54th. Mohebbi leveled for Iran in the 64th to make it 2-2 — ' +
+      'a result that leaves Group G delightfully unpredictable.' },
 ];
 
-const SCORES_UPDATED = '2026-06-15';
+const SCORES_UPDATED = '2026-06-16';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
