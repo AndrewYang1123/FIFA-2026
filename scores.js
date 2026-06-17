@@ -378,7 +378,101 @@ const FINAL_SCORES = [
       'a result that leaves Group G delightfully unpredictable.' },
 ];
 
-const SCORES_UPDATED = '2026-06-16';
+  { date:'Jun 16', round:'Matchday 1',
+    home:'France',  homeFlag:'🇫🇷', homeScore:3,
+    away:'Senegal', awayFlag:'🇸🇳', awayScore:1,
+    venue:'MetLife Stadium',
+    goals:[
+      { team:'home', scorer:'K. Mbappé',  minute:"66'"   },
+      { team:'home', scorer:'B. Barcola', minute:"82'"   },
+      { team:'away', scorer:'I. Mbaye',   minute:"90+5'" },
+      { team:'home', scorer:'K. Mbappé',  minute:"90+6'" },
+    ],
+    description:
+      '姆巴佩梅開二度，成為法國隊史最佳射手！' +
+      '姆巴佩 66 分鐘接應 Olise 精準傳球破門，率先為法國打破僵局；' +
+      'Barcola 82 分鐘接 Rabiot 傳球挑射擴大優勢。' +
+      '塞內加爾 Mbaye 90+5 分鐘一度拉近差距，' +
+      '但姆巴佩補時第 6 分鐘遠射封頂，以 3:1 鎖定勝局。' +
+      '此役姆巴佩國家隊進球達 58 球，超越 Giroud 成為法國隊史頭號射手。',
+    descriptionEn:
+      'Mbappé delivers a masterclass at MetLife Stadium as France open with a 3-1 win over Senegal! ' +
+      'He broke the deadlock in the 66th minute, darting across the box to finish a brilliant Olise through ball. ' +
+      'Barcola made it 2-0 in the 82nd with a cool chip over Mendy. ' +
+      'Mbaye pulled one back for Senegal in the 90+5th, but Mbappé sealed it with a long-range strike in 90+6. ' +
+      'His brace took him to 58 France goals — surpassing Giroud as Les Bleus\' all-time top scorer.' },
+
+  { date:'Jun 16', round:'Matchday 1',
+    home:'Iraq',   homeFlag:'🇮🇶', homeScore:1,
+    away:'Norway', awayFlag:'🇳🇴', awayScore:4,
+    venue:'Gillette Stadium',
+    goals:[
+      { team:'away', scorer:'E. Haaland',   minute:"29'"   },
+      { team:'home', scorer:'A. Hussein',   minute:"39'"   },
+      { team:'away', scorer:'E. Haaland',   minute:"43'"   },
+      { team:'away', scorer:'L. Óstigard',  minute:"76'"   },
+      { team:'away', scorer:'A. Hussein (OG)', minute:"90+6'" },
+    ],
+    description:
+      '哈蘭德世界盃首秀即梅開二度，挪威大勝伊拉克！' +
+      '哈蘭德 29 分鐘率先破門，伊拉克 Hussein 39 分鐘頭球扳平；' +
+      '但哈蘭德 43 分鐘再入一球令挪威半場 2:1 領先。' +
+      'Óstigard 76 分鐘頭球擴大差距，Hussein 補時自摩為挪威送上大禮，' +
+      '終以 4:1 完勝。哈蘭德終於在世界盃舞台上留下印記。',
+    descriptionEn:
+      'Erling Haaland finally gets his World Cup goals — and he arrives with a brace! ' +
+      'Haaland opened the scoring in the 29th minute before Hussein equalized for Iraq in the 39th. ' +
+      'But Haaland struck again just before half-time in the 43rd to restore Norway\'s lead. ' +
+      'Óstigard headed home an Ødegaard corner in the 76th, and Hussein completed a nightmare game ' +
+      'with a stoppage-time own goal to seal a 4-1 Norway rout. Group I is Norway\'s to lose.' },
+
+  { date:'Jun 16', round:'Matchday 1',
+    home:'Argentina', homeFlag:'🇦🇷', homeScore:3,
+    away:'Algeria',   awayFlag:'🇩🇿', awayScore:0,
+    venue:'Arrowhead Stadium',
+    goals:[
+      { team:'home', scorer:'L. Messi', minute:"17'" },
+      { team:'home', scorer:'L. Messi', minute:"60'" },
+      { team:'home', scorer:'L. Messi', minute:"76'" },
+    ],
+    description:
+      '梅西世界盃首個帽子戲法，傳奇再添新章！' +
+      '17 分鐘一腳遠射轟開僵局，60 分鐘補射擴大領先，' +
+      '76 分鐘招牌弧線球三球封頂，完成世界盃史上最年長的帽子戲法（38 歲）。' +
+      '此役他世界盃進球達 16 球，追平 Klose 的歷史紀錄，' +
+      '並創下第 200 次代表阿根廷出賽的里程碑。',
+    descriptionEn:
+      'Messi makes history at Arrowhead Stadium — his first-ever World Cup hat-trick! ' +
+      'A long-range rocket in the 17th, a composed tap-in in the 60th, and a trademark curling finish ' +
+      'in the 76th saw Argentina cruise to a 3-0 win over Algeria. ' +
+      'At 38, Messi became the oldest player to score a World Cup hat-trick and drew level with ' +
+      'Miroslav Klose on 16 World Cup goals — the all-time record. ' +
+      'It was also his 200th cap for Argentina. An all-time great night.' },
+
+  { date:'Jun 16', round:'Matchday 1',
+    home:'Austria', homeFlag:'🇦🇹', homeScore:3,
+    away:'Jordan',  awayFlag:'🇯🇴', awayScore:1,
+    venue:"Levi's Stadium",
+    goals:[
+      { team:'home', scorer:'R. Schmid',        minute:"20'"   },
+      { team:'away', scorer:'A. Olwan',          minute:"50'"   },
+      { team:'home', scorer:'Y. Al-Arab (OG)',   minute:"76'"   },
+      { team:'home', scorer:'M. Arnautović (pen)', minute:"90+12'" },
+    ],
+    description:
+      '奧地利 36 年來世界盃首勝！Schmid 20 分鐘遠射率先破門，' +
+      '約旦 Olwan 50 分鐘精妙弧線球扳平——成為約旦史上首粒世界盃進球，' +
+      '寫下歷史。Al-Arab 76 分鐘角球中烏龍再度讓奧地利領先，' +
+      '補時 Arnautović 主射十二碼鎖定勝局。奧地利 J 組開局完美。',
+    descriptionEn:
+      'Austria end a 36-year World Cup winless run at Levi\'s Stadium in Santa Clara! ' +
+      'Romano Schmid curled a stunning long-ranger into the top corner in the 20th minute. ' +
+      'Jordan\'s Ali Olwan equalized in the 50th with a beautiful curling effort — ' +
+      'the first goal in Jordanian World Cup history. ' +
+      'An own goal from Al-Arab on 76 minutes restored Austria\'s lead, ' +
+      'and Arnautović converted a VAR-awarded penalty deep in stoppage time to seal a 3-1 win.' },
+
+const SCORES_UPDATED = '2026-06-17';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
