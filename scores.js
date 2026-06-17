@@ -376,7 +376,6 @@ const FINAL_SCORES = [
       'All Whites ahead. Rezaeian equalized for Iran in the 32nd, only for Just to grab his ' +
       'second of the game in the 54th. Mohebbi leveled for Iran in the 64th to make it 2-2 — ' +
       'a result that leaves Group G delightfully unpredictable.' },
-];
 
   { date:'Jun 16', round:'Matchday 1',
     home:'France',  homeFlag:'🇫🇷', homeScore:3,
