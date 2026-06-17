@@ -471,6 +471,7 @@ const FINAL_SCORES = [
       'the first goal in Jordanian World Cup history. ' +
       'An own goal from Al-Arab on 76 minutes restored Austria\'s lead, ' +
       'and Arnautović converted a VAR-awarded penalty deep in stoppage time to seal a 3-1 win.' },
+];
 
 const SCORES_UPDATED = '2026-06-17';
 
