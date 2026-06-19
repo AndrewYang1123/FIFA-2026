@@ -470,9 +470,166 @@ const FINAL_SCORES = [
       'the first goal in Jordanian World Cup history. ' +
       'An own goal from Al-Arab on 76 minutes restored Austria\'s lead, ' +
       'and Arnautović converted a VAR-awarded penalty deep in stoppage time to seal a 3-1 win.' },
+
+  // ── Matchday 1, Day 7 — Jun 17 ───────────────────────────────────────────
+  { date:'Jun 17', round:'Matchday 1',
+    home:'Portugal', homeFlag:'🇵🇹', homeScore:1,
+    away:'DR Congo', awayFlag:'🇨🇩', awayScore:1,
+    venue:'NRG Stadium',
+    goals:[
+      { team:'home', scorer:'João Neves', minute:"6'"    },
+      { team:'away', scorer:'Y. Wissa',   minute:"45+5'" },
+    ],
+    description:
+      '葡萄牙意外被世盃首秀的剛果民主共和國逼平！Neves 6 分鐘頭槌先開紀錄，' +
+      '但 Wissa 在半場結束前補時一槌扳平，寫下剛果史上首粒世盃進球。' +
+      'C 羅縱橫全場仍未能破門，K 組局勢懸念盡增。',
+    descriptionEn:
+      'Portugal were held by World Cup debutants DR Congo! Neves headed in the 6th minute, ' +
+      'but Wissa stunned Ronaldo and co. with a stoppage-time equaliser right before the break — ' +
+      'Congo DR\'s first-ever World Cup goal. Group K is suddenly wide open.' },
+
+  { date:'Jun 17', round:'Matchday 1',
+    home:'England',  homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', homeScore:4,
+    away:'Croatia',  awayFlag:'🇭🇷', awayScore:2,
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'home', scorer:'H. Kane',       minute:"12'"   },
+      { team:'away', scorer:'M. Baturina',   minute:"36'"   },
+      { team:'home', scorer:'H. Kane',       minute:"42'"   },
+      { team:'away', scorer:'P. Musa',       minute:"45+5'" },
+      { team:'home', scorer:'J. Bellingham', minute:"47'"   },
+      { team:'home', scorer:'M. Rashford',   minute:"85'"   },
+    ],
+    description:
+      '英格蘭與克羅埃西亞奉獻本屆最精彩對決！Kane 12 分鐘罰球先開紀錄，' +
+      '克羅埃西亞連追兩球令比賽陷入膠著；Bellingham 下半場開球後 2 分鐘即閃電還擊，' +
+      'Rashford 85 分鐘一槌鎖定 4:2 勝局。英格蘭強勢登頂 L 組。',
+    descriptionEn:
+      'England and Croatia served up a World Cup classic in Dallas! Kane\'s early penalty, ' +
+      'two Croatian equalisers, then Bellingham\'s thunderbolt just 2 minutes after half-time ' +
+      'before Rashford sealed a brilliant 4-2 win. England top Group L in a match that had everything.' },
+
+  { date:'Jun 17', round:'Matchday 1',
+    home:'Ghana',  homeFlag:'🇬🇭', homeScore:1,
+    away:'Panama', awayFlag:'🇵🇦', awayScore:0,
+    venue:'BMO Field',
+    goals:[
+      { team:'home', scorer:'C. Yirenkyi', minute:"90+5'" },
+    ],
+    description:
+      '世界盃最戲劇性的一刻！巴拿馬主導全場卻未能把握機會，' +
+      '迦納替補球員 Yirenkyi 在第 90+5 分鐘突破禁區輕鬆推射，' +
+      '以本屆最后時刻絕殺令全場目瞪口呆，奪下三分。',
+    descriptionEn:
+      'Ghana stole the most dramatic win of the tournament so far! Panama controlled the game ' +
+      'throughout but couldn\'t score, and substitute Yirenkyi tapped home a stunning 90+5\' winner — ' +
+      'one of the latest decisive goals in World Cup history.' },
+
+  { date:'Jun 17', round:'Matchday 1',
+    home:'Uzbekistan', homeFlag:'🇺🇿', homeScore:1,
+    away:'Colombia',   awayFlag:'🇨🇴', awayScore:3,
+    venue:'Estadio Azteca',
+    goals:[
+      { team:'away', scorer:'D. Muñoz',    minute:"40'"   },
+      { team:'home', scorer:'Fayzullaev',  minute:"60'"   },
+      { team:'away', scorer:'Luis Díaz',   minute:"65'"   },
+      { team:'away', scorer:'J. Campaz',   minute:"90+9'" },
+    ],
+    description:
+      '哥倫比亞在 Azteca 球場強勢出征！Muñoz 率先破網，烏茲別克敢死隊迅速扳平，' +
+      '但 Luis Díaz 5 分鐘後精彩重奪優勢，Campaz 深入補時再補一球蓋棺論定。' +
+      '哥倫比亞領跑 K 組，葡萄牙意外平局使小組競爭更激烈。',
+    descriptionEn:
+      'Colombia made a statement at the Azteca! After Muñoz\'s opener and Fayzullaev\'s quick equaliser, ' +
+      'Luis Díaz restored the lead with a brilliant strike and Campaz killed it off deep in ' +
+      'stoppage time. Colombia top Group K — Portugal\'s earlier draw leaves the group wide open.' },
+
+  // ── Matchday 2, Day 1 — Jun 18 ───────────────────────────────────────────
+  { date:'Jun 18', round:'Matchday 2',
+    home:'Czechia',      homeFlag:'🇨🇿', homeScore:1,
+    away:'South Africa', awayFlag:'🇿🇦', awayScore:1,
+    venue:'Mercedes-Benz Stadium',
+    goals:[
+      { team:'home', scorer:'M. Sadilek', minute:"6'"  },
+      { team:'away', scorer:'T. Mokoena', minute:"83'" },
+    ],
+    description:
+      '捷克的領先被南非最後關頭逆轉！Sadilek 6 分鐘閃電破門，捷克穩穩主導全場，' +
+      '但 Mokoena 83 分鐘冷靜主射十二碼扳平，南非奪下寶貴一分，A 組頂部競爭更趨激烈。',
+    descriptionEn:
+      'South Africa snatched a vital late point! Sadilek gave Czechia the lead in just 6 minutes, ' +
+      'but Mokoena\'s cool 83rd-minute penalty rescued a draw for Bafana Bafana — ' +
+      'keeping Group A tightly contested with Mexico already through.' },
+
+  { date:'Jun 18', round:'Matchday 2',
+    home:'Switzerland',            homeFlag:'🇨🇭', homeScore:4,
+    away:'Bosnia and Herzegovina', awayFlag:'🇧🇦', awayScore:1,
+    venue:'SoFi Stadium',
+    goals:[
+      { team:'home', scorer:'J. Manzambi', minute:"74'"   },
+      { team:'home', scorer:'R. Vargas',   minute:"84'"   },
+      { team:'home', scorer:'J. Manzambi', minute:"90'"   },
+      { team:'away', scorer:'E. Mahmic',   minute:"90+3'" },
+      { team:'home', scorer:'G. Xhaka',    minute:"90+7'" },
+    ],
+    cards:[
+      { team:'away', player:'T. Muharemovic', minute:"80'", type:'red' },
+    ],
+    description:
+      '瑞士下半場強勢爆發，最後 16 分鐘四球橫掃！80 分鐘波赫球員遭紅牌逐出後，' +
+      '替補球員 Manzambi 連入兩球，Vargas 中距離炸門，Xhaka 補時主射十二碼蓋棺，' +
+      '波赫僅能在混亂中扳回一城。瑞士昂首登頂 B 組。',
+    descriptionEn:
+      'Switzerland erupted in the final 16 minutes! After Bosnia\'s Muharemovic saw red on 80\', ' +
+      'sub Manzambi struck twice, Vargas added a stunning long-range effort, and Xhaka ' +
+      'converted a late penalty. All four Swiss goals came after the 74th minute — a stunning blitz.' },
+
+  { date:'Jun 18', round:'Matchday 2',
+    home:'Canada', homeFlag:'🇨🇦', homeScore:6,
+    away:'Qatar',  awayFlag:'🇶🇦', awayScore:0,
+    venue:'BC Place',
+    goals:[
+      { team:'home', scorer:'C. Larin',   minute:"16'"   },
+      { team:'home', scorer:'J. David',   minute:"29'"   },
+      { team:'home', scorer:'J. David',   minute:"45+3'" },
+      { team:'home', scorer:'N. Saliba',  minute:"64'"   },
+      { team:'away', scorer:'Manai (OG)', minute:"75'"   },
+      { team:'home', scorer:'J. David',   minute:"90+2'" },
+    ],
+    cards:[
+      { team:'away', player:'H. Ahmed',  minute:"33'", type:'red' },
+      { team:'away', player:'A. Madibo', minute:"51'", type:'red' },
+    ],
+    description:
+      '加拿大在主場 BC Place 締造歷史！Jonathan David 大四喜領銜演出，' +
+      '卡達兩名球員先後遭紅牌逐出，楓葉隊以 6:0 狂掃，創下 CONCACAF 球隊世界盃史上最大勝仗。' +
+      'Koné 受傷離場令人揪心，但 BC Place 全場沸騰，加拿大積四分領跑 B 組。',
+    descriptionEn:
+      'Canada made history at BC Place! Jonathan David\'s four goals — a hat-trick and more — ' +
+      'headlined a stunning 6-0 demolition. Qatar were reduced to nine men with two red cards, ' +
+      'and Canada secured the biggest win by a CONCACAF nation in World Cup history, ' +
+      'topping Group B with four points.' },
+
+  { date:'Jun 18', round:'Matchday 2',
+    home:'Mexico',      homeFlag:'🇲🇽', homeScore:1,
+    away:'South Korea', awayFlag:'🇰🇷', awayScore:0,
+    venue:'Estadio Akron',
+    goals:[
+      { team:'home', scorer:'L. Romo', minute:"50'" },
+    ],
+    description:
+      '墨西哥以最幸運的進球率先確定晉級！南韓門將 Kim 出迎時與後衛相撞失誤，球滾進禁區，' +
+      'Romo 50 分鐘面對空門輕鬆推射。墨西哥成為本屆首支晉級 32 強的球隊，' +
+      '以六分完美領跑 A 組，揭幕戰光芒再現。',
+    descriptionEn:
+      'Mexico clinched their knockout spot in the luckiest fashion! South Korea keeper Kim ' +
+      'collided with his own defender while rushing off his line, leaving Romo to tap into ' +
+      'an empty net on 50 minutes. Mexico are the first team to qualify at World Cup 2026, ' +
+      'topping Group A with a perfect six points.' },
 ];
 
-const SCORES_UPDATED = '2026-06-17';
+const SCORES_UPDATED = '2026-06-18';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
