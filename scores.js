@@ -627,9 +627,125 @@ const FINAL_SCORES = [
       'collided with his own defender while rushing off his line, leaving Romo to tap into ' +
       'an empty net on 50 minutes. Mexico are the first team to qualify at World Cup 2026, ' +
       'topping Group A with a perfect six points.' },
+
+  // ── Matchday 2, Day 2 — Jun 19 ───────────────────────────────────────────
+  { date:'Jun 19', round:'Matchday 2',
+    home:'USA',       homeFlag:'🇺🇸', homeScore:2,
+    away:'Australia', awayFlag:'🇦🇺', awayScore:0,
+    venue:'Lumen Field',
+    goals:[
+      { team:'home', scorer:'Burgess (OG)', minute:"11'" },
+      { team:'home', scorer:'A. Freeman',   minute:"46'" },
+    ],
+    description:
+      '美國以穩健姿態淘汰澳洲，確定 D 組出線！11 分鐘 Balogun 左路突破傳中，' +
+      '澳洲後衛 Burgess 不慎烏龍入網率先為美國送分；' +
+      '下半場開賽後 Freeman 在禁區前沿補射落網，鎖定 2:0 勝局。' +
+      '美國積 6 分完美領跑 D 組，Christian Pulisic 缺陣亦無損美軍戰力。',
+    descriptionEn:
+      'The USMNT secured their knockout berth with a commanding 2-0 win over Australia at Lumen Field! ' +
+      'Cameron Burgess turned a Folarin Balogun cross into his own net in the 11th minute, ' +
+      'and Alex Freeman headed home a rebound just after half-time to seal the victory. ' +
+      'The US top Group D with six points despite Pulisic sitting out through injury — ' +
+      'a perfect Group D record heading into the final matchday.' },
+
+  { date:'Jun 18', round:'Matchday 2',
+    home:'Türkiye',  homeFlag:'🇹🇷', homeScore:0,
+    away:'Paraguay', awayFlag:'🇵🇾', awayScore:1,
+    venue:"Levi's Stadium",
+    goals:[
+      { team:'away', scorer:'M. Galarza', minute:"2'" },
+    ],
+    cards:[
+      { team:'away', player:'M. Almirón', minute:"45+3'", type:'red' },
+    ],
+    description:
+      '巴拉圭以最驚險方式奪勝！Galarza 開賽僅 2 分鐘便以一腳 25 米遠射破網，' +
+      '成為本屆最快進球之一。然而半場前 Almirón 因遮嘴慶祝觸犯 FIFA 新規遭紅牌驅逐，' +
+      '十人巴拉圭浴血奮戰守住一球優勢，最終淘汰土耳其，D 組局面大逆轉。',
+    descriptionEn:
+      'Paraguay held on for a stunning 1-0 win after the most bizarre red card of the tournament! ' +
+      'Galarza\'s stunning 25-metre strike in the 2nd minute gave them the lead, but Almirón was ' +
+      'controversially sent off in stoppage time for covering his mouth — under FIFA\'s new rule. ' +
+      'Ten-man Paraguay ground out the win to eliminate Türkiye.' },
+
+  // ── Matchday 2, Day 2 (cont.) — Jun 19 ──────────────────────────────────
+  { date:'Jun 19', round:'Matchday 2',
+    home:'Scotland', homeFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', homeScore:0,
+    away:'Morocco',  awayFlag:'🇲🇦', awayScore:1,
+    venue:'Gillette Stadium',
+    goals:[
+      { team:'away', scorer:'I. Saibari', minute:"2'" },
+    ],
+    description:
+      '摩洛哥閃電 2 分鐘破門，蘇格蘭全場追趕無果！Saibari 接 Brahim Díaz 妙傳後' +
+      '不停球直接勁射入頂角，71 秒便成功破網——本屆世盃最快致勝進球紀錄。' +
+      '摩洛哥防守嚴密，蘇格蘭下半場密攻皆被化解，C 組頂部之爭白熱化。',
+    descriptionEn:
+      'Morocco stunned Scotland with a 71-second opener — the fastest winning goal in a 1-0 result ' +
+      'in World Cup history! Saibari fired home a first-time finish from Brahim Díaz\'s pass, ' +
+      'and Morocco\'s resolute defending held out Scotland\'s second-half pressure throughout.' },
+
+  { date:'Jun 19', round:'Matchday 2',
+    home:'Brazil', homeFlag:'🇧🇷', homeScore:3,
+    away:'Haiti',  awayFlag:'🇭🇹', awayScore:0,
+    venue:'Lincoln Financial Field',
+    goals:[
+      { team:'home', scorer:'M. Cunha',      minute:"23'"   },
+      { team:'home', scorer:'M. Cunha',      minute:"36'"   },
+      { team:'home', scorer:'Vinícius Jr',   minute:"45+3'" },
+    ],
+    description:
+      '巴西上半場三球橫掃，Cunha 梅開二度大放異彩！23 分鐘混亂中率先破網，' +
+      '36 分鐘再以精妙左腳抽射追加，Vinícius Júnior 在傷停時間再補一球，' +
+      '半場已奠定勝局。下半場安塞洛蒂換人保存體力，巴西穩居 C 組榜首。',
+    descriptionEn:
+      'Brazil were devastating in the first half! Cunha netted a brace — a scrappy opener in the 23rd ' +
+      'and a brilliant left-footed finish in the 36th — before Vinícius Jr. sealed it in stoppage time. ' +
+      'Brazil top Group C on goal difference, with Haiti now eliminated.' },
+
+  // ── Matchday 2, Day 3 — Jun 20 ───────────────────────────────────────────
+  { date:'Jun 20', round:'Matchday 2',
+    home:'Netherlands', homeFlag:'🇳🇱', homeScore:5,
+    away:'Sweden',      awayFlag:'🇸🇪', awayScore:1,
+    venue:'NRG Stadium',
+    goals:[
+      { team:'home', scorer:'B. Brobbey',     minute:"5'"  },
+      { team:'home', scorer:'B. Brobbey',     minute:"17'" },
+      { team:'home', scorer:'C. Gakpo',       minute:"47'" },
+      { team:'home', scorer:'C. Gakpo',       minute:"54'" },
+      { team:'away', scorer:'A. Elanga',      minute:"59'" },
+      { team:'home', scorer:'C. Summerville', minute:"89'" },
+    ],
+    description:
+      '荷蘭在休斯頓震撼全場，5:1 大破瑞典！Brobbey 17 分鐘內連入兩球奠定基調，' +
+      'Gakpo 下半場接力梅開二度，Summerville 最後破門錦上添花。' +
+      '瑞典 Elanga 僅留一粒安慰球，荷蘭以暴力足球昂首領跑 F 組。',
+    descriptionEn:
+      'The Netherlands were electric — Brobbey\'s brace inside 17 minutes set the tone for a ' +
+      'dominant 5-1 demolition! Gakpo added a second-half double before Summerville finished it off. ' +
+      'Elanga\'s consolation was merely a footnote. Netherlands lead Group F in style.' },
+
+  { date:'Jun 20', round:'Matchday 2',
+    home:'Germany',     homeFlag:'🇩🇪', homeScore:2,
+    away:'Ivory Coast', awayFlag:'🇨🇮', awayScore:1,
+    venue:'BMO Field',
+    goals:[
+      { team:'away', scorer:'F. Kessié', minute:"30'"   },
+      { team:'home', scorer:'D. Undav',  minute:"68'"   },
+      { team:'home', scorer:'D. Undav',  minute:"90+4'" },
+    ],
+    description:
+      '德國最後一刻驚魂逆轉！象牙海岸隊長 Kessié 30 分鐘強勢破網，' +
+      '地主如坐針氈。替補球員 Undav 68 分鐘出場後即扳平，' +
+      '並在第 90+4 分鐘再度一槌定音，全場沸騰。德國以鬥志奪下 E 組關鍵三分。',
+    descriptionEn:
+      'Germany snatched a dramatic late comeback! Ivory Coast captain Kessié gave the Elephants ' +
+      'a shock lead that held until the 68th minute when super-sub Undav equalised — then struck ' +
+      'again in the 94th minute to seal a barely deserved but crucial victory for Germany.' },
 ];
 
-const SCORES_UPDATED = '2026-06-18';
+const SCORES_UPDATED = '2026-06-20';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
