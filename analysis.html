@@ -47,8 +47,11 @@
 <script>
 const container = document.getElementById('analysis-container');
 
+const isEn = getLang() === 'en';
 ANALYSIS_TOP20.forEach((team, i) => {
   const rankClass = i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
+  const strList  = (isEn ? team.strengths  : (team.strengthsZh  || team.strengths)).map(s=>`<li>${s}</li>`).join('');
+  const weakList = (isEn ? team.weaknesses : (team.weaknessesZh || team.weaknesses)).map(w=>`<li>${w}</li>`).join('');
   const card = document.createElement('div');
   card.className = 'analysis-card fade-in';
   card.innerHTML = `
@@ -68,11 +71,11 @@ ANALYSIS_TOP20.forEach((team, i) => {
       <div class="sw-row">
         <div class="sw-box str">
           <h4>${t('an_strengths')}</h4>
-          <ul>${team.strengths.map(s=>`<li>${s}</li>`).join('')}</ul>
+          <ul>${strList}</ul>
         </div>
         <div class="sw-box weak">
           <h4>${t('an_weaknesses')}</h4>
-          <ul>${team.weaknesses.map(w=>`<li>${w}</li>`).join('')}</ul>
+          <ul>${weakList}</ul>
         </div>
       </div>
       <div class="ace-box">
