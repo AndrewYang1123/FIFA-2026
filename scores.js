@@ -743,9 +743,41 @@ const FINAL_SCORES = [
       'Germany snatched a dramatic late comeback! Ivory Coast captain Kessié gave the Elephants ' +
       'a shock lead that held until the 68th minute when super-sub Undav equalised — then struck ' +
       'again in the 94th minute to seal a barely deserved but crucial victory for Germany.' },
+
+  { date:'Jun 20', round:'Matchday 2',
+    home:'Ecuador',  homeFlag:'🇪🇨', homeScore:0,
+    away:'Curaçao',  awayFlag:'🇨🇼', awayScore:0,
+    venue:'Arrowhead Stadium',
+    description:
+      '本屆最精彩的門將表演！庫拉索門將 Eloy Room 全場獨力撐起，完成多達 15 次神撲，' +
+      '令厄瓜多 26 腳射門全部告終。厄瓜多以 75% 控球率主導全場，卻功虧一簣，' +
+      '庫拉索以 0:0 奪得世界盃歷史首積分。',
+    descriptionEn:
+      'One of the great World Cup goalkeeping performances! Curaçao keeper Eloy Room made 15 saves ' +
+      'to earn a historic first-ever World Cup point, denying Ecuador 26 times despite 75% possession ' +
+      'and Valencia\'s golden chances. A stunning shutout that shocked Group E.' },
+
+  { date:'Jun 20', round:'Matchday 2',
+    home:'Tunisia', homeFlag:'🇹🇳', homeScore:0,
+    away:'Japan',   awayFlag:'🇯🇵', awayScore:4,
+    venue:'Estadio BBVA',
+    goals:[
+      { team:'away', scorer:'D. Kamada', minute:"4'"  },
+      { team:'away', scorer:'A. Ueda',   minute:"31'" },
+      { team:'away', scorer:'J. Ito',    minute:"69'" },
+      { team:'away', scorer:'A. Ueda',   minute:"83'" },
+    ],
+    description:
+      '日本大開殺戒，4:0 橫掃突尼西亞！Kamada 4 分鐘閃電破門，創日本世盃最快入球紀錄；' +
+      'Ueda 梅開二度加上 Ito 第 69 分鐘冷靜推射，' +
+      '日本完成大勝，突尼西亞出局，並寫下日本世界盃史上最大勝仗。',
+    descriptionEn:
+      'Japan were ruthless! Kamada struck in the 4th minute — the fastest goal in Japan\'s World Cup ' +
+      'history — then Ueda\'s brace and Ito\'s cool finish completed a dominant 4-0 victory. ' +
+      'Japan set a new record for their biggest ever World Cup win; Tunisia are eliminated.' },
 ];
 
-const SCORES_UPDATED = '2026-06-20';
+const SCORES_UPDATED = '2026-06-21';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
