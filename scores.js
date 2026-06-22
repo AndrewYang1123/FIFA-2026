@@ -775,9 +775,88 @@ const FINAL_SCORES = [
       'Japan were ruthless! Kamada struck in the 4th minute — the fastest goal in Japan\'s World Cup ' +
       'history — then Ueda\'s brace and Ito\'s cool finish completed a dominant 4-0 victory. ' +
       'Japan set a new record for their biggest ever World Cup win; Tunisia are eliminated.' },
+
+  // ── Jun 21 ──────────────────────────────────────────────────────────────
+
+  { date:'Jun 21', round:'Matchday 2',
+    home:'Spain',        homeFlag:'🇪🇸', homeScore:4,
+    away:'Saudi Arabia', awayFlag:'🇸🇦', awayScore:0,
+    venue:'Mercedes-Benz Stadium',
+    goals:[
+      { team:'home', scorer:'L. Yamal',      minute:"11'" },
+      { team:'home', scorer:'M. Oyarzabal',  minute:"21'" },
+      { team:'home', scorer:'M. Oyarzabal',  minute:"23'" },
+      { team:'away', scorer:'Al-Tambakti OG',minute:"49'" },
+    ],
+    description:
+      '西班牙終於爆發！17 歲天才 Lamine Yamal 首粒世界盃進球（第 11 分鐘），' +
+      'Oyarzabal 在 21、23 兩分鐘連下兩城完成上半場屠殺，' +
+      '沙特後衛 Al-Tambakti 烏龍球令比數定格 4:0。西班牙為首戰平局完美雪恥。',
+    descriptionEn:
+      'Spain answered their critics in style! Teen sensation Lamine Yamal opened his World Cup account ' +
+      'in the 11th minute, becoming one of the youngest ever WC scorers. Oyarzabal added a brace in two ' +
+      'minutes (21\'/23\') before Al-Tambakti\'s own goal completed a ruthless 4-0 victory — La Roja are back.' },
+
+  { date:'Jun 21', round:'Matchday 2',
+    home:'Belgium', homeFlag:'🇧🇪', homeScore:0,
+    away:'Iran',    awayFlag:'🇮🇷', awayScore:0,
+    venue:'SoFi Stadium',
+    cards:[
+      { team:'home', player:'N. Ngoy', minute:"66'", type:'red' },
+    ],
+    description:
+      '令人窒息的 0:0！比利時後衛 Ngoy 第 66 分鐘回傳失誤後，為阻截 Taremi 單刀犯規領紅，' +
+      '以 10 人迎戰剩餘賽事。伊朗門將 Beiranvand 全場七次神撲，Taremi 一腳被 VAR 判定越位無效。' +
+      '伊朗憑此平局暫登 G 組榜首。',
+    descriptionEn:
+      'A tense 0-0 in Los Angeles! Belgium defender Ngoy was shown a straight red in the 66th minute ' +
+      'for hauling down Taremi on a clear breakaway after a dreadful back-pass. Iran keeper Beiranvand ' +
+      'made seven saves; Taremi\'s goal was ruled out for offside via VAR. Iran top Group G on points.' },
+
+  { date:'Jun 21', round:'Matchday 2',
+    home:'Uruguay',    homeFlag:'🇺🇾', homeScore:2,
+    away:'Cape Verde', awayFlag:'🇨🇻', awayScore:2,
+    venue:'Hard Rock Stadium',
+    goals:[
+      { team:'away', scorer:'K. Pina',      minute:"21'" },
+      { team:'home', scorer:'M. Araújo',    minute:"44'" },
+      { team:'home', scorer:'A. Canobbio',  minute:"45+6'" },
+      { team:'away', scorer:'H. Varela',    minute:"61'" },
+    ],
+    description:
+      '又是佛得角！Kevin Pina 第 21 分鐘以一腳 32 米超遠界外球轟破球門，' +
+      '創本屆最遠進球紀錄；烏拉圭靠 Araújo（44\'）和 Canobbio（45+6\'）連入兩球翻盤，' +
+      '但替補 Hélio Varela 第 61 分鐘補時神射令比數再度扳平。佛得角已連奪兩場平局，' +
+      '奇蹟晉級之路仍未熄滅！',
+    descriptionEn:
+      'Cape Verde stun Uruguay again! Kevin Pina\'s outrageous 32-metre free-kick opened the scoring — ' +
+      'the longest-range goal of the 2026 tournament. Uruguay fought back through Araújo and Canobbio, ' +
+      'but Hélio Varela came off the bench to snatch a point in the 61st minute. The Blue Sharks keep ' +
+      'their knockout dream alive with two draws from two.' },
+
+  { date:'Jun 21', round:'Matchday 2',
+    home:'New Zealand', homeFlag:'🇳🇿', homeScore:1,
+    away:'Egypt',       awayFlag:'🇪🇬', awayScore:3,
+    venue:'BC Place',
+    goals:[
+      { team:'home', scorer:'F. Surman',    minute:"15'" },
+      { team:'away', scorer:'Mostafa Zico', minute:"58'" },
+      { team:'away', scorer:'M. Salah',     minute:"67'" },
+      { team:'away', scorer:'Trézéguet',    minute:"82'" },
+    ],
+    description:
+      '薩拉赫帶領埃及寫下世界盃歷史！Surman 第 15 分鐘先開紀錄，但埃及下半場神勇反彈：' +
+      'Mostafa Zico 頭球破門（58\'），薩拉赫低平炮劃入遠角（67\'），' +
+      '替補 Trézéguet 再補頭球（82\'）完成逆轉。埃及 3:1 奪下 G 組首勝，' +
+      '也是埃及隊史首場世界盃勝仗！',
+    descriptionEn:
+      'Egypt make history! New Zealand led through Surman\'s 15th-minute header, but Egypt turned it ' +
+      'around with a brilliant second half. Mostafa Zico headed in from a Salah cross (58\'), then Salah ' +
+      'himself curled a trademark left-footed drive into the far corner (67\'). Trézéguet headed home ' +
+      'the third in the 82nd to complete Egypt\'s first-ever World Cup victory — a historic night in Vancouver.' },
 ];
 
-const SCORES_UPDATED = '2026-06-21';
+const SCORES_UPDATED = '2026-06-22';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
