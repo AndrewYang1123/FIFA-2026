@@ -854,9 +854,88 @@ const FINAL_SCORES = [
       'around with a brilliant second half. Mostafa Zico headed in from a Salah cross (58\'), then Salah ' +
       'himself curled a trademark left-footed drive into the far corner (67\'). Trézéguet headed home ' +
       'the third in the 82nd to complete Egypt\'s first-ever World Cup victory — a historic night in Vancouver.' },
+
+  // ── Jun 22 ──────────────────────────────────────────────────────────────
+
+  { date:'Jun 22', round:'Matchday 2',
+    home:'Argentina', homeFlag:'🇦🇷', homeScore:2,
+    away:'Austria',   awayFlag:'🇦🇹', awayScore:0,
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'home', scorer:'L. Messi', minute:"38'"   },
+      { team:'home', scorer:'L. Messi', minute:"90+5'" },
+    ],
+    description:
+      '梅西改寫歷史！錯失點球後仍以第 38 分鐘及第 90+5 分鐘梅開二度，' +
+      '世界盃生涯進球數達 18 球，超越克洛澤成為世界盃史上最多進球球員。' +
+      '阿根廷提前出線，J 組榜首地位穩如磐石，衛冕之路氣勢如虹。',
+    descriptionEn:
+      'The Messi Game! He missed a penalty but still delivered a stunning brace — scoring in the 38th ' +
+      'minute and again deep in stoppage time (90+5\') to reach 18 World Cup goals, overtaking ' +
+      'Miroslav Klose as the all-time leading WC scorer. Argentina advance from Group J with a game to spare.' },
+
+  { date:'Jun 22', round:'Matchday 2',
+    home:'France', homeFlag:'🇫🇷', homeScore:3,
+    away:'Iraq',   awayFlag:'🇮🇶', awayScore:0,
+    venue:'Lincoln Financial Field',
+    goals:[
+      { team:'home', scorer:'K. Mbappé',   minute:"14'" },
+      { team:'home', scorer:'K. Mbappé',   minute:"54'" },
+      { team:'home', scorer:'O. Dembélé',  minute:"66'" },
+    ],
+    description:
+      '百帽加冕梅開二度！法國對陣伊拉克因雷暴中斷近 2 小時，' +
+      'Mbappé 在第 14 分鐘以左腳遠射先開紀錄，復賽後第 54 分鐘再下一城，' +
+      'Dembélé 第 66 分鐘完成比賽。這是 Mbappé 第 100 次代表法國出賽，' +
+      '本屆已入 4 球，法國提前晉級 I 組出線。',
+    descriptionEn:
+      'Century cap, double delight! France\'s match against Iraq was delayed nearly 2 hours by ' +
+      'thunderstorms in Philadelphia. Mbappé marked his 100th France cap with a brace — a 20-yard ' +
+      'screamer in the 14th minute and a tap-in in the 54th. Dembélé added a third (66\') on his way to ' +
+      'France\'s fourth successive World Cup knockout-stage qualification.' },
+
+  { date:'Jun 22', round:'Matchday 2',
+    home:'Norway',  homeFlag:'🇳🇴', homeScore:3,
+    away:'Senegal', awayFlag:'🇸🇳', awayScore:2,
+    venue:'MetLife Stadium',
+    goals:[
+      { team:'home', scorer:'M. Pedersen', minute:"43'"   },
+      { team:'away', scorer:'I. Sarr',     minute:"53'"   },
+      { team:'home', scorer:'E. Haaland',  minute:"48'"   },
+      { team:'home', scorer:'E. Haaland',  minute:"58'"   },
+      { team:'away', scorer:'I. Sarr',     minute:"90+3'" },
+    ],
+    description:
+      '哈蘭德大戰！挪威靠 Pedersen（43\'）先入，Sarr（53\'）為塞內加爾扳平後，' +
+      '哈蘭德霸氣梅開二度（48\'、58\'），4 場球加起來 4 球統治整個 I 組射手榜。' +
+      'Sarr 補時入球雖減分，挪威仍以 3:2 勝出，順利晉級。',
+    descriptionEn:
+      'Haaland takes over! Norway struck first through Pedersen (43\'), Senegal levelled via Sarr ' +
+      '(53\'), but Haaland settled it with a clinical brace — 48\' and 58\' — to give Norway a 3-1 cushion. ' +
+      'Sarr grabbed a late consolation (90+3\') but Norway held on 3-2. Haaland now has 4 goals in 2 games ' +
+      'and leads the Golden Boot race alongside Messi and Mbappé.' },
+
+  { date:'Jun 22', round:'Matchday 2',
+    home:'Jordan',  homeFlag:'🇯🇴', homeScore:1,
+    away:'Algeria', awayFlag:'🇩🇿', awayScore:2,
+    venue:"Levi's Stadium",
+    goals:[
+      { team:'home', scorer:'N. Al-Rashdan', minute:"36'" },
+      { team:'away', scorer:'N. Benbouali',  minute:"68'" },
+      { team:'away', scorer:'A. Gouiri',     minute:"82'" },
+    ],
+    description:
+      '阿爾及利亞逆轉！約旦 Al-Rashdan 第 36 分鐘外腳背精彩破門令全場沸騰，' +
+      '下半場阿爾及利亞靠定位球連入兩球還以顏色：Benbouali（68\'）頭球破門，' +
+      'Gouiri（82\'）角球後頭球封殺比賽。約旦憾負出局，阿爾及利亞晉級希望猶存。',
+    descriptionEn:
+      'Algeria comeback kings! Jordan shocked the Bay Area crowd with a stunning Al-Rashdan ' +
+      'outside-of-the-boot curler in the 36th minute. But Algeria rallied with two set-piece headers — ' +
+      'Benbouali in the 68th from a Mahrez corner, and Gouiri in the 82nd — to snatch a crucial win. ' +
+      'Jordan are eliminated; Algeria stay alive in Group J.' },
 ];
 
-const SCORES_UPDATED = '2026-06-22';
+const SCORES_UPDATED = '2026-06-23';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
