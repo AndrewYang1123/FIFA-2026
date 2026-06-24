@@ -259,6 +259,19 @@
       line-height: 1.65;
       font-style: italic;
     }
+
+    /* ── Matchday separator row ───────────────────────── */
+    .round-sep-row td {
+      background: linear-gradient(90deg, rgba(255,215,0,0.10), rgba(0,212,170,0.06));
+      border-top: 2px solid rgba(255,215,0,0.25);
+      border-bottom: 2px solid rgba(255,215,0,0.25);
+      padding: 0.45rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
     @media (max-width: 600px) {
       .ko-grid { grid-template-columns: 1fr; }
       .ko-round-card.ko-final { grid-column: auto; }

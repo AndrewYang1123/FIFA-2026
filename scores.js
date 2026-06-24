@@ -933,9 +933,74 @@ const FINAL_SCORES = [
       'outside-of-the-boot curler in the 36th minute. But Algeria rallied with two set-piece headers — ' +
       'Benbouali in the 68th from a Mahrez corner, and Gouiri in the 82nd — to snatch a crucial win. ' +
       'Jordan are eliminated; Algeria stay alive in Group J.' },
+
+  // ── Jun 23 ──────────────────────────────────────────────────────────────
+
+  { date:'Jun 23', round:'Matchday 2',
+    home:'Portugal',   homeFlag:'🇵🇹', homeScore:5,
+    away:'Uzbekistan', awayFlag:'🇺🇿', awayScore:0,
+    venue:'NRG Stadium',
+    goals:[
+      { team:'home', scorer:'C. Ronaldo',   minute:"6'"  },
+      { team:'home', scorer:'N. Mendes',    minute:"17'" },
+      { team:'home', scorer:'C. Ronaldo',   minute:"39'" },
+      { team:'away', scorer:'Nematov OG',   minute:"60'" },
+      { team:'home', scorer:'R. Leão',      minute:"87'" },
+    ],
+    description:
+      'C 羅歷史性六屆世界盃破門！第 6 分鐘閃電破門後，Mendes 17 分鐘界外球得分，' +
+      'C 羅 39 分鐘再下一城完成半場屠殺。下半場 Nematov 烏龍（60\'）及替補 Leão（87\'）' +
+      '錦上添花。葡萄牙 5:0 大勝，C 羅成為首位在六屆世界盃均有入球的球員。',
+    descriptionEn:
+      'Ronaldo writes history again! He scored in the 6th minute — becoming the first player ever ' +
+      'to score at six separate World Cups. Mendes added a brilliant free-kick (17\'), Ronaldo completed ' +
+      'his brace (39\'), then Nematov\'s own goal (60\') and Leão\'s 87th-minute strike rounded off ' +
+      'a dominant 5-0 victory for Portugal in Houston.' },
+
+  { date:'Jun 23', round:'Matchday 2',
+    home:'England', homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', homeScore:0,
+    away:'Ghana',   awayFlag:'🇬🇭', awayScore:0,
+    venue:'Gillette Stadium',
+    description:
+      '英格蘭 0:0 悶平迦納！三獅軍全場掌控卻無力破門，19 腳射門無一入網。' +
+      'O\'Reilly 第 86 分鐘挑中橫楣，Guehi 補時頭球被清出門線，創英格蘭世界盃最多射門不入的一場。',
+    descriptionEn:
+      'England frustrate again! They dominated Ghana with 19 shots but couldn\'t find the net. ' +
+      'O\'Reilly rattled the crossbar in the 86th minute and Guehi had a header cleared off the line ' +
+      'in stoppage time — a goalless draw that sets up a nervy final group game.' },
+
+  { date:'Jun 23', round:'Matchday 2',
+    home:'Panama',  homeFlag:'🇵🇦', homeScore:0,
+    away:'Croatia', awayFlag:'🇭🇷', awayScore:1,
+    venue:'BMO Field',
+    goals:[
+      { team:'away', scorer:'A. Budimir', minute:"54'" },
+    ],
+    description:
+      '克羅埃西亞最重要的一勝！Budimir 第 54 分鐘頭球破門，為球隊在 L 組拿下首分。' +
+      '巴拿馬雖積極壓迫，但克羅埃西亞後防線由 Gvardiol 帶領穩守至完場，1:0 出線希望大增。',
+    descriptionEn:
+      'Croatia grind out a vital win! Budimir\'s powerful 54th-minute header broke the deadlock ' +
+      'and proved to be the difference. Gvardiol marshalled a resolute defensive display as Croatia ' +
+      'held off Panama\'s late pressure to claim three crucial points in Toronto.' },
+
+  { date:'Jun 23', round:'Matchday 2',
+    home:'Colombia', homeFlag:'🇨🇴', homeScore:1,
+    away:'DR Congo', awayFlag:'🇨🇩', awayScore:0,
+    venue:'Estadio Akron',
+    goals:[
+      { team:'home', scorer:'D. Muñoz', minute:"76'" },
+    ],
+    description:
+      '哥倫比亞靠意志贏球！Daniel Muñoz 第 76 分鐘遠射破門，為哥倫比亞拿下 K 組關鍵三分。' +
+      '剛果民主共和國世盃首秀表現不俗，但最終黯然落敗。哥倫比亞與葡萄牙並列 K 組前二。',
+    descriptionEn:
+      'Colombia edge a tight one! Daniel Muñoz unleashed a long-range strike in the 76th minute ' +
+      'to settle a hard-fought contest in Guadalajara. DR Congo showed quality on their World Cup ' +
+      'debut but couldn\'t find an equaliser. Colombia join Portugal at the top of Group K.' },
 ];
 
-const SCORES_UPDATED = '2026-06-23';
+const SCORES_UPDATED = '2026-06-24';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
@@ -984,7 +1049,13 @@ var KO_ROUNDS = [
     }
 
     var isEn = getLang() === 'en';
+    var lastRound = null;
     var rows = FINAL_SCORES.map(function (m) {
+      var sep = '';
+      if (m.round !== lastRound) {
+        lastRound = m.round;
+        sep = '<tr class="round-sep-row"><td colspan="5">📅 ' + tx(m.round) + '</td></tr>';
+      }
       // Build detail row (goals, cards, description)
       var evts = [];
       (m.goals || []).forEach(function(g) {
@@ -1002,7 +1073,7 @@ var KO_ROUNDS = [
         ? '<tr><td colspan="5" class="match-detail">' + eventsHTML + descHTML + '</td></tr>'
         : '';
 
-      return `<tr>
+      return sep + `<tr>
           <td>${tx(m.date)}</td>
           <td><div class="match-cell">
             <span>${m.homeFlag} ${tx(m.home)}</span>
