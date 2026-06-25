@@ -998,9 +998,127 @@ const FINAL_SCORES = [
       'Colombia edge a tight one! Daniel Muñoz unleashed a long-range strike in the 76th minute ' +
       'to settle a hard-fought contest in Guadalajara. DR Congo showed quality on their World Cup ' +
       'debut but couldn\'t find an equaliser. Colombia join Portugal at the top of Group K.' },
+
+  // ── Jun 24 — Matchday 3 ─────────────────────────────────────────────────
+
+  { date:'Jun 24', round:'Matchday 3',
+    home:'Switzerland', homeFlag:'🇨🇭', homeScore:2,
+    away:'Canada',      awayFlag:'🇨🇦', awayScore:1,
+    venue:'BC Place',
+    goals:[
+      { team:'home', scorer:'R. Vargas',    minute:"46'"  },
+      { team:'home', scorer:'J. Manzambi',  minute:"57'"  },
+      { team:'away', scorer:'J. David',     minute:"76'"  },
+    ],
+    description:
+      '瑞士主宰 B 組！Vargas 下半場開場 39 秒即閃電破門（46\'），' +
+      'Manzambi 再入一球（57\'）確立優勢，加拿大 David 76 分鐘追回一球但無力回天。' +
+      '瑞士以 B 組榜首晉級；加拿大作為地主國雖居第二仍成功出線。',
+    descriptionEn:
+      'Switzerland top Group B with flair! Vargas struck 39 seconds after the restart (46\'), then ' +
+      'Manzambi doubled the lead (57\'). Jonathan David pulled one back for Canada in the 76th, but ' +
+      'the Swiss held firm. Switzerland advance as group winners; Canada qualify as runners-up.' },
+
+  { date:'Jun 24', round:'Matchday 3',
+    home:'Bosnia & Herz.', homeFlag:'🇧🇦', homeScore:3,
+    away:'Qatar',          awayFlag:'🇶🇦', awayScore:1,
+    venue:'Lumen Field',
+    goals:[
+      { team:'home', scorer:'K. Alajbegović', minute:"29'"  },
+      { team:'away', scorer:'Abunada OG',      minute:"34'"  },
+      { team:'away', scorer:'A. Al-Haydos',   minute:"42'"  },
+      { team:'home', scorer:'N. Mahmić',       minute:"82'"  },
+    ],
+    description:
+      '波黑大勝卡達！18 歲小將 Alajbegović 第 29 分鐘入球成為本屆世界盃第八年輕入球者，' +
+      '卡達自擺烏龍（34\'）雪上加霜；Al-Haydos（42\'）一度扳回一球，' +
+      '但 Mahmić（82\'）補時封棺 3:1。波黑以最佳第三名資格有望晉級。',
+    descriptionEn:
+      'Bosnia punish Qatar! Teen Alajbegović (18) opened the scoring in the 29th minute to become one ' +
+      'of the youngest WC scorers this year. An Abunada own goal (34\') doubled the lead before ' +
+      'Al-Haydos pulled one back (42\'). Mahmić sealed it in the 82nd. Bosnia finish third in Group B ' +
+      'but advance as one of the best third-placed teams.' },
+
+  { date:'Jun 24', round:'Matchday 3',
+    home:'Scotland', homeFlag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', homeScore:0,
+    away:'Brazil',   awayFlag:'🇧🇷', awayScore:3,
+    venue:'Hard Rock Stadium',
+    goals:[
+      { team:'away', scorer:'Vinícius Jr',  minute:"7'"   },
+      { team:'away', scorer:'Vinícius Jr',  minute:"45'"  },
+      { team:'away', scorer:'M. Cunha',     minute:"60'"  },
+    ],
+    description:
+      '維尼修斯三戰三球！McKenna 7 分鐘重大失誤，維尼修斯閃電破門；' +
+      '上半場補時他再以頭球入網（45\'），Cunha 60 分鐘再下一城。' +
+      '內馬爾 76 分鐘傷癒復出，巴西以 C 組第一強勢晉級。蘇格蘭就此出局。',
+    descriptionEn:
+      'Brazil march on — Vinícius unstoppable! He pounced on a McKenna howler in the 7th minute, ' +
+      'headed in a second just before halftime (45\'), and Cunha added a fine third in the 60th. ' +
+      'Neymar returned from injury as a substitute (76\') to a roaring reception in Miami. ' +
+      'Brazil top Group C; Scotland are eliminated.' },
+
+  { date:'Jun 24', round:'Matchday 3',
+    home:'Morocco', homeFlag:'🇲🇦', homeScore:4,
+    away:'Haiti',   awayFlag:'🇭🇹', awayScore:2,
+    venue:'Mercedes-Benz Stadium',
+    goals:[
+      { team:'away', scorer:'Bounou OG',   minute:"10'"   },
+      { team:'home', scorer:'A. Hakimi',   minute:"39'"   },
+      { team:'away', scorer:'W. Isidor',   minute:"43'"   },
+      { team:'home', scorer:'I. Saibari',  minute:"45+1'" },
+      { team:'home', scorer:'S. Rahimi',   minute:"78'"   },
+      { team:'home', scorer:'Y. Gessime',  minute:"89'"   },
+    ],
+    description:
+      '六球瘋狂大戰！摩洛哥門將 Bounou 烏龍球（10\'）讓海地意外領先，' +
+      'Hakimi 39 分鐘扳平，Isidor 43 分鐘令海地再度反超，' +
+      'Saibari 補時（45+1\'）即時追平，下半場 Rahimi（78\'）和 Gessime（89\'）' +
+      '補時連入兩球完成逆轉。摩洛哥以 C 組第二晉級，海地雖敗猶榮。',
+    descriptionEn:
+      'Six-goal thriller! Morocco keeper Bounou gifted Haiti an own-goal opener (10\'), Hakimi ' +
+      'equalised (39\'), Isidor put Haiti back ahead (43\'), but Saibari levelled right before halftime ' +
+      '(45+1\'). In the second half, Rahimi (78\') and Gessime (89\') completed a stunning comeback ' +
+      'to give Morocco a 4-2 win. Morocco advance as Group C runners-up behind Brazil.' },
+
+  { date:'Jun 24', round:'Matchday 3',
+    home:'Czechia', homeFlag:'🇨🇿', homeScore:0,
+    away:'Mexico',  awayFlag:'🇲🇽', awayScore:3,
+    venue:'Estadio Azteca',
+    goals:[
+      { team:'away', scorer:'M. Chávez',   minute:"55'"   },
+      { team:'away', scorer:'J. Quiñones', minute:"61'"   },
+      { team:'away', scorer:'Á. Fidalgo',  minute:"90+4'" },
+    ],
+    description:
+      '墨西哥主場完美收官！在地標 Azteca 球場三戰全勝，' +
+      'Chávez（55\'）、Quiñones（61\'）上下半場接連得分，' +
+      'Fidalgo 在補時第 90+4 分鐘補上第三球，墨西哥成為本屆首支三戰全勝球隊，' +
+      '以 A 組第一強勢晉級 32 強。捷克就此出局。',
+    descriptionEn:
+      'Perfect Mexico! El Tri complete a flawless group stage at the iconic Azteca — the first team ' +
+      'to win all three group games this tournament. Chávez (55\') and Quiñones (61\') scored in ' +
+      'quick succession, then Fidalgo added a third deep in stoppage time (90+4\'). Mexico top ' +
+      'Group A; Czechia are eliminated.' },
+
+  { date:'Jun 24', round:'Matchday 3',
+    home:'South Africa',  homeFlag:'🇿🇦', homeScore:1,
+    away:'South Korea',   awayFlag:'🇰🇷', awayScore:0,
+    venue:'Estadio BBVA',
+    goals:[
+      { team:'home', scorer:'T. Maseko', minute:"63'" },
+    ],
+    description:
+      '南非創造歷史！Maseko 第 63 分鐘精準頭球破門，' +
+      '南非憑此一勝首次以小組第二名晉級世界盃淘汰賽，創下非洲球隊本屆最大驚喜。' +
+      '南韓出局，A 組最終排名：墨西哥第一、南非第二，兩隊均晉級 32 強。',
+    descriptionEn:
+      'South Africa make history! Maseko headed in the only goal in the 63rd minute, sending Bafana ' +
+      'Bafana into the knockout rounds for the first time ever. South Korea are eliminated. ' +
+      'Mexico top Group A; South Africa advance as runners-up — the biggest African story of the tournament.' },
 ];
 
-const SCORES_UPDATED = '2026-06-24';
+const SCORES_UPDATED = '2026-06-25';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
