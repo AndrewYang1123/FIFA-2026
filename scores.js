@@ -1116,9 +1116,118 @@ const FINAL_SCORES = [
       'South Africa make history! Maseko headed in the only goal in the 63rd minute, sending Bafana ' +
       'Bafana into the knockout rounds for the first time ever. South Korea are eliminated. ' +
       'Mexico top Group A; South Africa advance as runners-up — the biggest African story of the tournament.' },
+
+  // ── Jun 25 — Matchday 3 ─────────────────────────────────────────────────
+
+  { date:'Jun 25', round:'Matchday 3',
+    home:'Ecuador', homeFlag:'🇪🇨', homeScore:2,
+    away:'Germany', awayFlag:'🇩🇪', awayScore:1,
+    venue:'MetLife Stadium',
+    goals:[
+      { team:'away', scorer:'L. Sané',    minute:"2'"  },
+      { team:'home', scorer:'N. Angulo',  minute:"9'"  },
+      { team:'home', scorer:'G. Plata',   minute:"77'" },
+    ],
+    description:
+      '厄瓜多大爆冷！Sané 2 分鐘閃電破門令德國佔得先機，' +
+      '但 Angulo 9 分鐘即時扳平，Plata 77 分鐘超遠射決殺比賽。' +
+      '德國爆冷出局，厄瓜多以 E 組第二晉級。',
+    descriptionEn:
+      'Ecuador stun Germany! Sané gave the Germans an early lead (2\'), but Angulo levelled within ' +
+      'seven minutes (9\'), then Plata\'s brilliant long-range strike in the 77th settled it. ' +
+      'Germany are shockingly eliminated; Ecuador advance from Group E as runners-up.' },
+
+  { date:'Jun 25', round:'Matchday 3',
+    home:'Curaçao',     homeFlag:'🇨🇼', homeScore:0,
+    away:'Ivory Coast', awayFlag:'🇨🇮', awayScore:2,
+    venue:'Lincoln Financial Field',
+    goals:[
+      { team:'away', scorer:'N. Pépé', minute:"7'"  },
+      { team:'away', scorer:'N. Pépé', minute:"64'" },
+    ],
+    description:
+      '象牙海岸梅開二度晉級！Pépé 7 分鐘先開紀錄，64 分鐘再入一球鎖定勝局，' +
+      '象牙海岸首次在世界盃打入淘汰賽，以 E 組第一出線。' +
+      '庫拉索雖就此出局，兩場歸零仍令全球球迷留下深刻印象。',
+    descriptionEn:
+      'Ivory Coast make history! Pépé was the hero with a brace — 7th and 64th minutes — sending ' +
+      'the Elephants to the World Cup knockout rounds for the first time ever. They top Group E. ' +
+      'Curaçao are eliminated but leave with heads held high after their incredible goalkeeping display vs Ecuador.' },
+
+  { date:'Jun 25', round:'Matchday 3',
+    home:'Japan',  homeFlag:'🇯🇵', homeScore:1,
+    away:'Sweden', awayFlag:'🇸🇪', awayScore:1,
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'home', scorer:'D. Maeda',  minute:"56'" },
+      { team:'away', scorer:'A. Elanga', minute:"62'" },
+    ],
+    description:
+      '日本與瑞典各取所需！Maeda 56 分鐘精彩配合後入球，' +
+      '但 Elanga 62 分鐘即時以左腳斜射扳平。' +
+      '兩隊均以 1:1 完成比賽，同以 F 組一二名晉級，' +
+      '日本將面對巴西，瑞典對陣摩洛哥。',
+    descriptionEn:
+      'Japan and Sweden share the points and the group! Maeda\'s composed finish (56\') gave Japan ' +
+      'the lead, but Elanga\'s left-footed cross-shot levelled instantly (62\'). Both teams advance — ' +
+      'Netherlands top Group F; Japan are runners-up and will face Brazil in the last 32.' },
+
+  { date:'Jun 25', round:'Matchday 3',
+    home:'Tunisia',     homeFlag:'🇹🇳', homeScore:1,
+    away:'Netherlands', awayFlag:'🇳🇱', awayScore:3,
+    venue:'Arrowhead Stadium',
+    goals:[
+      { team:'away', scorer:'Skhiri OG',   minute:"3'"  },
+      { team:'away', scorer:'B. Brobbey',  minute:"7'"  },
+      { team:'home', scorer:'H. Mastouri', minute:"54'" },
+      { team:'away', scorer:'J. Van Hecke',minute:"62'" },
+    ],
+    description:
+      '荷蘭橫掃突尼西亞！Skhiri 烏龍球（3\'）及 Brobbey（7\'）閃電兩球奠定基礎，' +
+      'Mastouri（54\'）一度追回一球，但 Van Hecke（62\'）頭球確立最終 3:1 比分。' +
+      '荷蘭以 F 組第一出線，突尼西亞被淘汰。',
+    descriptionEn:
+      'Netherlands dominate to top Group F! An early own goal from Skhiri (3\') and Brobbey\'s ' +
+      'third of the tournament (7\') gave the Dutch a flying start. Mastouri pulled one back for ' +
+      'Tunisia (54\') but Van Hecke\'s header restored the two-goal cushion (62\'). ' +
+      'Netherlands face Morocco in the Round of 32; Tunisia are eliminated.' },
+
+  { date:'Jun 25', round:'Matchday 3',
+    home:'Türkiye', homeFlag:'🇹🇷', homeScore:3,
+    away:'USA',     awayFlag:'🇺🇸', awayScore:2,
+    venue:'SoFi Stadium',
+    goals:[
+      { team:'away', scorer:'A. Trusty',    minute:"3'"    },
+      { team:'home', scorer:'A. Güler',     minute:"10'"   },
+      { team:'home', scorer:'B. Yılmaz',    minute:"31'"   },
+      { team:'away', scorer:'S. Berhalter', minute:"49'"   },
+      { team:'home', scorer:'K. Ayhan',     minute:"90+8'" },
+    ],
+    description:
+      '補時絕殺！美國 Trusty 3 分鐘先開紀錄，Güler（10\'）和 Yılmaz（31\'）讓土耳其反超，' +
+      'Berhalter（49\'）補時扳平帶全場瘋狂。Kaan Ayhan 在第 90+8 分鐘臨門一腳射入空門，' +
+      '以絕殺完成土耳其本屆唯一勝仗。美國仍以 D 組第一出線。',
+    descriptionEn:
+      'Stoppage-time stunner! Trusty gave the USA an early lead (3\'), but Güler (10\') and Yılmaz ' +
+      '(31\') turned it around. Berhalter\'s rebound finish equalised in the 49th. Then, in the 8th ' +
+      'minute of stoppage time, substitute Kaan Ayhan redirected a pass into an empty net to break ' +
+      'American hearts. Despite the loss, USA advance as Group D winners. Türkiye are eliminated.' },
+
+  { date:'Jun 25', round:'Matchday 3',
+    home:'Paraguay',  homeFlag:'🇵🇾', homeScore:0,
+    away:'Australia', awayFlag:'🇦🇺', awayScore:0,
+    venue:"Levi's Stadium",
+    description:
+      '0:0 互利平局！兩隊在出線形勢明朗的情況下刻意求穩，' +
+      '全場波瀾不驚，互換進攻但均無法破門。澳洲以 D 組第二晉級，' +
+      '巴拉圭以最佳第三名身份靜候分組結果。',
+    descriptionEn:
+      'A gentlemanly 0-0! With both teams\' fates largely determined, neither Paraguay nor Australia ' +
+      'pushed hard for a goal in a flat encounter. Australia advance as Group D runners-up. ' +
+      'Paraguay await their fate as a potential best third-placed qualifier.' },
 ];
 
-const SCORES_UPDATED = '2026-06-25';
+const SCORES_UPDATED = '2026-06-26';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
