@@ -1129,13 +1129,14 @@ const FINAL_SCORES = [
       { team:'home', scorer:'G. Plata',   minute:"77'" },
     ],
     description:
-      '厄瓜多大爆冷！Sané 2 分鐘閃電破門令德國佔得先機，' +
-      '但 Angulo 9 分鐘即時扳平，Plata 77 分鐘超遠射決殺比賽。' +
-      '德國爆冷出局，厄瓜多以 E 組第二晉級。',
+      '厄瓜多創造驚喜但兩隊同晉！Sané 2 分鐘閃電破門，Angulo 9 分鐘即時扳平，' +
+      'Plata 77 分鐘超遠射絕殺。厄瓜多雖贏球，德國憑前兩輪積分優勢仍以 E 組第二晉級 32 強，' +
+      '厄瓜多則以最佳第三名身份出線，32 強將面對墨西哥。',
     descriptionEn:
-      'Ecuador stun Germany! Sané gave the Germans an early lead (2\'), but Angulo levelled within ' +
-      'seven minutes (9\'), then Plata\'s brilliant long-range strike in the 77th settled it. ' +
-      'Germany are shockingly eliminated; Ecuador advance from Group E as runners-up.' },
+      'Ecuador stun Germany but both advance! Sané gave Germany an early lead (2\'), but Angulo levelled ' +
+      '(9\') and Plata\'s brilliant long-range strike sealed it (77\'). Despite the defeat, Germany ' +
+      'advance as Group E runners-up on superior accumulated points. Ecuador qualify as one of the best ' +
+      'third-placed teams and will face Mexico in the Round of 32.' },
 
   { date:'Jun 25', round:'Matchday 3',
     home:'Curaçao',     homeFlag:'🇨🇼', homeScore:0,
@@ -1165,8 +1166,8 @@ const FINAL_SCORES = [
     description:
       '日本與瑞典各取所需！Maeda 56 分鐘精彩配合後入球，' +
       '但 Elanga 62 分鐘即時以左腳斜射扳平。' +
-      '兩隊均以 1:1 完成比賽，同以 F 組一二名晉級，' +
-      '日本將面對巴西，瑞典對陣摩洛哥。',
+      '兩隊均以 1:1 完成比賽，日本以 F 組第二晉級，' +
+      '瑞典以最佳第三名出線；日本將面對巴西，瑞典對陣法國。',
     descriptionEn:
       'Japan and Sweden share the points and the group! Maeda\'s composed finish (56\') gave Japan ' +
       'the lead, but Elanga\'s left-footed cross-shot levelled instantly (62\'). Both teams advance — ' +
@@ -1219,15 +1220,130 @@ const FINAL_SCORES = [
     venue:"Levi's Stadium",
     description:
       '0:0 互利平局！兩隊在出線形勢明朗的情況下刻意求穩，' +
-      '全場波瀾不驚，互換進攻但均無法破門。澳洲以 D 組第二晉級，' +
-      '巴拉圭以最佳第三名身份靜候分組結果。',
+      '全場波瀾不驚。澳洲以 D 組第二晉級 32 強，' +
+      '巴拉圭以最佳第三名身份出線，32 強對陣德國。',
     descriptionEn:
-      'A gentlemanly 0-0! With both teams\' fates largely determined, neither Paraguay nor Australia ' +
-      'pushed hard for a goal in a flat encounter. Australia advance as Group D runners-up. ' +
-      'Paraguay await their fate as a potential best third-placed qualifier.' },
+      'A gentlemanly 0-0! With both teams\' fates already decided, neither side pushed hard in a flat ' +
+      'encounter. Australia advance as Group D runners-up. Paraguay qualify as a best third-placed team ' +
+      'and will face Germany in the Round of 32.' },
+  // ── Jun 26 — Matchday 3 ─────────────────────────────────────────────────
+
+  { date:'Jun 26', round:'Matchday 3',
+    home:'Norway', homeFlag:'🇳🇴', homeScore:1,
+    away:'France', awayFlag:'🇫🇷', awayScore:4,
+    venue:'Gillette Stadium',
+    goals:[
+      { team:'away', scorer:'O. Dembélé',  minute:"7'"    },
+      { team:'away', scorer:'O. Dembélé',  minute:"20'"   },
+      { team:'home', scorer:'T. Aasgaard', minute:"21'"   },
+      { team:'away', scorer:'O. Dembélé',  minute:"32'"   },
+      { team:'away', scorer:'D. Doué',     minute:"90+4'" },
+    ],
+    description:
+      'Dembélé 帽子戲法！法國在挪威主場以 4:1 大勝，以全勝姿態登頂 I 組。' +
+      'Dembélé 7、20、32 分鐘連入三球完成帽子戲法——本屆首個！' +
+      'Aasgaard 21 分鐘扳回一城，Doué 於補時（90+4\'）再下一城。' +
+      '法國三戰全勝 9 分昂首出線，挪威以最佳第三名身份晉級 32 強。',
+    descriptionEn:
+      'Dembélé hat-trick — the first of 2026! France demolished Norway 4-1 to top Group I with a ' +
+      'perfect record. Dembélé struck three times in the first half (7\', 20\', 32\'). Aasgaard ' +
+      'pulled one back (21\') but Doué sealed it in stoppage time (90+4\'). ' +
+      'France win all three group games; Norway advance as best third-placed qualifiers.' },
+
+  { date:'Jun 26', round:'Matchday 3',
+    home:'Senegal', homeFlag:'🇸🇳', homeScore:5,
+    away:'Iraq',    awayFlag:'🇮🇶', awayScore:0,
+    venue:'BMO Field',
+    goals:[
+      { team:'home', scorer:'H. Diarra', minute:"4'"  },
+      { team:'home', scorer:'I. Sarr',   minute:"56'" },
+      { team:'home', scorer:'P. Gueye',  minute:"59'" },
+      { team:'home', scorer:'P. Gueye',  minute:"71'" },
+      { team:'home', scorer:'I. Ndiaye', minute:"82'" },
+    ],
+    cards:[
+      { team:'away', player:'K. Ansaif', minute:"36'", type:'red' },
+    ],
+    description:
+      '塞內加爾大屠殺！Habib Diarra 4 分鐘閃電開場，伊拉克 Ansaif 36 分鐘領紅後節節敗退：' +
+      'Sarr（56\'）、Gueye 梅開二度（59\'、71\'）、Ndiaye（82\'）令比數定格 5:0。' +
+      '塞內加爾以 I 組第二、9 積分晉級，獅子軍團本屆首場大勝。',
+    descriptionEn:
+      'Senegal run riot! Habib Diarra opened in the 4th minute, and after Iraq were reduced to 10 men ' +
+      '(Ansaif red, 36\'), the Lions of Teranga ran free — Sarr (56\'), Gueye brace (59\', 71\'), ' +
+      'and Ndiaye (82\') completed a dominant 5-0. Senegal advance as Group I runners-up.' },
+
+  { date:'Jun 26', round:'Matchday 3',
+    home:'Cape Verde',   homeFlag:'🇨🇻', homeScore:0,
+    away:'Saudi Arabia', awayFlag:'🇸🇦', awayScore:0,
+    venue:'NRG Stadium',
+    description:
+      '藍鯊歷史性晉級！兩隊均知局面，賽事波瀾不驚，以 0:0 告終。' +
+      '佛得角以 H 組第二歷史性首次打入世界盃淘汰賽，' +
+      '32 強將面對阿根廷。沙特阿拉伯出局。',
+    descriptionEn:
+      'Cape Verde make history! A calm 0-0 was all the Blue Sharks needed — they advance as Group H ' +
+      'runners-up, qualifying for the World Cup knockout stage for the first time ever. ' +
+      'They will face Argentina in the Round of 32. Saudi Arabia are eliminated.' },
+
+  { date:'Jun 26', round:'Matchday 3',
+    home:'Uruguay', homeFlag:'🇺🇾', homeScore:0,
+    away:'Spain',   awayFlag:'🇪🇸', awayScore:1,
+    venue:'Estadio Akron',
+    goals:[
+      { team:'away', scorer:'Á. Baena', minute:"42'" },
+    ],
+    description:
+      '西班牙一球定乾坤！Baena 42 分鐘把握門將 Muslera 失手的機會，' +
+      '冷靜地將球送入遠角，西班牙以 H 組第一晉級。' +
+      '烏拉圭出局，Bielsa 任內憾別賽事。',
+    descriptionEn:
+      'Spain squeeze through on a Muslera howler! Álex Baena pounced on a fumble by Uruguay keeper ' +
+      'Muslera in the 42nd minute, slotting into the far corner. Spain top Group H; ' +
+      'Uruguay are eliminated, ending Bielsa\'s tenure with heartbreak.' },
+
+  { date:'Jun 26', round:'Matchday 3',
+    home:'Egypt', homeFlag:'🇪🇬', homeScore:1,
+    away:'Iran',  awayFlag:'🇮🇷', awayScore:1,
+    venue:'Lumen Field',
+    goals:[
+      { team:'home', scorer:'Mahmoud Saber', minute:"5'"  },
+      { team:'away', scorer:'R. Rezaeian',   minute:"14'" },
+    ],
+    description:
+      'VAR 裁定關鍵平局！埃及 Mahmoud Saber 5 分鐘率先破門，' +
+      'Rezaeian 14 分鐘即時扳平。伊朗於補時轟入「致命一球」但 VAR 判定越位無效，' +
+      '最終 1:1。埃及以 G 組第二晉級，伊朗出局。',
+    descriptionEn:
+      'VAR denies Iran a dramatic winner! Egypt led through Mahmoud Saber (5\'), but Rezaeian ' +
+      'equalised for Iran (14\'). Iran had a late goal ruled out by VAR for offside, ' +
+      'leaving it 1-1. Egypt advance as Group G runners-up; Iran are eliminated.' },
+
+  { date:'Jun 26', round:'Matchday 3',
+    home:'New Zealand', homeFlag:'🇳🇿', homeScore:1,
+    away:'Belgium',     awayFlag:'🇧🇪', awayScore:5,
+    venue:'BC Place',
+    goals:[
+      { team:'away', scorer:'L. Trossard',     minute:"28'"   },
+      { team:'away', scorer:'L. Trossard',     minute:"50'"   },
+      { team:'away', scorer:'K. De Bruyne',    minute:"66'"   },
+      { team:'home', scorer:'E. Just',         minute:"84'"   },
+      { team:'away', scorer:'R. Lukaku',       minute:"86'"   },
+      { team:'away', scorer:'A. Saelemaekers', minute:"90+4'" },
+    ],
+    description:
+      '比利時以 G 組第一完美收官！Trossard 梅開二度（28\'、50\'），' +
+      'De Bruyne 66 分鐘遠射，Just 84 分鐘為紐西蘭扳一城，' +
+      '替補 Lukaku 86 分鐘頭球及 Saelemaekers 90+4 分鐘補刀令比數定格 5:1。' +
+      '比利時三戰全勝，G 組第一昂首晉級；紐西蘭出局。',
+    descriptionEn:
+      'Belgium top Group G in style! Trossard scored twice (28\', 50\'), De Bruyne added a ' +
+      'brilliant third (66\'). Just grabbed a consolation for New Zealand (84\'), then Lukaku headed ' +
+      'home from the bench (86\') and Saelemaekers finished in stoppage time (90+4\'). ' +
+      'Belgium win all three group games; New Zealand are eliminated.' },
 ];
 
-const SCORES_UPDATED = '2026-06-26';
+const SCORES_UPDATED = '2026-06-27';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
@@ -1247,12 +1363,32 @@ var GRP_COLORS = [
 
 // Knockout round schedule (key must match FINAL_SCORES round field)
 var KO_ROUNDS = [
-  { key:'Round of 32',   zh:'32強賽',      en:'Round of 32',    dates:'Jul 2–5',   total:16 },
-  { key:'Round of 16',   zh:'16強賽',      en:'Round of 16',    dates:'Jul 6–8',   total:8  },
-  { key:'Quarter-final', zh:'八強賽 (QF)', en:'Quarter-finals', dates:'Jul 10–11', total:4  },
-  { key:'Semi-final',    zh:'準決賽 (SF)', en:'Semi-finals',    dates:'Jul 14–15', total:2  },
-  { key:'3rd Place',     zh:'季軍戰',      en:'3rd Place',      dates:'Jul 21',    total:1  },
-  { key:'Final',         zh:'🏆 決賽',     en:'🏆 The Final',   dates:'Jul 23',    total:1  },
+  { key:'Round of 32',   zh:'32強賽',      en:'Round of 32',    dates:'Jun 28 – Jul 3', total:16 },
+  { key:'Round of 16',   zh:'16強賽',      en:'Round of 16',    dates:'Jul 5–8',        total:8  },
+  { key:'Quarter-final', zh:'八強賽 (QF)', en:'Quarter-finals', dates:'Jul 10–11',      total:4  },
+  { key:'Semi-final',    zh:'準決賽 (SF)', en:'Semi-finals',    dates:'Jul 14–15',      total:2  },
+  { key:'3rd Place',     zh:'季軍戰',      en:'3rd Place',      dates:'Jul 21',         total:1  },
+  { key:'Final',         zh:'🏆 決賽',     en:'🏆 The Final',   dates:'Jul 23',         total:1  },
+];
+
+// Round of 32 confirmed matchups (TBD = pending Jun 27 Group J/K/L results)
+var R32_SCHEDULE = [
+  { date:'Jun 28', home:'South Africa',         homeFlag:'🇿🇦', away:'Canada',               awayFlag:'🇨🇦', venue:'SoFi Stadium'         },
+  { date:'Jun 29', home:'Germany',              homeFlag:'🇩🇪', away:'Paraguay',              awayFlag:'🇵🇾', venue:'Gillette Stadium'      },
+  { date:'Jun 29', home:'Netherlands',          homeFlag:'🇳🇱', away:'Morocco',               awayFlag:'🇲🇦', venue:'Estadio BBVA'          },
+  { date:'Jun 29', home:'Brazil',               homeFlag:'🇧🇷', away:'Japan',                 awayFlag:'🇯🇵', venue:'NRG Stadium'           },
+  { date:'Jun 30', home:'Ivory Coast',          homeFlag:'🇨🇮', away:'Norway',                awayFlag:'🇳🇴', venue:'AT&T Stadium'          },
+  { date:'Jun 30', home:'France',               homeFlag:'🇫🇷', away:'Sweden',                awayFlag:'🇸🇪', venue:'MetLife Stadium'       },
+  { date:'Jun 30', home:'Mexico',               homeFlag:'🇲🇽', away:'Ecuador',               awayFlag:'🇪🇨', venue:'Estadio Azteca'        },
+  { date:'Jul 1',  home:'TBD (Grp L Winner)',   homeFlag:'',    away:'TBD (Best 3rd)',         awayFlag:'',    venue:'Mercedes-Benz Stadium' },
+  { date:'Jul 1',  home:'USA',                  homeFlag:'🇺🇸', away:'Bosnia and Herzegovina', awayFlag:'🇧🇦', venue:"Levi's Stadium"        },
+  { date:'Jul 1',  home:'Belgium',              homeFlag:'🇧🇪', away:'TBD (Best 3rd)',         awayFlag:'',    venue:'Lumen Field'           },
+  { date:'Jul 2',  home:'TBD (Grp K 2nd)',      homeFlag:'',    away:'TBD (Grp L 2nd)',        awayFlag:'',    venue:'BMO Field'             },
+  { date:'Jul 2',  home:'Spain',                homeFlag:'🇪🇸', away:'TBD (Grp J 2nd)',        awayFlag:'',    venue:'SoFi Stadium'          },
+  { date:'Jul 2',  home:'Switzerland',          homeFlag:'🇨🇭', away:'TBD (Best 3rd)',         awayFlag:'',    venue:'BC Place'              },
+  { date:'Jul 3',  home:'Australia',            homeFlag:'🇦🇺', away:'Egypt',                 awayFlag:'🇪🇬', venue:'AT&T Stadium'          },
+  { date:'Jul 3',  home:'Argentina',            homeFlag:'🇦🇷', away:'Cape Verde',             awayFlag:'🇨🇻', venue:'Hard Rock Stadium'     },
+  { date:'Jul 3',  home:'TBD (Grp K Winner)',   homeFlag:'',    away:'TBD (Best 3rd)',         awayFlag:'',    venue:'Arrowhead Stadium'     },
 ];
 
 (function () {
@@ -1422,15 +1558,30 @@ var KO_ROUNDS = [
       var isFinal = r.key === 'Final';
       var label = isEn ? r.en : r.zh;
       var results = koMap[r.key] || [];
-      var matchHTML = results.length > 0
-        ? results.map(function(m) {
-            return '<div class="ko-match">' +
-              '<span class="ko-team">' + m.homeFlag + ' ' + tx(m.home) + '</span>' +
-              '<span class="ko-score">' + m.homeScore + ' – ' + m.awayScore + '</span>' +
-              '<span class="ko-team right">' + tx(m.away) + ' ' + m.awayFlag + '</span>' +
-              '</div>';
-          }).join('')
-        : '<div class="ko-tbd">🔒 ' + r.total + (isEn ? ' matches — pending' : ' 場賽事 — 待確定') + '</div>';
+      var matchHTML;
+      if (results.length > 0) {
+        matchHTML = results.map(function(m) {
+          return '<div class="ko-match">' +
+            '<span class="ko-team">' + m.homeFlag + ' ' + tx(m.home) + '</span>' +
+            '<span class="ko-score">' + m.homeScore + ' – ' + m.awayScore + '</span>' +
+            '<span class="ko-team right">' + tx(m.away) + ' ' + m.awayFlag + '</span>' +
+            '</div>';
+        }).join('');
+      } else if (r.key === 'Round of 32' && typeof R32_SCHEDULE !== 'undefined') {
+        var lastDate = null;
+        matchHTML = R32_SCHEDULE.map(function(s) {
+          var dateSep = '';
+          if (s.date !== lastDate) { lastDate = s.date; dateSep = '<div class="ko-date-sep">📅 ' + tx(s.date) + '</div>'; }
+          var isTbd = !s.homeFlag || !s.awayFlag;
+          return dateSep + '<div class="ko-match ko-sched' + (isTbd ? ' ko-sched-tbd' : '') + '">' +
+            '<span class="ko-team">' + (s.homeFlag ? s.homeFlag + ' ' : '') + s.home + '</span>' +
+            '<span class="ko-score ko-vs">VS</span>' +
+            '<span class="ko-team right">' + s.away + (s.awayFlag ? ' ' + s.awayFlag : '') + '</span>' +
+            '</div>';
+        }).join('');
+      } else {
+        matchHTML = '<div class="ko-tbd">🔒 ' + r.total + (isEn ? ' matches — pending' : ' 場賽事 — 待確定') + '</div>';
+      }
 
       return '<div class="ko-round-card' + (isFinal ? ' ko-final' : '') + '">' +
         '<div class="ko-round-hdr"><span>' + label + '</span><span class="ko-dates">' + r.dates + '</span></div>' +
@@ -1438,16 +1589,7 @@ var KO_ROUNDS = [
         '</div>';
     }).join('');
 
-    var banner = !hasAny
-      ? '<div class="ko-coming-soon">' +
-          '<div class="ko-icon">🏆</div>' +
-          '<p>' + (isEn ? 'Knockout stage begins July 2, 2026' : '淘汰賽將於 2026年7月2日 開始') + '</p>' +
-          '<p style="font-size:0.76rem;margin-top:0.5rem;color:var(--muted)">' +
-            (isEn ? 'Group stage results will determine the bracket.' : '小組賽結果將決定淘汰賽對陣。') + '</p>' +
-          '</div>'
-      : '';
-
-    area.innerHTML = banner + '<div class="ko-grid">' + roundCards + '</div>';
+    area.innerHTML = '<div class="ko-grid">' + roundCards + '</div>';
   }
 
   // ── Tab switching ───────────────────────────────────────

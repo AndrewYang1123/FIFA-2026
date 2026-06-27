@@ -272,6 +272,28 @@
       text-transform: uppercase;
       color: var(--gold);
     }
+    /* ── R32 schedule view ───────────────────────────────── */
+    .ko-date-sep {
+      padding: 0.3rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background: rgba(255,215,0,0.05);
+      border-top: 1px solid rgba(255,215,0,0.12);
+    }
+    .ko-date-sep:first-child { border-top: none; }
+    .ko-score.ko-vs {
+      color: var(--muted);
+      background: rgba(255,255,255,0.06);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    .ko-match.ko-sched { opacity: 0.9; }
+    .ko-match.ko-sched-tbd .ko-team { color: var(--muted); font-style: italic; font-weight: 400; }
+
     @media (max-width: 600px) {
       .ko-grid { grid-template-columns: 1fr; }
       .ko-round-card.ko-final { grid-column: auto; }
