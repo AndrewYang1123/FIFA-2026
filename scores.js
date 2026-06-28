@@ -1341,9 +1341,142 @@ const FINAL_SCORES = [
       'brilliant third (66\'). Just grabbed a consolation for New Zealand (84\'), then Lukaku headed ' +
       'home from the bench (86\') and Saelemaekers finished in stoppage time (90+4\'). ' +
       'Belgium win all three group games; New Zealand are eliminated.' },
+
+  // ── Jun 27 — Matchday 3 Groups J / K / L ───────────────────────────────
+
+  { date:'Jun 27', round:'Matchday 3',
+    home:'Jordan',    homeFlag:'🇯🇴', homeScore:1,
+    away:'Argentina', awayFlag:'🇦🇷', awayScore:3,
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'away', scorer:'G. Lo Celso',  minute:"19'"   },
+      { team:'away', scorer:'L. Martínez',  minute:"31'"   },
+      { team:'home', scorer:'M. Tamari',    minute:"55'"   },
+      { team:'away', scorer:'L. Messi',     minute:"80'"   },
+    ],
+    description:
+      '梅西再破紀錄！Lo Celso 19 分鐘自由球率先破門，Lautaro Martínez 31 分鐘點球追加。' +
+      'Jordan 的 Tamari 55 分鐘扳一城。替補出場的梅西 80 分鐘再以自由球破網，' +
+      '成為世界盃史上首位連續七場入球的球員。阿根廷三戰全勝，J 組第一強勢晉級。',
+    descriptionEn:
+      'Messi makes history — again! Lo Celso opened with a brilliant free-kick (19\'), Lautaro ' +
+      'converted a penalty (31\'), and Tamari pulled one back for Jordan (55\'). Messi — off ' +
+      'the bench — curled home a stunning free-kick (80\') to score in seven consecutive ' +
+      'World Cup matches: a record never achieved before. Argentina win all three. ' },
+
+  { date:'Jun 27', round:'Matchday 3',
+    home:'Algeria', homeFlag:'🇩🇿', homeScore:3,
+    away:'Austria', awayFlag:'🇦🇹', awayScore:3,
+    venue:'Arrowhead Stadium',
+    goals:[
+      { team:'away', scorer:'M. Arnautovic', minute:"28'"   },
+      { team:'home', scorer:'R. Belghali',   minute:"41'"   },
+      { team:'away', scorer:'M. Sabitzer',   minute:"55'"   },
+      { team:'home', scorer:'R. Mahrez',     minute:"60'"   },
+      { team:'home', scorer:'R. Mahrez',     minute:"90+3'" },
+      { team:'away', scorer:'S. Kalajdzic',  minute:"90+5'" },
+    ],
+    description:
+      '六球瘋狂完結！Arnautovic 28 分鐘先開紀錄，Belghali 41 分鐘扳平，' +
+      'Sabitzer 55 分鐘令奧地利再度領先，Mahrez 60 分鐘均分。' +
+      'Mahrez 90+3 分鐘打入 3:2，但 Kalajdzic 第 90+5 分鐘頭球扳平！' +
+      '兩隊均以 J 組前兩名晉級，伊朗出局。',
+    descriptionEn:
+      'Six-goal Group J finale! Arnautovic (28\') led Austria, Belghali (41\') levelled. ' +
+      'Sabitzer (55\') restored the lead; Mahrez (60\') equalised. Mahrez struck for 3-2 (90+3\') ' +
+      '— but Kalajdzic headed a 90+5\' equaliser to snatch runners-up for Austria. ' +
+      'Both advance; Iran eliminated.' },
+
+  { date:'Jun 27', round:'Matchday 3',
+    home:'Colombia', homeFlag:'🇨🇴', homeScore:0,
+    away:'Portugal', awayFlag:'🇵🇹', awayScore:0,
+    venue:'Hard Rock Stadium',
+    description:
+      '默契平局！哥倫比亞與葡萄牙均已確定晉級，以 0:0 收場。' +
+      '哥倫比亞以 K 組第一出線，葡萄牙第二，32 強分別對陣 Ghana 及克羅埃西亞。',
+    descriptionEn:
+      'A composed 0-0 with both sides already through. Colombia top Group K; ' +
+      'Portugal advance as runners-up. They face Ghana and Croatia in the R32.' },
+
+  { date:'Jun 27', round:'Matchday 3',
+    home:'DR Congo',   homeFlag:'🇨🇩', homeScore:3,
+    away:'Uzbekistan', awayFlag:'🇺🇿', awayScore:1,
+    venue:'Mercedes-Benz Stadium',
+    goals:[
+      { team:'away', scorer:'E. Shomurodov', minute:"10'"   },
+      { team:'home', scorer:'Y. Wissa',      minute:"68'"   },
+      { team:'home', scorer:'F. Mayele',     minute:"78'"   },
+      { team:'home', scorer:'Y. Wissa',      minute:"90+1'" },
+    ],
+    description:
+      '剛果強勢晉級！Shomurodov 10 分鐘先開紀錄，Wissa 68 分鐘點球扳平，' +
+      'Mayele 78 分鐘反超，Wissa 補時再下一城完成 3:1 大勝。' +
+      '剛果以最佳第三名晉級 32 強，對陣英格蘭。烏茲別克出局。',
+    descriptionEn:
+      'DR Congo storm through! Shomurodov (10\') gave Uzbekistan the lead, but Wissa levelled ' +
+      'from the spot (68\'), Mayele made it 2-1 (78\'), and Wissa sealed it in stoppage time ' +
+      '(90+1\'). DR Congo qualify as best third-placed team and face England in R32. ' +
+      'Uzbekistan eliminated.' },
+
+  { date:'Jun 27', round:'Matchday 3',
+    home:'Panama',  homeFlag:'🇵🇦', homeScore:0,
+    away:'England', awayFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayScore:2,
+    venue:'MetLife Stadium',
+    goals:[
+      { team:'away', scorer:'J. Bellingham', minute:"62'" },
+      { team:'away', scorer:'H. Kane',       minute:"67'" },
+    ],
+    description:
+      '英格蘭輕鬆晉級！Bellingham 62 分鐘率先破門，Kane 67 分鐘完成個人世界盃第 11 球，' +
+      '打破 Lineker 紀錄成為英格蘭世界盃史上最多進球球員。英格蘭以 L 組第一晉級，巴拿馬出局。',
+    descriptionEn:
+      'England cruise through! Bellingham opened (62\'), and Kane nodded in (67\') for his ' +
+      '11th World Cup goal — surpassing Gary Lineker as England\'s all-time World Cup top scorer. ' +
+      'England top Group L; Panama eliminated.' },
+
+  { date:'Jun 27', round:'Matchday 3',
+    home:'Croatia', homeFlag:'🇭🇷', homeScore:2,
+    away:'Ghana',   awayFlag:'🇬🇭', awayScore:1,
+    venue:'Lincoln Financial Field',
+    goals:[
+      { team:'home', scorer:'P. Sucic',     minute:"31'" },
+      { team:'away', scorer:'D. Luckassen', minute:"73'" },
+      { team:'home', scorer:'N. Vlasic',    minute:"83'" },
+    ],
+    description:
+      '克羅埃西亞後來居上！Sucic 31 分鐘先開紀錄，Ghana 的 Luckassen 73 分鐘扳平，' +
+      '但 Vlasic 83 分鐘頂入 Modrić 角球絕殺。克羅埃西亞以 L 組第二晉級，' +
+      'Ghana 以最佳第三名出線，32 強對陣哥倫比亞。',
+    descriptionEn:
+      'Croatia edge a thriller! Sucic led (31\'), Luckassen equalised for Ghana (73\'), ' +
+      'but Vlasic headed home Modrić\'s corner in the 83rd to snatch the winner. Croatia ' +
+      'advance as Group L runners-up; Ghana qualify as best third-placed team and face Colombia.' },
+
+  // ── Jun 28 — Round of 32 ────────────────────────────────────────────────
+
+  { date:'Jun 28', round:'Round of 32',
+    home:'South Africa', homeFlag:'🇿🇦', homeScore:0,
+    away:'Canada',       awayFlag:'🇨🇦', awayScore:1,
+    venue:'SoFi Stadium',
+    goals:[
+      { team:'away', scorer:'S. Eustáquio', minute:"90+2'" },
+    ],
+    description:
+      '加拿大補時絕殺，首度闖入世界盃 16 強！全場苦戰難分，' +
+      'Alphonso Davies 傷癒復出士氣大振。第 90+2 分鐘，防守球員清解角球，' +
+      '皮球正好落在 Stephen Eustáquio 腳下，他以右腳凌空抽射轟破網窩，' +
+      '令 SoFi Stadium 近 8 萬球迷瘋狂沸騰。南非雖奮力抵抗，仍黯然出局；' +
+      '加拿大以地主身份首度躋身 16 強，寫下歷史最佳戰績。',
+    descriptionEn:
+      'Canada make history at SoFi Stadium — their first-ever World Cup Round of 16! ' +
+      'It was a tense, tight affair until Stephen Eustáquio produced a moment of magic in the 90+2\' minute: ' +
+      'a defender headed a corner clear straight to Eustáquio, who unleashed a right-footed volley into the net ' +
+      'to send the partisan crowd into delirium. Captain Alphonso Davies made his tournament debut after missing ' +
+      'the group stage through injury and gave Canada a massive lift. South Africa fought bravely ' +
+      'but are eliminated; Canada advance to face Morocco or Netherlands on July 4.' },
 ];
 
-const SCORES_UPDATED = '2026-06-27';
+const SCORES_UPDATED = '2026-06-28';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
@@ -1380,15 +1513,15 @@ var R32_SCHEDULE = [
   { date:'Jun 30', home:'Ivory Coast',          homeFlag:'🇨🇮', away:'Norway',                awayFlag:'🇳🇴', venue:'AT&T Stadium'          },
   { date:'Jun 30', home:'France',               homeFlag:'🇫🇷', away:'Sweden',                awayFlag:'🇸🇪', venue:'MetLife Stadium'       },
   { date:'Jun 30', home:'Mexico',               homeFlag:'🇲🇽', away:'Ecuador',               awayFlag:'🇪🇨', venue:'Estadio Azteca'        },
-  { date:'Jul 1',  home:'TBD (Grp L Winner)',   homeFlag:'',    away:'TBD (Best 3rd)',         awayFlag:'',    venue:'Mercedes-Benz Stadium' },
+  { date:'Jul 1',  home:'England',              homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', away:'DR Congo',              awayFlag:'🇨🇩', venue:'Mercedes-Benz Stadium' },
   { date:'Jul 1',  home:'USA',                  homeFlag:'🇺🇸', away:'Bosnia and Herzegovina', awayFlag:'🇧🇦', venue:"Levi's Stadium"        },
-  { date:'Jul 1',  home:'Belgium',              homeFlag:'🇧🇪', away:'TBD (Best 3rd)',         awayFlag:'',    venue:'Lumen Field'           },
-  { date:'Jul 2',  home:'TBD (Grp K 2nd)',      homeFlag:'',    away:'TBD (Grp L 2nd)',        awayFlag:'',    venue:'BMO Field'             },
-  { date:'Jul 2',  home:'Spain',                homeFlag:'🇪🇸', away:'TBD (Grp J 2nd)',        awayFlag:'',    venue:'SoFi Stadium'          },
-  { date:'Jul 2',  home:'Switzerland',          homeFlag:'🇨🇭', away:'TBD (Best 3rd)',         awayFlag:'',    venue:'BC Place'              },
+  { date:'Jul 1',  home:'Belgium',              homeFlag:'🇧🇪', away:'Senegal',               awayFlag:'🇸🇳', venue:'Lumen Field'           },
+  { date:'Jul 2',  home:'Portugal',             homeFlag:'🇵🇹', away:'Croatia',               awayFlag:'🇭🇷', venue:'BMO Field'             },
+  { date:'Jul 2',  home:'Spain',                homeFlag:'🇪🇸', away:'Austria',               awayFlag:'🇦🇹', venue:'SoFi Stadium'          },
+  { date:'Jul 2',  home:'Switzerland',          homeFlag:'🇨🇭', away:'Algeria',               awayFlag:'🇩🇿', venue:'BC Place'              },
   { date:'Jul 3',  home:'Australia',            homeFlag:'🇦🇺', away:'Egypt',                 awayFlag:'🇪🇬', venue:'AT&T Stadium'          },
   { date:'Jul 3',  home:'Argentina',            homeFlag:'🇦🇷', away:'Cape Verde',             awayFlag:'🇨🇻', venue:'Hard Rock Stadium'     },
-  { date:'Jul 3',  home:'TBD (Grp K Winner)',   homeFlag:'',    away:'TBD (Best 3rd)',         awayFlag:'',    venue:'Arrowhead Stadium'     },
+  { date:'Jul 3',  home:'Colombia',             homeFlag:'🇨🇴', away:'Ghana',                 awayFlag:'🇬🇭', venue:'Arrowhead Stadium'     },
 ];
 
 (function () {
@@ -1559,24 +1692,33 @@ var R32_SCHEDULE = [
       var label = isEn ? r.en : r.zh;
       var results = koMap[r.key] || [];
       var matchHTML;
-      if (results.length > 0) {
+      if (r.key === 'Round of 32' && typeof R32_SCHEDULE !== 'undefined') {
+        var r32Map = {};
+        results.forEach(function(m) { r32Map[m.home + '|' + m.away] = m; });
+        var lastDate = null;
+        matchHTML = R32_SCHEDULE.map(function(s) {
+          var dateSep = '';
+          if (s.date !== lastDate) { lastDate = s.date; dateSep = '<div class="ko-date-sep">📅 ' + tx(s.date) + '</div>'; }
+          var done = r32Map[s.home + '|' + s.away];
+          if (done) {
+            return dateSep + '<div class="ko-match">' +
+              '<span class="ko-team">' + s.homeFlag + ' ' + s.home + '</span>' +
+              '<span class="ko-score">' + done.homeScore + ' – ' + done.awayScore + '</span>' +
+              '<span class="ko-team right">' + s.away + ' ' + s.awayFlag + '</span>' +
+              '</div>';
+          }
+          return dateSep + '<div class="ko-match ko-sched">' +
+            '<span class="ko-team">' + s.homeFlag + ' ' + s.home + '</span>' +
+            '<span class="ko-score ko-vs">VS</span>' +
+            '<span class="ko-team right">' + s.away + ' ' + s.awayFlag + '</span>' +
+            '</div>';
+        }).join('');
+      } else if (results.length > 0) {
         matchHTML = results.map(function(m) {
           return '<div class="ko-match">' +
             '<span class="ko-team">' + m.homeFlag + ' ' + tx(m.home) + '</span>' +
             '<span class="ko-score">' + m.homeScore + ' – ' + m.awayScore + '</span>' +
             '<span class="ko-team right">' + tx(m.away) + ' ' + m.awayFlag + '</span>' +
-            '</div>';
-        }).join('');
-      } else if (r.key === 'Round of 32' && typeof R32_SCHEDULE !== 'undefined') {
-        var lastDate = null;
-        matchHTML = R32_SCHEDULE.map(function(s) {
-          var dateSep = '';
-          if (s.date !== lastDate) { lastDate = s.date; dateSep = '<div class="ko-date-sep">📅 ' + tx(s.date) + '</div>'; }
-          var isTbd = !s.homeFlag || !s.awayFlag;
-          return dateSep + '<div class="ko-match ko-sched' + (isTbd ? ' ko-sched-tbd' : '') + '">' +
-            '<span class="ko-team">' + (s.homeFlag ? s.homeFlag + ' ' : '') + s.home + '</span>' +
-            '<span class="ko-score ko-vs">VS</span>' +
-            '<span class="ko-team right">' + s.away + (s.awayFlag ? ' ' + s.awayFlag : '') + '</span>' +
             '</div>';
         }).join('');
       } else {
