@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /betting.html
+
+Sitemap: https://fifa-2026-brown.vercel.app/sitemap.xml
