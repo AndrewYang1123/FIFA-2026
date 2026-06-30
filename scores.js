@@ -1474,9 +1474,68 @@ const FINAL_SCORES = [
       'to send the partisan crowd into delirium. Captain Alphonso Davies made his tournament debut after missing ' +
       'the group stage through injury and gave Canada a massive lift. South Africa fought bravely ' +
       'but are eliminated; Canada advance to face Morocco or Netherlands on July 4.' },
+
+  // ── Jun 29 — Round of 32 ────────────────────────────────────────────────
+
+  { date:'Jun 29', round:'Round of 32',
+    home:'Germany', homeFlag:'🇩🇪', homeScore:1,
+    away:'Paraguay', awayFlag:'🇵🇾', awayScore:1,
+    pens:'3-4',
+    venue:'Gillette Stadium',
+    goals:[
+      { team:'away', scorer:'J. Enciso',  minute:"42'" },
+      { team:'home', scorer:'K. Havertz', minute:"54'" },
+    ],
+    description:
+      '本屆最大冷門！巴拉圭 Enciso 42 分鐘頭球率先破門，德國 Havertz 54 分鐘抬腳擺平。' +
+      '延長賽中 Tah 角球頭球遭 VAR 吹掉，雙方以 1:1 進入互射十二碼。' +
+      '德國射失三球（Havertz、Woltemade、Tah），巴拉圭 Canale 主射制勝球，以 4:3 送走四屆冠軍德國！',
+    descriptionEn:
+      'The biggest upset of the tournament! Enciso headed Paraguay ahead (42\'), Havertz levelled ' +
+      'for Germany (54\'). A Tah header was controversially ruled out by VAR in extra time, and the match ' +
+      'went to penalties. Germany missed three kicks (Havertz, Woltemade, Tah); Canale converted the ' +
+      'decisive spot-kick as Paraguay won 4-3 on penalties to eliminate four-time champions Germany.' },
+
+  { date:'Jun 29', round:'Round of 32',
+    home:'Netherlands', homeFlag:'🇳🇱', homeScore:1,
+    away:'Morocco',     awayFlag:'🇲🇦', awayScore:1,
+    pens:'2-3',
+    venue:'Estadio BBVA',
+    goals:[
+      { team:'home', scorer:'C. Gakpo',    minute:"72'" },
+      { team:'away', scorer:'I. Diop',     minute:"90+1'" },
+    ],
+    description:
+      '摩洛哥補時扳平再互射淘汰荷蘭！Gakpo 72 分鐘頭球領先，Issa Diop 90+1 分鐘替補上場後頭球均分。' +
+      '十二碼大戰荷蘭射失兩球（Kluivert 打柱、Timber 踢歪），門將 Bounou 撲出一球；' +
+      'Saibari 主射制勝，摩洛哥 3:2 勝出，晉級 16 強。',
+    descriptionEn:
+      'Diop breaks Dutch hearts in injury time! Gakpo headed Netherlands ahead (72\'), but Diop ' +
+      'headed in from a Talbi cross in the 90+1\' to force penalties. Kluivert hit the post and ' +
+      'Timber blazed over as the Netherlands missed twice; Bounou made a key save. Saibari ' +
+      'converted the winning penalty as Morocco advance 3-2 on penalties.' },
+
+  { date:'Jun 29', round:'Round of 32',
+    home:'Brazil', homeFlag:'🇧🇷', homeScore:2,
+    away:'Japan',  awayFlag:'🇯🇵', awayScore:1,
+    venue:'NRG Stadium',
+    goals:[
+      { team:'away', scorer:'K. Sano',      minute:"29'" },
+      { team:'home', scorer:'Casemiro',     minute:"56'" },
+      { team:'home', scorer:'G. Martinelli',minute:"90+5'" },
+    ],
+    description:
+      '巴西補時驚魂晉級！日本 Sano 29 分鐘冷靜推射率先破門。' +
+      '下半場 Casemiro 56 分鐘後點頭球扳平，雙方纏鬥至傷停時間。' +
+      '替補 Martinelli 在第 90+5 分鐘接 Guimarães 直塞，以左腳弧線球絕殺，巴西 2:1 驚險過關。',
+    descriptionEn:
+      'Brazil escape a scare to reach the last 16! Sano capitalised on a Casemiro error to fire ' +
+      'Japan ahead (29\'). Casemiro atoned with a powerful header at the back post (56\'). Deep ' +
+      'in stoppage time, substitute Martinelli curled a superb finish off a Guimarães through-ball ' +
+      '(90+5\') to seal a nervy 2-1 win for Brazil.' },
 ];
 
-const SCORES_UPDATED = '2026-06-28';
+const SCORES_UPDATED = '2026-06-30';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
@@ -1701,9 +1760,10 @@ var R32_SCHEDULE = [
           if (s.date !== lastDate) { lastDate = s.date; dateSep = '<div class="ko-date-sep">📅 ' + tx(s.date) + '</div>'; }
           var done = r32Map[s.home + '|' + s.away];
           if (done) {
+            var penStr = done.pens ? ' <span style="font-size:0.7rem;color:var(--muted);font-weight:600">(PSO ' + done.pens + ')</span>' : '';
             return dateSep + '<div class="ko-match">' +
               '<span class="ko-team">' + s.homeFlag + ' ' + s.home + '</span>' +
-              '<span class="ko-score">' + done.homeScore + ' – ' + done.awayScore + '</span>' +
+              '<span class="ko-score">' + done.homeScore + ' – ' + done.awayScore + penStr + '</span>' +
               '<span class="ko-team right">' + s.away + ' ' + s.awayFlag + '</span>' +
               '</div>';
           }
