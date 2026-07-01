@@ -1533,9 +1533,70 @@ const FINAL_SCORES = [
       'Japan ahead (29\'). Casemiro atoned with a powerful header at the back post (56\'). Deep ' +
       'in stoppage time, substitute Martinelli curled a superb finish off a Guimarães through-ball ' +
       '(90+5\') to seal a nervy 2-1 win for Brazil.' },
+
+  // ── Jun 30 — Round of 32 ────────────────────────────────────────────────
+
+  { date:'Jun 30', round:'Round of 32',
+    home:'Ivory Coast', homeFlag:'🇨🇮', homeScore:1,
+    away:'Norway',      awayFlag:'🇳🇴', awayScore:2,
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'away', scorer:'A. Nusa',     minute:"39'" },
+      { team:'home', scorer:'Amad Diallo', minute:"74'" },
+      { team:'away', scorer:'E. Haaland',  minute:"86'" },
+    ],
+    description:
+      '哈蘭德絕殺！Nusa 39 分鐘弧線球率先替挪威破門，象牙海岸 Amad Diallo 74 分鐘扳平。' +
+      '最終哈蘭德在 86 分鐘接 Patrick Berg 傳送，一錘定音完成 2:1 逆轉。' +
+      '哈蘭德本屆三場五球，挪威首度晉級世界盃 16 強，下一關對陣巴西。',
+    descriptionEn:
+      'Haaland the hero again! Nusa curled Norway ahead (39\'), Amad Diallo levelled for Ivory Coast ' +
+      '(74\'), but Haaland powered home Berg\'s cross in the 86th minute to seal a 2-1 win. ' +
+      'It is Norway\'s first-ever World Cup knockout stage victory; Haaland now has five goals ' +
+      'in three games. Norway face Brazil in the Round of 16.' },
+
+  { date:'Jun 30', round:'Round of 32',
+    home:'France', homeFlag:'🇫🇷', homeScore:3,
+    away:'Sweden', awayFlag:'🇸🇪', awayScore:0,
+    venue:'MetLife Stadium',
+    goals:[
+      { team:'home', scorer:'K. Mbappé',  minute:"45'" },
+      { team:'home', scorer:'B. Barcola', minute:"53'" },
+      { team:'home', scorer:'K. Mbappé',  minute:"74'" },
+    ],
+    description:
+      '姆巴佩雙響，法國輕鬆晉級！姆巴佩 45 分鐘短角球配合後精準破網，' +
+      'Barcola 53 分鐘接 Olise 直塞追加。姆巴佩 74 分鐘再下一城完成雙響，' +
+      '本屆累計 6 球並平梅西。法國 3:0 大勝瑞典，晉級 16 強後對陣巴拉圭。',
+    descriptionEn:
+      'Mbappé brace as France cruise through! Mbappé broke the deadlock with a short corner ' +
+      'routine just before half-time (45\'), Barcola latched onto Olise\'s through-ball to make it ' +
+      '2-0 (53\'), and Mbappé completed his brace in the 74th minute for his 18th career World Cup ' +
+      'goal. France advance to face Paraguay in the Round of 16.' },
+
+  { date:'Jun 30', round:'Round of 32',
+    home:'Mexico',  homeFlag:'🇲🇽', homeScore:2,
+    away:'Ecuador', awayFlag:'🇪🇨', awayScore:0,
+    venue:'Estadio Azteca',
+    goals:[
+      { team:'home', scorer:'J. Quiñones', minute:"22'" },
+      { team:'home', scorer:'R. Jiménez',  minute:"31'" },
+    ],
+    cards:[
+      { team:'away', player:'P. Hincapié', minute:"90+3'", type:'red' },
+    ],
+    description:
+      '墨西哥終結 40 年淘汰賽魔咒！Quiñones 22 分鐘切入禁區轟入球門上角，' +
+      '九分鐘後 Jiménez 與 Quiñones 二過一後打穿門將，2:0 奠定勝局。' +
+      '厄瓜多 Hincapié 補時以手遮口被罰紅牌出場。主場作戰的墨西哥晉級 16 強，等待英格蘭或剛果。',
+    descriptionEn:
+      'Mexico end a 40-year knockout curse at the Azteca! Quiñones powered a shot into the top ' +
+      'corner (22\'), then combined with Jiménez in a slick give-and-go for the second (31\'). ' +
+      'Ecuador\'s Hincapié was sent off in injury time. Mexico advance to the Round of 16 as hosts; ' +
+      'Ecuador\'s first knockout stage in 20 years ends at the first hurdle.' },
 ];
 
-const SCORES_UPDATED = '2026-06-30';
+const SCORES_UPDATED = '2026-07-01';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
