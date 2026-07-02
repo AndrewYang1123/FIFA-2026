@@ -1594,6 +1594,72 @@ const FINAL_SCORES = [
       'corner (22\'), then combined with Jiménez in a slick give-and-go for the second (31\'). ' +
       'Ecuador\'s Hincapié was sent off in injury time. Mexico advance to the Round of 16 as hosts; ' +
       'Ecuador\'s first knockout stage in 20 years ends at the first hurdle.' },
+
+  // ── Jul 1 — Round of 32 ─────────────────────────────────────────────────
+
+  { date:'Jul 1', round:'Round of 32',
+    home:'England',  homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', homeScore:2,
+    away:'DR Congo', awayFlag:'🇨🇩', awayScore:1,
+    venue:'Mercedes-Benz Stadium',
+    goals:[
+      { team:'away', scorer:'B. Cipenga', minute:"7'"  },
+      { team:'home', scorer:'H. Kane',    minute:"75'" },
+      { team:'home', scorer:'H. Kane',    minute:"86'" },
+    ],
+    description:
+      'Kane 兩度救主，英格蘭驚險逆轉！剛果 Cipenga 7 分鐘閃電先破門，英格蘭長期落後。' +
+      'Kane 75 分鐘頭球扳平，86 分鐘再以凌厲射門完成逆轉，' +
+      '個人本屆第 13 球，強勢晉級 16 強將對陣主場墨西哥。',
+    descriptionEn:
+      'Kane rescues England with a stunning comeback double! Cipenga shocked England with a ' +
+      'seventh-minute opener and DR Congo defended bravely. Kane equalised with a header (75\') ' +
+      'then blasted in a brilliant winner (86\') for his 13th World Cup goal. England advance ' +
+      'to face Mexico in the Round of 16.' },
+
+  { date:'Jul 1', round:'Round of 32',
+    home:'Belgium', homeFlag:'🇧🇪', homeScore:3,
+    away:'Senegal', awayFlag:'🇸🇳', awayScore:2,
+    pens:'AET',
+    venue:'Lumen Field',
+    goals:[
+      { team:'away', scorer:'H. Diarra',    minute:"25'"    },
+      { team:'away', scorer:'I. Sarr',      minute:"51'"    },
+      { team:'home', scorer:'R. Lukaku',    minute:"86'"    },
+      { team:'home', scorer:'Y. Tielemans', minute:"89'"    },
+      { team:'home', scorer:'Y. Tielemans', minute:"120+5'" },
+    ],
+    description:
+      '世界盃最戲劇性逆轉之一！塞內加爾 Diarra 25 分鐘、Sarr 51 分鐘接連破門，比利時岌岌可危。' +
+      'Lukaku 86 分鐘扳一城，Tielemans 89 分鐘頭球扳平，強行拖入加時。' +
+      '加時賽第 120+5 分鐘，Tielemans 主射點球，以 3:2 完成驚天大逆轉。' +
+      '此球被認為是世界盃史上最晚的致勝球，比利時晉級 16 強對陣美國。',
+    descriptionEn:
+      'One of the greatest World Cup comebacks! Diarra (25\') and Sarr (51\') put Senegal in control. ' +
+      'Belgium looked dead and buried until Lukaku pulled one back (86\') and Tielemans headed home ' +
+      'the equaliser (89\') to force extra time. Then in the 120+5\' minute, Tielemans converted a ' +
+      'penalty to complete a stunning 3-2 win — reportedly the latest winning goal in World Cup history.' },
+
+  { date:'Jul 1', round:'Round of 32',
+    home:'USA',                  homeFlag:'🇺🇸', homeScore:2,
+    away:'Bosnia and Herzegovina', awayFlag:'🇧🇦', awayScore:0,
+    venue:"Levi's Stadium",
+    goals:[
+      { team:'home', scorer:'F. Balogun',  minute:"45'" },
+      { team:'home', scorer:'M. Tillman',  minute:"82'" },
+    ],
+    cards:[
+      { team:'home', player:'F. Balogun', minute:"64'", type:'red' },
+    ],
+    description:
+      '十人美國守住勝果，闖入 16 強！Balogun 45 分鐘首開紀錄，' +
+      '卻在 64 分鐘因飛鏟犯規遭 VAR 介入紅牌出場。' +
+      '帶著一人之差的美國繼續攻勢，Tillman 82 分鐘任意球絕妙破門鎖定勝局。' +
+      '這是美國自 2002 年以來首場世界盃淘汰賽勝利，16 強將面對比利時（Balogun 停賽）。',
+    descriptionEn:
+      'USA win with 10 men — first knockout victory since 2002! Balogun opened the scoring (45\') ' +
+      'but was controversially sent off in the 64th minute for a dangerous tackle. Playing a man down, ' +
+      'the USA held firm and Tillman sealed it with a superb free-kick (82\'). The USMNT advance to ' +
+      'face Belgium in the Round of 16, but will be without suspended Balogun.' },
 ];
 
 const SCORES_UPDATED = '2026-07-01';
