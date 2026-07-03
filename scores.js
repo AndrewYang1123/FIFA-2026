@@ -1660,9 +1660,64 @@ const FINAL_SCORES = [
       'but was controversially sent off in the 64th minute for a dangerous tackle. Playing a man down, ' +
       'the USA held firm and Tillman sealed it with a superb free-kick (82\'). The USMNT advance to ' +
       'face Belgium in the Round of 16, but will be without suspended Balogun.' },
+
+  // ── Jul 2 — Round of 32 ─────────────────────────────────────────────────
+
+  { date:'Jul 2', round:'Round of 32',
+    home:'Portugal', homeFlag:'🇵🇹', homeScore:2,
+    away:'Croatia',  awayFlag:'🇭🇷', awayScore:1,
+    venue:'BMO Field',
+    goals:[
+      { team:'away', scorer:'I. Perišić',  minute:"53'"    },
+      { team:'home', scorer:'C. Ronaldo',  minute:"68'"    },
+      { team:'home', scorer:'G. Ramos',    minute:"90+4'"  },
+    ],
+    description:
+      '拉莫斯補時頭球絕殺！克羅埃西亞 Perišić 53 分鐘率先破門，' +
+      'C 朗拿度 68 分鐘主射點球扳平，打進個人首個世界盃淘汰賽進球。' +
+      '加時前 Ramos 第 90+4 分鐘頂入頭球，葡萄牙驚險 2:1 晉級 16 強。',
+    descriptionEn:
+      'Ramos heads Portugal through in dramatic stoppage time! Perišić put Croatia ahead (53\'), ' +
+      'Ronaldo levelled with a penalty — his first-ever World Cup knockout goal (68\'). ' +
+      'Then Ramos glanced in a header in the 90+4\' to send Portugal to the Round of 16.' },
+
+  { date:'Jul 2', round:'Round of 32',
+    home:'Spain',   homeFlag:'🇪🇸', homeScore:3,
+    away:'Austria', awayFlag:'🇦🇹', awayScore:0,
+    venue:'SoFi Stadium',
+    goals:[
+      { team:'home', scorer:'M. Oyarzabal', minute:"36'" },
+      { team:'home', scorer:'P. Porro',     minute:"66'" },
+      { team:'home', scorer:'M. Oyarzabal', minute:"89'" },
+    ],
+    description:
+      '奧亞薩巴爾雙響，西班牙大勝晉級！奧亞薩巴爾 36 分鐘近距離補射率先破門，' +
+      'Porro 66 分鐘接 Baena 傳中頭球追加，奧亞薩巴爾 89 分鐘再下一城完成雙響，' +
+      '西班牙自 2010 年奪冠以來首場淘汰賽大勝，以 3:0 強勢晉級 16 強。',
+    descriptionEn:
+      'Oyarzabal brace as Spain ease through! Oyarzabal prodded in Cucurella\'s cross (36\'), ' +
+      'Porro headed home Baena\'s delivery for his first international goal (66\'), then Oyarzabal ' +
+      'slotted in a second (89\'). Spain\'s first knockout stage rout since their 2010 title run.' },
+
+  { date:'Jul 2', round:'Round of 32',
+    home:'Switzerland', homeFlag:'🇨🇭', homeScore:2,
+    away:'Algeria',     awayFlag:'🇩🇿', awayScore:0,
+    venue:'BC Place',
+    goals:[
+      { team:'home', scorer:'B. Embolo', minute:"10'" },
+      { team:'home', scorer:'D. Ndoye',  minute:"46'" },
+    ],
+    description:
+      '瑞士輕鬆晉級！Embolo 10 分鐘接 Manzambi 精彩個人突破後的傳送率先破門，' +
+      '下半場開賽 48 秒 Ndoye 即接外圍傳球追加，2:0 穩穩過關。' +
+      '瑞士保持 10 場不敗，16 強將對陣哥倫比亞或 Ghana。',
+    descriptionEn:
+      'Switzerland cruise into the last 16! Embolo finished off Manzambi\'s brilliant run (10\'), ' +
+      'then Ndoye struck just 48 seconds into the second half (46\') to make it 2-0. ' +
+      'Switzerland extend their unbeaten run to 10 matches and face Colombia or Ghana in R16.' },
 ];
 
-const SCORES_UPDATED = '2026-07-01';
+const SCORES_UPDATED = '2026-07-02';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
