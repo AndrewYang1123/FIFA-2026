@@ -6,6 +6,220 @@
   <title>2026 FIFA World Cup — 完整賽程</title>
   <link rel="stylesheet" href="style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4522779931939215" crossorigin="anonymous"></script>
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       Knockout Bracket — 3D showcase
+       ═══════════════════════════════════════════════════════════ */
+    .kbracket-shell {
+      position: relative;
+      margin-bottom: 2.5rem;
+      border-radius: 20px;
+      padding: 1.25rem 0.5rem 0.5rem;
+      background:
+        radial-gradient(1200px 400px at 50% -10%, rgba(0,212,170,0.10), transparent 60%),
+        linear-gradient(160deg, #0c1526 0%, #0b1120 40%, #0a0e1a 100%);
+      background-color: #0b1120;
+      border: 1px solid rgba(0,212,170,0.14);
+      box-shadow: 0 30px 60px -30px rgba(0,0,0,0.9), inset 0 1px 0 rgba(255,255,255,0.04);
+      overflow: hidden;
+    }
+    .kbracket-shell::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: radial-gradient(700px 400px at 50% 20%, #000 30%, transparent 80%);
+      pointer-events: none;
+    }
+    .kb-title-row {
+      position: relative;
+      text-align: center;
+      margin-bottom: 0.35rem;
+    }
+    .kb-title-row h2 {
+      font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      background: linear-gradient(92deg, #ffd700 0%, #fff3b0 30%, #00d4aa 75%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 8px rgba(0,212,170,0.25));
+    }
+    .kb-sub {
+      position: relative;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-style: italic;
+      margin-bottom: 0.9rem;
+    }
+    .kb-sub b { color: var(--accent); font-style: normal; }
+
+    .kbracket-wrap {
+      position: relative;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.5rem 0.5rem 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(0,212,170,0.4) transparent;
+    }
+    .kbracket-wrap::-webkit-scrollbar { height: 8px; }
+    .kbracket-wrap::-webkit-scrollbar-thumb { background: rgba(0,212,170,0.35); border-radius: 8px; }
+
+    .kb-grid {
+      position: relative;
+      display: flex;
+      gap: 60px;
+      min-width: 1160px;
+      padding: 0.5rem 0.75rem;
+      perspective: 1800px;
+    }
+    .kb-svg {
+      position: absolute; top: 0; left: 0;
+      pointer-events: none; z-index: 0;
+      overflow: visible;
+    }
+    .kb-col {
+      position: relative; z-index: 1;
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 208px;
+      transform-style: preserve-3d;
+    }
+    .kb-col-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .kb-col.is-champ-col .kb-col-body { justify-content: center; }
+    .kb-col-label {
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .kb-col.is-final-col .kb-col-label { color: var(--gold); }
+
+    /* ── Match card (3D) ─────────────────────────── */
+    .kb-card {
+      position: relative;
+      margin: 9px 0;
+      border-radius: 13px;
+      background: linear-gradient(150deg, #17223d 0%, #0f1728 55%, #0c1322 100%);
+      border: 1px solid rgba(0,212,170,0.16);
+      box-shadow:
+        0 14px 26px -12px rgba(0,0,0,0.85),
+        0 3px 0 -1px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        inset 0 -16px 30px -22px rgba(0,212,170,0.4);
+      transform: translateZ(0);
+      transition: transform 0.28s cubic-bezier(.2,.7,.2,1), box-shadow 0.28s ease, border-color 0.28s ease;
+      will-change: transform;
+    }
+    .kb-card:hover {
+      transform: translateY(-5px) rotateX(6deg) rotateY(-2deg) scale(1.02);
+      border-color: rgba(0,212,170,0.5);
+      box-shadow:
+        0 26px 44px -14px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(0,212,170,0.35),
+        0 16px 50px -14px rgba(0,212,170,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      z-index: 5;
+    }
+    .kb-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.32rem 0.6rem;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: #b9c6da;
+      background: linear-gradient(90deg, rgba(0,212,170,0.15), rgba(26,58,110,0.18));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-radius: 13px 13px 0 0;
+    }
+    .kb-head .kb-mno { color: var(--accent); font-weight: 800; }
+    .kb-head .kb-venue { color: var(--muted); font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 92px; }
+    .kb-body { padding: 0.15rem 0; }
+    .kb-team {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.38rem 0.62rem;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .kb-team + .kb-team { border-top: 1px dashed rgba(255,255,255,0.09); }
+    .kb-flag { font-size: 1.08rem; line-height: 1; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5)); }
+    .kb-tn { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .kb-team .kb-seed { margin-left: auto; font-size: 0.6rem; color: var(--muted); font-weight: 700; }
+    .kb-team.tbd { color: var(--muted); font-style: italic; font-weight: 500; }
+    .kb-team.tbd .kb-flag { opacity: 0.5; }
+    .kb-team.win { color: var(--accent); }
+    .kb-team.win .kb-tn { text-shadow: 0 0 12px rgba(0,212,170,0.4); }
+
+    /* ── Semi / Final emphasis ───────────────────── */
+    .kb-card.is-sf { border-color: rgba(0,212,170,0.28); }
+    .kb-card.is-final {
+      border-color: rgba(255,215,0,0.5);
+      background: linear-gradient(150deg, #2a2410 0%, #1a1608 55%, #12100a 100%);
+      box-shadow:
+        0 16px 34px -12px rgba(0,0,0,0.85),
+        0 0 0 1px rgba(255,215,0,0.25),
+        0 0 40px -8px rgba(255,215,0,0.3),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+    .kb-card.is-final .kb-head {
+      background: linear-gradient(90deg, rgba(255,215,0,0.28), rgba(245,158,11,0.18));
+      color: #ffe680;
+    }
+    .kb-card.is-final .kb-head .kb-mno { color: #ffd700; }
+
+    /* ── Champion slot ───────────────────────────── */
+    .kb-col.is-champ-col { flex: 0 0 176px; justify-content: center; }
+    .kb-champ {
+      position: relative;
+      text-align: center;
+      padding: 1.4rem 0.85rem;
+      border-radius: 16px;
+      background: linear-gradient(160deg, rgba(255,215,0,0.16), rgba(245,158,11,0.06) 60%, transparent);
+      border: 1px solid rgba(255,215,0,0.45);
+      box-shadow: 0 20px 44px -18px rgba(255,215,0,0.35), inset 0 1px 0 rgba(255,255,255,0.12);
+    }
+    .kb-champ .kb-cup {
+      font-size: 2.9rem;
+      line-height: 1;
+      filter: drop-shadow(0 6px 14px rgba(255,215,0,0.5));
+      animation: kbFloat 3.2s ease-in-out infinite;
+    }
+    @keyframes kbFloat { 0%,100% { transform: translateY(0) rotate(-2deg);} 50% { transform: translateY(-7px) rotate(2deg);} }
+    .kb-champ .kb-champ-lbl {
+      margin-top: 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ffd700, #fff3b0);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .kb-champ .kb-champ-sub { margin-top: 0.3rem; font-size: 0.64rem; color: var(--muted); }
+
+    @media (max-width: 640px) {
+      .kb-grid { gap: 44px; min-width: 1080px; }
+      .kb-col { flex: 0 0 188px; }
+    }
+  </style>
 </head>
 <body data-page-title="idx_title">
 <nav>
@@ -37,6 +251,15 @@
     <div class="stat-box"><div class="num">3</div><div class="lbl" data-i18n="idx_stat_hosts">主辦國家</div></div>
     <div class="stat-box"><div class="num">43</div><div class="lbl" data-i18n="idx_stat_days">比賽天數</div></div>
     <div class="stat-box"><div class="num" id="visitor-count">—</div><div class="lbl" data-i18n="idx_stat_visitors">瀏覽人數</div></div>
+  </div>
+
+  <!-- KNOCKOUT BRACKET -->
+  <div class="kbracket-shell" id="kbracket-shell">
+    <div class="kb-title-row"><h2 id="kb-title">🏆 淘汰賽對陣圖</h2></div>
+    <div class="kb-sub" id="kb-sub"></div>
+    <div class="kbracket-wrap">
+      <div class="kb-grid" id="kb-grid"></div>
+    </div>
   </div>
 
   <!-- GROUPS -->
@@ -140,6 +363,143 @@ VENUES.forEach(v => {
   d.innerHTML = `<strong style="color:var(--text)">${v.name}</strong><span style="font-size:0.82rem;color:var(--muted)">📍 ${v.city}</span><span style="font-size:0.78rem;color:var(--accent)">${t('idx_venue_capacity', {cap: v.cap.toLocaleString()})}</span>`;
   vg.appendChild(d);
 });
+</script>
+<script>
+/* ═══════════════════════════════════════════════════════════
+   Knockout Bracket renderer (3D + SVG connectors)
+   ═══════════════════════════════════════════════════════════ */
+(function () {
+  var isEn = (typeof getLang === 'function') && getLang() === 'en';
+  var L = isEn
+    ? { title:'🏆 Knockout Bracket', sub:'All 8 Round of 16 ties locked in — the road to the Final begins <b>July&nbsp;4</b>',
+        r16:'Round of 16', qf:'Quarter-finals', sf:'Semi-finals', fin:'Final', champ:'Champion',
+        winOf:'Winner of', tbd:'To be decided', crown:'World Champions' }
+    : { title:'🏆 淘汰賽對陣圖', sub:'16 強 8 場對戰全部確定 — 通往決賽之路 <b>7 月 4 日</b> 開打',
+        r16:'16 強', qf:'八強 (QF)', sf:'準決賽 (SF)', fin:'決賽', champ:'世界冠軍',
+        winOf:'勝者', tbd:'待定', crown:'世界冠軍' };
+
+  document.getElementById('kb-title').textContent = L.title;
+  document.getElementById('kb-sub').innerHTML = L.sub;
+
+  // Round of 16 — confirmed matchups (mirrors R16_SCHEDULE)
+  var R16 = [
+    { m:'M1', date:'7/4', venue:'Houston',     h:{n:'Canada',f:'🇨🇦'},      a:{n:'Morocco',f:'🇲🇦'} },
+    { m:'M2', date:'7/4', venue:'Philadelphia',h:{n:'Paraguay',f:'🇵🇾'},    a:{n:'France',f:'🇫🇷'} },
+    { m:'M3', date:'7/5', venue:'New Jersey',  h:{n:'Brazil',f:'🇧🇷'},      a:{n:'Norway',f:'🇳🇴'} },
+    { m:'M4', date:'7/5', venue:'Mexico City', h:{n:'Mexico',f:'🇲🇽'},      a:{n:'England',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'} },
+    { m:'M5', date:'7/6', venue:'Arlington',   h:{n:'Portugal',f:'🇵🇹'},    a:{n:'Spain',f:'🇪🇸'} },
+    { m:'M6', date:'7/6', venue:'Seattle',     h:{n:'USA',f:'🇺🇸'},         a:{n:'Belgium',f:'🇧🇪'} },
+    { m:'M7', date:'7/7', venue:'Atlanta',     h:{n:'Argentina',f:'🇦🇷'},   a:{n:'Egypt',f:'🇪🇬'} },
+    { m:'M8', date:'7/7', venue:'Vancouver',   h:{n:'Switzerland',f:'🇨🇭'}, a:{n:'Colombia',f:'🇨🇴'} },
+  ];
+  // Later rounds reference feeder match ids
+  var QF = [
+    { m:'QF1', date:'7/9',  venue:'Boston',  f:['M1','M2'] },
+    { m:'QF2', date:'7/10', venue:'Miami',   f:['M3','M4'] },
+    { m:'QF3', date:'7/10', venue:'Los Angeles', f:['M5','M6'] },
+    { m:'QF4', date:'7/11', venue:'Kansas City',  f:['M7','M8'] },
+  ];
+  var SF = [
+    { m:'SF1', date:'7/14', venue:'Arlington', f:['QF1','QF2'] },
+    { m:'SF2', date:'7/15', venue:'Atlanta',   f:['QF3','QF4'] },
+  ];
+  var FIN = { m:'Final', date:'7/19', venue:'New York/NJ', f:['SF1','SF2'] };
+
+  function teamRow(t, tbd) {
+    if (tbd) {
+      return '<div class="kb-team tbd"><span class="kb-flag">🏳️</span><span class="kb-tn">' + t + '</span></div>';
+    }
+    return '<div class="kb-team"><span class="kb-flag">' + t.f + '</span><span class="kb-tn">' + t.n + '</span></div>';
+  }
+  function realCard(mt, cls) {
+    return '<div class="kb-card' + (cls||'') + '" data-m="' + mt.m + '">' +
+      '<div class="kb-head"><span class="kb-mno">' + mt.m + '</span>' +
+        '<span class="kb-venue">' + mt.date + ' · ' + mt.venue + '</span></div>' +
+      '<div class="kb-body">' + teamRow(mt.h) + teamRow(mt.a) + '</div></div>';
+  }
+  function ghostCard(mt, cls) {
+    var r1 = L.winOf + ' ' + mt.f[0], r2 = L.winOf + ' ' + mt.f[1];
+    return '<div class="kb-card' + (cls||'') + '" data-m="' + mt.m + '">' +
+      '<div class="kb-head"><span class="kb-mno">' + mt.m + '</span>' +
+        '<span class="kb-venue">' + mt.date + ' · ' + mt.venue + '</span></div>' +
+      '<div class="kb-body">' + teamRow(r1, true) + teamRow(r2, true) + '</div></div>';
+  }
+
+  var grid = document.getElementById('kb-grid');
+  grid.innerHTML =
+    '<div class="kb-col col-r16"><div class="kb-col-label">' + L.r16 + '</div><div class="kb-col-body">' + R16.map(function(x){return realCard(x);}).join('') + '</div></div>' +
+    '<div class="kb-col col-qf"><div class="kb-col-label">' + L.qf + '</div><div class="kb-col-body">' + QF.map(function(x){return ghostCard(x);}).join('') + '</div></div>' +
+    '<div class="kb-col col-sf"><div class="kb-col-label">' + L.sf + '</div><div class="kb-col-body">' + SF.map(function(x){return ghostCard(x,' is-sf');}).join('') + '</div></div>' +
+    '<div class="kb-col col-final is-final-col"><div class="kb-col-label">' + L.fin + '</div><div class="kb-col-body">' + ghostCard(FIN,' is-final') + '</div></div>' +
+    '<div class="kb-col is-champ-col"><div class="kb-col-label">' + L.champ + '</div><div class="kb-col-body">' +
+      '<div class="kb-champ"><div class="kb-cup">🏆</div><div class="kb-champ-lbl">' + L.crown + '</div>' +
+      '<div class="kb-champ-sub">' + FIN.date + ' · ' + FIN.venue + '</div></div></div></div>';
+
+  // ── SVG connectors ──────────────────────────────────────
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('class', 'kb-svg');
+  svg.innerHTML =
+    '<defs><linearGradient id="kbGrad" x1="0" y1="0" x2="1" y2="0">' +
+    '<stop offset="0" stop-color="#00d4aa" stop-opacity="0.15"/>' +
+    '<stop offset="0.5" stop-color="#00d4aa" stop-opacity="0.6"/>' +
+    '<stop offset="1" stop-color="#ffd700" stop-opacity="0.55"/></gradient></defs>';
+  grid.insertBefore(svg, grid.firstChild);
+
+  // feeder → target links (pairs advance into next match)
+  var LINKS = [
+    ['M1','QF1'],['M2','QF1'],['M3','QF2'],['M4','QF2'],
+    ['M5','QF3'],['M6','QF3'],['M7','QF4'],['M8','QF4'],
+    ['QF1','SF1'],['QF2','SF1'],['QF3','SF2'],['QF4','SF2'],
+    ['SF1','Final'],['SF2','Final'],
+  ];
+
+  function cardEl(id) { return grid.querySelector('.kb-card[data-m="' + id + '"]'); }
+
+  function drawLinks() {
+    // clear existing links (keep defs)
+    Array.prototype.slice.call(svg.querySelectorAll('.kb-link')).forEach(function(p){ p.remove(); });
+    var W = grid.scrollWidth, H = grid.scrollHeight;
+    svg.setAttribute('width', W); svg.setAttribute('height', H);
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var gr = grid.getBoundingClientRect();
+
+    LINKS.forEach(function(pair) {
+      var from = cardEl(pair[0]), to = cardEl(pair[1]);
+      if (!from || !to) return;
+      var fr = from.getBoundingClientRect(), tr = to.getBoundingClientRect();
+      var x1 = fr.right - gr.left + grid.scrollLeft;
+      var y1 = fr.top + fr.height / 2 - gr.top + grid.scrollTop;
+      var x2 = tr.left - gr.left + grid.scrollLeft;
+      var y2 = tr.top + tr.height / 2 - gr.top + grid.scrollTop;
+      var mx = (x1 + x2) / 2;
+      var d = 'M ' + x1 + ' ' + y1 +
+              ' C ' + mx + ' ' + y1 + ', ' + mx + ' ' + y2 + ', ' + x2 + ' ' + y2;
+      var path = document.createElementNS(NS, 'path');
+      path.setAttribute('class', 'kb-link');
+      path.setAttribute('d', d);
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke', 'url(#kbGrad)');
+      path.setAttribute('stroke-width', '2.5');
+      path.setAttribute('stroke-linecap', 'round');
+      svg.appendChild(path);
+      // node dot at the target end
+      var dot = document.createElementNS(NS, 'circle');
+      dot.setAttribute('class', 'kb-link');
+      dot.setAttribute('cx', x1); dot.setAttribute('cy', y1);
+      dot.setAttribute('r', '3');
+      dot.setAttribute('fill', '#00d4aa');
+      dot.setAttribute('opacity', '0.7');
+      svg.appendChild(dot);
+    });
+  }
+
+  // draw after layout settles; redraw on resize
+  requestAnimationFrame(function(){ requestAnimationFrame(drawLinks); });
+  window.addEventListener('load', drawLinks);
+  var rt;
+  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(drawLinks, 120); });
+})();
 </script>
 <script>
 // Visitor counter via CountAPI (free, no setup needed)
