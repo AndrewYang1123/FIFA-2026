@@ -1797,7 +1797,7 @@ var GRP_COLORS = [
 // Knockout round schedule (key must match FINAL_SCORES round field)
 var KO_ROUNDS = [
   { key:'Round of 32',   zh:'32強賽',      en:'Round of 32',    dates:'Jun 28 – Jul 3', total:16 },
-  { key:'Round of 16',   zh:'16強賽',      en:'Round of 16',    dates:'Jul 5–8',        total:8  },
+  { key:'Round of 16',   zh:'16強賽',      en:'Round of 16',    dates:'Jul 4–7',        total:8  },
   { key:'Quarter-final', zh:'八強賽 (QF)', en:'Quarter-finals', dates:'Jul 10–11',      total:4  },
   { key:'Semi-final',    zh:'準決賽 (SF)', en:'Semi-finals',    dates:'Jul 14–15',      total:2  },
   { key:'3rd Place',     zh:'季軍戰',      en:'3rd Place',      dates:'Jul 21',         total:1  },
@@ -1822,6 +1822,18 @@ var R32_SCHEDULE = [
   { date:'Jul 3',  home:'Australia',            homeFlag:'🇦🇺', away:'Egypt',                 awayFlag:'🇪🇬', venue:'AT&T Stadium'          },
   { date:'Jul 3',  home:'Argentina',            homeFlag:'🇦🇷', away:'Cape Verde',             awayFlag:'🇨🇻', venue:'Hard Rock Stadium'     },
   { date:'Jul 3',  home:'Colombia',             homeFlag:'🇨🇴', away:'Ghana',                 awayFlag:'🇬🇭', venue:'Arrowhead Stadium'     },
+];
+
+// Round of 16 confirmed matchups
+var R16_SCHEDULE = [
+  { date:'Jul 4', home:'Canada',      homeFlag:'🇨🇦', away:'Morocco',    awayFlag:'🇲🇦', venue:'NRG Stadium'            },
+  { date:'Jul 4', home:'Paraguay',    homeFlag:'🇵🇾', away:'France',     awayFlag:'🇫🇷', venue:'Lincoln Financial Field' },
+  { date:'Jul 5', home:'Brazil',      homeFlag:'🇧🇷', away:'Norway',     awayFlag:'🇳🇴', venue:'MetLife Stadium'         },
+  { date:'Jul 5', home:'Mexico',      homeFlag:'🇲🇽', away:'England',    awayFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', venue:'Estadio Azteca'          },
+  { date:'Jul 6', home:'Portugal',    homeFlag:'🇵🇹', away:'Spain',      awayFlag:'🇪🇸', venue:'AT&T Stadium'            },
+  { date:'Jul 6', home:'USA',         homeFlag:'🇺🇸', away:'Belgium',    awayFlag:'🇧🇪', venue:'Lumen Field'             },
+  { date:'Jul 7', home:'Argentina',   homeFlag:'🇦🇷', away:'Egypt',      awayFlag:'🇪🇬', venue:'Mercedes-Benz Stadium'  },
+  { date:'Jul 7', home:'Switzerland', homeFlag:'🇨🇭', away:'Colombia',   awayFlag:'🇨🇴', venue:'BC Place'                },
 ];
 
 (function () {
@@ -1992,16 +2004,19 @@ var R32_SCHEDULE = [
       var label = isEn ? r.en : r.zh;
       var results = koMap[r.key] || [];
       var matchHTML;
-      if (r.key === 'Round of 32' && typeof R32_SCHEDULE !== 'undefined') {
-        var r32Map = {};
-        results.forEach(function(m) { r32Map[m.home + '|' + m.away] = m; });
+      var scheduleMap = { 'Round of 32': typeof R32_SCHEDULE !== 'undefined' ? R32_SCHEDULE : null,
+                          'Round of 16': typeof R16_SCHEDULE !== 'undefined' ? R16_SCHEDULE : null };
+      var sched = scheduleMap[r.key];
+      if (sched) {
+        var schedResultMap = {};
+        results.forEach(function(m) { schedResultMap[m.home + '|' + m.away] = m; });
         var lastDate = null;
-        matchHTML = R32_SCHEDULE.map(function(s) {
+        matchHTML = sched.map(function(s) {
           var dateSep = '';
           if (s.date !== lastDate) { lastDate = s.date; dateSep = '<div class="ko-date-sep">📅 ' + tx(s.date) + '</div>'; }
-          var done = r32Map[s.home + '|' + s.away];
+          var done = schedResultMap[s.home + '|' + s.away];
           if (done) {
-            var penStr = done.pens ? ' <span style="font-size:0.7rem;color:var(--muted);font-weight:600">(PSO ' + done.pens + ')</span>' : '';
+            var penStr = done.pens ? ' <span style="font-size:0.7rem;color:var(--muted);font-weight:600">(' + done.pens + ')</span>' : '';
             return dateSep + '<div class="ko-match">' +
               '<span class="ko-team">' + s.homeFlag + ' ' + s.home + '</span>' +
               '<span class="ko-score">' + done.homeScore + ' – ' + done.awayScore + penStr + '</span>' +
