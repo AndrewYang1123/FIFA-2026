@@ -1715,9 +1715,68 @@ const FINAL_SCORES = [
       'Switzerland cruise into the last 16! Embolo finished off Manzambi\'s brilliant run (10\'), ' +
       'then Ndoye struck just 48 seconds into the second half (46\') to make it 2-0. ' +
       'Switzerland extend their unbeaten run to 10 matches and face Colombia or Ghana in R16.' },
+
+  // ── Jul 3 — Round of 32 ─────────────────────────────────────────────────
+
+  { date:'Jul 3', round:'Round of 32',
+    home:'Australia', homeFlag:'🇦🇺', homeScore:1,
+    away:'Egypt',     awayFlag:'🇪🇬', awayScore:1,
+    pens:'2-4',
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'away', scorer:'Emam Ashour',   minute:"13'" },
+      { team:'home', scorer:'M. Hany (OG)',  minute:"55'" },
+    ],
+    description:
+      '埃及點球淘汰澳洲，首度躋身世界盃 16 強！Emam Ashour 13 分鐘頭球破門領先，' +
+      '澳洲 Mohamed Hany 55 分鐘烏龍球扳平。互射十二碼，澳洲 Souttar 射高、Herrington 打中橫樑，' +
+      'Salah 最後一球以挑射方式打入，埃及 4:2 勝出。',
+    descriptionEn:
+      'Egypt reach the last 16 for the first time! Emam Ashour headed Egypt ahead (13\'), but ' +
+      'Mohamed Hany diverted O\'Neill\'s free-kick into his own net to level (55\'). In the shootout, ' +
+      'Australia missed twice (Souttar over bar, Herrington hit crossbar) while Salah chipped a ' +
+      'cheeky panenka — Egypt win 4-2 on penalties.' },
+
+  { date:'Jul 3', round:'Round of 32',
+    home:'Argentina',  homeFlag:'🇦🇷', homeScore:3,
+    away:'Cape Verde', awayFlag:'🇨🇻', awayScore:2,
+    pens:'AET',
+    venue:'Hard Rock Stadium',
+    goals:[
+      { team:'home', scorer:'L. Messi',        minute:"29'"  },
+      { team:'away', scorer:'D. Duarte',        minute:"59'"  },
+      { team:'home', scorer:'L. Martínez',      minute:"97'"  },
+      { team:'away', scorer:'S. Lopes Cabral',  minute:"103'" },
+      { team:'away', scorer:'D. Borges (OG)',   minute:"111'" },
+    ],
+    description:
+      '梅西創紀錄，阿根廷驚魂晉級！梅西 29 分鐘以外腳挑射破門，刷新世界盃個人最多進球紀錄至 20 球（本屆 7 球）。' +
+      '佛得角 Duarte 59 分鐘扳平，加時 Lisandro Martínez 97 分鐘再度領先，' +
+      '卻被 Lopes Cabral 103 分鐘驚天遠射扳回。最終 Diney Borges 111 分鐘烏龍球送走佛得角，阿根廷驚險晉級。',
+    descriptionEn:
+      'Messi breaks the all-time World Cup scoring record — but Argentina are taken to the wire! ' +
+      'Messi opened with an outside-of-the-boot flick (29\') for his record-extending 20th WC goal ' +
+      '(7 this tournament). Cape Verde equalised through Duarte (59\'), Lisandro Martínez restored ' +
+      'the lead in extra time (97\'), but Lopes Cabral stunned with a long-range strike (103\'). ' +
+      'An own goal by Borges (111\') finally sealed it for Argentina.' },
+
+  { date:'Jul 3', round:'Round of 32',
+    home:'Colombia', homeFlag:'🇨🇴', homeScore:1,
+    away:'Ghana',    awayFlag:'🇬🇭', awayScore:0,
+    venue:'Arrowhead Stadium',
+    goals:[
+      { team:'home', scorer:'J. Arias', minute:"14'" },
+    ],
+    description:
+      '阿里亞斯 14 分鐘接 Suárez 橫傳輕鬆推入，哥倫比亞 1:0 穩紮穩打勝出。' +
+      'Ghana 八次射門無一命中球框，哥倫比亞鎖定 16 強後對陣瑞士。',
+    descriptionEn:
+      'Arias flicked in Suárez\'s cut-back in the 14th minute and Colombia never looked back. ' +
+      'Ghana failed to register a single shot on target in eight attempts. ' +
+      'Colombia advance to face Switzerland in the Round of 16.' },
 ];
 
-const SCORES_UPDATED = '2026-07-02';
+const SCORES_UPDATED = '2026-07-04';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
