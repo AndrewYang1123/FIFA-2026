@@ -168,6 +168,22 @@
     .kb-team.tbd .kb-flag { opacity: 0.5; }
     .kb-team.win { color: var(--accent); }
     .kb-team.win .kb-tn { text-shadow: 0 0 12px rgba(0,212,170,0.4); }
+    .kb-team.lose { opacity: 0.5; }
+    .kb-team.lose .kb-tn { text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.25); }
+    .kb-team-score {
+      margin-left: auto;
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: var(--muted);
+      background: rgba(255,255,255,0.06);
+      border-radius: 5px;
+      padding: 0.05rem 0.4rem;
+      min-width: 20px;
+      text-align: center;
+    }
+    .kb-team.win .kb-team-score { color: #000; background: var(--accent); }
+    .kb-card.is-played { border-color: rgba(0,212,170,0.3); }
+    .kb-card.is-played .kb-head { background: linear-gradient(90deg, rgba(0,212,170,0.22), rgba(26,58,110,0.14)); }
 
     /* ── Semi / Final emphasis ───────────────────── */
     .kb-card.is-sf { border-color: rgba(0,212,170,0.28); }
@@ -371,26 +387,26 @@ VENUES.forEach(v => {
 (function () {
   var isEn = (typeof getLang === 'function') && getLang() === 'en';
   var L = isEn
-    ? { title:'🏆 Knockout Bracket', sub:'All 8 Round of 16 ties locked in — the road to the Final begins <b>July&nbsp;4</b>',
+    ? { title:'🏆 Knockout Bracket', sub:'4 of 8 Round of 16 ties complete — quarterfinal picture is taking shape',
         r16:'Round of 16', qf:'Quarter-finals', sf:'Semi-finals', fin:'Final', champ:'Champion',
         winOf:'Winner of', tbd:'To be decided', crown:'World Champions' }
-    : { title:'🏆 淘汰賽對陣圖', sub:'16 強 8 場對戰全部確定 — 通往決賽之路 <b>7 月 4 日</b> 開打',
+    : { title:'🏆 淘汰賽對陣圖', sub:'16 強 8 場已完成 4 場 — 八強對戰輪廓逐漸成形',
         r16:'16 強', qf:'八強 (QF)', sf:'準決賽 (SF)', fin:'決賽', champ:'世界冠軍',
         winOf:'勝者', tbd:'待定', crown:'世界冠軍' };
 
   document.getElementById('kb-title').textContent = L.title;
   document.getElementById('kb-sub').innerHTML = L.sub;
 
-  // Round of 16 — confirmed matchups (mirrors R16_SCHEDULE)
+  // Round of 16 — confirmed matchups (mirrors R16_SCHEDULE); hs/as/winner set once played
   var R16 = [
-    { m:'M1', date:'7/4', venue:'Houston',     h:{n:'Canada',f:'🇨🇦'},      a:{n:'Morocco',f:'🇲🇦'} },
-    { m:'M2', date:'7/4', venue:'Philadelphia',h:{n:'Paraguay',f:'🇵🇾'},    a:{n:'France',f:'🇫🇷'} },
-    { m:'M3', date:'7/5', venue:'New Jersey',  h:{n:'Brazil',f:'🇧🇷'},      a:{n:'Norway',f:'🇳🇴'} },
-    { m:'M4', date:'7/5', venue:'Mexico City', h:{n:'Mexico',f:'🇲🇽'},      a:{n:'England',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'} },
-    { m:'M5', date:'7/6', venue:'Arlington',   h:{n:'Portugal',f:'🇵🇹'},    a:{n:'Spain',f:'🇪🇸'} },
-    { m:'M6', date:'7/6', venue:'Seattle',     h:{n:'USA',f:'🇺🇸'},         a:{n:'Belgium',f:'🇧🇪'} },
-    { m:'M7', date:'7/7', venue:'Atlanta',     h:{n:'Argentina',f:'🇦🇷'},   a:{n:'Egypt',f:'🇪🇬'} },
-    { m:'M8', date:'7/7', venue:'Vancouver',   h:{n:'Switzerland',f:'🇨🇭'}, a:{n:'Colombia',f:'🇨🇴'} },
+    { m:'M1', date:'7/4', venue:'NRG Stadium',          h:{n:'Canada',f:'🇨🇦'},      a:{n:'Morocco',f:'🇲🇦'},  hs:0, as:3, winner:'a' },
+    { m:'M2', date:'7/4', venue:'Lincoln Financial Field', h:{n:'Paraguay',f:'🇵🇾'}, a:{n:'France',f:'🇫🇷'},   hs:0, as:1, winner:'a' },
+    { m:'M3', date:'7/5', venue:'MetLife Stadium',      h:{n:'Brazil',f:'🇧🇷'},      a:{n:'Norway',f:'🇳🇴'},   hs:1, as:2, winner:'a' },
+    { m:'M4', date:'7/5', venue:'Estadio Azteca',       h:{n:'Mexico',f:'🇲🇽'},      a:{n:'England',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'}, hs:2, as:3, winner:'a' },
+    { m:'M5', date:'7/6', venue:'AT&T Stadium',         h:{n:'Portugal',f:'🇵🇹'},    a:{n:'Spain',f:'🇪🇸'} },
+    { m:'M6', date:'7/6', venue:'Lumen Field',          h:{n:'USA',f:'🇺🇸'},         a:{n:'Belgium',f:'🇧🇪'} },
+    { m:'M7', date:'7/7', venue:'Mercedes-Benz Stadium',h:{n:'Argentina',f:'🇦🇷'},   a:{n:'Egypt',f:'🇪🇬'} },
+    { m:'M8', date:'7/7', venue:'BC Place',             h:{n:'Switzerland',f:'🇨🇭'}, a:{n:'Colombia',f:'🇨🇴'} },
   ];
   // Later rounds reference feeder match ids
   var QF = [
@@ -405,24 +421,38 @@ VENUES.forEach(v => {
   ];
   var FIN = { m:'Final', date:'7/19', venue:'New York/NJ', f:['SF1','SF2'] };
 
-  function teamRow(t, tbd) {
-    if (tbd) {
+  // Map of matchId -> winning team {n,f}, for feeding into later rounds
+  var winners = {};
+  R16.forEach(function(mt) {
+    if (mt.winner) winners[mt.m] = mt.winner === 'h' ? mt.h : mt.a;
+  });
+
+  function teamRow(t, opts) {
+    opts = opts || {};
+    if (opts.tbd) {
       return '<div class="kb-team tbd"><span class="kb-flag">🏳️</span><span class="kb-tn">' + t + '</span></div>';
     }
-    return '<div class="kb-team"><span class="kb-flag">' + t.f + '</span><span class="kb-tn">' + t.n + '</span></div>';
+    var cls = 'kb-team' + (opts.win ? ' win' : '') + (opts.lose ? ' lose' : '');
+    var scoreHtml = (opts.score !== undefined) ? '<span class="kb-team-score">' + opts.score + '</span>' : '';
+    return '<div class="' + cls + '"><span class="kb-flag">' + t.f + '</span><span class="kb-tn">' + t.n + '</span>' + scoreHtml + '</div>';
   }
   function realCard(mt, cls) {
-    return '<div class="kb-card' + (cls||'') + '" data-m="' + mt.m + '">' +
+    var played = mt.hs !== undefined;
+    var homeOpts = played ? { win: mt.winner === 'h', lose: mt.winner === 'a', score: mt.hs } : {};
+    var awayOpts = played ? { win: mt.winner === 'a', lose: mt.winner === 'h', score: mt.as } : {};
+    return '<div class="kb-card' + (cls||'') + (played ? ' is-played' : '') + '" data-m="' + mt.m + '">' +
       '<div class="kb-head"><span class="kb-mno">' + mt.m + '</span>' +
         '<span class="kb-venue">' + mt.date + ' · ' + mt.venue + '</span></div>' +
-      '<div class="kb-body">' + teamRow(mt.h) + teamRow(mt.a) + '</div></div>';
+      '<div class="kb-body">' + teamRow(mt.h, homeOpts) + teamRow(mt.a, awayOpts) + '</div></div>';
   }
   function ghostCard(mt, cls) {
-    var r1 = L.winOf + ' ' + mt.f[0], r2 = L.winOf + ' ' + mt.f[1];
+    var w1 = winners[mt.f[0]], w2 = winners[mt.f[1]];
+    var row1 = w1 ? teamRow(w1) : teamRow(L.winOf + ' ' + mt.f[0], { tbd:true });
+    var row2 = w2 ? teamRow(w2) : teamRow(L.winOf + ' ' + mt.f[1], { tbd:true });
     return '<div class="kb-card' + (cls||'') + '" data-m="' + mt.m + '">' +
       '<div class="kb-head"><span class="kb-mno">' + mt.m + '</span>' +
         '<span class="kb-venue">' + mt.date + ' · ' + mt.venue + '</span></div>' +
-      '<div class="kb-body">' + teamRow(r1, true) + teamRow(r2, true) + '</div></div>';
+      '<div class="kb-body">' + row1 + row2 + '</div></div>';
   }
 
   var grid = document.getElementById('kb-grid');
