@@ -258,7 +258,7 @@ const SCHEDULE = [
 ];
 
 const TEAMS_DATA = [
-  { name:'Argentina', flag:'🇦🇷', group:'D', rank:1, conf:'CONMEBOL', coach:'Lionel Scaloni',
+  { name:'Argentina', flag:'🇦🇷', group:'J', rank:1, conf:'CONMEBOL', coach:'Lionel Scaloni',
     players:[
       {name:'Lionel Messi',pos:'FW',star:true},{name:'Ángel Di María',pos:'FW'},{name:'Julián Álvarez',pos:'FW',star:true},
       {name:'Lautaro Martínez',pos:'FW',star:true},{name:'Rodrigo De Paul',pos:'MF'},{name:'Alexis Mac Allister',pos:'MF'},
@@ -266,7 +266,7 @@ const TEAMS_DATA = [
       {name:'Cristian Romero',pos:'DF'},{name:'Lisandro Martínez',pos:'DF'},{name:'Nahuel Molina',pos:'DF'},
       {name:'Emiliano Martínez',pos:'GK',star:true},{name:'Germán Pezzella',pos:'DF'},{name:'Thiago Almada',pos:'MF'}
     ]},
-  { name:'France', flag:'🇫🇷', group:'D', rank:2, conf:'UEFA', coach:'Didier Deschamps',
+  { name:'France', flag:'🇫🇷', group:'I', rank:2, conf:'UEFA', coach:'Didier Deschamps',
     players:[
       {name:'Kylian Mbappé',pos:'FW',star:true},{name:'Antoine Griezmann',pos:'FW',star:true},{name:'Ousmane Dembélé',pos:'FW'},
       {name:'Marcus Thuram',pos:'FW'},{name:'Randal Kolo Muani',pos:'FW'},{name:'Eduardo Camavinga',pos:'MF'},
@@ -274,7 +274,7 @@ const TEAMS_DATA = [
       {name:'Jules Koundé',pos:'DF'},{name:'Raphaël Varane',pos:'DF'},{name:'Dayot Upamecano',pos:'DF'},
       {name:'Theo Hernandez',pos:'DF'},{name:'Mike Maignan',pos:'GK',star:true},{name:'N\'Golo Kanté',pos:'MF'}
     ]},
-  { name:'Spain', flag:'🇪🇸', group:'F', rank:3, conf:'UEFA', coach:'Luis de la Fuente',
+  { name:'Spain', flag:'🇪🇸', group:'H', rank:3, conf:'UEFA', coach:'Luis de la Fuente',
     players:[
       {name:'Pedri',pos:'MF',star:true},{name:'Gavi',pos:'MF',star:true},{name:'Lamine Yamal',pos:'FW',star:true},
       {name:'Álvaro Morata',pos:'FW'},{name:'Dani Olmo',pos:'MF'},{name:'Fabián Ruiz',pos:'MF'},
@@ -282,7 +282,7 @@ const TEAMS_DATA = [
       {name:'Dani Carvajal',pos:'DF'},{name:'Pau Cubarsí',pos:'DF'},{name:'Unai Simón',pos:'GK'},
       {name:'Ferran Torres',pos:'FW'},{name:'Nico Williams',pos:'FW',star:true},{name:'Mikel Merino',pos:'MF'}
     ]},
-  { name:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', group:'B', rank:5, conf:'UEFA', coach:'Gareth Southgate',
+  { name:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', group:'L', rank:5, conf:'UEFA', coach:'Gareth Southgate',
     players:[
       {name:'Jude Bellingham',pos:'MF',star:true},{name:'Harry Kane',pos:'FW',star:true},{name:'Phil Foden',pos:'MF',star:true},
       {name:'Bukayo Saka',pos:'FW',star:true},{name:'Marcus Rashford',pos:'FW'},{name:'Declan Rice',pos:'MF'},
@@ -290,7 +290,7 @@ const TEAMS_DATA = [
       {name:'Harry Maguire',pos:'DF'},{name:'Luke Shaw',pos:'DF'},{name:'Jordan Pickford',pos:'GK'},
       {name:'Trent Alexander-Arnold',pos:'DF'},{name:'Cole Palmer',pos:'MF'},{name:'Ollie Watkins',pos:'FW'}
     ]},
-  { name:'Brazil', flag:'🇧🇷', group:'E', rank:5, conf:'CONMEBOL', coach:'Dorival Júnior',
+  { name:'Brazil', flag:'🇧🇷', group:'C', rank:5, conf:'CONMEBOL', coach:'Dorival Júnior',
     players:[
       {name:'Vinícius Jr.',pos:'FW',star:true},{name:'Rodrygo',pos:'FW',star:true},{name:'Neymar Jr.',pos:'FW',star:true},
       {name:'Raphinha',pos:'FW'},{name:'Endrick',pos:'FW'},{name:'Bruno Guimarães',pos:'MF',star:true},
@@ -298,7 +298,7 @@ const TEAMS_DATA = [
       {name:'Marquinhos',pos:'DF'},{name:'Danilo',pos:'DF'},{name:'Renan Lodi',pos:'DF'},
       {name:'Alisson Becker',pos:'GK',star:true},{name:'Antony',pos:'FW'},{name:'Douglas Luiz',pos:'MF'}
     ]},
-  { name:'Portugal', flag:'🇵🇹', group:'E', rank:6, conf:'UEFA', coach:'Roberto Martínez',
+  { name:'Portugal', flag:'🇵🇹', group:'K', rank:6, conf:'UEFA', coach:'Roberto Martínez',
     players:[
       {name:'Cristiano Ronaldo',pos:'FW',star:true},{name:'Bruno Fernandes',pos:'MF',star:true},{name:'Rafael Leão',pos:'FW',star:true},
       {name:'Bernardo Silva',pos:'MF',star:true},{name:'João Cancelo',pos:'DF'},{name:'Rúben Dias',pos:'DF'},
@@ -322,15 +322,15 @@ const TEAMS_DATA = [
       {name:'Dries Mertens',pos:'FW'},{name:'Charles De Ketelaere',pos:'MF'},{name:'Leandro Trossard',pos:'FW'},
       {name:'Timothy Castagne',pos:'DF'},{name:'Jeremy Doku',pos:'FW',star:true},{name:'Arthur Theate',pos:'DF'}
     ]},
-  { name:'Italy', flag:'🇮🇹', group:'H', rank:9, conf:'UEFA', coach:'Luciano Spalletti',
+  { name:'Czechia', flag:'🇨🇿', group:'A', rank:40, conf:'UEFA', coach:'Miroslav Koubek',
     players:[
-      {name:'Gianluigi Donnarumma',pos:'GK',star:true},{name:'Leonardo Bonucci',pos:'DF'},{name:'Giorgio Chiellini',pos:'DF'},
-      {name:'Federico Chiesa',pos:'FW',star:true},{name:'Marco Verratti',pos:'MF'},{name:'Jorginho',pos:'MF'},
-      {name:'Nicolo Barella',pos:'MF',star:true},{name:'Giacomo Raspadori',pos:'FW'},{name:'Giovanni Di Lorenzo',pos:'DF'},
-      {name:'Alessandro Bastoni',pos:'DF'},{name:'Sandro Tonali',pos:'MF'},{name:'Federico Dimarco',pos:'DF'},
-      {name:'Gianluca Scamacca',pos:'FW'},{name:'Lorenzo Pellegrini',pos:'MF'},{name:'Matteo Politano',pos:'FW'}
+      {name:'Patrik Schick',pos:'FW',star:true},{name:'Tomáš Souček',pos:'MF',star:true},{name:'Ladislav Krejčí',pos:'DF',star:true},
+      {name:'Adam Hložek',pos:'FW'},{name:'Vladimír Coufal',pos:'DF'},{name:'Lukáš Provod',pos:'MF'},
+      {name:'Matěj Kovář',pos:'GK'},{name:'David Zima',pos:'DF'},{name:'Robin Hranáč',pos:'DF'},
+      {name:'Pavel Šulc',pos:'MF',star:true},{name:'Michal Sadílek',pos:'MF'},{name:'David Jurásek',pos:'DF'},
+      {name:'Jindřich Staněk',pos:'GK'},{name:'Antonín Barák',pos:'MF'},{name:'Václav Černý',pos:'FW'}
     ]},
-  { name:'Colombia', flag:'🇨🇴', group:'G', rank:9, conf:'CONMEBOL', coach:'Néstor Lorenzo',
+  { name:'Colombia', flag:'🇨🇴', group:'K', rank:9, conf:'CONMEBOL', coach:'Néstor Lorenzo',
     players:[
       {name:'James Rodríguez',pos:'MF',star:true},{name:'Luis Díaz',pos:'FW',star:true},{name:'Falcao García',pos:'FW'},
       {name:'Radamel Falcao',pos:'FW'},{name:'Cuadrado',pos:'MF'},{name:'Davinson Sánchez',pos:'DF'},
@@ -338,7 +338,7 @@ const TEAMS_DATA = [
       {name:'John Córdoba',pos:'FW'},{name:'Jhon Durán',pos:'FW'},{name:'Jorge Carrascal',pos:'MF'},
       {name:'Daniel Muñoz',pos:'DF'},{name:'Jefferson Lerma',pos:'MF'},{name:'Camilo Vargas',pos:'GK'}
     ]},
-  { name:'Croatia', flag:'🇭🇷', group:'C', rank:10, conf:'UEFA', coach:'Zlatko Dalić',
+  { name:'Croatia', flag:'🇭🇷', group:'L', rank:10, conf:'UEFA', coach:'Zlatko Dalić',
     players:[
       {name:'Luka Modrić',pos:'MF',star:true},{name:'Ivan Perišić',pos:'FW'},{name:'Andrej Kramarić',pos:'FW',star:true},
       {name:'Mateo Kovačić',pos:'MF',star:true},{name:'Marcelo Brozović',pos:'MF'},{name:'Joško Gvardiol',pos:'DF',star:true},
@@ -346,15 +346,15 @@ const TEAMS_DATA = [
       {name:'Ante Budimir',pos:'FW'},{name:'Mario Pašalić',pos:'MF'},{name:'Bruno Petković',pos:'FW'},
       {name:'Borna Ćorić',pos:'MF'},{name:'Josip Stanišić',pos:'DF'},{name:'Nikola Vlašić',pos:'MF'}
     ]},
-  { name:'Denmark', flag:'🇩🇰', group:'J', rank:11, conf:'UEFA', coach:'Kasper Hjulmand',
+  { name:'Bosnia and Herzegovina', flag:'🇧🇦', group:'B', rank:65, conf:'UEFA', coach:'Sergej Barbarez',
     players:[
-      {name:'Christian Eriksen',pos:'MF',star:true},{name:'Kasper Dolberg',pos:'FW'},{name:'Martin Braithwaite',pos:'FW'},
-      {name:'Pierre-Emile Höjbjerg',pos:'MF',star:true},{name:'Simon Kjær',pos:'DF'},{name:'Kasper Schmeichel',pos:'GK'},
-      {name:'Andreas Christensen',pos:'DF'},{name:'Joachim Andersen',pos:'DF'},{name:'Rasmus Hojlund',pos:'FW',star:true},
-      {name:'Mikkel Damsgaard',pos:'MF'},{name:'Yussuf Poulsen',pos:'FW'},{name:'Viktor Claesson',pos:'MF'},
-      {name:'Thomas Delaney',pos:'MF'},{name:'Brentford Maehle',pos:'DF'},{name:'Alexander Bah',pos:'DF'}
+      {name:'Edin Džeko',pos:'FW',star:true},{name:'Ermedin Demirović',pos:'FW',star:true},{name:'Sead Kolašinac',pos:'DF'},
+      {name:'Amir Hadžiahmetović',pos:'MF'},{name:'Esmir Bajraktarević',pos:'FW',star:true},{name:'Kerim Alajbegović',pos:'MF'},
+      {name:'Rade Krunić',pos:'MF'},{name:'Nihad Mujakić',pos:'DF'},{name:'Toni Šunjić',pos:'DF'},
+      {name:'Ibrahim Šehić',pos:'GK'},{name:'Dennis Hadžikadunić',pos:'DF'},{name:'Anel Ahmedhodžić',pos:'DF'},
+      {name:'Amar Rahmanović',pos:'FW'},{name:'Gojko Cimirot',pos:'MF'},{name:'Nedim Bajrami',pos:'MF'}
     ]},
-  { name:'Germany', flag:'🇩🇪', group:'I', rank:12, conf:'UEFA', coach:'Julian Nagelsmann',
+  { name:'Germany', flag:'🇩🇪', group:'E', rank:12, conf:'UEFA', coach:'Julian Nagelsmann',
     players:[
       {name:'Florian Wirtz',pos:'MF',star:true},{name:'Jamal Musiala',pos:'MF',star:true},{name:'Thomas Müller',pos:'FW'},
       {name:'Toni Kroos',pos:'MF',star:true},{name:'Joshua Kimmich',pos:'MF'},{name:'Antonio Rüdiger',pos:'DF'},
@@ -362,7 +362,7 @@ const TEAMS_DATA = [
       {name:'Manuel Neuer',pos:'GK',star:true},{name:'Niklas Süle',pos:'DF'},{name:'Leon Goretzka',pos:'MF'},
       {name:'David Raum',pos:'DF'},{name:'İlkay Gündoğan',pos:'MF'},{name:'Niclas Füllkrug',pos:'FW'}
     ]},
-  { name:'USA', flag:'🇺🇸', group:'B', rank:13, conf:'CONCACAF', coach:'Mauricio Pochettino',
+  { name:'USA', flag:'🇺🇸', group:'D', rank:13, conf:'CONCACAF', coach:'Mauricio Pochettino',
     players:[
       {name:'Christian Pulisic',pos:'FW',star:true},{name:'Gio Reyna',pos:'MF',star:true},{name:'Ricardo Pepi',pos:'FW'},
       {name:'Tyler Adams',pos:'MF'},{name:'Weston McKennie',pos:'MF'},{name:'Yunus Musah',pos:'MF',star:true},
@@ -402,7 +402,7 @@ const TEAMS_DATA = [
       {name:'Maxi Gómez',pos:'FW'},{name:'Facundo Torres',pos:'FW'},{name:'Giorgian de Arrascaeta',pos:'MF'},
       {name:'Diego Godín',pos:'DF'},{name:'Sebastián Coates',pos:'DF'},{name:'Edinson Cavani',pos:'FW'}
     ]},
-  { name:'Switzerland', flag:'🇨🇭', group:'I', rank:19, conf:'UEFA', coach:'Murat Yakin',
+  { name:'Switzerland', flag:'🇨🇭', group:'B', rank:19, conf:'UEFA', coach:'Murat Yakin',
     players:[
       {name:'Xherdan Shaqiri',pos:'FW',star:true},{name:'Granit Xhaka',pos:'MF',star:true},{name:'Haris Seferović',pos:'FW'},
       {name:'Yann Sommer',pos:'GK'},{name:'Manuel Akanji',pos:'DF',star:true},{name:'Nico Elvedi',pos:'DF'},
@@ -410,7 +410,7 @@ const TEAMS_DATA = [
       {name:'Ricardo Rodríguez',pos:'DF'},{name:'Fabian Schär',pos:'DF'},{name:'Ruben Vargas',pos:'FW'},
       {name:'Steven Zuber',pos:'MF'},{name:'Noah Okafor',pos:'FW',star:true},{name:'Michel Aebischer',pos:'MF'}
     ]},
-  { name:'Senegal', flag:'🇸🇳', group:'B', rank:20, conf:'CAF', coach:'Aliou Cissé',
+  { name:'Senegal', flag:'🇸🇳', group:'I', rank:20, conf:'CAF', coach:'Aliou Cissé',
     players:[
       {name:'Sadio Mané',pos:'FW',star:true},{name:'Kalidou Koulibaly',pos:'DF',star:true},{name:'Edouard Mendy',pos:'GK',star:true},
       {name:'Idrissa Gueye',pos:'MF'},{name:'Cheikhou Kouyaté',pos:'MF'},{name:'Ismaila Sarr',pos:'FW',star:true},
@@ -418,7 +418,7 @@ const TEAMS_DATA = [
       {name:'Abdou Diallo',pos:'DF'},{name:'Saliou Ciss',pos:'DF'},{name:'Famara Diédhiou',pos:'FW'},
       {name:'Nicolas Jackson',pos:'FW',star:true},{name:'Pape Gueye',pos:'MF'},{name:'Iliman Ndiaye',pos:'FW'}
     ]},
-  { name:'Iran', flag:'🇮🇷', group:'H', rank:22, conf:'AFC', coach:'Amir Ghalenoei',
+  { name:'Iran', flag:'🇮🇷', group:'G', rank:22, conf:'AFC', coach:'Amir Ghalenoei',
     players:[
       {name:'Sardar Azmoun',pos:'FW',star:true},{name:'Mehdi Taremi',pos:'FW',star:true},{name:'Alireza Jahanbakhsh',pos:'FW'},
       {name:'Ali Gholizadeh',pos:'FW'},{name:'Saeid Ezatolahi',pos:'MF'},{name:'Ehsan Hajsafi',pos:'DF'},
@@ -426,7 +426,7 @@ const TEAMS_DATA = [
       {name:'Morteza Pouraliganji',pos:'DF'},{name:'Ahmad Nourollahi',pos:'MF'},{name:'Saman Ghoddos',pos:'FW'},
       {name:'Karim Ansarifard',pos:'FW'},{name:'Omid Ebrahimi',pos:'MF'},{name:'Ali Karimi',pos:'MF'}
     ]},
-  { name:'South Korea', flag:'🇰🇷', group:'G', rank:23, conf:'AFC', coach:'Hong Myung-bo',
+  { name:'South Korea', flag:'🇰🇷', group:'A', rank:23, conf:'AFC', coach:'Hong Myung-bo',
     players:[
       {name:'Son Heung-min',pos:'FW',star:true},{name:'Lee Kang-in',pos:'MF',star:true},{name:'Kim Min-jae',pos:'DF',star:true},
       {name:'Hwang Hee-chan',pos:'FW'},{name:'Hwang In-beom',pos:'MF'},{name:'Jung Woo-young',pos:'MF'},
@@ -434,7 +434,7 @@ const TEAMS_DATA = [
       {name:'Oh Hyeon-gyu',pos:'FW'},{name:'Cho Gue-sung',pos:'FW'},{name:'Kwon Chang-hoon',pos:'MF'},
       {name:'Kim Tae-hwan',pos:'DF'},{name:'Kim Jin-ya',pos:'DF'},{name:'Paik Seung-ho',pos:'MF'}
     ]},
-  { name:'Australia', flag:'🇦🇺', group:'I', rank:24, conf:'AFC', coach:'Tony Popovic',
+  { name:'Australia', flag:'🇦🇺', group:'D', rank:24, conf:'AFC', coach:'Tony Popovic',
     players:[
       {name:'Mathew Ryan',pos:'GK',star:true},{name:'Mitch Langerak',pos:'GK'},{name:'Harry Souttar',pos:'DF'},
       {name:'Aziz Behich',pos:'DF'},{name:'Aaron Mooy',pos:'MF',star:true},{name:'Jackson Irvine',pos:'MF'},
@@ -442,23 +442,23 @@ const TEAMS_DATA = [
       {name:'Mathew Leckie',pos:'FW',star:true},{name:'Craig Goodwin',pos:'FW'},{name:'Miloš Degenek',pos:'DF'},
       {name:'Garang Kuol',pos:'FW',star:true},{name:'Mitchell Duke',pos:'FW'},{name:'Ajdin Hrustic',pos:'MF'}
     ]},
-  { name:'Poland', flag:'🇵🇱', group:'A', rank:22, conf:'UEFA', coach:'Michał Probierz',
+  { name:'Qatar', flag:'🇶🇦', group:'B', rank:37, conf:'AFC', coach:'Julen Lopetegui',
     players:[
-      {name:'Robert Lewandowski',pos:'FW',star:true},{name:'Piotr Zieliński',pos:'MF',star:true},{name:'Wojciech Szczęsny',pos:'GK',star:true},
-      {name:'Kamil Grosicki',pos:'FW'},{name:'Arkadiusz Milik',pos:'FW'},{name:'Grzegorz Krychowiak',pos:'MF'},
-      {name:'Bartosz Bereszyński',pos:'DF'},{name:'Kamil Glik',pos:'DF'},{name:'Matty Cash',pos:'DF'},
-      {name:'Sebastian Szymański',pos:'MF'},{name:'Michał Skóraś',pos:'FW'},{name:'Paweł Dawidowicz',pos:'DF'},
-      {name:'Przemysław Frankowski',pos:'MF'},{name:'Karol Świderski',pos:'FW'},{name:'Jakub Moder',pos:'MF'}
+      {name:'Akram Afif',pos:'FW',star:true},{name:'Almoez Ali',pos:'FW',star:true},{name:'Hassan Al-Haydos',pos:'MF',star:true},
+      {name:'Meshaal Barsham',pos:'GK'},{name:'Boualem Khoukhi',pos:'DF'},{name:'Pedro Miguel',pos:'DF'},
+      {name:'Karim Boudiaf',pos:'MF'},{name:'Abdulaziz Hatem',pos:'MF'},{name:'Homam Ahmed',pos:'DF'},
+      {name:'Assim Madibo',pos:'MF'},{name:'Mohammed Muntari',pos:'FW'},{name:'Ayoub Al Aloui',pos:'DF'},
+      {name:'Jassem Jaber',pos:'MF'},{name:'Mahmoud Abunada',pos:'GK'},{name:'Yusuf Abdurisag',pos:'FW'}
     ]},
-  { name:'Nigeria', flag:'🇳🇬', group:'D', rank:34, conf:'CAF', coach:'Finidi George',
+  { name:'Haiti', flag:'🇭🇹', group:'C', rank:85, conf:'CONCACAF', coach:'Sébastien Migné',
     players:[
-      {name:'Victor Osimhen',pos:'FW',star:true},{name:'Asisat Oshoala',pos:'FW'},{name:'Wilfred Ndidi',pos:'MF',star:true},
-      {name:'Alex Iwobi',pos:'MF'},{name:'Kelechi Iheanacho',pos:'FW'},{name:'Moses Simon',pos:'FW'},
-      {name:'William Troost-Ekong',pos:'DF'},{name:'Innocent Bonke',pos:'MF'},{name:'Samuel Chukwueze',pos:'FW',star:true},
-      {name:'Taiwo Awoniyi',pos:'FW'},{name:'Calvin Bassey',pos:'DF'},{name:'Zaidu Sanusi',pos:'DF'},
-      {name:'Maduka Okoye',pos:'GK'},{name:'Frank Onyeka',pos:'MF'},{name:'Terem Moffi',pos:'FW'}
+      {name:'Duckens Nazon',pos:'FW',star:true},{name:'Wilson Isidor',pos:'FW',star:true},{name:'Johnny Placide',pos:'GK',star:true},
+      {name:'Frantzdy Pierrot',pos:'FW'},{name:'Ricardo Adé',pos:'DF'},{name:'Carlens Arcus',pos:'DF'},
+      {name:'Steward Céus',pos:'MF'},{name:'Danley Jean Jacques',pos:'MF'},{name:'Jems Geffrard',pos:'DF'},
+      {name:'Bryan Alceus',pos:'MF'},{name:'Cardochelin Guerrier',pos:'DF'},{name:'Berscy Fabien',pos:'MF'},
+      {name:'Kim Jaggy',pos:'DF'},{name:'Ruben Providence',pos:'FW'},{name:'Josué Duverger',pos:'GK'}
     ]},
-  { name:'Tunisia', flag:'🇹🇳', group:'L', rank:35, conf:'CAF', coach:'Jalel Kadri',
+  { name:'Tunisia', flag:'🇹🇳', group:'F', rank:35, conf:'CAF', coach:'Jalel Kadri',
     players:[
       {name:'Youssef Msakni',pos:'FW',star:true},{name:'Wahbi Khazri',pos:'FW'},{name:'Fakhreddine Ben Youssef',pos:'FW'},
       {name:'Ellyes Skhiri',pos:'MF',star:true},{name:'Aïssa Laïdouni',pos:'MF'},{name:'Ghilane Chaâlali',pos:'MF'},
@@ -466,7 +466,7 @@ const TEAMS_DATA = [
       {name:'Mohamed Ali Ben Romdhane',pos:'MF'},{name:'Saad Bguir',pos:'FW'},{name:'Aymen Dahmen',pos:'GK'},
       {name:'Wajdi Kechrida',pos:'DF'},{name:'Hamza Mathlouthi',pos:'DF'},{name:'Seifeddine Jaziri',pos:'FW'}
     ]},
-  { name:'Algeria', flag:'🇩🇿', group:'F', rank:37, conf:'CAF', coach:'Djamel Belmadi',
+  { name:'Algeria', flag:'🇩🇿', group:'J', rank:37, conf:'CAF', coach:'Djamel Belmadi',
     players:[
       {name:'Riyad Mahrez',pos:'FW',star:true},{name:'Islam Slimani',pos:'FW'},{name:'Youcef Atal',pos:'DF'},
       {name:'Sofiane Feghouli',pos:'MF',star:true},{name:'Ismail Bennacer',pos:'MF',star:true},{name:'Ramy Bensebaïni',pos:'DF'},
@@ -474,15 +474,15 @@ const TEAMS_DATA = [
       {name:'Baghdad Bounedjah',pos:'FW'},{name:'Andy Delort',pos:'FW'},{name:'Raïs M\'bolhi',pos:'GK'},
       {name:'Mohamed Fares',pos:'DF'},{name:'Djamel Benlamri',pos:'DF'},{name:'Yassine Benzia',pos:'FW'}
     ]},
-  { name:'Serbia', flag:'🇷🇸', group:'J', rank:33, conf:'UEFA', coach:'Dragan Stojković',
+  { name:'Paraguay', flag:'🇵🇾', group:'D', rank:65, conf:'CONMEBOL', coach:'Gustavo Alfaro',
     players:[
-      {name:'Aleksandar Mitrović',pos:'FW',star:true},{name:'Dušan Vlahović',pos:'FW',star:true},{name:'Sergej Milinković-Savić',pos:'MF',star:true},
-      {name:'Nemanja Gudelj',pos:'MF'},{name:'Dušan Tadić',pos:'MF'},{name:'Nikola Milenković',pos:'DF'},
-      {name:'Stefan Mitrović',pos:'DF'},{name:'Predrag Rajković',pos:'GK'},{name:'Filip Kostić',pos:'MF'},
-      {name:'Luka Jović',pos:'FW'},{name:'Sasa Lukić',pos:'MF'},{name:'Ivan Ilić',pos:'MF'},
-      {name:'Stefan Blazić',pos:'GK'},{name:'Andrija Živković',pos:'FW'},{name:'Milan Gajić',pos:'DF'}
+      {name:'Julio Enciso',pos:'FW',star:true},{name:'Miguel Almirón',pos:'MF',star:true},{name:'Gustavo Gómez',pos:'DF',star:true},
+      {name:'Diego Gómez',pos:'MF',star:true},{name:'Antonio Sanabria',pos:'FW'},{name:'Fabián Balbuena',pos:'DF'},
+      {name:'Ángel Cardozo Lucena',pos:'DF'},{name:'Omar Alderete',pos:'DF'},{name:'Mathías Villasanti',pos:'MF'},
+      {name:'Ramón Sosa',pos:'FW'},{name:'Gustavo Velázquez',pos:'FW'},{name:'Roberto Fernández',pos:'GK'},
+      {name:'Damián Bobadilla',pos:'MF'},{name:'Junior Alonso',pos:'DF'},{name:'Andrés Cubas',pos:'MF'}
     ]},
-  { name:'Egypt', flag:'🇪🇬', group:'J', rank:36, conf:'CAF', coach:'Rui Vitória',
+  { name:'Egypt', flag:'🇪🇬', group:'G', rank:36, conf:'CAF', coach:'Rui Vitória',
     players:[
       {name:'Mohamed Salah',pos:'FW',star:true},{name:'Mohamed El Shenawy',pos:'GK',star:true},{name:'Ahmed Hegazi',pos:'DF'},
       {name:'Mahmoud Trezeguet',pos:'FW'},{name:'Omar Marmoush',pos:'FW',star:true},{name:'Ahmed Sayed',pos:'MF'},
@@ -490,7 +490,7 @@ const TEAMS_DATA = [
       {name:'Zizo',pos:'MF'},{name:'Mostafa Mohamed',pos:'FW'},{name:'Ayman Ashraf',pos:'DF'},
       {name:'Mahmoud Hassan',pos:'FW'},{name:'Tarek Hamed',pos:'MF'},{name:'Ali Gabr',pos:'DF'}
     ]},
-  { name:'Ghana', flag:'🇬🇭', group:'H', rank:65, conf:'CAF', coach:'Otto Addo',
+  { name:'Ghana', flag:'🇬🇭', group:'L', rank:65, conf:'CAF', coach:'Otto Addo',
     players:[
       {name:'Jordan Ayew',pos:'FW',star:true},{name:'André Ayew',pos:'FW'},{name:'Thomas Partey',pos:'MF',star:true},
       {name:'Mohammed Salisu',pos:'DF'},{name:'Daniel Amartey',pos:'DF'},{name:'Kudus Mohammed',pos:'MF',star:true},
@@ -498,15 +498,15 @@ const TEAMS_DATA = [
       {name:'Antoine Semenyo',pos:'FW'},{name:'Joel Fameyeh',pos:'FW'},{name:'Elisha Owusu',pos:'MF'},
       {name:'Daniel Korkor',pos:'FW'},{name:'Inaki Williams',pos:'FW',star:true},{name:'Nico Williams',pos:'FW'}
     ]},
-  { name:'Cameroon', flag:'🇨🇲', group:'E', rank:43, conf:'CAF', coach:'Rigobert Song',
+  { name:'Türkiye', flag:'🇹🇷', group:'D', rank:29, conf:'UEFA', coach:'Vincenzo Montella',
     players:[
-      {name:'Vincent Aboubakar',pos:'FW',star:true},{name:'Eric Maxim Choupo-Moting',pos:'FW',star:true},{name:'Bryan Mbeumo',pos:'FW',star:true},
-      {name:'Andre Onana',pos:'GK',star:true},{name:'Jean-Charles Castelletto',pos:'DF'},{name:'Collins Fai',pos:'DF'},
-      {name:'Nicolas Nkoulou',pos:'DF'},{name:'Pierre Kunde',pos:'MF'},{name:'Martin Hongla',pos:'MF'},
-      {name:'Jérôme Ngom Mbekeli',pos:'MF'},{name:'Georges-Kévin Nkoudou',pos:'FW'},{name:'Christian Bassogog',pos:'FW'},
-      {name:'Tolo Nouhou',pos:'DF'},{name:'Olivier Ntcham',pos:'MF'},{name:'Stéphane Bahoken',pos:'FW'}
+      {name:'Hakan Çalhanoğlu',pos:'MF',star:true},{name:'Arda Güler',pos:'MF',star:true},{name:'Kenan Yıldız',pos:'FW',star:true},
+      {name:'Uğurcan Çakır',pos:'GK'},{name:'Merih Demiral',pos:'DF'},{name:'Zeki Çelik',pos:'DF'},
+      {name:'Kerem Aktürkoğlu',pos:'FW'},{name:'Orkun Kökçü',pos:'MF',star:true},{name:'Salih Özcan',pos:'MF'},
+      {name:'Barış Alper Yılmaz',pos:'FW'},{name:'İsmail Yüksek',pos:'MF'},{name:'Ferdi Kadıoğlu',pos:'DF'},
+      {name:'Abdülkerim Bardakçı',pos:'DF'},{name:'Okay Yokuşlu',pos:'MF'},{name:'Cengiz Ünder',pos:'FW'}
     ]},
-  { name:'Ecuador', flag:'🇪🇨', group:'D', rank:44, conf:'CONMEBOL', coach:'Sebastián Beccacece',
+  { name:'Ecuador', flag:'🇪🇨', group:'E', rank:44, conf:'CONMEBOL', coach:'Sebastián Beccacece',
     players:[
       {name:'Enner Valencia',pos:'FW',star:true},{name:'Moisés Caicedo',pos:'MF',star:true},{name:'Gonzalo Plata',pos:'FW'},
       {name:'Ángel Mena',pos:'FW'},{name:'Felipe Caicedo',pos:'FW'},{name:'Carlos Gruezo',pos:'MF'},
@@ -514,7 +514,7 @@ const TEAMS_DATA = [
       {name:'Jeremy Sarmiento',pos:'FW'},{name:'Romario Ibarra',pos:'FW'},{name:'Byron Castillo',pos:'DF'},
       {name:'José Cifuentes',pos:'MF'},{name:'Djorkaeff Reasco',pos:'FW'},{name:'Kendry Páez',pos:'MF',star:true}
     ]},
-  { name:'Canada', flag:'🇨🇦', group:'C', rank:40, conf:'CONCACAF', coach:'Jesse Marsch',
+  { name:'Canada', flag:'🇨🇦', group:'B', rank:40, conf:'CONCACAF', coach:'Jesse Marsch',
     players:[
       {name:'Alphonso Davies',pos:'DF',star:true},{name:'Jonathan David',pos:'FW',star:true},{name:'Cyle Larin',pos:'FW'},
       {name:'Tajon Buchanan',pos:'FW',star:true},{name:'Stephen Eustáquio',pos:'MF'},{name:'Junior Hoilett',pos:'FW'},
@@ -522,7 +522,7 @@ const TEAMS_DATA = [
       {name:'Steven Vitória',pos:'DF'},{name:'Milan Borjan',pos:'GK'},{name:'Alistair Johnston',pos:'DF'},
       {name:'Liam Millar',pos:'FW'},{name:'Mark-Anthony Kaye',pos:'MF'},{name:'Ismaël Koné',pos:'MF',star:true}
     ]},
-  { name:'Ivory Coast', flag:'🇨🇮', group:'I', rank:59, conf:'CAF', coach:'Emerse Faé',
+  { name:'Ivory Coast', flag:'🇨🇮', group:'E', rank:59, conf:'CAF', coach:'Emerse Faé',
     players:[
       {name:'Sébastien Haller',pos:'FW',star:true},{name:'Nicolas Pépé',pos:'FW'},{name:'Wilfried Zaha',pos:'FW',star:true},
       {name:'Jean Michaël Seri',pos:'MF'},{name:'Franck Kessié',pos:'MF',star:true},{name:'Eric Bailly',pos:'DF'},
@@ -530,7 +530,7 @@ const TEAMS_DATA = [
       {name:'Joël Asoro',pos:'FW'},{name:'Christian Kouamé',pos:'FW'},{name:'Max-Alain Gradel',pos:'FW'},
       {name:'Odilon Kossounou',pos:'DF'},{name:'Ibrahim Sangaré',pos:'MF',star:true},{name:'Mory Koné',pos:'GK'}
     ]},
-  { name:'South Africa', flag:'🇿🇦', group:'G', rank:60, conf:'CAF', coach:'Hugo Broos',
+  { name:'South Africa', flag:'🇿🇦', group:'A', rank:60, conf:'CAF', coach:'Hugo Broos',
     players:[
       {name:'Percy Tau',pos:'FW',star:true},{name:'Ronwen Williams',pos:'GK',star:true},{name:'Thulani Serero',pos:'MF'},
       {name:'Bafana Mbenga',pos:'DF'},{name:'Keagan Dolly',pos:'FW'},{name:'Themba Zwane',pos:'MF',star:true},
@@ -538,7 +538,7 @@ const TEAMS_DATA = [
       {name:'Ethan Brooks',pos:'MF'},{name:'Evidence Makgopa',pos:'FW'},{name:'Phathutshedzo Nange',pos:'MF'},
       {name:'Elias Mokwana',pos:'FW'},{name:'Ramahlwe Mphahlele',pos:'DF'},{name:'Grant Kekana',pos:'DF'}
     ]},
-  { name:'Saudi Arabia', flag:'🇸🇦', group:'A', rank:56, conf:'AFC', coach:'Roberto Mancini',
+  { name:'Saudi Arabia', flag:'🇸🇦', group:'H', rank:56, conf:'AFC', coach:'Roberto Mancini',
     players:[
       {name:'Salem Al-Dawsari',pos:'FW',star:true},{name:'Firas Al-Buraikan',pos:'FW'},{name:'Mohammed Al-Owais',pos:'GK',star:true},
       {name:'Ali Al-Bulaihi',pos:'DF'},{name:'Yasser Al-Shahrani',pos:'DF'},{name:'Abdullah Otayf',pos:'MF'},
@@ -546,15 +546,15 @@ const TEAMS_DATA = [
       {name:'Mohammed Kanno',pos:'MF',star:true},{name:'Ali Lajami',pos:'DF'},{name:'Nawaf Al-Abid',pos:'FW'},
       {name:'Riyadh Sharahili',pos:'MF'},{name:'Fahad Al-Muwallad',pos:'FW'},{name:'Mohamed Al-Buraik',pos:'DF'}
     ]},
-  { name:'Turkey', flag:'🇹🇷', group:'K', rank:29, conf:'UEFA', coach:'Vincenzo Montella',
+  { name:'Curaçao', flag:'🇨🇼', group:'E', rank:89, conf:'CONCACAF', coach:'Dick Advocaat',
     players:[
-      {name:'Hakan Çalhanoğlu',pos:'MF',star:true},{name:'Arda Güler',pos:'MF',star:true},{name:'Kerem Aktürkoğlu',pos:'FW',star:true},
-      {name:'Burak Yılmaz',pos:'FW'},{name:'Zeki Çelik',pos:'DF'},{name:'Merih Demiral',pos:'DF'},
-      {name:'Samet Akaydın',pos:'DF'},{name:'Mert Günok',pos:'GK'},{name:'Orkun Kökçü',pos:'MF',star:true},
-      {name:'Yusuf Yazıcı',pos:'MF'},{name:'Ferdi Kadıoğlu',pos:'DF'},{name:'İlkay Gündoğan',pos:'MF'},
-      {name:'Okay Yokuslu',pos:'MF'},{name:'Cenk Tosun',pos:'FW'},{name:'Abdülkerim Bardakçı',pos:'DF'}
+      {name:'Leandro Bacuna',pos:'MF',star:true},{name:'Eloy Room',pos:'GK',star:true},{name:'Jurgen Locadia',pos:'FW',star:true},
+      {name:'Gervane Kastaneer',pos:'FW'},{name:'Kenji Gorre',pos:'MF'},{name:'Tahith Chong',pos:'FW'},
+      {name:'Jurien Gaari',pos:'DF'},{name:'Roshon van Eijma',pos:'DF'},{name:'Jearl Margaritha',pos:'FW'},
+      {name:'Juninho Bacuna',pos:'MF'},{name:'Cuco Martina',pos:'DF'},{name:'Elson Hooi',pos:'DF'},
+      {name:'Charlison Benschop',pos:'FW'},{name:'Godfried Roemeratoe',pos:'MF'},{name:'Vurnon Anita',pos:'MF'}
     ]},
-  { name:'Austria', flag:'🇦🇹', group:'K', rank:25, conf:'UEFA', coach:'Ralf Rangnick',
+  { name:'Austria', flag:'🇦🇹', group:'J', rank:25, conf:'UEFA', coach:'Ralf Rangnick',
     players:[
       {name:'David Alaba',pos:'DF',star:true},{name:'Marcel Sabitzer',pos:'MF',star:true},{name:'Marko Arnautović',pos:'FW',star:true},
       {name:'Christoph Baumgartner',pos:'MF'},{name:'Konrad Laimer',pos:'MF',star:true},{name:'Florian Grillitsch',pos:'MF'},
@@ -562,7 +562,7 @@ const TEAMS_DATA = [
       {name:'Michael Gregoritsch',pos:'FW'},{name:'Patrick Wimmer',pos:'MF'},{name:'Louis Schaub',pos:'MF'},
       {name:'Philipp Lienhart',pos:'DF'},{name:'Andreas Weimann',pos:'FW'},{name:'Romano Schmid',pos:'MF'}
     ]},
-  { name:'Scotland', flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', group:'L', rank:30, conf:'UEFA', coach:'Steve Clarke',
+  { name:'Scotland', flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', group:'C', rank:30, conf:'UEFA', coach:'Steve Clarke',
     players:[
       {name:'Andrew Robertson',pos:'DF',star:true},{name:'Scott McTominay',pos:'MF',star:true},{name:'Kieran Tierney',pos:'DF'},
       {name:'Lyndon Dykes',pos:'FW'},{name:'Ryan Fraser',pos:'FW'},{name:'Ryan Jack',pos:'MF'},
@@ -570,15 +570,15 @@ const TEAMS_DATA = [
       {name:'Ryan Christie',pos:'MF'},{name:'Billy Gilmour',pos:'MF',star:true},{name:'Grant Hanley',pos:'DF'},
       {name:'Callum McGregor',pos:'MF'},{name:'Nathan Patterson',pos:'DF'},{name:'Che Adams',pos:'FW'}
     ]},
-  { name:'Venezuela', flag:'🇻🇪', group:'E', rank:69, conf:'CONMEBOL', coach:'Fernando Batista',
+  { name:'Sweden', flag:'🇸🇪', group:'F', rank:25, conf:'UEFA', coach:'Graham Potter',
     players:[
-      {name:'Salomón Rondón',pos:'FW',star:true},{name:'Josef Martínez',pos:'FW',star:true},{name:'Tomás Rincón',pos:'MF'},
-      {name:'Roberto Rosales',pos:'DF'},{name:'Alexander González',pos:'DF'},{name:'Eric Ramírez',pos:'FW'},
-      {name:'Yangel Herrera',pos:'MF',star:true},{name:'Wuilker Faríñez',pos:'GK'},{name:'José Martínez',pos:'MF'},
-      {name:'Cristian Casseres Jr.',pos:'MF'},{name:'Jan Arango',pos:'MF'},{name:'Jhon Murillo',pos:'FW'},
-      {name:'Adalberto Peñaranda',pos:'FW'},{name:'Yordan Osorio',pos:'DF'},{name:'Luis Mago',pos:'FW'}
+      {name:'Viktor Gyökeres',pos:'FW',star:true},{name:'Alexander Isak',pos:'FW',star:true},{name:'Victor Lindelöf',pos:'DF',star:true},
+      {name:'Anthony Elanga',pos:'FW'},{name:'Lucas Bergvall',pos:'MF',star:true},{name:'Daniel Svensson',pos:'DF'},
+      {name:'Robin Olsen',pos:'GK'},{name:'Jesper Karlström',pos:'MF'},{name:'Gustaf Nilsson',pos:'FW'},
+      {name:'Isak Hien',pos:'DF'},{name:'Kristoffer Olsson',pos:'MF'},{name:'Emil Krafth',pos:'DF'},
+      {name:'Yasin Ayari',pos:'MF',star:true},{name:'Jonathan Levi',pos:'DF'},{name:'Adam Lundqvist',pos:'DF'}
     ]},
-  { name:'Uzbekistan', flag:'🇺🇿', group:'L', rank:62, conf:'AFC', coach:'Srecko Katanec',
+  { name:'Uzbekistan', flag:'🇺🇿', group:'K', rank:62, conf:'AFC', coach:'Srecko Katanec',
     players:[
       {name:'Eldor Shomurodov',pos:'FW',star:true},{name:'Jaloliddin Masharipov',pos:'MF',star:true},{name:'Otabek Shukurov',pos:'GK'},
       {name:'Dostonbek Khamdamov',pos:'MF'},{name:'Abbosbek Fayzullaev',pos:'MF',star:true},{name:'Otabek Dzhaparov',pos:'MF'},
@@ -586,23 +586,23 @@ const TEAMS_DATA = [
       {name:'Ilhom Zaynutdinov',pos:'MF'},{name:'Azizbek Turgunboev',pos:'DF'},{name:'Shamsiddin Latipov',pos:'DF'},
       {name:'Sherzod Nishonov',pos:'GK'},{name:'Bunyod Hamidov',pos:'DF'},{name:'Jamshid Iskanderov',pos:'FW'}
     ]},
-  { name:'Peru', flag:'🇵🇪', group:'L', rank:71, conf:'CONMEBOL', coach:'Jorge Fossati',
+  { name:'Cape Verde', flag:'🇨🇻', group:'H', rank:73, conf:'CAF', coach:'Pedro "Bubista" Brito',
     players:[
-      {name:'Paolo Guerrero',pos:'FW',star:true},{name:'Gianluca Lapadula',pos:'FW'},{name:'Renato Tapia',pos:'MF',star:true},
-      {name:'André Carrillo',pos:'FW'},{name:'Yoshimar Yotún',pos:'MF'},{name:'Alexis Flores',pos:'MF'},
-      {name:'Pedro Gallese',pos:'GK',star:true},{name:'Luis Advíncula',pos:'DF'},{name:'Alexander Callens',pos:'DF'},
-      {name:'Miguel Araujo',pos:'DF'},{name:'Christian Cueva',pos:'MF'},{name:'Edison Flores',pos:'MF'},
-      {name:'Christofer Gonzales',pos:'MF'},{name:'Bryan Reyna',pos:'FW'},{name:'Marcos López',pos:'DF'}
+      {name:'Ryan Mendes',pos:'FW',star:true},{name:'Dailon Livramento',pos:'FW',star:true},{name:'Vozinha',pos:'GK',star:true},
+      {name:'Jamiro Monteiro',pos:'MF'},{name:'Kenny Rocha Santos',pos:'MF'},{name:'Garry Rodrigues',pos:'FW'},
+      {name:'Steven Fortes',pos:'DF'},{name:'Diney Borges',pos:'DF'},{name:'Stopira',pos:'DF'},
+      {name:'Patrick Andrade',pos:'MF'},{name:'Bryan Teixeira',pos:'FW'},{name:'Kevin Jamir Monteiro',pos:'MF'},
+      {name:'Marco Soares',pos:'GK'},{name:'Jefté Betú',pos:'DF'},{name:'Willy Semedo',pos:'MF'}
     ]},
-  { name:'Honduras', flag:'🇭🇳', group:'A', rank:80, conf:'CONCACAF', coach:'Reinaldo Rueda',
+  { name:'Iraq', flag:'🇮🇶', group:'I', rank:68, conf:'AFC', coach:'Graham Arnold',
     players:[
-      {name:'Romell Quioto',pos:'FW',star:true},{name:'Alberth Elis',pos:'FW',star:true},{name:'Anthony Lozano',pos:'FW'},
-      {name:'Rigoberto Rivas',pos:'FW'},{name:'Deybi Flores',pos:'MF'},{name:'Edwin Rodríguez',pos:'MF'},
-      {name:'Jonathan Rubio',pos:'MF'},{name:'Maynor Figueroa',pos:'DF'},{name:'Denil Maldonado',pos:'DF'},
-      {name:'Júnior Lacayo',pos:'DF'},{name:'Harold Fonseca',pos:'GK'},{name:'Luis Palma',pos:'FW',star:true},
-      {name:'Oscar Salas',pos:'MF'},{name:'Edrick Menjívar',pos:'GK'},{name:'Bryan Acosta',pos:'MF'}
+      {name:'Aymen Hussein',pos:'FW',star:true},{name:'Ali Al-Hamadi',pos:'FW',star:true},{name:'Zidane Iqbal',pos:'MF',star:true},
+      {name:'Ali Jasim',pos:'FW'},{name:'Jalal Hassan',pos:'GK'},{name:'Rebin Sulaka',pos:'DF'},
+      {name:'Amjad Attwan',pos:'DF'},{name:'Hussein Ali',pos:'DF'},{name:'Amir Al-Ammari',pos:'MF'},
+      {name:'Frans Putros',pos:'MF'},{name:'Manaf Younis',pos:'MF'},{name:'Mohanad Ali',pos:'FW'},
+      {name:'Merchas Doski',pos:'DF'},{name:'Ahmed Yasin',pos:'MF'},{name:'Fahad Talib',pos:'GK'}
     ]},
-  { name:'Panama', flag:'🇵🇦', group:'B', rank:72, conf:'CONCACAF', coach:'Thomas Christiansen',
+  { name:'Panama', flag:'🇵🇦', group:'L', rank:72, conf:'CONCACAF', coach:'Thomas Christiansen',
     players:[
       {name:'Rolando Blackburn',pos:'FW',star:true},{name:'Ismael Díaz',pos:'FW',star:true},{name:'José Fajardo',pos:'FW'},
       {name:'Adalberto Carrasquilla',pos:'MF',star:true},{name:'Anibal Godoy',pos:'MF'},{name:'Alfredo Stephens',pos:'DF'},
@@ -610,23 +610,23 @@ const TEAMS_DATA = [
       {name:'Édgar Bárcenas',pos:'FW'},{name:'Amir Murillo',pos:'DF'},{name:'Luis Mejía',pos:'GK'},
       {name:'Moisés Montero',pos:'MF'},{name:'Abdiel Arroyo',pos:'FW'},{name:'Éric Davis',pos:'DF'}
     ]},
-  { name:'Jamaica', flag:'🇯🇲', group:'C', rank:53, conf:'CONCACAF', coach:'Steve McClaren',
+  { name:'Norway', flag:'🇳🇴', group:'I', rank:35, conf:'UEFA', coach:'Ståle Solbakken',
     players:[
-      {name:'Michail Antonio',pos:'FW',star:true},{name:'Bobby Reid',pos:'FW'},{name:'Shamar Nicholson',pos:'FW',star:true},
-      {name:'Leon Bailey',pos:'FW',star:true},{name:'Daniel Johnson',pos:'MF'},{name:'Kasey Palmer',pos:'MF'},
-      {name:'Adrian Mariappa',pos:'DF'},{name:'Michael Hector',pos:'DF'},{name:'Damion Lowe',pos:'DF'},
-      {name:'Adryan',pos:'MF'},{name:'Liam Moore',pos:'DF'},{name:'Andre Blake',pos:'GK',star:true},
-      {name:'Cory Burke',pos:'FW'},{name:'Demarai Gray',pos:'FW'},{name:'Ethan Pinnock',pos:'DF'}
+      {name:'Erling Haaland',pos:'FW',star:true},{name:'Martin Ødegaard',pos:'MF',star:true},{name:'Antonio Nusa',pos:'FW',star:true},
+      {name:'Alexander Sørloth',pos:'FW'},{name:'Sander Berge',pos:'MF'},{name:'Patrick Berg',pos:'MF'},
+      {name:'Kristoffer Ajer',pos:'DF'},{name:'Leo Østigård',pos:'DF'},{name:'Julian Ryerson',pos:'DF'},
+      {name:'Jens Petter Hauge',pos:'FW'},{name:'Oscar Bobb',pos:'MF',star:true},{name:'Andreas Schjelderup',pos:'FW'},
+      {name:'Fredrik Aursnes',pos:'MF'},{name:'David Møller Wolfe',pos:'DF'},{name:'Ørjan Nyland',pos:'GK'}
     ]},
-  { name:'Costa Rica', flag:'🇨🇷', group:'J', rank:45, conf:'CONCACAF', coach:'Gustavo Alfaro',
+  { name:'Jordan', flag:'🇯🇴', group:'J', rank:75, conf:'AFC', coach:'Jamal Sellami',
     players:[
-      {name:'Bryan Ruiz',pos:'MF'},{name:'Keylor Navas',pos:'GK',star:true},{name:'Joel Campbell',pos:'FW',star:true},
-      {name:'Marco Ureña',pos:'FW'},{name:'Celso Borges',pos:'MF'},{name:'Bryan Oviedo',pos:'DF'},
-      {name:'Francisco Calvo',pos:'DF'},{name:'Óscar Duarte',pos:'DF'},{name:'Yeltsin Tejeda',pos:'MF'},
-      {name:'Randall Leal',pos:'MF'},{name:'Anthony Contreras',pos:'FW'},{name:'Jewison Bennette',pos:'FW',star:true},
-      {name:'Brandon Aguilera',pos:'MF'},{name:'Álvaro Zamora',pos:'GK'},{name:'Rónald Matarrita',pos:'DF'}
+      {name:'Musa Al-Taamari',pos:'FW',star:true},{name:'Ali Olwan',pos:'FW',star:true},{name:'Ehsan Haddad',pos:'DF'},
+      {name:'Yazan Al-Naimat',pos:'FW'},{name:'Mohammad Abu Zrayq',pos:'DF'},{name:'Noor Rawabdeh',pos:'MF'},
+      {name:'Salem Al-Ajalin',pos:'MF'},{name:'Baha Abdelrahman',pos:'DF'},{name:'Yazan Al-Arab',pos:'GK'},
+      {name:'Anas Bani Yaseen',pos:'MF'},{name:'Yousef Al-Rawashdeh',pos:'FW'},{name:'Mahmoud Al-Mardi',pos:'DF'},
+      {name:'Ihsan Haddad',pos:'MF'},{name:'Rajaei Ayed',pos:'MF'},{name:'Amer Shafi',pos:'GK'}
     ]},
-  { name:'New Zealand', flag:'🇳🇿', group:'K', rank:95, conf:'OFC', coach:'Darren Bazeley',
+  { name:'New Zealand', flag:'🇳🇿', group:'G', rank:95, conf:'OFC', coach:'Darren Bazeley',
     players:[
       {name:'Chris Wood',pos:'FW',star:true},{name:'Kosta Barbarouses',pos:'FW'},{name:'Liberato Cacace',pos:'DF',star:true},
       {name:'Joe Bell',pos:'MF'},{name:'Marco Rojas',pos:'FW'},{name:'Ryan Thomas',pos:'MF'},
@@ -634,13 +634,13 @@ const TEAMS_DATA = [
       {name:'Elijah Just',pos:'MF'},{name:'Callan Elliot',pos:'MF'},{name:'Filippo Giovagnoli',pos:'MF'},
       {name:'Stefan Marinovic',pos:'GK'},{name:'Michael Boxall',pos:'DF'},{name:'Sarpreet Singh',pos:'MF',star:true}
     ]},
-  { name:'Indonesia', flag:'🇮🇩', group:'K', rank:130, conf:'AFC', coach:'Shin Tae-yong',
+  { name:'DR Congo', flag:'🇨🇩', group:'K', rank:57, conf:'CAF', coach:'Sébastien Desabre',
     players:[
-      {name:'Egy Maulana Vikri',pos:'FW',star:true},{name:'Witan Sulaeman',pos:'FW'},{name:'Pratama Arhan',pos:'DF'},
-      {name:'Ricky Kambuaya',pos:'MF'},{name:'Elkan Baggott',pos:'DF',star:true},{name:'Sandy Walsh',pos:'DF'},
-      {name:'Marc Klok',pos:'MF'},{name:'Ernando Ari',pos:'GK'},{name:'Justin Hubner',pos:'DF',star:true},
-      {name:'Nathan Tjoe-A-On',pos:'DF'},{name:'Rafael Struick',pos:'FW',star:true},{name:'Hokky Caraka',pos:'FW'},
-      {name:'Kevin Diks',pos:'DF'},{name:'Marselino Ferdinan',pos:'MF',star:true},{name:'Jay Idzes',pos:'DF'}
+      {name:'Yoane Wissa',pos:'FW',star:true},{name:'Fiston Mayele',pos:'FW',star:true},{name:'Chancel Mbemba',pos:'DF',star:true},
+      {name:'Lionel Mpasi',pos:'GK',star:true},{name:'Brian Cipenga',pos:'MF'},{name:'Silas Katompa Mvumpa',pos:'FW'},
+      {name:'Meschack Elia',pos:'MF'},{name:'Arthur Masuaku',pos:'DF'},{name:'Gaël Kakuta',pos:'MF'},
+      {name:'Jackson Muleka',pos:'FW'},{name:'Dylan Batubinsika',pos:'DF'},{name:'Samuel Moutoussamy',pos:'MF'},
+      {name:'Timothy Fayulu',pos:'DF'},{name:'Elie Kroupi',pos:'FW'},{name:'Ley Matampi',pos:'GK'}
     ]}
 ];
 
@@ -701,12 +701,12 @@ const ANALYSIS_TOP20 = [
     weaknessesZh:['深度淘汰賽經驗不足','防守定位球漏洞','門將發揮不穩定','中場深度有限'],
     ace:{name:'James Rodríguez',pos:'MF',club:'Rayo Vallecano'},
     winProb:5, odds:'12x' },
-  { name:'Italy', flag:'🇮🇹', rank:9, worldRank:9,
-    strengths:['Tactical intelligence','Donnarumma world-class GK','Defensive tradition','European Champions pedigree','Chiesa pace & creativity'],
-    strengthsZh:['戰術智慧深厚','Donnarumma頂尖門將','防守傳統深厚','歐洲冠軍底蘊','Chiesa速度與創造力'],
-    weaknesses:['Inconsistent form','Striker quality concerns','Aging core players','Qualification struggles'],
-    weaknessesZh:['近期表現起伏','前鋒品質令人憂慮','核心球員老化','資格賽舉步維艱'],
-    ace:{name:'Federico Chiesa',pos:'FW',club:'Liverpool'},
+  { name:'Switzerland', flag:'🇨🇭', rank:9, worldRank:19,
+    strengths:['Disciplined tactical structure','Sommer world-class GK','Deep, well-organized squad','Major tournament consistency','Xhaka leadership in midfield'],
+    strengthsZh:['戰術紀律嚴明','Sommer頂尖門將','陣容深度均衡','大賽穩定性高','Xhaka中場領袖氣質'],
+    weaknesses:['Lack of a true world-class striker','Limited attacking creativity','Squad ceiling below elite favorites','Physicality against bigger nations'],
+    weaknessesZh:['缺乏世界級前鋒','進攻創造力有限','陣容上限不及頂級強隊','對抗大隊身體對抗吃虧'],
+    ace:{name:'Granit Xhaka',pos:'MF',club:'Bayer Leverkusen'},
     winProb:4, odds:'14x' },
   { name:'Croatia', flag:'🇭🇷', rank:10, worldRank:10,
     strengths:['Modrić elite leadership','World Cup finalists experience','Strong midfield','Overachieving tradition','Gvardiol emerging star'],
@@ -715,12 +715,12 @@ const ANALYSIS_TOP20 = [
     weaknessesZh:['核心老化尤以Modrić為甚','小國陣容深度有限','後黃金一代時期','老將體能負擔沉重'],
     ace:{name:'Luka Modrić',pos:'MF',club:'Real Madrid'},
     winProb:3, odds:'18x' },
-  { name:'Denmark', flag:'🇩🇰', rank:11, worldRank:11,
-    strengths:['Eriksen resurrection story','Physical fitness','Strong set pieces','Team unity after 2021 tragedy','Hojlund rising star'],
-    strengthsZh:['Eriksen復出傳奇故事','體能出色','定位球威脅大','2021悲劇後的凝聚力','Hojlund新星冒起'],
-    weaknesses:['Lack of world-class attackers','Dependence on Eriksen','High press vulnerability','Knockout consistency'],
-    weaknessesZh:['缺乏世界級前鋒','高度依賴Eriksen','高位壓迫破解隱患','淘汰賽穩定性欠佳'],
-    ace:{name:'Rasmus Hojlund',pos:'FW',club:'Manchester United'},
+  { name:'Iran', flag:'🇮🇷', rank:11, worldRank:22,
+    strengths:['Taremi clinical finishing','Physical, well-drilled defense','Set-piece threat','Strong team spirit','Experienced core'],
+    strengthsZh:['Taremi門前終結效率高','防守身體對抗紮實','定位球威脅不小','團隊凝聚力強','核心陣容經驗豐富'],
+    weaknesses:['Limited creativity in build-up','Overreliance on Taremi and Azmoun','Squad depth behind starters','Adjusting to fast transitions'],
+    weaknessesZh:['出球創造力有限','過度依賴Taremi與Azmoun','替補深度不足','應對快速轉換能力欠佳'],
+    ace:{name:'Mehdi Taremi',pos:'FW',club:'Inter Milan'},
     winProb:3, odds:'20x' },
   { name:'Germany', flag:'🇩🇪', rank:12, worldRank:12,
     strengths:['Musiala + Wirtz star pair','Tactical innovation under Nagelsmann','Tournament experience','Host nation momentum similar','Physical intensity'],
