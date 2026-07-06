@@ -1774,9 +1774,89 @@ const FINAL_SCORES = [
       'Arias flicked in Suárez\'s cut-back in the 14th minute and Colombia never looked back. ' +
       'Ghana failed to register a single shot on target in eight attempts. ' +
       'Colombia advance to face Switzerland in the Round of 16.' },
+
+  // ── Jul 4 — Round of 16 ─────────────────────────────────────────────────
+
+  { date:'Jul 4', round:'Round of 16',
+    home:'Canada',   homeFlag:'🇨🇦', homeScore:0,
+    away:'Morocco',  awayFlag:'🇲🇦', awayScore:3,
+    venue:'NRG Stadium',
+    goals:[
+      { team:'away', scorer:'A. Ounahi',  minute:"50'"   },
+      { team:'away', scorer:'A. Ounahi',  minute:"82'"   },
+      { team:'away', scorer:'S. Rahimi',  minute:"90+8'" },
+    ],
+    description:
+      '摩洛哥完封地主晉級 8 強！Ounahi 上下半場各入一球（50、82 分鐘），' +
+      'Rahimi 補時第 90+8 分鐘再下一城，3:0 完勝。加拿大成為 16 強首支出局球隊。',
+    descriptionEn:
+      'Morocco cruise past the co-hosts! Ounahi struck either side of the break (50\', 82\'), and ' +
+      'Rahimi added a third deep into stoppage time (90+8\'). Canada become the first team eliminated ' +
+      'from the Round of 16.' },
+
+  { date:'Jul 4', round:'Round of 16',
+    home:'Paraguay', homeFlag:'🇵🇾', homeScore:0,
+    away:'France',   awayFlag:'🇫🇷', awayScore:1,
+    venue:'Lincoln Financial Field',
+    goals:[
+      { team:'away', scorer:'K. Mbappé', minute:"70'" },
+    ],
+    description:
+      '姆巴佩點球絕殺，法國連續第四屆晉級 8 強！Doue 遭 Gómez 犯規，姆巴佩 70 分鐘主射命中，' +
+      '個人本屆第 7 球、生涯世界盃第 19 球。巴拉圭爆冷之旅至此結束。',
+    descriptionEn:
+      'Mbappé\'s penalty sends France through for a fourth straight quarterfinal! Awarded after a late ' +
+      'challenge on Doué, Mbappé converted in the 70th minute — his 7th goal of the tournament and ' +
+      '19th of his World Cup career. Paraguay\'s giant-killing run ends here.' },
+
+  // ── Jul 5 — Round of 16 ─────────────────────────────────────────────────
+
+  { date:'Jul 5', round:'Round of 16',
+    home:'Brazil', homeFlag:'🇧🇷', homeScore:1,
+    away:'Norway', awayFlag:'🇳🇴', awayScore:2,
+    venue:'MetLife Stadium',
+    goals:[
+      { team:'away', scorer:'E. Haaland', minute:"79'"   },
+      { team:'away', scorer:'E. Haaland', minute:"90'"   },
+      { team:'home', scorer:'Neymar Jr. (pen)', minute:"90+3'" },
+    ],
+    description:
+      '哈蘭德梅開二度，挪威爆冷淘汰巴西！上半場 Guimarães 主射點球被門將 Nyland 撲出，' +
+      '哈蘭德 79 分鐘頭球、90 分鐘禁區外低射連下兩城，巴西補時由 Neymar 主射點球扳回一城，仍以 1:2 出局。' +
+      '哈蘭德本屆累積 7 球，率挪威隊史首度晉級世界盃 8 強。巴西則寫下 1990 年以來最早出局紀錄。',
+    descriptionEn:
+      'Haaland brace stuns five-time champions Brazil! Nyland saved a first-half Guimarães penalty, ' +
+      'then Haaland headed home (79\') and added a low finish from outside the box (90\') to put Norway ' +
+      '2-0 up. Neymar converted a stoppage-time penalty (90+3\') but it was too late. Haaland now has ' +
+      '7 goals this tournament as Norway reach their first-ever World Cup quarterfinal; Brazil suffer ' +
+      'their earliest exit since 1990.' },
+
+  { date:'Jul 5', round:'Round of 16',
+    home:'Mexico',  homeFlag:'🇲🇽', homeScore:2,
+    away:'England', awayFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayScore:3,
+    venue:'Estadio Azteca',
+    goals:[
+      { team:'away', scorer:'J. Bellingham', minute:"36'" },
+      { team:'away', scorer:'J. Bellingham', minute:"38'" },
+      { team:'home', scorer:'J. Quiñones',   minute:"42'" },
+      { team:'away', scorer:'H. Kane (pen)', minute:"60'" },
+      { team:'home', scorer:'R. Jiménez (pen)', minute:"69'" },
+    ],
+    cards:[
+      { team:'away', player:'J. Quansah', minute:"55'", type:'red' },
+    ],
+    description:
+      '阿茲特克球場世紀大戰！Bellingham 36、38 分鐘連入兩球，Quiñones 42 分鐘扳一城。' +
+      'Kane 60 分鐘主射點球擴大優勢，Quansah 55 分鐘遭紅牌罰下，英格蘭十人應戰。' +
+      'Jiménez 69 分鐘點球再追一城，但英格蘭頂住墨西哥最後衝擊，以 3:2 驚險晉級 8 強。',
+    descriptionEn:
+      'A World Cup classic at the Azteca! Bellingham struck twice in three minutes (36\', 38\'), ' +
+      'Quiñones pulled one back (42\'). Kane\'s penalty made it 3-1 (60\'), but Quansah was sent off ' +
+      '(55\') and England had to survive the final half hour with ten men. Jiménez\'s penalty (69\') ' +
+      'set up a grandstand finish, but England held on to win 3-2 and reach the quarterfinals.' },
 ];
 
-const SCORES_UPDATED = '2026-07-04';
+const SCORES_UPDATED = '2026-07-05';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
