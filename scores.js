@@ -1931,7 +1931,7 @@ const FINAL_SCORES = [
       'who advance to the quarterfinals.' },
 ];
 
-const SCORES_UPDATED = '2026-07-07';
+const SCORES_UPDATED = '2026-07-08';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
