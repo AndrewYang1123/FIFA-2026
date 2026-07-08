@@ -1854,9 +1854,84 @@ const FINAL_SCORES = [
       'Quiñones pulled one back (42\'). Kane\'s penalty made it 3-1 (60\'), but Quansah was sent off ' +
       '(55\') and England had to survive the final half hour with ten men. Jiménez\'s penalty (69\') ' +
       'set up a grandstand finish, but England held on to win 3-2 and reach the quarterfinals.' },
+
+  // ── Jul 6 — Round of 16 ─────────────────────────────────────────────────
+
+  { date:'Jul 6', round:'Round of 16',
+    home:'Portugal', homeFlag:'🇵🇹', homeScore:0,
+    away:'Spain',    awayFlag:'🇪🇸', awayScore:1,
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'away', scorer:'M. Merino', minute:"90+1'" },
+    ],
+    description:
+      '梅里諾補時絕殺，C 朗拿度的世界盃生涯恐畫上句號！全場苦戰 90 分鐘僵持不下，' +
+      '替補上場的 Merino 在下半場補時第 1 分鐘快發任意球後連續盤帶，' +
+      '接 Ferran Torres 傳球射穿 Diogo Costa，西班牙 1:0 淘汰葡萄牙，晉級 8 強。',
+    descriptionEn:
+      'Merino breaks the deadlock in stoppage time — and likely ends Ronaldo\'s World Cup career! ' +
+      'After a goalless 90 minutes, substitute Mikel Merino took a quick free-kick, drove forward and ' +
+      'fired past Diogo Costa off a Ferran Torres pass in the first minute of second-half stoppage time. ' +
+      'Spain win 1-0 and reach the quarterfinals for the first time since their 2010 title run.' },
+
+  { date:'Jul 6', round:'Round of 16',
+    home:'USA',     homeFlag:'🇺🇸', homeScore:1,
+    away:'Belgium', awayFlag:'🇧🇪', awayScore:4,
+    venue:'Lumen Field',
+    goals:[
+      { team:'away', scorer:'C. De Ketelaere', minute:"8'"    },
+      { team:'home', scorer:'M. Tillman',      minute:"31'"   },
+      { team:'away', scorer:'H. Vanaken',      minute:"57'"   },
+      { team:'away', scorer:'R. Lukaku',       minute:"90+3'" },
+    ],
+    description:
+      '美國世界盃夢碎，比利時 4:1 大勝晉級！De Ketelaere 8 分鐘率先破門，' +
+      'Tillman 31 分鐘一度扳平，但美國後防連番失誤，門將 Freese 更送礼失球，' +
+      'Vanaken 57 分鐘、Lukaku 補時再入兩球，比利時攻守全面壓制，闖入 8 強對陣美國。',
+    descriptionEn:
+      'USA\'s World Cup dream ends in a lopsided defeat! De Ketelaere opened the scoring (8\'), Tillman ' +
+      'briefly levelled (31\'), but defensive errors and a goalkeeping mistake from Matt Freese let ' +
+      'Belgium in again — Vanaken (57\') and Lukaku (90+3\') completed a dominant 4-1 win. ' +
+      'Belgium advance to the quarterfinals.' },
+
+  // ── Jul 7 — Round of 16 ─────────────────────────────────────────────────
+
+  { date:'Jul 7', round:'Round of 16',
+    home:'Argentina', homeFlag:'🇦🇷', homeScore:3,
+    away:'Egypt',      awayFlag:'🇪🇬', awayScore:2,
+    venue:'Mercedes-Benz Stadium',
+    goals:[
+      { team:'away', scorer:'Y. Ibrahim',    minute:"15'"   },
+      { team:'away', scorer:'M. Zico',       minute:"67'"   },
+      { team:'home', scorer:'C. Romero',     minute:"79'"   },
+      { team:'home', scorer:'L. Messi',      minute:"83'"   },
+      { team:'home', scorer:'E. Fernández',  minute:"90+2'" },
+    ],
+    description:
+      '阿根廷驚天逆轉，梅西再建功！埃及 Ibrahim 15 分鐘率先破門，Zico 67 分鐘再下一城，一度 2:0 領先。' +
+      '阿根廷絕地反擊：Romero 79 分鐘扳一城，梅西 83 分鐘扳平，E. Fernández 補時終場前再入絕殺球，' +
+      '阿根廷 3:2 完成大逆轉，晉級 8 強。',
+    descriptionEn:
+      'A stunning Argentina comeback, with Messi at the heart of it! Egypt raced into a 2-0 lead through ' +
+      'Ibrahim (15\') and Zico (67\'). Argentina fought back: Romero pulled one back (79\'), Messi ' +
+      'equalised (83\'), and Enzo Fernández struck the winner in stoppage time (90+2\'). ' +
+      'Argentina complete the comeback 3-2 and reach the quarterfinals.' },
+
+  { date:'Jul 7', round:'Round of 16',
+    home:'Switzerland', homeFlag:'🇨🇭', homeScore:0,
+    away:'Colombia',    awayFlag:'🇨🇴', awayScore:0,
+    pens:'4-3',
+    venue:'BC Place',
+    description:
+      '互射十二碼決勝負，瑞士驚險過關！120 分鐘賽事雙方均未能破門，戰至互射十二碼。' +
+      'Ruben Vargas 主射制勝一球，令哥倫比亞門將 Camilo Vargas 撲救不及，瑞士 4:3 淘汰哥倫比亞，晉級 8 強。',
+    descriptionEn:
+      'Penalties decide it after a goalless 120 minutes! Ruben Vargas sent Colombia goalkeeper Camilo ' +
+      'Vargas the wrong way to convert the winning penalty, sealing a 4-3 shootout win for Switzerland, ' +
+      'who advance to the quarterfinals.' },
 ];
 
-const SCORES_UPDATED = '2026-07-05';
+const SCORES_UPDATED = '2026-07-07';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
