@@ -396,10 +396,10 @@ VENUES.forEach(v => {
 (function () {
   var isEn = (typeof getLang === 'function') && getLang() === 'en';
   var L = isEn
-    ? { title:'🏆 Knockout Bracket', sub:'Round of 16 complete — all 8 quarterfinal spots are set',
+    ? { title:'🏆 Knockout Bracket', sub:'2 of 4 quarterfinals complete — France and Spain reach the semis',
         r16:'Round of 16', qf:'Quarter-finals', sf:'Semi-finals', fin:'Final', champ:'Champion',
         winOf:'Winner of', tbd:'To be decided', crown:'World Champions' }
-    : { title:'🏆 淘汰賽對陣圖', sub:'16 強賽事全數完成 — 八強對戰組合已全數確定',
+    : { title:'🏆 淘汰賽對陣圖', sub:'八強賽事已完成 2 場 — 法國、西班牙晉級四強',
         r16:'16 強', qf:'八強 (QF)', sf:'準決賽 (SF)', fin:'決賽', champ:'世界冠軍',
         winOf:'勝者', tbd:'待定', crown:'世界冠軍' };
 
@@ -417,11 +417,11 @@ VENUES.forEach(v => {
     { m:'M7', date:'7/7', venue:'Mercedes-Benz Stadium',h:{n:'Argentina',f:'🇦🇷'},   a:{n:'Egypt',f:'🇪🇬'},   hs:3, as:2, winner:'h' },
     { m:'M8', date:'7/7', venue:'BC Place',             h:{n:'Switzerland',f:'🇨🇭'}, a:{n:'Colombia',f:'🇨🇴'},hs:0, as:0, winner:'h', pens:'4-3' },
   ];
-  // Later rounds reference feeder match ids
+  // Later rounds reference feeder match ids; s/winnerId/pens set once played
   var QF = [
-    { m:'QF1', date:'7/9',  venue:'Boston',  f:['M1','M2'] },
+    { m:'QF1', date:'7/9',  venue:'Boston',  f:['M1','M2'], s:{M1:0, M2:2}, winnerId:'M2' },
     { m:'QF2', date:'7/10', venue:'Miami',   f:['M3','M4'] },
-    { m:'QF3', date:'7/10', venue:'Los Angeles', f:['M5','M6'] },
+    { m:'QF3', date:'7/10', venue:'Los Angeles', f:['M5','M6'], s:{M5:2, M6:1}, winnerId:'M5' },
     { m:'QF4', date:'7/11', venue:'Kansas City',  f:['M7','M8'] },
   ];
   var SF = [
@@ -456,14 +456,29 @@ VENUES.forEach(v => {
       '<div class="kb-body">' + teamRow(mt.h, homeOpts) + teamRow(mt.a, awayOpts) + pensHtml + '</div></div>';
   }
   function ghostCard(mt, cls) {
-    var w1 = winners[mt.f[0]], w2 = winners[mt.f[1]];
-    var row1 = w1 ? teamRow(w1) : teamRow(L.winOf + ' ' + mt.f[0], { tbd:true });
-    var row2 = w2 ? teamRow(w2) : teamRow(L.winOf + ' ' + mt.f[1], { tbd:true });
-    return '<div class="kb-card' + (cls||'') + '" data-m="' + mt.m + '">' +
+    var id1 = mt.f[0], id2 = mt.f[1];
+    var w1 = winners[id1], w2 = winners[id2];
+    var played = !!mt.winnerId;
+    var row1, row2, pensHtml = '';
+    if (played) {
+      var win1 = mt.winnerId === id1;
+      row1 = teamRow(w1, { win: win1, lose: !win1, score: mt.s[id1] });
+      row2 = teamRow(w2, { win: !win1, lose: win1, score: mt.s[id2] });
+      if (mt.pens) pensHtml = '<div class="kb-pens">PSO ' + mt.pens + '</div>';
+    } else {
+      row1 = w1 ? teamRow(w1) : teamRow(L.winOf + ' ' + id1, { tbd:true });
+      row2 = w2 ? teamRow(w2) : teamRow(L.winOf + ' ' + id2, { tbd:true });
+    }
+    return '<div class="kb-card' + (cls||'') + (played ? ' is-played' : '') + '" data-m="' + mt.m + '">' +
       '<div class="kb-head"><span class="kb-mno">' + mt.m + '</span>' +
         '<span class="kb-venue">' + mt.date + ' · ' + mt.venue + '</span></div>' +
-      '<div class="kb-body">' + row1 + row2 + '</div></div>';
+      '<div class="kb-body">' + row1 + row2 + pensHtml + '</div></div>';
   }
+
+  // Feed QF winners into the map so SF/Final can resolve their teams too
+  QF.forEach(function(mt) {
+    if (mt.winnerId) winners[mt.m] = winners[mt.winnerId];
+  });
 
   var grid = document.getElementById('kb-grid');
   grid.innerHTML =

@@ -1929,9 +1929,51 @@ const FINAL_SCORES = [
       'Penalties decide it after a goalless 120 minutes! Ruben Vargas sent Colombia goalkeeper Camilo ' +
       'Vargas the wrong way to convert the winning penalty, sealing a 4-3 shootout win for Switzerland, ' +
       'who advance to the quarterfinals.' },
+
+  // ── Jul 9 — Quarter-finals ───────────────────────────────────────────────
+
+  { date:'Jul 9', round:'Quarter-final',
+    home:'France',   homeFlag:'🇫🇷', homeScore:2,
+    away:'Morocco',  awayFlag:'🇲🇦', awayScore:0,
+    venue:'Gillette Stadium',
+    goals:[
+      { team:'home', scorer:'K. Mbappé',   minute:"60'" },
+      { team:'home', scorer:'O. Dembélé',  minute:"66'" },
+    ],
+    description:
+      '姆巴佩失球再建功，法國連續第三屆闖入四強！上半場 28 分鐘姆巴佩主射點球被門將 Bounou 撲出，' +
+      '但他 60 分鐘以精妙一球扳回顏面，並助攻 Dembélé 66 分鐘低射入網鎖定勝局。' +
+      '法國 2:0 淘汰摩洛哥，姆巴佩本屆累積 8 球，追平梅西暫居金靴榜首。',
+    descriptionEn:
+      'Mbappé bounces back from a penalty miss to send France into a third straight semifinal! ' +
+      'Bounou saved Mbappé\'s spot-kick in the 28th minute, but Mbappé made amends with a sublime ' +
+      'finish (60\') and teed up Dembélé\'s low strike (66\'). France win 2-0; Mbappé now has 8 goals ' +
+      'this tournament, level with Messi atop the Golden Boot race.' },
+
+  // ── Jul 10 — Quarter-finals ──────────────────────────────────────────────
+
+  { date:'Jul 10', round:'Quarter-final',
+    home:'Spain',   homeFlag:'🇪🇸', homeScore:2,
+    away:'Belgium', awayFlag:'🇧🇪', awayScore:1,
+    venue:'SoFi Stadium',
+    goals:[
+      { team:'home', scorer:'Fabián Ruiz',        minute:"30'"   },
+      { team:'away', scorer:'C. De Ketelaere',    minute:"45+1'" },
+      { team:'home', scorer:'M. Merino',          minute:"88'"   },
+    ],
+    description:
+      '梅里諾替補建功，西班牙驚險晉級四強！Fabián Ruiz 30 分鐘接反彈球推射破網，' +
+      'De Ketelaere 上半場補時頭球扳平。比利時門將 Courtois 傷退，替補 Lammens 88 分鐘擋出的反彈球正中替補上場的' +
+      'Merino 腳下，一蹴而就完成致勝一擊。西班牙 2:1 淘汰比利時，準決賽對陣法國。',
+    descriptionEn:
+      'Super-sub Merino sends Spain through! Fabián Ruiz pounced on a rebound to open the scoring (30\'), ' +
+      'De Ketelaere headed Belgium level right before the half-time whistle (45+1\'). With Thibault ' +
+      'Courtois forced off injured, substitute keeper Lammens spilled a shot straight into the path of ' +
+      'fellow substitute Merino, who turned it home in the 88th minute. Spain win 2-1 and will face ' +
+      'France in the semifinal.' },
 ];
 
-const SCORES_UPDATED = '2026-07-08';
+const SCORES_UPDATED = '2026-07-10';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
