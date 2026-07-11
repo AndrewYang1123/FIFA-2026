@@ -1973,7 +1973,7 @@ const FINAL_SCORES = [
       'France in the semifinal.' },
 ];
 
-const SCORES_UPDATED = '2026-07-10';
+const SCORES_UPDATED = '2026-07-11';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
