@@ -250,7 +250,7 @@ const SCHEDULE = [
   { phase:'Quarterfinals', round:'QF', date:'Jul 11', time:'18:00', home:'Argentina', away:'Switzerland', homeFlag:'🇦🇷', awayFlag:'🇨🇭', venue:'Arrowhead Stadium', group:'' },
   // ── SEMIFINALS ───────────────────────────────────────────────────────
   { phase:'Semifinals', round:'SF', date:'Jul 14', time:'12:00', home:'France', away:'Spain', homeFlag:'🇫🇷', awayFlag:'🇪🇸', venue:'AT&T Stadium', group:'' },
-  { phase:'Semifinals', round:'SF', date:'Jul 15', time:'12:00', home:'W QF-3', away:'W QF-4', homeFlag:'🏆', awayFlag:'🏆', venue:'Mercedes-Benz Stadium', group:'' },
+  { phase:'Semifinals', round:'SF', date:'Jul 15', time:'12:00', home:'England', away:'Argentina', homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayFlag:'🇦🇷', venue:'Mercedes-Benz Stadium', group:'' },
   // ── 3RD PLACE ────────────────────────────────────────────────────────
   { phase:'3rd Place Play-off', round:'3rd', date:'Jul 18', time:'14:00', home:'L SF-1', away:'L SF-2', homeFlag:'🥉', awayFlag:'🥉', venue:'Hard Rock Stadium', group:'' },
   // ── FINAL ────────────────────────────────────────────────────────────
