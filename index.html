@@ -211,6 +211,33 @@
     }
     .kb-card.is-final .kb-head .kb-mno { color: #ffd700; }
 
+    /* ── 3rd Place / Bronze medal match ────────────── */
+    .kb-third-wrap { margin-top: 0.9rem; }
+    .kb-third-lbl {
+      text-align: center;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--bronze);
+      margin-bottom: 0.35rem;
+      opacity: 0.85;
+    }
+    .kb-card.is-third {
+      border-color: rgba(205,127,50,0.45);
+      background: linear-gradient(150deg, #2a1c10 0%, #1a1108 55%, #120c08 100%);
+      box-shadow:
+        0 10px 20px -10px rgba(0,0,0,0.8),
+        0 0 0 1px rgba(205,127,50,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .kb-card.is-third .kb-head {
+      background: linear-gradient(90deg, rgba(205,127,50,0.28), rgba(120,70,20,0.16));
+      color: #e8b98a;
+    }
+    .kb-card.is-third .kb-head .kb-mno { color: var(--bronze); }
+    .kb-card.is-third .kb-team.win .kb-team-score { background: var(--bronze); }
+
     /* ── Champion slot ───────────────────────────── */
     .kb-col.is-champ-col { flex: 0 0 176px; justify-content: center; }
     .kb-champ {
@@ -397,11 +424,11 @@ VENUES.forEach(v => {
   var isEn = (typeof getLang === 'function') && getLang() === 'en';
   var L = isEn
     ? { title:'🏆 Knockout Bracket', sub:'Semifinal field complete — France, Spain, England &amp; Argentina, the top 4 ranked teams',
-        r16:'Round of 16', qf:'Quarter-finals', sf:'Semi-finals', fin:'Final', champ:'Champion',
-        winOf:'Winner of', tbd:'To be decided', crown:'World Champions' }
+        r16:'Round of 16', qf:'Quarter-finals', sf:'Semi-finals', fin:'Final', champ:'Champion', third:'🥉 3rd Place',
+        winOf:'Winner of', loseOf:'Loser of', tbd:'To be decided', crown:'World Champions' }
     : { title:'🏆 淘汰賽對陣圖', sub:'四強名單全數確定 — 法國、西班牙、英格蘭、阿根廷，史上首次由排名前四強隊伍會師四強',
-        r16:'16 強', qf:'八強 (QF)', sf:'準決賽 (SF)', fin:'決賽', champ:'世界冠軍',
-        winOf:'勝者', tbd:'待定', crown:'世界冠軍' };
+        r16:'16 強', qf:'八強 (QF)', sf:'準決賽 (SF)', fin:'決賽', champ:'世界冠軍', third:'🥉 季軍戰',
+        winOf:'勝者', loseOf:'敗方', tbd:'待定', crown:'世界冠軍' };
 
   document.getElementById('kb-title').textContent = L.title;
   document.getElementById('kb-sub').innerHTML = L.sub;
@@ -429,11 +456,16 @@ VENUES.forEach(v => {
     { m:'SF2', date:'7/15', venue:'Atlanta',   f:['QF3','QF4'] },
   ];
   var FIN = { m:'Final', date:'7/19', venue:'New York/NJ', f:['SF1','SF2'] };
+  var THIRD = { m:'3rd', date:'7/18', venue:'Hard Rock Stadium', f:['SF1','SF2'] };
 
-  // Map of matchId -> winning team {n,f}, for feeding into later rounds
+  // Maps of matchId -> team {n,f}, for feeding into later rounds
   var winners = {};
+  var losers = {};
   R16.forEach(function(mt) {
-    if (mt.winner) winners[mt.m] = mt.winner === 'h' ? mt.h : mt.a;
+    if (mt.winner) {
+      winners[mt.m] = mt.winner === 'h' ? mt.h : mt.a;
+      losers[mt.m] = mt.winner === 'h' ? mt.a : mt.h;
+    }
   });
 
   function teamRow(t, opts) {
@@ -455,9 +487,11 @@ VENUES.forEach(v => {
         '<span class="kb-venue">' + mt.date + ' · ' + mt.venue + '</span></div>' +
       '<div class="kb-body">' + teamRow(mt.h, homeOpts) + teamRow(mt.a, awayOpts) + pensHtml + '</div></div>';
   }
-  function ghostCard(mt, cls) {
+  function ghostCard(mt, cls, srcMap, labelPrefix) {
+    srcMap = srcMap || winners;
+    labelPrefix = labelPrefix || L.winOf;
     var id1 = mt.f[0], id2 = mt.f[1];
-    var w1 = winners[id1], w2 = winners[id2];
+    var w1 = srcMap[id1], w2 = srcMap[id2];
     var played = !!mt.winnerId;
     var row1, row2, pensHtml = '';
     if (played) {
@@ -466,8 +500,8 @@ VENUES.forEach(v => {
       row2 = teamRow(w2, { win: !win1, lose: win1, score: mt.s[id2] });
       if (mt.pens) pensHtml = '<div class="kb-pens">PSO ' + mt.pens + '</div>';
     } else {
-      row1 = w1 ? teamRow(w1) : teamRow(L.winOf + ' ' + id1, { tbd:true });
-      row2 = w2 ? teamRow(w2) : teamRow(L.winOf + ' ' + id2, { tbd:true });
+      row1 = w1 ? teamRow(w1) : teamRow(labelPrefix + ' ' + id1, { tbd:true });
+      row2 = w2 ? teamRow(w2) : teamRow(labelPrefix + ' ' + id2, { tbd:true });
     }
     return '<div class="kb-card' + (cls||'') + (played ? ' is-played' : '') + '" data-m="' + mt.m + '">' +
       '<div class="kb-head"><span class="kb-mno">' + mt.m + '</span>' +
@@ -475,9 +509,20 @@ VENUES.forEach(v => {
       '<div class="kb-body">' + row1 + row2 + pensHtml + '</div></div>';
   }
 
-  // Feed QF winners into the map so SF/Final can resolve their teams too
+  // Feed QF winners/losers into the maps so SF/Final/3rd-place can resolve their teams too
   QF.forEach(function(mt) {
-    if (mt.winnerId) winners[mt.m] = winners[mt.winnerId];
+    if (mt.winnerId) {
+      var loserId = mt.f[0] === mt.winnerId ? mt.f[1] : mt.f[0];
+      winners[mt.m] = winners[mt.winnerId];
+      losers[mt.m] = winners[loserId];
+    }
+  });
+  // Once SF matches are played, feed their losers into the 3rd-place map too
+  SF.forEach(function(mt) {
+    if (mt.winnerId) {
+      var loserId = mt.f[0] === mt.winnerId ? mt.f[1] : mt.f[0];
+      losers[mt.m] = winners[loserId];
+    }
   });
 
   var grid = document.getElementById('kb-grid');
@@ -485,7 +530,9 @@ VENUES.forEach(v => {
     '<div class="kb-col col-r16"><div class="kb-col-label">' + L.r16 + '</div><div class="kb-col-body">' + R16.map(function(x){return realCard(x);}).join('') + '</div></div>' +
     '<div class="kb-col col-qf"><div class="kb-col-label">' + L.qf + '</div><div class="kb-col-body">' + QF.map(function(x){return ghostCard(x);}).join('') + '</div></div>' +
     '<div class="kb-col col-sf"><div class="kb-col-label">' + L.sf + '</div><div class="kb-col-body">' + SF.map(function(x){return ghostCard(x,' is-sf');}).join('') + '</div></div>' +
-    '<div class="kb-col col-final is-final-col"><div class="kb-col-label">' + L.fin + '</div><div class="kb-col-body">' + ghostCard(FIN,' is-final') + '</div></div>' +
+    '<div class="kb-col col-final is-final-col"><div class="kb-col-label">' + L.fin + '</div><div class="kb-col-body">' + ghostCard(FIN,' is-final') +
+      '<div class="kb-third-wrap"><div class="kb-third-lbl">' + L.third + '</div>' + ghostCard(THIRD,' is-third', losers, L.loseOf) + '</div>' +
+      '</div></div>' +
     '<div class="kb-col is-champ-col"><div class="kb-col-label">' + L.champ + '</div><div class="kb-col-body">' +
       '<div class="kb-champ"><div class="kb-cup">🏆</div><div class="kb-champ-lbl">' + L.crown + '</div>' +
       '<div class="kb-champ-sub">' + FIN.date + ' · ' + FIN.venue + '</div></div></div></div>';
@@ -508,18 +555,14 @@ VENUES.forEach(v => {
     ['QF1','SF1'],['QF2','SF1'],['QF3','SF2'],['QF4','SF2'],
     ['SF1','Final'],['SF2','Final'],
   ];
+  // SF losers feed the 3rd-place match — drawn distinctly (bronze, dashed)
+  var LOSER_LINKS = [ ['SF1','3rd'], ['SF2','3rd'] ];
 
   function cardEl(id) { return grid.querySelector('.kb-card[data-m="' + id + '"]'); }
 
-  function drawLinks() {
-    // clear existing links (keep defs)
-    Array.prototype.slice.call(svg.querySelectorAll('.kb-link')).forEach(function(p){ p.remove(); });
-    var W = grid.scrollWidth, H = grid.scrollHeight;
-    svg.setAttribute('width', W); svg.setAttribute('height', H);
-    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
-    var gr = grid.getBoundingClientRect();
-
-    LINKS.forEach(function(pair) {
+  function drawLinkSet(pairs, gr, opts) {
+    opts = opts || {};
+    pairs.forEach(function(pair) {
       var from = cardEl(pair[0]), to = cardEl(pair[1]);
       if (!from || !to) return;
       var fr = from.getBoundingClientRect(), tr = to.getBoundingClientRect();
@@ -534,19 +577,32 @@ VENUES.forEach(v => {
       path.setAttribute('class', 'kb-link');
       path.setAttribute('d', d);
       path.setAttribute('fill', 'none');
-      path.setAttribute('stroke', 'url(#kbGrad)');
-      path.setAttribute('stroke-width', '2.5');
+      path.setAttribute('stroke', opts.stroke || 'url(#kbGrad)');
+      path.setAttribute('stroke-width', opts.width || '2.5');
       path.setAttribute('stroke-linecap', 'round');
+      if (opts.dash) path.setAttribute('stroke-dasharray', opts.dash);
       svg.appendChild(path);
       // node dot at the target end
       var dot = document.createElementNS(NS, 'circle');
       dot.setAttribute('class', 'kb-link');
       dot.setAttribute('cx', x1); dot.setAttribute('cy', y1);
       dot.setAttribute('r', '3');
-      dot.setAttribute('fill', '#00d4aa');
+      dot.setAttribute('fill', opts.dotColor || '#00d4aa');
       dot.setAttribute('opacity', '0.7');
       svg.appendChild(dot);
     });
+  }
+
+  function drawLinks() {
+    // clear existing links (keep defs)
+    Array.prototype.slice.call(svg.querySelectorAll('.kb-link')).forEach(function(p){ p.remove(); });
+    var W = grid.scrollWidth, H = grid.scrollHeight;
+    svg.setAttribute('width', W); svg.setAttribute('height', H);
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var gr = grid.getBoundingClientRect();
+
+    drawLinkSet(LINKS, gr);
+    drawLinkSet(LOSER_LINKS, gr, { stroke:'rgba(205,127,50,0.5)', width:'1.75', dash:'5,4', dotColor:'#cd7f32' });
   }
 
   // draw after layout settles; redraw on resize
