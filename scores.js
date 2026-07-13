@@ -1971,9 +1971,48 @@ const FINAL_SCORES = [
       'Courtois forced off injured, substitute keeper Lammens spilled a shot straight into the path of ' +
       'fellow substitute Merino, who turned it home in the 88th minute. Spain win 2-1 and will face ' +
       'France in the semifinal.' },
+
+  // ── Jul 11 — Quarter-finals ──────────────────────────────────────────────
+
+  { date:'Jul 11', round:'Quarter-final',
+    home:'Norway',  homeFlag:'🇳🇴', homeScore:1,
+    away:'England', awayFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayScore:2,
+    venue:'Hard Rock Stadium',
+    goals:[
+      { team:'home', scorer:'A. Schjelderup', minute:"36'"   },
+      { team:'away', scorer:'J. Bellingham',  minute:"45+2'" },
+      { team:'away', scorer:'J. Bellingham',  minute:"93'"   },
+    ],
+    description:
+      '英格蘭加時驚險過關，貝林漢梅開二度！挪威 Schjelderup 36 分鐘破門領先，貝林漢上半場補時扳平，' +
+      '加時賽第 3 分鐘再入絕殺球，英格蘭 2:1 淘汰挪威，晉級四強。',
+    descriptionEn:
+      'England survive in extra time as Jude Bellingham scores twice! Norway\'s Schjelderup opened the ' +
+      'scoring in the 36th minute, Bellingham equalised in first-half stoppage time, then struck the ' +
+      'winner three minutes into extra time. England beat Norway 2-1 to reach the semifinals.' },
+
+  { date:'Jul 11', round:'Quarter-final',
+    home:'Argentina',   homeFlag:'🇦🇷', homeScore:3,
+    away:'Switzerland', awayFlag:'🇨🇭', awayScore:1,
+    venue:'Arrowhead Stadium',
+    goals:[
+      { team:'home', scorer:'A. Mac Allister', minute:"10'"    },
+      { team:'away', scorer:'D. Ndoye',        minute:"67'"    },
+      { team:'home', scorer:'J. Álvarez',      minute:"112'"   },
+      { team:'home', scorer:'L. Martínez',     minute:"120+1'" },
+    ],
+    description:
+      '阿根廷加時完成淘汰，晉級四強對陣英格蘭！Mac Allister 10 分鐘率先破門，瑞士 Ndoye 67 分鐘扳平，' +
+      '瑞士 Embolo 兩黃變一紅離場僅餘 10 人應戰。加時賽 Álvarez 112 分鐘、馬天尼斯補時再入兩球，' +
+      '阿根廷 3:1 淘汰瑞士，準決賽對陣英格蘭。',
+    descriptionEn:
+      'Argentina need extra time to see off 10-man Switzerland! Mac Allister struck early (10\'), Ndoye ' +
+      'levelled for Switzerland (67\'), who were reduced to 10 men after Breel Embolo\'s second yellow. ' +
+      'Julián Álvarez (112\') and Lautaro Martínez (120+1\') scored in extra time as Argentina won 3-1 to ' +
+      'reach the semifinal against England.' },
 ];
 
-const SCORES_UPDATED = '2026-07-11';
+const SCORES_UPDATED = '2026-07-12';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
