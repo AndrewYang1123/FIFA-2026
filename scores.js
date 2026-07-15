@@ -2010,9 +2010,27 @@ const FINAL_SCORES = [
       'levelled for Switzerland (67\'), who were reduced to 10 men after Breel Embolo\'s second yellow. ' +
       'Julián Álvarez (112\') and Lautaro Martínez (120+1\') scored in extra time as Argentina won 3-1 to ' +
       'reach the semifinal against England.' },
+
+  // ── Jul 14 — Semi-final ──────────────────────────────────────────────────
+
+  { date:'Jul 14', round:'Semi-final',
+    home:'France', homeFlag:'🇫🇷', homeScore:0,
+    away:'Spain',  awayFlag:'🇪🇸', awayScore:2,
+    venue:'AT&T Stadium',
+    goals:[
+      { team:'away', scorer:'M. Oyarzabal', minute:"22' (pen)" },
+      { team:'away', scorer:'P. Porro',     minute:"58'"       },
+    ],
+    description:
+      '西班牙鐵桶陣完封法國，晉級決賽！Oyarzabal 22 分鐘主射點球先拔頭籌，Porro 58 分鐘再入一球鎖定勝局，' +
+      '西班牙全場壓制姆巴佩為首的法國攻擊線，2:0 淘汰法國晉級決賽。',
+    descriptionEn:
+      'Spain shut down France to reach the final! Mikel Oyarzabal converted a penalty in the 22nd minute ' +
+      'and Pedro Porro doubled the lead in the 58th, as Spain\'s defence stifled Kylian Mbappé and France\'s ' +
+      'attack. Spain win 2-0 and advance to the World Cup final.' },
 ];
 
-const SCORES_UPDATED = '2026-07-12';
+const SCORES_UPDATED = '2026-07-15';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
