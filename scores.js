@@ -2028,9 +2028,30 @@ const FINAL_SCORES = [
       'Spain shut down France to reach the final! Mikel Oyarzabal converted a penalty in the 22nd minute ' +
       'and Pedro Porro doubled the lead in the 58th, as Spain\'s defence stifled Kylian Mbappé and France\'s ' +
       'attack. Spain win 2-0 and advance to the World Cup final.' },
+
+  // ── Jul 15 — Semi-final ──────────────────────────────────────────────────
+
+  { date:'Jul 15', round:'Semi-final',
+    home:'England',   homeFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', homeScore:1,
+    away:'Argentina', awayFlag:'🇦🇷', awayScore:2,
+    venue:'Mercedes-Benz Stadium',
+    goals:[
+      { team:'home', scorer:'A. Gordon',      minute:"55'" },
+      { team:'away', scorer:'E. Fernández',   minute:"85'" },
+      { team:'away', scorer:'L. Martínez',    minute:"90+3'" },
+    ],
+    description:
+      '阿根廷驚天逆轉，梅西再度隱身助攻幕後功臣！英格蘭 Gordon 55 分鐘接 Morgan Rogers 傳中破門先拔頭籌，' +
+      '阿根廷 E. Fernández 85 分鐘頭球扳平，補時 Martínez 再度頭球絕殺，兩球均由梅西送出助攻。' +
+      '阿根廷 2:1 逆轉英格蘭，晉級決賽對陣西班牙。',
+    descriptionEn:
+      'Argentina complete another dramatic comeback — Messi pulling the strings from deep! Anthony Gordon ' +
+      'gave England the lead (55\'), picked out by Morgan Rogers. Enzo Fernández headed in a Messi assist ' +
+      'to equalise (85\'), then Lautaro Martínez headed home another Messi assist in stoppage time (90+3\'). ' +
+      'Argentina win 2-1 to reach the final against Spain.' },
 ];
 
-const SCORES_UPDATED = '2026-07-15';
+const SCORES_UPDATED = '2026-07-16';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
