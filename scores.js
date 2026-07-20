@@ -2049,9 +2049,68 @@ const FINAL_SCORES = [
       'gave England the lead (55\'), picked out by Morgan Rogers. Enzo Fernández headed in a Messi assist ' +
       'to equalise (85\'), then Lautaro Martínez headed home another Messi assist in stoppage time (90+3\'). ' +
       'Argentina win 2-1 to reach the final against Spain.' },
+
+  // ── Jul 18 — 3rd Place Play-off ──────────────────────────────────────────
+
+  { date:'Jul 18', round:'3rd Place',
+    home:'France',   homeFlag:'🇫🇷', homeScore:4,
+    away:'England',  awayFlag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', awayScore:6,
+    venue:'Hard Rock Stadium',
+    goals:[
+      { team:'away', scorer:'D. Rice',       minute:"3'"    },
+      { team:'away', scorer:'E. Konsa',       minute:"8'"    },
+      { team:'away', scorer:'B. Saka',       minute:"30'"   },
+      { team:'away', scorer:'B. Saka',       minute:"40'"   },
+      { team:'home', scorer:'K. Mbappé',     minute:"48'"   },
+      { team:'home', scorer:'B. Barcola',    minute:"55'"   },
+      { team:'home', scorer:'K. Mbappé',     minute:"65'"   },
+      { team:'away', scorer:'B. Saka (pen)', minute:"87'"   },
+      { team:'home', scorer:'O. Dembélé',    minute:"90+6'" },
+      { team:'away', scorer:'J. Bellingham', minute:"90+8'" },
+    ],
+    description:
+      '本屆最瘋狂的一場比賽，十球大戰！英格蘭上半場狂攻，Rice 3 分鐘遠射破門，Konsa 8 分鐘頭球，' +
+      'Saka 30、40 分鐘連入兩球，半場已 4:0 領先。姆巴佩 48 分鐘扳一城並助攻 Barcola 55 分鐘再入一球，' +
+      '姆巴佩 65 分鐘再下一城，超越梅西成為世界盃歷史最多進球球員（22 球）。' +
+      'Saka 87 分鐘主射點球完成帽子戲法，Dembélé 補時扳回一城，' +
+      '但替補上陣的 Bellingham 補時再入一球鎖定勝局，英格蘭 6:4 淘汰法國奪得季軍，' +
+      '創下自 1982 年以來世界盃單場最多進球紀錄。',
+    descriptionEn:
+      'The wildest match of the tournament — a 10-goal thriller! England raced into a 4-0 half-time lead: ' +
+      'Rice curled one in from distance (3\'), Konsa headed home (8\'), and Saka struck twice (30\', 40\'). ' +
+      'Mbappé pulled one back (48\') and set up Barcola (55\'), then scored again himself (65\') to move ' +
+      'past Messi as the all-time World Cup top scorer with 22 career goals. Saka completed his hat-trick ' +
+      'from the penalty spot (87\'), Dembélé pulled one back in stoppage time (90+6\'), but substitute ' +
+      'Jude Bellingham struck the game\'s 10th goal (90+8\') to seal England\'s 6-4 win and third-place ' +
+      'finish — the most goals in a World Cup match since 1982.' },
+
+  // ── Jul 19 — Final ───────────────────────────────────────────────────────
+
+  { date:'Jul 19', round:'Final',
+    home:'Spain',     homeFlag:'🇪🇸', homeScore:1,
+    away:'Argentina', awayFlag:'🇦🇷', awayScore:0,
+    venue:'MetLife Stadium',
+    goals:[
+      { team:'home', scorer:'F. Torres', minute:"106'" },
+    ],
+    cards:[
+      { team:'away', player:'E. Fernández', minute:"82'",   type:'yellow' },
+      { team:'away', player:'E. Fernández', minute:"90+3'", type:'red' },
+    ],
+    description:
+      '西班牙加時絕殺奪冠，時隔 16 年再登世界之巔！90 分鐘戰成 0:0 進入加時，' +
+      '阿根廷 E. Fernández 82 分鐘吃到黃牌，補時第 3 分鐘再對 Cubarsí 犯規染紅離場，令阿根廷十人應戰整個加時賽。' +
+      '第 106 分鐘，替補登場的 Ferran Torres 接 Nico Williams 傳中近距離推射破網，' +
+      '西班牙 1:0 絕殺奪冠，繼 2010 年後第二次捧起世界盃金盃，梅西的衛冕之路就此終結。',
+    descriptionEn:
+      'Spain win the World Cup in extra time — their second title, 16 years after 2010! The final was ' +
+      'goalless after 90 minutes. Argentina\'s Enzo Fernández picked up a yellow card (82\') then a second ' +
+      'for a foul on Pau Cubarsí in second-half stoppage time (90+3\'), leaving Argentina to play the ' +
+      'entire extra time with 10 men. In the 106th minute, substitute Ferran Torres finished off a Nico ' +
+      'Williams cross to win it 1-0. Spain lift their second World Cup trophy; Argentina\'s title defence ends.' },
 ];
 
-const SCORES_UPDATED = '2026-07-16';
+const SCORES_UPDATED = '2026-07-19';
 
 // 12 distinct header gradient colours for groups A → L
 var GRP_COLORS = [
@@ -2075,8 +2134,8 @@ var KO_ROUNDS = [
   { key:'Round of 16',   zh:'16強賽',      en:'Round of 16',    dates:'Jul 4–7',        total:8  },
   { key:'Quarter-final', zh:'八強賽 (QF)', en:'Quarter-finals', dates:'Jul 10–11',      total:4  },
   { key:'Semi-final',    zh:'準決賽 (SF)', en:'Semi-finals',    dates:'Jul 14–15',      total:2  },
-  { key:'3rd Place',     zh:'季軍戰',      en:'3rd Place',      dates:'Jul 21',         total:1  },
-  { key:'Final',         zh:'🏆 決賽',     en:'🏆 The Final',   dates:'Jul 23',         total:1  },
+  { key:'3rd Place',     zh:'季軍戰',      en:'3rd Place',      dates:'Jul 18',         total:1  },
+  { key:'Final',         zh:'🏆 決賽',     en:'🏆 The Final',   dates:'Jul 19',         total:1  },
 ];
 
 // Round of 32 confirmed matchups (TBD = pending Jun 27 Group J/K/L results)

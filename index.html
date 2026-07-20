@@ -256,6 +256,12 @@
       animation: kbFloat 3.2s ease-in-out infinite;
     }
     @keyframes kbFloat { 0%,100% { transform: translateY(0) rotate(-2deg);} 50% { transform: translateY(-7px) rotate(2deg);} }
+    .kb-champ .kb-champ-team {
+      margin-top: 0.65rem;
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--text);
+    }
     .kb-champ .kb-champ-lbl {
       margin-top: 0.55rem;
       font-size: 0.72rem;
@@ -423,10 +429,10 @@ VENUES.forEach(v => {
 (function () {
   var isEn = (typeof getLang === 'function') && getLang() === 'en';
   var L = isEn
-    ? { title:'🏆 Knockout Bracket', sub:'Final is set — Spain vs Argentina on Jul 19; France meet England for bronze',
+    ? { title:'🏆 Knockout Bracket', sub:'Tournament complete — Spain are world champions, beating Argentina 1-0 in extra time',
         r16:'Round of 16', qf:'Quarter-finals', sf:'Semi-finals', fin:'Final', champ:'Champion', third:'🥉 3rd Place',
         winOf:'Winner of', loseOf:'Loser of', tbd:'To be decided', crown:'World Champions' }
-    : { title:'🏆 淘汰賽對陣圖', sub:'決賽對陣確定 — 西班牙對阿根廷（7/19），法國對英格蘭爭季軍',
+    : { title:'🏆 淘汰賽對陣圖', sub:'賽事圓滿落幕 — 西班牙加時 1:0 擊敗阿根廷，奪得世界盃冠軍',
         r16:'16 強', qf:'八強 (QF)', sf:'準決賽 (SF)', fin:'決賽', champ:'世界冠軍', third:'🥉 季軍戰',
         winOf:'勝者', loseOf:'敗方', tbd:'待定', crown:'世界冠軍' };
 
@@ -455,8 +461,8 @@ VENUES.forEach(v => {
     { m:'SF1', date:'7/14', venue:'Arlington', f:['QF1','QF2'], s:{QF1:0, QF2:2}, winnerId:'QF2' },
     { m:'SF2', date:'7/15', venue:'Atlanta',   f:['QF3','QF4'], s:{QF3:1, QF4:2}, winnerId:'QF4' },
   ];
-  var FIN = { m:'Final', date:'7/19', venue:'New York/NJ', f:['SF1','SF2'] };
-  var THIRD = { m:'3rd', date:'7/18', venue:'Hard Rock Stadium', f:['SF1','SF2'] };
+  var FIN = { m:'Final', date:'7/19', venue:'New York/NJ', f:['SF1','SF2'], s:{SF1:1, SF2:0}, winnerId:'SF1' };
+  var THIRD = { m:'3rd', date:'7/18', venue:'Hard Rock Stadium', f:['SF1','SF2'], s:{SF1:4, SF2:6}, winnerId:'SF2' };
 
   // Maps of matchId -> team {n,f}, for feeding into later rounds
   var winners = {};
@@ -525,6 +531,8 @@ VENUES.forEach(v => {
       losers[mt.m] = winners[loserId];
     }
   });
+  // Once the Final is played, resolve the champion team
+  var champion = FIN.winnerId ? winners[FIN.winnerId] : null;
 
   var grid = document.getElementById('kb-grid');
   grid.innerHTML =
@@ -535,7 +543,9 @@ VENUES.forEach(v => {
       '<div class="kb-third-wrap"><div class="kb-third-lbl">' + L.third + '</div>' + ghostCard(THIRD,' is-third', losers, L.loseOf) + '</div>' +
       '</div></div>' +
     '<div class="kb-col is-champ-col"><div class="kb-col-label">' + L.champ + '</div><div class="kb-col-body">' +
-      '<div class="kb-champ"><div class="kb-cup">🏆</div><div class="kb-champ-lbl">' + L.crown + '</div>' +
+      '<div class="kb-champ"><div class="kb-cup">🏆</div>' +
+      (champion ? '<div class="kb-champ-team">' + champion.f + ' ' + champion.n + '</div>' : '') +
+      '<div class="kb-champ-lbl">' + L.crown + '</div>' +
       '<div class="kb-champ-sub">' + FIN.date + ' · ' + FIN.venue + '</div></div></div></div>';
 
   // ── SVG connectors ──────────────────────────────────────
